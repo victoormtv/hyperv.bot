@@ -1,0 +1,155 @@
+REPARACIÓN COMPLETA DE VENTAS - 2026-02
+Fecha: 19/2/2026, 1:39:55 a. m.
+Ejecutado por: strixboss
+Modo: Vista Previa
+Total reparaciones: 15
+
+CATEGORÍAS:
+- Propinas mal calculadas: 0
+- Descuentos mal aplicados: 4
+- Comisiones fijas incorrectas: 0
+- Descuento Ads incorrecto: 0
+- Otros errores: 11
+================================================================================
+
+Venta #216 [OTROS]
+Vendedor: josuex_16
+Producto: Aimbot Color - Semanal
+Propina: 23.86 PEN
+Comisión anterior: 33.86 PEN
+Comisión corregida: 33.67 PEN
+Diferencia: -0.19 PEN
+--------------------------------------------------------------------------------
+
+Venta #229 [OTROS]
+Vendedor: strixboss
+Producto: Bypass ID - Mensual
+Propina: 3.40 PEN
+Comisión anterior: 23.4 PEN
+Comisión corregida: 23.13 PEN
+Diferencia: -0.27 PEN
+--------------------------------------------------------------------------------
+
+Venta #234 [OTROS]
+Vendedor: fvbriix
+Producto: Panel Full - Semanal
+Propina: 12.01 PEN
+Comisión anterior: 22.01 PEN
+Comisión corregida: 21.81 PEN
+Diferencia: -0.2 PEN
+--------------------------------------------------------------------------------
+
+Venta #251 [OTROS]
+Vendedor: tanatoboss
+Producto: Aimbot Color - Mensual
+Propina: 7.41 PEN
+Comisión anterior: 27.41 PEN
+Comisión corregida: 27.14 PEN
+Diferencia: -0.27 PEN
+--------------------------------------------------------------------------------
+
+Venta #266 [OTROS]
+Vendedor: mattizynn.
+Producto: Regedit - Mensual
+Propina: 14.20 PEN
+Comisión anterior: 29.2 PEN
+Comisión corregida: 28.98 PEN
+Diferencia: -0.22 PEN
+--------------------------------------------------------------------------------
+
+Venta #270 [OTROS]
+Vendedor: fvbriix
+Producto: Propina - N/A
+Propina: 157.67 PEN
+Comisión anterior: 157.67 PEN
+Comisión corregida: 157.3 PEN
+Diferencia: -0.37 PEN
+--------------------------------------------------------------------------------
+
+Venta #284 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Panel iOS - Mensual
+Descuento: 22.70 PEN
+Comisión anterior: 26.36 PEN
+Comisión corregida: 26.22 PEN
+Diferencia: -0.14 PEN
+--------------------------------------------------------------------------------
+
+Venta #287 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Panel Full + Bypass ID - Anual + Anual
+Descuento: 109.32 PEN
+Comisión anterior: 57.29 PEN
+Comisión corregida: 58.14 PEN
+Diferencia: +0.85 PEN
+--------------------------------------------------------------------------------
+
+Venta #290 [OTROS]
+Vendedor: tanatoboss
+Producto: Panel Full - Anual
+Propina: 12.60 PEN
+Comisión anterior: 52.6 PEN
+Comisión corregida: 52.1 PEN
+Diferencia: -0.5 PEN
+--------------------------------------------------------------------------------
+
+Venta #315 [OTROS]
+Vendedor: tanatoboss
+Producto: Panel iOS - Mensual
+Propina: 64.93 PEN
+Comisión anterior: 94.93 PEN
+Comisión corregida: 94.36 PEN
+Diferencia: -0.57 PEN
+--------------------------------------------------------------------------------
+
+Venta #342 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Aimlock - Anual
+Descuento: 13.86 PEN
+Comisión anterior: 23.22 PEN
+Comisión corregida: 23.07 PEN
+Diferencia: -0.15 PEN
+--------------------------------------------------------------------------------
+
+Venta #346 [OTROS]
+Vendedor: strixboss
+Producto: Panel Full - Semanal
+Propina: 23.45 PEN
+Comisión anterior: 33.45 PEN
+Comisión corregida: 33.25 PEN
+Diferencia: -0.2 PEN
+--------------------------------------------------------------------------------
+
+Venta #354 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Panel Secure - Anual
+Descuento: 16.46 PEN
+Comisión anterior: 26.89 PEN
+Comisión corregida: 26.71 PEN
+Diferencia: -0.18 PEN
+--------------------------------------------------------------------------------
+
+Venta #357 [OTROS]
+Vendedor: tanatoboss
+Producto: Panel Full - Mensual
+Propina: 24.18 PEN
+Comisión anterior: 44.18 PEN
+Comisión corregida: 43.87 PEN
+Diferencia: -0.31 PEN
+--------------------------------------------------------------------------------
+
+Venta #358 [OTROS]
+Vendedor: josuex_16
+Producto: Panel Full - Mensual
+Propina: 6.86 PEN
+Comisión anterior: 26.86 PEN
+Comisión corregida: 26.55 PEN
+Diferencia: -0.31 PEN
+--------------------------------------------------------------------------------
+
+
+================================================================================
+ERRORES:
+
+Venta #226: Cannot read properties of undefined (reading 'includes')
+Venta #300: Cannot read properties of undefined (reading 'includes')

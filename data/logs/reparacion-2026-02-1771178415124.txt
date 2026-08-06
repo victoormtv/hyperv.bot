@@ -1,0 +1,44 @@
+REPARACIÓN DE VENTAS - 2026-02
+Fecha: 15/2/2026, 6:00:15 p. m.
+Ejecutado por: strixboss
+Modo: Vista Previa
+Total reparaciones: 4
+
+================================================================================
+
+Venta #267
+Vendedor: fvbriix
+Producto: Propina - N/A
+Propina: 13.50 PEN
+Comisión anterior: 0 PEN
+Comisión corregida: 13.5 PEN
+Diferencia: +13.5 PEN
+--------------------------------------------------------------------------------
+
+Venta #315
+Vendedor: tanatoboss
+Producto: Panel iOS - Mensual
+Propina: 65.10 PEN
+Comisión anterior: 30 PEN
+Comisión corregida: 95.1 PEN
+Diferencia: +65.1 PEN
+--------------------------------------------------------------------------------
+
+Venta #327
+Vendedor: fvbriboss
+Producto: Bypass APK - Mensual
+Propina: 30.00 PEN
+Comisión anterior: 15 PEN
+Comisión corregida: 45 PEN
+Diferencia: +30 PEN
+--------------------------------------------------------------------------------
+
+Venta #346
+Vendedor: strixboss
+Producto: Panel Full - Semanal
+Propina: 23.45 PEN
+Comisión anterior: 10 PEN
+Comisión corregida: 33.45 PEN
+Diferencia: +23.45 PEN
+--------------------------------------------------------------------------------
+

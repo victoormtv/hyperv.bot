@@ -1,0 +1,1365 @@
+REPARACIÓN COMPLETA DE VENTAS - 2026-03
+Fecha: 18/4/2026, 7:25:17 p. m.
+Ejecutado por: strixboss
+Modo: Vista Previa
+Total reparaciones: 150
+
+CATEGORÍAS:
+- Propinas mal calculadas: 2
+- Descuentos mal aplicados: 100
+- Comisiones fijas incorrectas: 0
+- Descuento Ads incorrecto: 1
+- Otros errores: 47
+================================================================================
+
+Venta #483 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Panel Secure - Mensual
+Descuento: 20.82 PEN
+Comisión anterior: 11.34 PEN
+Comisión corregida: 11.1 PEN
+Diferencia: -0.24 PEN
+--------------------------------------------------------------------------------
+
+Venta #486 [OTROS]
+Vendedor: yamisita_
+Producto: Panel Full - Mensual
+Propina: 19.00 PEN
+Comisión anterior: 39 PEN
+Comisión corregida: 36.51 PEN
+Diferencia: -2.49 PEN
+--------------------------------------------------------------------------------
+
+Venta #487 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Panel iOS - Semanal
+Descuento: 2.00 PEN
+Comisión anterior: 9.65 PEN
+Comisión corregida: 9.76 PEN
+Diferencia: +0.11 PEN
+--------------------------------------------------------------------------------
+
+Venta #489 [OTROS]
+Vendedor: josuex_16
+Producto: Panel Only Aimbot - Semanal
+Propina: 0.56 PEN
+Comisión anterior: 5.56 PEN
+Comisión corregida: 5 PEN
+Diferencia: -0.56 PEN
+--------------------------------------------------------------------------------
+
+Venta #492 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Bypass APK - Semanal
+Descuento: 26.30 PEN
+Comisión anterior: 5.74 PEN
+Comisión corregida: 5.62 PEN
+Diferencia: -0.12 PEN
+--------------------------------------------------------------------------------
+
+Venta #493 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Panel Secure - Mensual
+Descuento: 20.44 PEN
+Comisión anterior: 11.41 PEN
+Comisión corregida: 11.17 PEN
+Diferencia: -0.24 PEN
+--------------------------------------------------------------------------------
+
+Venta #494 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Regedit - Anual
+Descuento: 15.00 PEN
+Comisión anterior: 27.12 PEN
+Comisión corregida: 26.54 PEN
+Diferencia: -0.58 PEN
+--------------------------------------------------------------------------------
+
+Venta #495 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Panel iOS - Mensual
+Descuento: 25.20 PEN
+Comisión anterior: 21.48 PEN
+Comisión corregida: 21.06 PEN
+Diferencia: -0.42 PEN
+--------------------------------------------------------------------------------
+
+Venta #498 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Aimlock - Anual
+Descuento: 38.46 PEN
+Comisión anterior: 20.09 PEN
+Comisión corregida: 19.66 PEN
+Diferencia: -0.43 PEN
+--------------------------------------------------------------------------------
+
+Venta #499 [PROPINAS]
+Vendedor: josuex_16
+Producto: Panel iOS - Semanal
+Propina: 14.00 PEN
+Comisión anterior: 24 PEN
+Comisión corregida: 25 PEN
+Diferencia: +1 PEN
+--------------------------------------------------------------------------------
+
+Venta #500 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Bypass APK - Semanal
+Descuento: 29.13 PEN
+Comisión anterior: 5.26 PEN
+Comisión corregida: 5.14 PEN
+Diferencia: -0.12 PEN
+--------------------------------------------------------------------------------
+
+Venta #501 [PROPINAS]
+Vendedor: josuex_16
+Producto: Panel iOS - Semanal
+Propina: 22.00 PEN
+Comisión anterior: 32 PEN
+Comisión corregida: 33 PEN
+Diferencia: +1 PEN
+--------------------------------------------------------------------------------
+
+Venta #506 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Aimbot Color - Mensual
+Descuento: 29.70 PEN
+Comisión anterior: 15.75 PEN
+Comisión corregida: 14.6 PEN
+Diferencia: -1.15 PEN
+--------------------------------------------------------------------------------
+
+Venta #508 [OTROS]
+Vendedor: unknownx444
+Producto: Panel Only Aimbot - Semanal
+Propina: 0.66 PEN
+Comisión anterior: 5.66 PEN
+Comisión corregida: 5 PEN
+Diferencia: -0.66 PEN
+--------------------------------------------------------------------------------
+
+Venta #510 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Bypass APK - Semanal
+Descuento: 26.29 PEN
+Comisión anterior: 5.74 PEN
+Comisión corregida: 5.62 PEN
+Diferencia: -0.12 PEN
+--------------------------------------------------------------------------------
+
+Venta #512 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Bypass ID - Semanal
+Descuento: 1.47 PEN
+Comisión anterior: 9.79 PEN
+Comisión corregida: 9.58 PEN
+Diferencia: -0.21 PEN
+--------------------------------------------------------------------------------
+
+Venta #515 [OTROS]
+Vendedor: tanatoboss
+Producto: Bypass ID - 14 dias
+Propina: 1.54 PEN
+Comisión anterior: 16.54 PEN
+Comisión corregida: 15 PEN
+Diferencia: -1.54 PEN
+--------------------------------------------------------------------------------
+
+Venta #517 [OTROS]
+Vendedor: yamisita_
+Producto: Panel Full - Mensual
+Propina: 2.75 PEN
+Comisión anterior: 22.75 PEN
+Comisión corregida: 20 PEN
+Diferencia: -2.75 PEN
+--------------------------------------------------------------------------------
+
+Venta #519 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Panel Full - Anual
+Descuento: 38.24 PEN
+Comisión anterior: 33.06 PEN
+Comisión corregida: 32.35 PEN
+Diferencia: -0.71 PEN
+--------------------------------------------------------------------------------
+
+Venta #520 [DESCUENTOS]
+Vendedor: yamisita_
+Producto: Bypass ID - Semanal
+Descuento: 1.30 PEN
+Comisión anterior: 10 PEN
+Comisión corregida: 9.63 PEN
+Diferencia: -0.37 PEN
+--------------------------------------------------------------------------------
+
+Venta #528 [OTROS]
+Vendedor: josuex_16
+Producto: Propina - N/A
+Propina: 34.44 PEN
+Comisión anterior: 34.44 PEN
+Comisión corregida: 33.71 PEN
+Diferencia: -0.73 PEN
+--------------------------------------------------------------------------------
+
+Venta #531 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Panel iOS - Mensual
+Descuento: 25.20 PEN
+Comisión anterior: 21.48 PEN
+Comisión corregida: 21.06 PEN
+Diferencia: -0.42 PEN
+--------------------------------------------------------------------------------
+
+Venta #533 [OTROS]
+Vendedor: tanatoboss
+Producto: Aimbot Color - Semanal
+Propina: 11.01 PEN
+Comisión anterior: 21.01 PEN
+Comisión corregida: 15.7 PEN
+Diferencia: -5.31 PEN
+--------------------------------------------------------------------------------
+
+Venta #534 [OTROS]
+Vendedor: mattizynn.
+Producto: Panel Full - Mensual
+Propina: 19.00 PEN
+Comisión anterior: 39 PEN
+Comisión corregida: 36.51 PEN
+Diferencia: -2.49 PEN
+--------------------------------------------------------------------------------
+
+Venta #541 [DESCUENTOS]
+Vendedor: yamisita_
+Producto: Bypass ID - Semanal
+Descuento: 7.70 PEN
+Comisión anterior: 6.74 PEN
+Comisión corregida: 6.63 PEN
+Diferencia: -0.11 PEN
+--------------------------------------------------------------------------------
+
+Venta #542 [DESCUENTOS]
+Vendedor: yamisita_
+Producto: Panel iOS - Mensual
+Descuento: 65.37 PEN
+Comisión anterior: 15.08 PEN
+Comisión corregida: 14.79 PEN
+Diferencia: -0.29 PEN
+--------------------------------------------------------------------------------
+
+Venta #544 [DESCUENTOS]
+Vendedor: mattizynn.
+Producto: Bypass ID - Semanal
+Descuento: 10.51 PEN
+Comisión anterior: 7.12 PEN
+Comisión corregida: 7 PEN
+Diferencia: -0.12 PEN
+--------------------------------------------------------------------------------
+
+Venta #545 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Panel iOS - Mensual
+Descuento: 33.49 PEN
+Comisión anterior: 20.16 PEN
+Comisión corregida: 19.77 PEN
+Diferencia: -0.39 PEN
+--------------------------------------------------------------------------------
+
+Venta #547 [OTROS]
+Vendedor: fvbriboss
+Producto: Panel iOS - Semanal
+Propina: 10.23 PEN
+Comisión anterior: 20.23 PEN
+Comisión corregida: 19.37 PEN
+Diferencia: -0.86 PEN
+--------------------------------------------------------------------------------
+
+Venta #551 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Bypass ID - Mensual
+Descuento: 5.37 PEN
+Comisión anterior: 19.34 PEN
+Comisión corregida: 18.93 PEN
+Diferencia: -0.41 PEN
+--------------------------------------------------------------------------------
+
+Venta #552 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Panel Only Aimbot - Mensual
+Descuento: 11.38 PEN
+Comisión anterior: 8.17 PEN
+Comisión corregida: 7.93 PEN
+Diferencia: -0.24 PEN
+--------------------------------------------------------------------------------
+
+Venta #553 [DESCUENTOS]
+Vendedor: yamisita_
+Producto: Bypass ID - Mensual
+Descuento: 5.37 PEN
+Comisión anterior: 19.34 PEN
+Comisión corregida: 18.93 PEN
+Diferencia: -0.41 PEN
+--------------------------------------------------------------------------------
+
+Venta #556 [OTROS]
+Vendedor: josuex_16
+Producto: Panel Only Aimbot - Semanal
+Propina: 21.32 PEN
+Comisión anterior: 26.32 PEN
+Comisión corregida: 25.44 PEN
+Diferencia: -0.88 PEN
+--------------------------------------------------------------------------------
+
+Venta #558 [OTROS]
+Vendedor: josuex_16
+Producto: Panel iOS - Mensual
+Propina: 10.96 PEN
+Comisión anterior: 35.96 PEN
+Comisión corregida: 32.66 PEN
+Diferencia: -3.3 PEN
+--------------------------------------------------------------------------------
+
+Venta #559 [OTROS]
+Vendedor: yamisita_
+Producto: Panel Android - Semanal
+Propina: 35.49 PEN
+Comisión anterior: 45.49 PEN
+Comisión corregida: 44.13 PEN
+Diferencia: -1.36 PEN
+--------------------------------------------------------------------------------
+
+Venta #566 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Panel iOS - Semanal
+Descuento: 5.00 PEN
+Comisión anterior: 9.3 PEN
+Comisión corregida: 9.41 PEN
+Diferencia: +0.11 PEN
+--------------------------------------------------------------------------------
+
+Venta #568 [DESCUENTOS]
+Vendedor: mattizynn.
+Producto: Panel Android - Semanal
+Descuento: 13.69 PEN
+Comisión anterior: 6.25 PEN
+Comisión corregida: 6.09 PEN
+Diferencia: -0.16 PEN
+--------------------------------------------------------------------------------
+
+Venta #571 [OTROS]
+Vendedor: josuex_16
+Producto: Panel Only Aimbot - Semanal
+Propina: 0.66 PEN
+Comisión anterior: 5.66 PEN
+Comisión corregida: 5 PEN
+Diferencia: -0.66 PEN
+--------------------------------------------------------------------------------
+
+Venta #572 [DESCUENTOS]
+Vendedor: mattizynn.
+Producto: Panel Android - Semanal
+Descuento: 11.41 PEN
+Comisión anterior: 6.92 PEN
+Comisión corregida: 6.74 PEN
+Diferencia: -0.18 PEN
+--------------------------------------------------------------------------------
+
+Venta #578 [DESCUENTOS]
+Vendedor: yamisita_
+Producto: Panel Android - Semanal
+Descuento: 4.13 PEN
+Comisión anterior: 7.69 PEN
+Comisión corregida: 7.5 PEN
+Diferencia: -0.19 PEN
+--------------------------------------------------------------------------------
+
+Venta #579 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Panel Android - Semanal
+Descuento: 1.30 PEN
+Comisión anterior: 10 PEN
+Comisión corregida: 9.63 PEN
+Diferencia: -0.37 PEN
+--------------------------------------------------------------------------------
+
+Venta #581 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Panel Only Aimbot - Semanal
+Descuento: 1.88 PEN
+Comisión anterior: 4.67 PEN
+Comisión corregida: 4.53 PEN
+Diferencia: -0.14 PEN
+--------------------------------------------------------------------------------
+
+Venta #582 [OTROS]
+Vendedor: tanatoboss
+Producto: Bypass ID - Semanal
+Propina: 18.39 PEN
+Comisión anterior: 28.39 PEN
+Comisión corregida: 27.36 PEN
+Diferencia: -1.03 PEN
+--------------------------------------------------------------------------------
+
+Venta #584 [ADS]
+Vendedor: yamisita_
+Producto: Panel iOS - Semanal
+Propina: 53.48 PEN
+Comisión anterior: 61.98 PEN
+Comisión corregida: 60.29 PEN
+Diferencia: -1.69 PEN
+--------------------------------------------------------------------------------
+
+Venta #585 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Bypass ID - Semanal
+Descuento: 8.17 PEN
+Comisión anterior: 7.87 PEN
+Comisión corregida: 7.66 PEN
+Diferencia: -0.21 PEN
+--------------------------------------------------------------------------------
+
+Venta #586 [OTROS]
+Vendedor: tanatoboss
+Producto: Panel iOS - Mensual
+Propina: 99.04 PEN
+Comisión anterior: 124.04 PEN
+Comisión corregida: 119.03 PEN
+Diferencia: -5.01 PEN
+--------------------------------------------------------------------------------
+
+Venta #588 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Bypass ID - Semanal
+Descuento: 0.94 PEN
+Comisión anterior: 10 PEN
+Comisión corregida: 9.73 PEN
+Diferencia: -0.27 PEN
+--------------------------------------------------------------------------------
+
+Venta #589 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Panel Only Aimbot - Semanal
+Descuento: 1.88 PEN
+Comisión anterior: 4.65 PEN
+Comisión corregida: 4.53 PEN
+Diferencia: -0.12 PEN
+--------------------------------------------------------------------------------
+
+Venta #589 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Bypass ID - Anual
+Descuento: 43.29 PEN
+Comisión anterior: 32.02 PEN
+Comisión corregida: 31.34 PEN
+Diferencia: -0.68 PEN
+--------------------------------------------------------------------------------
+
+Venta #590 [OTROS]
+Vendedor: josuex_16
+Producto: Propina - N/A
+Propina: 31.54 PEN
+Comisión anterior: 31.54 PEN
+Comisión corregida: 30.87 PEN
+Diferencia: -0.67 PEN
+--------------------------------------------------------------------------------
+
+Venta #591 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Panel iOS - Mensual
+Descuento: 21.30 PEN
+Comisión anterior: 23.43 PEN
+Comisión corregida: 21.67 PEN
+Diferencia: -1.76 PEN
+--------------------------------------------------------------------------------
+
+Venta #594 [OTROS]
+Vendedor: fvbriboss
+Producto: Propina - N/A
+Propina: 34.44 PEN
+Comisión anterior: 34.44 PEN
+Comisión corregida: 33.71 PEN
+Diferencia: -0.73 PEN
+--------------------------------------------------------------------------------
+
+Venta #596 [DESCUENTOS]
+Vendedor: mattizynn.
+Producto: Bypass ID - Semanal
+Descuento: 10.51 PEN
+Comisión anterior: 7.13 PEN
+Comisión corregida: 7 PEN
+Diferencia: -0.13 PEN
+--------------------------------------------------------------------------------
+
+Venta #597 [OTROS]
+Vendedor: fvbriboss
+Producto: Propina - N/A
+Propina: 31.54 PEN
+Comisión anterior: 31.54 PEN
+Comisión corregida: 30.87 PEN
+Diferencia: -0.67 PEN
+--------------------------------------------------------------------------------
+
+Venta #597 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Panel Secure - Semanal
+Descuento: 2.91 PEN
+Comisión anterior: 7.56 PEN
+Comisión corregida: 7.42 PEN
+Diferencia: -0.14 PEN
+--------------------------------------------------------------------------------
+
+Venta #598 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Bypass APK + Bypass APK - Mensual + Mensual
+Descuento: 101.61 PEN
+Comisión anterior: 18.63 PEN
+Comisión corregida: 18.28 PEN
+Diferencia: -0.35 PEN
+--------------------------------------------------------------------------------
+
+Venta #599 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Regedit - Anual
+Descuento: 17.44 PEN
+Comisión anterior: 26.48 PEN
+Comisión corregida: 25.97 PEN
+Diferencia: -0.51 PEN
+--------------------------------------------------------------------------------
+
+Venta #602 [DESCUENTOS]
+Vendedor: rodriseis
+Producto: Panel iOS - Mensual
+Descuento: 35.98 PEN
+Comisión anterior: 19.76 PEN
+Comisión corregida: 19.38 PEN
+Diferencia: -0.38 PEN
+--------------------------------------------------------------------------------
+
+Venta #604 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Panel iOS - Mensual
+Descuento: 14.36 PEN
+Comisión anterior: 23.2 PEN
+Comisión corregida: 22.76 PEN
+Diferencia: -0.44 PEN
+--------------------------------------------------------------------------------
+
+Venta #607 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Panel iOS - Mensual
+Descuento: 33.49 PEN
+Comisión anterior: 20.16 PEN
+Comisión corregida: 19.77 PEN
+Diferencia: -0.39 PEN
+--------------------------------------------------------------------------------
+
+Venta #607 [OTROS]
+Vendedor: fvbriboss
+Producto: Panel Full - Mensual
+Propina: 2.75 PEN
+Comisión anterior: 22.75 PEN
+Comisión corregida: 20 PEN
+Diferencia: -2.75 PEN
+--------------------------------------------------------------------------------
+
+Venta #608 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Panel iOS - Semanal
+Descuento: 4.35 PEN
+Comisión anterior: 9.38 PEN
+Comisión corregida: 9.49 PEN
+Diferencia: +0.11 PEN
+--------------------------------------------------------------------------------
+
+Venta #610 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Bypass APK + Panel Secure - Semanal + Semanal
+Descuento: 27.69 PEN
+Comisión anterior: 13.27 PEN
+Comisión corregida: 13.02 PEN
+Diferencia: -0.25 PEN
+--------------------------------------------------------------------------------
+
+Venta #611 [DESCUENTOS]
+Vendedor: strixboss
+Producto: Panel Secure - Semanal
+Descuento: 2.75 PEN
+Comisión anterior: 7.62 PEN
+Comisión corregida: 7.45 PEN
+Diferencia: -0.17 PEN
+--------------------------------------------------------------------------------
+
+Venta #614 [OTROS]
+Vendedor: josuex_16
+Producto: Panel Full - Mensual
+Propina: 19.00 PEN
+Comisión anterior: 39 PEN
+Comisión corregida: 36.51 PEN
+Diferencia: -2.49 PEN
+--------------------------------------------------------------------------------
+
+Venta #616 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Bypass ID - Semanal
+Descuento: 10.51 PEN
+Comisión anterior: 7.16 PEN
+Comisión corregida: 7 PEN
+Diferencia: -0.16 PEN
+--------------------------------------------------------------------------------
+
+Venta #619 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Panel Android - Semanal
+Descuento: 1.89 PEN
+Comisión anterior: 10 PEN
+Comisión corregida: 9.46 PEN
+Diferencia: -0.54 PEN
+--------------------------------------------------------------------------------
+
+Venta #622 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Bypass APK - Mensual
+Descuento: 35.64 PEN
+Comisión anterior: 11.13 PEN
+Comisión corregida: 10.89 PEN
+Diferencia: -0.24 PEN
+--------------------------------------------------------------------------------
+
+Venta #624 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Bypass APK - Semanal
+Descuento: 29.13 PEN
+Comisión anterior: 5.26 PEN
+Comisión corregida: 5.14 PEN
+Diferencia: -0.12 PEN
+--------------------------------------------------------------------------------
+
+Venta #625 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Bypass ID + Panel Only Aimbot - Mensual + Mensual
+Descuento: 37.05 PEN
+Comisión anterior: 23.31 PEN
+Comisión corregida: 22.83 PEN
+Diferencia: -0.48 PEN
+--------------------------------------------------------------------------------
+
+Venta #626 [OTROS]
+Vendedor: tanatoboss
+Producto: Panel Full - Semanal
+Propina: 20.24 PEN
+Comisión anterior: 30.24 PEN
+Comisión corregida: 28.69 PEN
+Diferencia: -1.55 PEN
+--------------------------------------------------------------------------------
+
+Venta #628 [DESCUENTOS]
+Vendedor: strixboss
+Producto: Bypass ID - Mensual
+Descuento: 30.58 PEN
+Comisión anterior: 14.18 PEN
+Comisión corregida: 13.88 PEN
+Diferencia: -0.3 PEN
+--------------------------------------------------------------------------------
+
+Venta #629 [OTROS]
+Vendedor: strixboss
+Producto: Panel Only Aimbot - Semanal
+Propina: 0.65 PEN
+Comisión anterior: 5.65 PEN
+Comisión corregida: 5 PEN
+Diferencia: -0.65 PEN
+--------------------------------------------------------------------------------
+
+Venta #633 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Panel Warzone - 15 dias
+Descuento: 15.37 PEN
+Comisión anterior: 8.78 PEN
+Comisión corregida: 8.6 PEN
+Diferencia: -0.18 PEN
+--------------------------------------------------------------------------------
+
+Venta #635 [DESCUENTOS]
+Vendedor: mattizynn.
+Producto: Panel Android - Semanal
+Descuento: 11.41 PEN
+Comisión anterior: 6.89 PEN
+Comisión corregida: 6.74 PEN
+Diferencia: -0.15 PEN
+--------------------------------------------------------------------------------
+
+Venta #637 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Bypass ID - Trimestral
+Descuento: 7.55 PEN
+Comisión anterior: 29.11 PEN
+Comisión corregida: 28.49 PEN
+Diferencia: -0.62 PEN
+--------------------------------------------------------------------------------
+
+Venta #638 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Panel Android - 14 dias
+Descuento: 6.81 PEN
+Comisión anterior: 13.59 PEN
+Comisión corregida: 13.3 PEN
+Diferencia: -0.29 PEN
+--------------------------------------------------------------------------------
+
+Venta #641 [DESCUENTOS]
+Vendedor: rodriseis
+Producto: Panel Android - Semanal
+Descuento: 14.78 PEN
+Comisión anterior: 5.9 PEN
+Comisión corregida: 5.78 PEN
+Diferencia: -0.12 PEN
+--------------------------------------------------------------------------------
+
+Venta #644 [DESCUENTOS]
+Vendedor: mattizynn.
+Producto: Bypass APK - Mensual
+Descuento: 45.75 PEN
+Comisión anterior: 9.93 PEN
+Comisión corregida: 9.72 PEN
+Diferencia: -0.21 PEN
+--------------------------------------------------------------------------------
+
+Venta #645 [OTROS]
+Vendedor: mattizynn.
+Producto: Regedit - Mensual
+Propina: 5.22 PEN
+Comisión anterior: 20.22 PEN
+Comisión corregida: 18.58 PEN
+Diferencia: -1.64 PEN
+--------------------------------------------------------------------------------
+
+Venta #646 [DESCUENTOS]
+Vendedor: rodriseis
+Producto: Bypass APK - Mensual
+Descuento: 19.43 PEN
+Comisión anterior: 13.04 PEN
+Comisión corregida: 12.76 PEN
+Diferencia: -0.28 PEN
+--------------------------------------------------------------------------------
+
+Venta #647 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Panel Only Aimbot - Mensual
+Descuento: 8.19 PEN
+Comisión anterior: 8.7 PEN
+Comisión corregida: 8.51 PEN
+Diferencia: -0.19 PEN
+--------------------------------------------------------------------------------
+
+Venta #649 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Panel iOS - Mensual
+Descuento: 14.00 PEN
+Comisión anterior: 25 PEN
+Comisión corregida: 22.81 PEN
+Diferencia: -2.19 PEN
+--------------------------------------------------------------------------------
+
+Venta #650 [OTROS]
+Vendedor: tanatoboss
+Producto: Panel iOS + Gbox - Mensual + Por Temporada
+Propina: 8.06 PEN
+Comisión anterior: 33.06 PEN
+Comisión corregida: 29.42 PEN
+Diferencia: -3.64 PEN
+--------------------------------------------------------------------------------
+
+Venta #651 [OTROS]
+Vendedor: fvbriboss
+Producto: Panel Secure - Semanal
+Propina: 11.30 PEN
+Comisión anterior: 19.3 PEN
+Comisión corregida: 15.45 PEN
+Diferencia: -3.85 PEN
+--------------------------------------------------------------------------------
+
+Venta #653 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Bypass APK - Mensual
+Descuento: 45.76 PEN
+Comisión anterior: 9.91 PEN
+Comisión corregida: 9.72 PEN
+Diferencia: -0.19 PEN
+--------------------------------------------------------------------------------
+
+Venta #655 [OTROS]
+Vendedor: mattizynn.
+Producto: Panel Full - Anual
+Propina: 10.27 PEN
+Comisión anterior: 50.27 PEN
+Comisión corregida: 46.21 PEN
+Diferencia: -4.06 PEN
+--------------------------------------------------------------------------------
+
+Venta #656 [DESCUENTOS]
+Vendedor: mattizynn.
+Producto: Bypass ID - Trimestral
+Descuento: 7.55 PEN
+Comisión anterior: 29.05 PEN
+Comisión corregida: 28.49 PEN
+Diferencia: -0.56 PEN
+--------------------------------------------------------------------------------
+
+Venta #657 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Panel Secure + Bypass APK - Mensual + Mensual
+Descuento: 35.67 PEN
+Comisión anterior: 25.4 PEN
+Comisión corregida: 24.9 PEN
+Diferencia: -0.5 PEN
+--------------------------------------------------------------------------------
+
+Venta #658 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Panel Only Aimbot - Anual
+Descuento: 35.37 PEN
+Comisión anterior: 18.56 PEN
+Comisión corregida: 18.2 PEN
+Diferencia: -0.36 PEN
+--------------------------------------------------------------------------------
+
+Venta #659 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Panel Full + Bypass APK - Semanal + Semanal
+Descuento: 25.37 PEN
+Comisión anterior: 15.99 PEN
+Comisión corregida: 15.77 PEN
+Diferencia: -0.22 PEN
+--------------------------------------------------------------------------------
+
+Venta #660 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Bypass APK - Mensual
+Descuento: 35.37 PEN
+Comisión anterior: 11.07 PEN
+Comisión corregida: 10.92 PEN
+Diferencia: -0.15 PEN
+--------------------------------------------------------------------------------
+
+Venta #661 [OTROS]
+Vendedor: tanatoboss
+Producto: Bypass ID - 14 dias
+Propina: 20.08 PEN
+Comisión anterior: 35.08 PEN
+Comisión corregida: 34.13 PEN
+Diferencia: -0.95 PEN
+--------------------------------------------------------------------------------
+
+Venta #662 [OTROS]
+Vendedor: yamisita_
+Producto: Panel iOS + Gbox - Semanal + Por Temporada
+Propina: 65.82 PEN
+Comisión anterior: 75.82 PEN
+Comisión corregida: 73.5 PEN
+Diferencia: -2.32 PEN
+--------------------------------------------------------------------------------
+
+Venta #664 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Bypass ID - Semanal
+Descuento: 1.29 PEN
+Comisión anterior: 9.76 PEN
+Comisión corregida: 9.63 PEN
+Diferencia: -0.13 PEN
+--------------------------------------------------------------------------------
+
+Venta #665 [OTROS]
+Vendedor: yamisita_
+Producto: Regedit - Mensual
+Propina: 3.28 PEN
+Comisión anterior: 18.28 PEN
+Comisión corregida: 17.14 PEN
+Diferencia: -1.14 PEN
+--------------------------------------------------------------------------------
+
+Venta #666 [OTROS]
+Vendedor: fvbriboss
+Producto: Panel iOS + Gbox - Semanal + Por Temporada
+Propina: 7.09 PEN
+Comisión anterior: 17.09 PEN
+Comisión corregida: 15.57 PEN
+Diferencia: -1.52 PEN
+--------------------------------------------------------------------------------
+
+Venta #670 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Bypass APK - Semanal
+Descuento: 9.70 PEN
+Comisión anterior: 8.52 PEN
+Comisión corregida: 8.38 PEN
+Diferencia: -0.14 PEN
+--------------------------------------------------------------------------------
+
+Venta #672 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Bypass APK - Mensual
+Descuento: 35.37 PEN
+Comisión anterior: 11.1 PEN
+Comisión corregida: 10.92 PEN
+Diferencia: -0.18 PEN
+--------------------------------------------------------------------------------
+
+Venta #673 [OTROS]
+Vendedor: mattizynn.
+Producto: Regedit - Anual
+Propina: 20.74 PEN
+Comisión anterior: 50.74 PEN
+Comisión corregida: 48.28 PEN
+Diferencia: -2.46 PEN
+--------------------------------------------------------------------------------
+
+Venta #674 [OTROS]
+Vendedor: tanatoboss
+Producto: Panel Full - Semanal
+Propina: 8.52 PEN
+Comisión anterior: 18.52 PEN
+Comisión corregida: 17.4 PEN
+Diferencia: -1.12 PEN
+--------------------------------------------------------------------------------
+
+Venta #676 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Panel Android - Mensual
+Descuento: 32.60 PEN
+Comisión anterior: 13.7 PEN
+Comisión corregida: 13.48 PEN
+Diferencia: -0.22 PEN
+--------------------------------------------------------------------------------
+
+Venta #677 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Panel Only Aimbot - Mensual
+Descuento: 8.19 PEN
+Comisión anterior: 8.65 PEN
+Comisión corregida: 8.51 PEN
+Diferencia: -0.14 PEN
+--------------------------------------------------------------------------------
+
+Venta #679 [OTROS]
+Vendedor: fvbriboss
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 30.87 PEN
+Diferencia: +30.87 PEN
+--------------------------------------------------------------------------------
+
+Venta #680 [OTROS]
+Vendedor: josuex_16
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 30.87 PEN
+Diferencia: +30.87 PEN
+--------------------------------------------------------------------------------
+
+Venta #683 [OTROS]
+Vendedor: tanatoboss
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 126.51 PEN
+Diferencia: +126.51 PEN
+--------------------------------------------------------------------------------
+
+Venta #685 [OTROS]
+Vendedor: fvbriboss
+Producto: Panel Full - Semanal
+Propina: 10.63 PEN
+Comisión anterior: 20.63 PEN
+Comisión corregida: 19.13 PEN
+Diferencia: -1.5 PEN
+--------------------------------------------------------------------------------
+
+Venta #687 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Bypass ID + Panel Only Aimbot - Mensual + Mensual
+Descuento: 74.11 PEN
+Comisión anterior: 16 PEN
+Comisión corregida: 15.66 PEN
+Diferencia: -0.34 PEN
+--------------------------------------------------------------------------------
+
+Venta #689 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Bypass ID - Semanal
+Descuento: 4.13 PEN
+Comisión anterior: 9.01 PEN
+Comisión corregida: 8.82 PEN
+Diferencia: -0.19 PEN
+--------------------------------------------------------------------------------
+
+Venta #696 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Bypass APK - Semanal
+Descuento: 16.19 PEN
+Comisión anterior: 7.47 PEN
+Comisión corregida: 7.3 PEN
+Diferencia: -0.17 PEN
+--------------------------------------------------------------------------------
+
+Venta #698 [OTROS]
+Vendedor: yamisita_
+Producto: Panel Full - Anual
+Propina: 12.10 PEN
+Comisión anterior: 52.1 PEN
+Comisión corregida: 46.21 PEN
+Diferencia: -5.89 PEN
+--------------------------------------------------------------------------------
+
+Venta #701 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Panel Secure - Anual
+Descuento: 23.49 PEN
+Comisión anterior: 26.02 PEN
+Comisión corregida: 25.3 PEN
+Diferencia: -0.72 PEN
+--------------------------------------------------------------------------------
+
+Venta #702 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Panel Full - Anual
+Descuento: 57.55 PEN
+Comisión anterior: 29.3 PEN
+Comisión corregida: 28.49 PEN
+Diferencia: -0.81 PEN
+--------------------------------------------------------------------------------
+
+Venta #703 [OTROS]
+Vendedor: tanatoboss
+Producto: Bypass ID - Semanal
+Propina: 13.15 PEN
+Comisión anterior: 23.15 PEN
+Comisión corregida: 21.81 PEN
+Diferencia: -1.34 PEN
+--------------------------------------------------------------------------------
+
+Venta #704 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Bypass ID - Semanal
+Descuento: 1.30 PEN
+Comisión anterior: 10 PEN
+Comisión corregida: 9.63 PEN
+Diferencia: -0.37 PEN
+--------------------------------------------------------------------------------
+
+Venta #705 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Bypass ID - Semanal
+Descuento: 4.13 PEN
+Comisión anterior: 9.07 PEN
+Comisión corregida: 8.82 PEN
+Diferencia: -0.25 PEN
+--------------------------------------------------------------------------------
+
+Venta #706 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Bypass ID - Semanal
+Descuento: 7.32 PEN
+Comisión anterior: 8.13 PEN
+Comisión corregida: 7.91 PEN
+Diferencia: -0.22 PEN
+--------------------------------------------------------------------------------
+
+Venta #709 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Bypass APK - Semanal
+Descuento: 26.29 PEN
+Comisión anterior: 5.78 PEN
+Comisión corregida: 5.62 PEN
+Diferencia: -0.16 PEN
+--------------------------------------------------------------------------------
+
+Venta #710 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Bypass ID - Semanal
+Descuento: 1.29 PEN
+Comisión anterior: 10 PEN
+Comisión corregida: 9.63 PEN
+Diferencia: -0.37 PEN
+--------------------------------------------------------------------------------
+
+Venta #712 [OTROS]
+Vendedor: fvbriboss
+Producto: Panel Only Aimbot - Semanal
+Propina: 18.10 PEN
+Comisión anterior: 23.1 PEN
+Comisión corregida: 22.25 PEN
+Diferencia: -0.85 PEN
+--------------------------------------------------------------------------------
+
+Venta #713 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Panel iOS + Gbox - Mensual + Por Temporada
+Descuento: 21.61 PEN
+Comisión anterior: 22.5 PEN
+Comisión corregida: 22 PEN
+Diferencia: -0.5 PEN
+--------------------------------------------------------------------------------
+
+Venta #716 [OTROS]
+Vendedor: mattizynn.
+Producto: Bypass ID - Semanal
+Propina: 6.44 PEN
+Comisión anterior: 16.44 PEN
+Comisión corregida: 15.43 PEN
+Diferencia: -1.01 PEN
+--------------------------------------------------------------------------------
+
+Venta #717 [OTROS]
+Vendedor: josuex_16
+Producto: Panel Only Aimbot - Semanal
+Propina: 0.62 PEN
+Comisión anterior: 5.62 PEN
+Comisión corregida: 5 PEN
+Diferencia: -0.62 PEN
+--------------------------------------------------------------------------------
+
+Venta #718 [OTROS]
+Vendedor: tanatoboss
+Producto: Bypass APK - Mensual
+Propina: 32.35 PEN
+Comisión anterior: 47.35 PEN
+Comisión corregida: 43.39 PEN
+Diferencia: -3.96 PEN
+--------------------------------------------------------------------------------
+
+Venta #720 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Bypass APK - Semanal
+Descuento: 9.45 PEN
+Comisión anterior: 8.64 PEN
+Comisión corregida: 8.43 PEN
+Diferencia: -0.21 PEN
+--------------------------------------------------------------------------------
+
+Venta #721 [DESCUENTOS]
+Vendedor: mattizynn.
+Producto: Panel Only Aimbot - Semanal
+Descuento: 3.15 PEN
+Comisión anterior: 4.32 PEN
+Comisión corregida: 4.21 PEN
+Diferencia: -0.11 PEN
+--------------------------------------------------------------------------------
+
+Venta #722 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Bypass APK - Semanal
+Descuento: 19.56 PEN
+Comisión anterior: 6.92 PEN
+Comisión corregida: 6.74 PEN
+Diferencia: -0.18 PEN
+--------------------------------------------------------------------------------
+
+Venta #724 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Panel iOS + Gbox - Mensual + Por Temporada
+Descuento: 21.61 PEN
+Comisión anterior: 22.6 PEN
+Comisión corregida: 22 PEN
+Diferencia: -0.6 PEN
+--------------------------------------------------------------------------------
+
+Venta #727 [OTROS]
+Vendedor: fvbriboss
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 33.7 PEN
+Diferencia: +33.7 PEN
+--------------------------------------------------------------------------------
+
+Venta #729 [OTROS]
+Vendedor: yamisita_
+Producto: Bypass ID - Mensual
+Propina: 3.45 PEN
+Comisión anterior: 23.45 PEN
+Comisión corregida: 20 PEN
+Diferencia: -3.45 PEN
+--------------------------------------------------------------------------------
+
+Venta #734 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Panel Only Aimbot - Semanal
+Descuento: 6.52 PEN
+Comisión anterior: 3.47 PEN
+Comisión corregida: 3.37 PEN
+Diferencia: -0.1 PEN
+--------------------------------------------------------------------------------
+
+Venta #737 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Panel Secure - Semanal
+Descuento: 9.13 PEN
+Comisión anterior: 6.35 PEN
+Comisión corregida: 6.17 PEN
+Diferencia: -0.18 PEN
+--------------------------------------------------------------------------------
+
+Venta #738 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Panel iOS - Semanal
+Descuento: 22.25 PEN
+Comisión anterior: 7.59 PEN
+Comisión corregida: 7.38 PEN
+Diferencia: -0.21 PEN
+--------------------------------------------------------------------------------
+
+Venta #741 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Aimbot Proxy - Semanal
+Descuento: 6.31 PEN
+Comisión anterior: 9.52 PEN
+Comisión corregida: 9.26 PEN
+Diferencia: -0.26 PEN
+--------------------------------------------------------------------------------
+
+Venta #744 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Aimbot Proxy - Semanal
+Descuento: 6.31 PEN
+Comisión anterior: 9.57 PEN
+Comisión corregida: 9.26 PEN
+Diferencia: -0.31 PEN
+--------------------------------------------------------------------------------
+
+Venta #747 [DESCUENTOS]
+Vendedor: mattizynn.
+Producto: Panel Only Aimbot - Trimestral
+Descuento: 27.25 PEN
+Comisión anterior: 10.82 PEN
+Comisión corregida: 10.46 PEN
+Diferencia: -0.36 PEN
+--------------------------------------------------------------------------------
+
+Venta #748 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Panel iOS - Semanal
+Descuento: 6.31 PEN
+Comisión anterior: 9.57 PEN
+Comisión corregida: 9.26 PEN
+Diferencia: -0.31 PEN
+--------------------------------------------------------------------------------
+
+Venta #750 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Bypass APK - Semanal
+Descuento: 19.57 PEN
+Comisión anterior: 6.96 PEN
+Comisión corregida: 6.74 PEN
+Diferencia: -0.22 PEN
+--------------------------------------------------------------------------------
+
+Venta #751 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Panel iOS - Mensual
+Descuento: 28.57 PEN
+Comisión anterior: 21.22 PEN
+Comisión corregida: 20.54 PEN
+Diferencia: -0.68 PEN
+--------------------------------------------------------------------------------
+
+Venta #752 [OTROS]
+Vendedor: fvbriboss
+Producto: Panel Full - Semanal
+Propina: 21.30 PEN
+Comisión anterior: 31.3 PEN
+Comisión corregida: 28.69 PEN
+Diferencia: -2.61 PEN
+--------------------------------------------------------------------------------
+
+Venta #755 [OTROS]
+Vendedor: tanatoboss
+Producto: Panel Only Aimbot - Semanal
+Propina: 0.89 PEN
+Comisión anterior: 5.89 PEN
+Comisión corregida: 5 PEN
+Diferencia: -0.89 PEN
+--------------------------------------------------------------------------------
+
+Venta #760 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Panel Full - Mensual
+Descuento: 31.31 PEN
+Comisión anterior: 14.74 PEN
+Comisión corregida: 14.31 PEN
+Diferencia: -0.43 PEN
+--------------------------------------------------------------------------------
+
+Venta #761 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Panel COD iOS - 1 dia
+Descuento: 13.00 PEN
+Comisión anterior: 3.93 PEN
+Comisión corregida: 3.82 PEN
+Diferencia: -0.11 PEN
+--------------------------------------------------------------------------------
+
+Venta #762 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Bypass APK + Panel Only Aimbot - Semanal + Semanal
+Descuento: 13.06 PEN
+Comisión anterior: 13.74 PEN
+Comisión corregida: 12.55 PEN
+Diferencia: -1.19 PEN
+--------------------------------------------------------------------------------
+
+Venta #763 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Panel iOS - Mensual
+Descuento: 17.55 PEN
+Comisión anterior: 22.92 PEN
+Comisión corregida: 22.26 PEN
+Diferencia: -0.66 PEN
+--------------------------------------------------------------------------------
+
+Venta #764 [OTROS]
+Vendedor: josuex_16
+Producto: Bypass ID - 14 dias
+Propina: 14.63 PEN
+Comisión anterior: 29.63 PEN
+Comisión corregida: 27.75 PEN
+Diferencia: -1.88 PEN
+--------------------------------------------------------------------------------
+
+Venta #767 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Panel Only Aimbot - Semanal
+Descuento: 1.88 PEN
+Comisión anterior: 4.69 PEN
+Comisión corregida: 4.53 PEN
+Diferencia: -0.16 PEN
+--------------------------------------------------------------------------------
+
+Venta #768 [DESCUENTOS]
+Vendedor: yamisita_
+Producto: Regedit - Anual
+Descuento: 12.05 PEN
+Comisión anterior: 28.18 PEN
+Comisión corregida: 27.22 PEN
+Diferencia: -0.96 PEN
+--------------------------------------------------------------------------------
+
+Venta #769 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Panel iOS + Gbox - Mensual + Por Temporada
+Descuento: 45.20 PEN
+Comisión anterior: 19.38 PEN
+Comisión corregida: 18.72 PEN
+Diferencia: -0.66 PEN
+--------------------------------------------------------------------------------
+
+Venta #773 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Panel iOS - 1 dia
+Descuento: 4.13 PEN
+Comisión anterior: 4.57 PEN
+Comisión corregida: 4.41 PEN
+Diferencia: -0.16 PEN
+--------------------------------------------------------------------------------
+
+
+================================================================================
+ERRORES:
+
+Venta #549: Cannot read properties of undefined (reading 'includes')

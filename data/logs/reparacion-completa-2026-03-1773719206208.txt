@@ -1,0 +1,391 @@
+REPARACIÓN COMPLETA DE VENTAS - 2026-03
+Fecha: 16/3/2026, 10:46:46 p. m.
+Ejecutado por: strixboss
+Modo: Aplicado
+Total reparaciones: 42
+
+CATEGORÍAS:
+- Propinas mal calculadas: 3
+- Descuentos mal aplicados: 22
+- Comisiones fijas incorrectas: 0
+- Descuento Ads incorrecto: 0
+- Otros errores: 17
+================================================================================
+
+Venta #482 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Panel iOS - Mensual
+Descuento: 14.84 PEN
+Comisión anterior: 24.19 PEN
+Comisión corregida: 22.68 PEN
+Diferencia: -1.51 PEN
+--------------------------------------------------------------------------------
+
+Venta #486 [OTROS]
+Vendedor: yamisita_
+Producto: Panel Full - Mensual
+Propina: 19.27 PEN
+Comisión anterior: 39.27 PEN
+Comisión corregida: 39 PEN
+Diferencia: -0.27 PEN
+--------------------------------------------------------------------------------
+
+Venta #487 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Panel iOS - Semanal
+Descuento: 3.00 PEN
+Comisión anterior: 12.45 PEN
+Comisión corregida: 9.65 PEN
+Diferencia: -2.8 PEN
+--------------------------------------------------------------------------------
+
+Venta #488 [OTROS]
+Vendedor: yamisita_
+Producto: Panel iOS - 1 dia
+Comisión anterior: 5 PEN
+Comisión corregida: 25 PEN
+Diferencia: +20 PEN
+--------------------------------------------------------------------------------
+
+Venta #495 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Panel iOS - Mensual
+Descuento: 22.54 PEN
+Comisión anterior: 22.96 PEN
+Comisión corregida: 21.48 PEN
+Diferencia: -1.48 PEN
+--------------------------------------------------------------------------------
+
+Venta #499 [OTROS]
+Vendedor: josuex_16
+Producto: Panel iOS - Semanal
+Comisión anterior: 15 PEN
+Comisión corregida: 24 PEN
+Diferencia: +9 PEN
+--------------------------------------------------------------------------------
+
+Venta #501 [PROPINAS]
+Vendedor: josuex_16
+Producto: Panel iOS - Semanal
+Propina: 8.00 PEN
+Comisión anterior: 23 PEN
+Comisión corregida: 32 PEN
+Diferencia: +9 PEN
+--------------------------------------------------------------------------------
+
+Venta #507 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Panel iOS - Mensual
+Descuento: 10.00 PEN
+Comisión anterior: 25 PEN
+Comisión corregida: 23.44 PEN
+Diferencia: -1.56 PEN
+--------------------------------------------------------------------------------
+
+Venta #509 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Panel iOS - Mensual
+Descuento: 47.10 PEN
+Comisión anterior: 18.82 PEN
+Comisión corregida: 17.64 PEN
+Diferencia: -1.18 PEN
+--------------------------------------------------------------------------------
+
+Venta #511 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Panel iOS - Mensual
+Descuento: 20.00 PEN
+Comisión anterior: 23.33 PEN
+Comisión corregida: 21.88 PEN
+Diferencia: -1.45 PEN
+--------------------------------------------------------------------------------
+
+Venta #514 [DESCUENTOS]
+Vendedor: yamisita_
+Producto: Panel iOS - Mensual
+Descuento: 60.00 PEN
+Comisión anterior: 16.67 PEN
+Comisión corregida: 15.63 PEN
+Diferencia: -1.04 PEN
+--------------------------------------------------------------------------------
+
+Venta #515 [OTROS]
+Vendedor: tanatoboss
+Producto: Bypass ID - 14 dias
+Propina: 1.64 PEN
+Comisión anterior: 16.64 PEN
+Comisión corregida: 16.54 PEN
+Diferencia: -0.1 PEN
+--------------------------------------------------------------------------------
+
+Venta #517 [OTROS]
+Vendedor: yamisita_
+Producto: Panel Full - Mensual
+Propina: 2.98 PEN
+Comisión anterior: 22.98 PEN
+Comisión corregida: 22.75 PEN
+Diferencia: -0.23 PEN
+--------------------------------------------------------------------------------
+
+Venta #522 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Panel iOS - Semanal
+Descuento: 36.00 PEN
+Comisión anterior: 7.5 PEN
+Comisión corregida: 5.81 PEN
+Diferencia: -1.69 PEN
+--------------------------------------------------------------------------------
+
+Venta #524 [OTROS]
+Vendedor: fvbriboss
+Producto: Panel iOS - Mensual
+Comisión anterior: 30 PEN
+Comisión corregida: 42.8 PEN
+Diferencia: +12.8 PEN
+--------------------------------------------------------------------------------
+
+Venta #531 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Panel iOS - Mensual
+Descuento: 22.54 PEN
+Comisión anterior: 22.96 PEN
+Comisión corregida: 21.48 PEN
+Diferencia: -1.48 PEN
+--------------------------------------------------------------------------------
+
+Venta #534 [OTROS]
+Vendedor: mattizynn.
+Producto: Panel Full - Mensual
+Propina: 19.27 PEN
+Comisión anterior: 39.27 PEN
+Comisión corregida: 39 PEN
+Diferencia: -0.27 PEN
+--------------------------------------------------------------------------------
+
+Venta #538 [DESCUENTOS]
+Vendedor: mattizynn.
+Producto: Panel iOS - Mensual
+Descuento: 31.50 PEN
+Comisión Fija: 3.1666666666666665 PEN
+Comisión anterior: 24.58 PEN
+Comisión corregida: 23.24 PEN
+Diferencia: -1.34 PEN
+--------------------------------------------------------------------------------
+
+Venta #539 [DESCUENTOS]
+Vendedor: mattizynn.
+Producto: Panel iOS - Mensual
+Descuento: 45.16 PEN
+Comisión anterior: 19.14 PEN
+Comisión corregida: 17.94 PEN
+Diferencia: -1.2 PEN
+--------------------------------------------------------------------------------
+
+Venta #542 [DESCUENTOS]
+Vendedor: yamisita_
+Producto: Panel iOS - Mensual
+Descuento: 63.51 PEN
+Comisión anterior: 16.04 PEN
+Comisión corregida: 15.08 PEN
+Diferencia: -0.96 PEN
+--------------------------------------------------------------------------------
+
+Venta #545 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Panel iOS - Mensual
+Descuento: 31.00 PEN
+Comisión anterior: 21.45 PEN
+Comisión corregida: 20.16 PEN
+Diferencia: -1.29 PEN
+--------------------------------------------------------------------------------
+
+Venta #547 [OTROS]
+Vendedor: fvbriboss
+Producto: Panel iOS - Semanal
+Comisión anterior: 14.4 PEN
+Comisión corregida: 20.23 PEN
+Diferencia: +5.83 PEN
+--------------------------------------------------------------------------------
+
+Venta #550 [DESCUENTOS]
+Vendedor: yamisita_
+Producto: Panel iOS - Mensual
+Descuento: 30.97 PEN
+Comisión anterior: 18.28 PEN
+Comisión corregida: 17.14 PEN
+Diferencia: -1.14 PEN
+--------------------------------------------------------------------------------
+
+Venta #557 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Panel iOS - Semanal
+Descuento: 19.33 PEN
+Comisión anterior: 10 PEN
+Comisión corregida: 7.75 PEN
+Diferencia: -2.25 PEN
+--------------------------------------------------------------------------------
+
+Venta #558 [OTROS]
+Vendedor: josuex_16
+Producto: Panel iOS - Mensual
+Comisión anterior: 28.55 PEN
+Comisión corregida: 35.96 PEN
+Diferencia: +7.41 PEN
+--------------------------------------------------------------------------------
+
+Venta #559 [OTROS]
+Vendedor: yamisita_
+Producto: Panel Android - Semanal
+Propina: 35.63 PEN
+Comisión anterior: 45.63 PEN
+Comisión corregida: 45.49 PEN
+Diferencia: -0.14 PEN
+--------------------------------------------------------------------------------
+
+Venta #566 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Panel iOS - Semanal
+Descuento: 6.00 PEN
+Comisión anterior: 12 PEN
+Comisión corregida: 9.3 PEN
+Diferencia: -2.7 PEN
+--------------------------------------------------------------------------------
+
+Venta #582 [OTROS]
+Vendedor: tanatoboss
+Producto: Bypass ID - Semanal
+Propina: 18.50 PEN
+Comisión anterior: 28.5 PEN
+Comisión corregida: 28.39 PEN
+Diferencia: -0.11 PEN
+--------------------------------------------------------------------------------
+
+Venta #584 [PROPINAS]
+Vendedor: yamisita_
+Producto: Panel iOS - Semanal
+Propina: 39.77 PEN
+Comisión anterior: 52.52 PEN
+Comisión corregida: 61.98 PEN
+Diferencia: +9.46 PEN
+--------------------------------------------------------------------------------
+
+Venta #586 [PROPINAS]
+Vendedor: tanatoboss
+Producto: Panel iOS - Mensual
+Propina: 79.57 PEN
+Comisión anterior: 109.57 PEN
+Comisión corregida: 124.04 PEN
+Diferencia: +14.47 PEN
+--------------------------------------------------------------------------------
+
+Venta #591 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Panel iOS - Mensual
+Descuento: 10.04 PEN
+Comisión anterior: 24.98 PEN
+Comisión corregida: 23.43 PEN
+Diferencia: -1.55 PEN
+--------------------------------------------------------------------------------
+
+Venta #602 [DESCUENTOS]
+Vendedor: rodriseis
+Producto: Panel iOS - Mensual
+Descuento: 33.54 PEN
+Comisión anterior: 21.07 PEN
+Comisión corregida: 19.76 PEN
+Diferencia: -1.31 PEN
+--------------------------------------------------------------------------------
+
+Venta #604 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Panel iOS - Mensual
+Descuento: 11.49 PEN
+Comisión anterior: 24.74 PEN
+Comisión corregida: 23.2 PEN
+Diferencia: -1.54 PEN
+--------------------------------------------------------------------------------
+
+Venta #607 [DESCUENTOS]
+Vendedor: fvbriboss
+Producto: Panel iOS - Mensual
+Descuento: 31.00 PEN
+Comisión anterior: 21.49 PEN
+Comisión corregida: 20.16 PEN
+Diferencia: -1.33 PEN
+--------------------------------------------------------------------------------
+
+Venta #607 [OTROS]
+Vendedor: fvbriboss
+Producto: Panel Full - Mensual
+Propina: 2.98 PEN
+Comisión anterior: 22.98 PEN
+Comisión corregida: 22.75 PEN
+Diferencia: -0.23 PEN
+--------------------------------------------------------------------------------
+
+Venta #608 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Panel iOS - Semanal
+Descuento: 5.35 PEN
+Comisión anterior: 12.1 PEN
+Comisión corregida: 9.38 PEN
+Diferencia: -2.72 PEN
+--------------------------------------------------------------------------------
+
+Venta #614 [OTROS]
+Vendedor: josuex_16
+Producto: Panel Full - Mensual
+Propina: 19.36 PEN
+Comisión anterior: 39.36 PEN
+Comisión corregida: 39 PEN
+Diferencia: -0.36 PEN
+--------------------------------------------------------------------------------
+
+Venta #626 [OTROS]
+Vendedor: tanatoboss
+Producto: Panel Full - Semanal
+Propina: 20.35 PEN
+Comisión anterior: 30.35 PEN
+Comisión corregida: 30.24 PEN
+Diferencia: -0.11 PEN
+--------------------------------------------------------------------------------
+
+Venta #634 [OTROS]
+Vendedor: josuex_16
+Producto: Panel iOS - 1 dia
+Comisión anterior: 4.55 PEN
+Comisión corregida: 20 PEN
+Diferencia: +15.45 PEN
+--------------------------------------------------------------------------------
+
+Venta #636 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Panel iOS - Semanal
+Descuento: 5.76 PEN
+Comisión anterior: 12.06 PEN
+Comisión corregida: 9.33 PEN
+Diferencia: -2.73 PEN
+--------------------------------------------------------------------------------
+
+Venta #639 [OTROS]
+Vendedor: yamisita_
+Producto: Panel iOS - Mensual
+Comisión anterior: 26.67 PEN
+Comisión corregida: 25 PEN
+Diferencia: -1.67 PEN
+--------------------------------------------------------------------------------
+
+Venta #645 [OTROS]
+Vendedor: mattizynn.
+Producto: Regedit - Mensual
+Propina: 5.40 PEN
+Comisión anterior: 20.4 PEN
+Comisión corregida: 20.22 PEN
+Diferencia: -0.18 PEN
+--------------------------------------------------------------------------------
+
+
+================================================================================
+ERRORES:
+
+Venta #549: Cannot read properties of undefined (reading 'includes')

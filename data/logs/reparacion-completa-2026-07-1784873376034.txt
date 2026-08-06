@@ -1,0 +1,497 @@
+REPARACIÓN COMPLETA DE VENTAS - 2026-07
+Fecha: 24/7/2026, 1:09:36 a. m.
+Ejecutado por: strixboss
+Modo: Aplicado
+Total reparaciones: 57
+Total errores: 0
+
+CATEGORÍAS:
+- Propinas mal calculadas: 4
+- Descuentos mal aplicados: 14
+- Comisiones fijas incorrectas: 3
+- Descuento Ads incorrecto: 0
+- Otros errores: 36
+================================================================================
+
+Venta #1321 [OTROS]
+Vendedor: josuex_16
+Producto: Bypass ID - Semanal
+Comisión anterior: 8.86 PEN
+Comisión corregida: 11 PEN
+Diferencia: +2.14 PEN
+--------------------------------------------------------------------------------
+
+Venta #1323 [OTROS]
+Vendedor: fvbriix
+Producto: Bypass ID - 14 dias
+Comisión anterior: 10.75 PEN
+Comisión corregida: 35.69 PEN
+Diferencia: +24.94 PEN
+--------------------------------------------------------------------------------
+
+Venta #1325 [OTROS]
+Vendedor: josuex_16
+Producto: Bypass ID - Semanal
+Comisión anterior: 10 PEN
+Comisión corregida: 15 PEN
+Diferencia: +5 PEN
+--------------------------------------------------------------------------------
+
+Venta #1326 [OTROS]
+Vendedor: fvbriix
+Producto: Bypass ID - Semanal
+Comisión anterior: 10 PEN
+Comisión corregida: 15 PEN
+Diferencia: +5 PEN
+--------------------------------------------------------------------------------
+
+Venta #1329 [OTROS]
+Vendedor: fvbriix
+Producto: Panel Only Aimbot + Bypass ID - Semanal + Semanal
+Comisión anterior: 15 PEN
+Comisión corregida: 19.38 PEN
+Diferencia: +4.38 PEN
+--------------------------------------------------------------------------------
+
+Venta #1331 [DESCUENTOS]
+Vendedor: fvbriix
+Producto: Panel Android - Semanal
+Descuento: 0.77 PEN
+Comisión Fija: 4.563618785406551 PEN
+Comisión anterior: 14.6 PEN
+Comisión corregida: 14.34 PEN
+Diferencia: -0.26 PEN
+--------------------------------------------------------------------------------
+
+Venta #1332 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Panel Full + Bypass ID - Anual + Trimestral
+Descuento: 19.47 PEN
+Comisión anterior: 64.37 PEN
+Comisión corregida: 61.28 PEN
+Diferencia: -3.09 PEN
+--------------------------------------------------------------------------------
+
+Venta #1333 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Bypass ID - Mensual
+Descuento: 20.28 PEN
+Comisión anterior: 14.01 PEN
+Comisión corregida: 15.49 PEN
+Diferencia: +1.48 PEN
+--------------------------------------------------------------------------------
+
+Venta #1335 [OTROS]
+Vendedor: tanatoboss
+Producto: Bypass ID - 14 dias
+Comisión anterior: 15 PEN
+Comisión corregida: 50.43 PEN
+Diferencia: +35.43 PEN
+--------------------------------------------------------------------------------
+
+Venta #1337 [DESCUENTOS]
+Vendedor: fvbriix
+Producto: Bypass ID - Anual
+Descuento: 16.58 PEN
+Comisión Fija: 4.563618785406551 PEN
+Comisión anterior: 39.48 PEN
+Comisión corregida: 31.95 PEN
+Diferencia: -7.53 PEN
+--------------------------------------------------------------------------------
+
+Venta #1339 [OTROS]
+Vendedor: fvbriix
+Producto: Bypass ID - 14 dias
+Comisión anterior: 10.8 PEN
+Comisión corregida: 35.83 PEN
+Diferencia: +25.03 PEN
+--------------------------------------------------------------------------------
+
+Venta #1340 [OTROS]
+Vendedor: mattizynn.
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 18.27 PEN
+Diferencia: +18.27 PEN
+--------------------------------------------------------------------------------
+
+Venta #1341 [DESCUENTOS]
+Vendedor: fvbriix
+Producto: Bypass ID - Mensual
+Descuento: 10.63 PEN
+Comisión anterior: 15.95 PEN
+Comisión corregida: 17.64 PEN
+Diferencia: +1.69 PEN
+--------------------------------------------------------------------------------
+
+Venta #1342 [OTROS]
+Vendedor: fvbriix
+Producto: Bypass ID - Semanal
+Comisión anterior: 8.57 PEN
+Comisión corregida: 10 PEN
+Diferencia: +1.43 PEN
+--------------------------------------------------------------------------------
+
+Venta #1343 [OTROS]
+Vendedor: fvbriix
+Producto: Panel Full - Anual
+Propina: 8.98 PEN
+Comisión anterior: 48.98 PEN
+Comisión corregida: 47.99 PEN
+Diferencia: -0.99 PEN
+--------------------------------------------------------------------------------
+
+Venta #1344 [OTROS]
+Vendedor: fvbriix
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 15.06 PEN
+Diferencia: +15.06 PEN
+--------------------------------------------------------------------------------
+
+Venta #1345 [OTROS]
+Vendedor: fvbriix
+Producto: Bypass ID - Semanal
+Comisión anterior: 8.94 PEN
+Comisión corregida: 11.14 PEN
+Diferencia: +2.2 PEN
+--------------------------------------------------------------------------------
+
+Venta #1348 [COMISIONESFIJAS]
+Vendedor: josuex_16
+Producto: Bypass ID - Semanal
+Comisión Fija: 4.563618785406551 PEN
+Comisión anterior: 13.72 PEN
+Comisión corregida: 16.46 PEN
+Diferencia: +2.74 PEN
+--------------------------------------------------------------------------------
+
+Venta #1349 [OTROS]
+Vendedor: myayat
+Producto: Bypass ID - Semanal
+Comisión anterior: 9.22 PEN
+Comisión corregida: 12.26 PEN
+Diferencia: +3.04 PEN
+--------------------------------------------------------------------------------
+
+Venta #1352 [OTROS]
+Vendedor: josuex_16
+Producto: Bypass ID - Semanal
+Comisión anterior: 8.9 PEN
+Comisión corregida: 11.14 PEN
+Diferencia: +2.24 PEN
+--------------------------------------------------------------------------------
+
+Venta #1353 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Panel Full + Bypass ID - Semanal + Semanal
+Descuento: 10.00 PEN
+Comisión anterior: 16.84 PEN
+Comisión corregida: 17.78 PEN
+Diferencia: +0.94 PEN
+--------------------------------------------------------------------------------
+
+Venta #1356 [PROPINAS]
+Vendedor: fvbriix
+Producto: Bypass ID - Mensual
+Propina: 8.94 PEN
+Comisión anterior: 28.94 PEN
+Comisión corregida: 38.76 PEN
+Diferencia: +9.82 PEN
+--------------------------------------------------------------------------------
+
+Venta #1357 [OTROS]
+Vendedor: josuex_16
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 18.27 PEN
+Diferencia: +18.27 PEN
+--------------------------------------------------------------------------------
+
+Venta #1361 [OTROS]
+Vendedor: fvbriix
+Producto: Bypass ID - Semanal
+Comisión anterior: 8.57 PEN
+Comisión corregida: 10 PEN
+Diferencia: +1.43 PEN
+--------------------------------------------------------------------------------
+
+Venta #1362 [OTROS]
+Vendedor: fvbriix
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 8.63 PEN
+Diferencia: +8.63 PEN
+--------------------------------------------------------------------------------
+
+Venta #1367 [OTROS]
+Vendedor: fvbriix
+Producto: Bypass ID - Semanal
+Comisión anterior: 8.9 PEN
+Comisión corregida: 11.14 PEN
+Diferencia: +2.24 PEN
+--------------------------------------------------------------------------------
+
+Venta #1368 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Bypass ID - Mensual
+Descuento: 10.00 PEN
+Comisión anterior: 16 PEN
+Comisión corregida: 17.78 PEN
+Diferencia: +1.78 PEN
+--------------------------------------------------------------------------------
+
+Venta #1371 [OTROS]
+Vendedor: josuex_16
+Producto: Bypass ID - Semanal
+Comisión anterior: 8.57 PEN
+Comisión corregida: 10 PEN
+Diferencia: +1.43 PEN
+--------------------------------------------------------------------------------
+
+Venta #1372 [OTROS]
+Vendedor: fvbriix
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 21.49 PEN
+Diferencia: +21.49 PEN
+--------------------------------------------------------------------------------
+
+Venta #1374 [OTROS]
+Vendedor: fvbriix
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 31.14 PEN
+Diferencia: +31.14 PEN
+--------------------------------------------------------------------------------
+
+Venta #1377 [OTROS]
+Vendedor: fvbriix
+Producto: Bypass ID - Mensual
+Comisión anterior: 19.1 PEN
+Comisión corregida: 25.45 PEN
+Diferencia: +6.35 PEN
+--------------------------------------------------------------------------------
+
+Venta #1382 [OTROS]
+Vendedor: josuex_16
+Producto: Bypass ID - Semanal
+Comisión anterior: 10 PEN
+Comisión corregida: 15 PEN
+Diferencia: +5 PEN
+--------------------------------------------------------------------------------
+
+Venta #1387 [DESCUENTOS]
+Vendedor: mattizynn.
+Producto: Bypass ID - Semanal
+Descuento: 5.00 PEN
+Comisión anterior: 7.14 PEN
+Comisión corregida: 8.33 PEN
+Diferencia: +1.19 PEN
+--------------------------------------------------------------------------------
+
+Venta #1389 [PROPINAS]
+Vendedor: tanatoboss
+Producto: Bypass APK - Mensual
+Propina: 29.65 PEN
+Comisión anterior: 44.65 PEN
+Comisión corregida: 44.76 PEN
+Diferencia: +0.11 PEN
+--------------------------------------------------------------------------------
+
+Venta #1397 [OTROS]
+Vendedor: josuex_16
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 31.14 PEN
+Diferencia: +31.14 PEN
+--------------------------------------------------------------------------------
+
+Venta #1400 [OTROS]
+Vendedor: fvbriix
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 31.14 PEN
+Diferencia: +31.14 PEN
+--------------------------------------------------------------------------------
+
+Venta #1401 [DESCUENTOS]
+Vendedor: fvbriix
+Producto: Bypass ID - Trimestral
+Descuento: 20.00 PEN
+Comisión anterior: 24 PEN
+Comisión corregida: 21.43 PEN
+Diferencia: -2.57 PEN
+--------------------------------------------------------------------------------
+
+Venta #1402 [OTROS]
+Vendedor: josuex_16
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 18.27 PEN
+Diferencia: +18.27 PEN
+--------------------------------------------------------------------------------
+
+Venta #1404 [PROPINAS]
+Vendedor: fvbriix
+Producto: Bypass ID - Mensual
+Propina: 3.70 PEN
+Comisión anterior: 23.7 PEN
+Comisión corregida: 33.7 PEN
+Diferencia: +10 PEN
+--------------------------------------------------------------------------------
+
+Venta #1416 [OTROS]
+Vendedor: josuex_16
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 31.14 PEN
+Diferencia: +31.14 PEN
+--------------------------------------------------------------------------------
+
+Venta #1420 [OTROS]
+Vendedor: fvbriix
+Producto: Panel Full - Semanal
+Propina: 25.19 PEN
+Comisión anterior: 35.19 PEN
+Comisión corregida: 34.96 PEN
+Diferencia: -0.23 PEN
+--------------------------------------------------------------------------------
+
+Venta #1422 [DESCUENTOS]
+Vendedor: fvbriix
+Producto: Panel Android - Semanal
+Descuento: 7.62 PEN
+Comisión Fija: 4.563618785406551 PEN
+Comisión anterior: 12.54 PEN
+Comisión corregida: 12.39 PEN
+Diferencia: -0.15 PEN
+--------------------------------------------------------------------------------
+
+Venta #1429 [DESCUENTOS]
+Vendedor: fvbriix
+Producto: Bypass ID - Semanal
+Descuento: 5.00 PEN
+Comisión anterior: 7.14 PEN
+Comisión corregida: 8.33 PEN
+Diferencia: +1.19 PEN
+--------------------------------------------------------------------------------
+
+Venta #1430 [DESCUENTOS]
+Vendedor: fvbriix
+Producto: Panel Only Aimbot + Bypass ID - Semanal + Semanal
+Descuento: 9.26 PEN
+Comisión anterior: 11.11 PEN
+Comisión corregida: 12.22 PEN
+Diferencia: +1.11 PEN
+--------------------------------------------------------------------------------
+
+Venta #1436 [PROPINAS]
+Vendedor: fvbriix
+Producto: Panel iOS - Semanal
+Propina: 10.19 PEN
+Comisión anterior: 20.19 PEN
+Comisión corregida: 20.41 PEN
+Diferencia: +0.22 PEN
+--------------------------------------------------------------------------------
+
+Venta #1437 [OTROS]
+Vendedor: josuex_16
+Producto: Bypass ID - Semanal
+Comisión anterior: 8.87 PEN
+Comisión corregida: 11.14 PEN
+Diferencia: +2.27 PEN
+--------------------------------------------------------------------------------
+
+Venta #1438 [DESCUENTOS]
+Vendedor: fvbriix
+Producto: Bypass ID - Anual
+Descuento: 30.24 PEN
+Comisión anterior: 31.88 PEN
+Comisión corregida: 25.22 PEN
+Diferencia: -6.66 PEN
+--------------------------------------------------------------------------------
+
+Venta #1439 [OTROS]
+Vendedor: josuex_16
+Producto: Bypass ID - Anual
+Comisión anterior: 38.12 PEN
+Comisión corregida: 30 PEN
+Diferencia: -8.12 PEN
+--------------------------------------------------------------------------------
+
+Venta #1441 [OTROS]
+Vendedor: josuex_16
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 18.27 PEN
+Diferencia: +18.27 PEN
+--------------------------------------------------------------------------------
+
+Venta #1443 [OTROS]
+Vendedor: josuex_16
+Producto: Bypass ID - Semanal
+Comisión anterior: 9.77 PEN
+Comisión corregida: 14.06 PEN
+Diferencia: +4.29 PEN
+--------------------------------------------------------------------------------
+
+Venta #1446 [COMISIONESFIJAS]
+Vendedor: josuex_16
+Producto: Bypass ID - Semanal
+Comisión Fija: 4.563618785406551 PEN
+Comisión anterior: 13.76 PEN
+Comisión corregida: 16.46 PEN
+Diferencia: +2.7 PEN
+--------------------------------------------------------------------------------
+
+Venta #1454 [OTROS]
+Vendedor: tanatoboss
+Producto: Bypass ID - Mensual
+Comisión anterior: 19.07 PEN
+Comisión corregida: 25.45 PEN
+Diferencia: +6.38 PEN
+--------------------------------------------------------------------------------
+
+Venta #1457 [DESCUENTOS]
+Vendedor: fvbriix
+Producto: Bypass ID - Semanal
+Descuento: 10.00 PEN
+Comisión anterior: 5.71 PEN
+Comisión corregida: 6.67 PEN
+Diferencia: +0.96 PEN
+--------------------------------------------------------------------------------
+
+Venta #1458 [OTROS]
+Vendedor: fvbriix
+Producto: Bypass ID - Semanal
+Comisión anterior: 10 PEN
+Comisión corregida: 15 PEN
+Diferencia: +5 PEN
+--------------------------------------------------------------------------------
+
+Venta #1462 [OTROS]
+Vendedor: fvbriix
+Producto: Panel Only Aimbot + Bypass ID - Semanal + Semanal
+Comisión anterior: 13.64 PEN
+Comisión corregida: 15 PEN
+Diferencia: +1.36 PEN
+--------------------------------------------------------------------------------
+
+Venta #1466 [OTROS]
+Vendedor: tanatoboss
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 42.48 PEN
+Diferencia: +42.48 PEN
+--------------------------------------------------------------------------------
+
+Venta #1467 [COMISIONESFIJAS]
+Vendedor: fvbriix
+Producto: Bypass ID - Semanal
+Comisión Fija: 4.563618785406551 PEN
+Comisión anterior: 14.6 PEN
+Comisión corregida: 18.79 PEN
+Diferencia: +4.19 PEN
+--------------------------------------------------------------------------------
+

@@ -1,0 +1,34 @@
+{
+  "tickets": {
+    "1534679485188669603": {
+      "lastClientActivity": 1785966611231,
+      "warningGiven": true,
+      "closed": true,
+      "closedAt": 1785981600001
+    },
+    "1534685653382594721": {
+      "lastClientActivity": 1785968700799,
+      "warningGiven": true,
+      "closed": true,
+      "closedAt": 1785985200001
+    },
+    "1534739063095955528": {
+      "lastClientActivity": 1785981830351,
+      "warningGiven": true,
+      "closed": false,
+      "closedAt": null
+    },
+    "1534810735971008512": {
+      "lastClientActivity": 1785997943359,
+      "warningGiven": false,
+      "closed": false,
+      "closedAt": null
+    },
+    "1534812086620651530": {
+      "lastClientActivity": 1785998926853,
+      "warningGiven": false,
+      "closed": false,
+      "closedAt": null
+    }
+  }
+}

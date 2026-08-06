@@ -1,0 +1,94 @@
+REPARACIÓN COMPLETA DE VENTAS - 2026-06
+Fecha: 17/6/2026, 2:06:51 a. m.
+Ejecutado por: strixboss
+Modo: Aplicado
+Total reparaciones: 9
+
+CATEGORÍAS:
+- Propinas mal calculadas: 0
+- Descuentos mal aplicados: 4
+- Comisiones fijas incorrectas: 0
+- Descuento Ads incorrecto: 0
+- Otros errores: 5
+================================================================================
+
+Venta #1200 [OTROS]
+Vendedor: josuex_16
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 21.31 PEN
+Diferencia: +21.31 PEN
+--------------------------------------------------------------------------------
+
+Venta #1201 [DESCUENTOS]
+Vendedor: fvbriix
+Producto: Panel Secure + Bypass ID - Mensual + Mensual
+Descuento: 75.00 PEN
+Comisión Fija: 3.3333333333333335 PEN
+Comisión anterior: 23.62 PEN
+Comisión corregida: 23.75 PEN
+Diferencia: +0.13 PEN
+--------------------------------------------------------------------------------
+
+Venta #1213 [DESCUENTOS]
+Vendedor: 4kiiiro
+Producto: Bypass ID - Semanal
+Descuento: 15.00 PEN
+Comisión Fija: 3.3333333333333335 PEN
+Comisión anterior: 8.93 PEN
+Comisión corregida: 9.05 PEN
+Diferencia: +0.12 PEN
+--------------------------------------------------------------------------------
+
+Venta #1225 [DESCUENTOS]
+Vendedor: fvbriix
+Producto: Bypass ID - Mensual
+Descuento: 35.00 PEN
+Comisión Fija: 3.3333333333333335 PEN
+Comisión anterior: 16.2 PEN
+Comisión corregida: 16.33 PEN
+Diferencia: +0.13 PEN
+--------------------------------------------------------------------------------
+
+Venta #1228 [DESCUENTOS]
+Vendedor: fvbriix
+Producto: Panel Full - Anual
+Descuento: 95.00 PEN
+Comisión Fija: 3.3333333333333335 PEN
+Comisión anterior: 24.2 PEN
+Comisión corregida: 24.33 PEN
+Diferencia: +0.13 PEN
+--------------------------------------------------------------------------------
+
+Venta #1230 [OTROS]
+Vendedor: josuex_16
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 18.12 PEN
+Diferencia: +18.12 PEN
+--------------------------------------------------------------------------------
+
+Venta #1235 [OTROS]
+Vendedor: josuex_16
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 30.87 PEN
+Diferencia: +30.87 PEN
+--------------------------------------------------------------------------------
+
+Venta #1236 [OTROS]
+Vendedor: josuex_16
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 14.93 PEN
+Diferencia: +14.93 PEN
+--------------------------------------------------------------------------------
+
+Venta #1241 [OTROS]
+Vendedor: fvbriix
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 21.31 PEN
+Diferencia: +21.31 PEN
+--------------------------------------------------------------------------------
+

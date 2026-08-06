@@ -1,0 +1,298 @@
+REPARACIÓN COMPLETA DE VENTAS - 2026-06
+Fecha: 24/6/2026, 10:22:54 p. m.
+Ejecutado por: strixboss
+Modo: Aplicado
+Total reparaciones: 32
+
+CATEGORÍAS:
+- Propinas mal calculadas: 11
+- Descuentos mal aplicados: 17
+- Comisiones fijas incorrectas: 0
+- Descuento Ads incorrecto: 0
+- Otros errores: 4
+================================================================================
+
+Venta #1184 [PROPINAS]
+Vendedor: tanatoboss
+Producto: Regedit - Mensual
+Propina: 3.83 PEN
+Comisión anterior: 18.83 PEN
+Comisión corregida: 19.64 PEN
+Diferencia: +0.81 PEN
+--------------------------------------------------------------------------------
+
+Venta #1185 [PROPINAS]
+Vendedor: tanatoboss
+Producto: Aimbot Proxy - Mensual
+Propina: 16.21 PEN
+Comisión anterior: 41.21 PEN
+Comisión corregida: 43.2 PEN
+Diferencia: +1.99 PEN
+--------------------------------------------------------------------------------
+
+Venta #1185 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Panel iOS + Gbox - Semanal + Por Temporada
+Descuento: 9.59 PEN
+Comisión anterior: 8.8 PEN
+Comisión corregida: 9.09 PEN
+Diferencia: +0.29 PEN
+--------------------------------------------------------------------------------
+
+Venta #1186 [PROPINAS]
+Vendedor: tanatoboss
+Producto: Aimbot Proxy - Mensual
+Propina: 12.20 PEN
+Comisión anterior: 37.2 PEN
+Comisión corregida: 39.15 PEN
+Diferencia: +1.95 PEN
+--------------------------------------------------------------------------------
+
+Venta #1187 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Panel iOS - Mensual
+Descuento: 32.27 PEN
+Comisión anterior: 19.77 PEN
+Comisión corregida: 19.96 PEN
+Diferencia: +0.19 PEN
+--------------------------------------------------------------------------------
+
+Venta #1188 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Regedit - Mensual
+Descuento: 8.63 PEN
+Comisión anterior: 13.25 PEN
+Comisión corregida: 13.38 PEN
+Diferencia: +0.13 PEN
+--------------------------------------------------------------------------------
+
+Venta #1189 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Bypass ID - Mensual
+Descuento: 20.55 PEN
+Comisión anterior: 15.74 PEN
+Comisión corregida: 15.89 PEN
+Diferencia: +0.15 PEN
+--------------------------------------------------------------------------------
+
+Venta #1195 [PROPINAS]
+Vendedor: tanatoboss
+Producto: Panel Full - Trimestral
+Propina: 24.33 PEN
+Comisión anterior: 54.33 PEN
+Comisión corregida: 56.01 PEN
+Diferencia: +1.68 PEN
+--------------------------------------------------------------------------------
+
+Venta #1195 [DESCUENTOS]
+Vendedor: fvbriix
+Producto: Bypass APK + Panel Only Aimbot - Semanal + Semanal
+Descuento: 4.12 PEN
+Comisión anterior: 14.09 PEN
+Comisión corregida: 14.23 PEN
+Diferencia: +0.14 PEN
+--------------------------------------------------------------------------------
+
+Venta #1198 [PROPINAS]
+Vendedor: tanatoboss
+Producto: Bypass ID - Semanal
+Propina: 7.00 PEN
+Comisión anterior: 17 PEN
+Comisión corregida: 17.4 PEN
+Diferencia: +0.4 PEN
+--------------------------------------------------------------------------------
+
+Venta #1200 [PROPINAS]
+Vendedor: josuex_16
+Producto: Propina - N/A
+Propina: 21.31 PEN
+Comisión anterior: 21.31 PEN
+Comisión corregida: 21.51 PEN
+Diferencia: +0.2 PEN
+--------------------------------------------------------------------------------
+
+Venta #1205 [DESCUENTOS]
+Vendedor: fvbriix
+Producto: Panel iOS - Mensual
+Descuento: 33.01 PEN
+Comisión anterior: 18.74 PEN
+Comisión corregida: 19.84 PEN
+Diferencia: +1.1 PEN
+--------------------------------------------------------------------------------
+
+Venta #1215 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Panel Full + Bypass ID - Mensual + Mensual
+Descuento: 5.85 PEN
+Comisión anterior: 38.51 PEN
+Comisión corregida: 38.89 PEN
+Diferencia: +0.38 PEN
+--------------------------------------------------------------------------------
+
+Venta #1217 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Regedit - Anual
+Descuento: 28.05 PEN
+Comisión anterior: 23.3 PEN
+Comisión corregida: 23.53 PEN
+Diferencia: +0.23 PEN
+--------------------------------------------------------------------------------
+
+Venta #1230 [PROPINAS]
+Vendedor: josuex_16
+Producto: Propina - N/A
+Propina: 18.12 PEN
+Comisión anterior: 18.12 PEN
+Comisión corregida: 18.29 PEN
+Diferencia: +0.17 PEN
+--------------------------------------------------------------------------------
+
+Venta #1231 [DESCUENTOS]
+Vendedor: fvbriix
+Producto: Panel Full + Bypass ID - Anual + Anual
+Descuento: 79.14 PEN
+Comisión anterior: 63.56 PEN
+Comisión corregida: 64.17 PEN
+Diferencia: +0.61 PEN
+--------------------------------------------------------------------------------
+
+Venta #1235 [PROPINAS]
+Vendedor: josuex_16
+Producto: Propina - N/A
+Propina: 30.87 PEN
+Comisión anterior: 30.87 PEN
+Comisión corregida: 31.17 PEN
+Diferencia: +0.3 PEN
+--------------------------------------------------------------------------------
+
+Venta #1236 [PROPINAS]
+Vendedor: josuex_16
+Producto: Propina - N/A
+Propina: 14.93 PEN
+Comisión anterior: 14.93 PEN
+Comisión corregida: 15.07 PEN
+Diferencia: +0.14 PEN
+--------------------------------------------------------------------------------
+
+Venta #1241 [PROPINAS]
+Vendedor: fvbriix
+Producto: Propina - N/A
+Propina: 21.31 PEN
+Comisión anterior: 21.31 PEN
+Comisión corregida: 21.51 PEN
+Diferencia: +0.2 PEN
+--------------------------------------------------------------------------------
+
+Venta #1242 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Regedit - Mensual
+Descuento: 8.63 PEN
+Comisión anterior: 13.25 PEN
+Comisión corregida: 13.38 PEN
+Diferencia: +0.13 PEN
+--------------------------------------------------------------------------------
+
+Venta #1246 [DESCUENTOS]
+Vendedor: tanatoboss
+Producto: Bypass ID - Anual
+Descuento: 7.89 PEN
+Comisión anterior: 38.05 PEN
+Comisión corregida: 38.42 PEN
+Diferencia: +0.37 PEN
+--------------------------------------------------------------------------------
+
+Venta #1253 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Aimbot Proxy - Mensual
+Descuento: 52.61 PEN
+Comisión anterior: 17.9 PEN
+Comisión corregida: 18.08 PEN
+Diferencia: +0.18 PEN
+--------------------------------------------------------------------------------
+
+Venta #1259 [OTROS]
+Vendedor: tanatoboss
+Producto: Panel Only Aimbot - Semanal
+Comisión anterior: 5 PEN
+Comisión corregida: 5.42 PEN
+Diferencia: +0.42 PEN
+--------------------------------------------------------------------------------
+
+Venta #1262 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Panel Secure - Mensual
+Descuento: 5.15 PEN
+Comisión anterior: 13.9 PEN
+Comisión corregida: 14.03 PEN
+Diferencia: +0.13 PEN
+--------------------------------------------------------------------------------
+
+Venta #1264 [OTROS]
+Vendedor: tanatoboss
+Producto: Bypass ID - Semanal
+Comisión anterior: 9.73 PEN
+Comisión corregida: 10 PEN
+Diferencia: +0.27 PEN
+--------------------------------------------------------------------------------
+
+Venta #1265 [OTROS]
+Vendedor: myayat
+Producto: Panel Only Aimbot + Bypass ID - Mensual + Mensual
+Comisión anterior: 29.35 PEN
+Comisión corregida: 30 PEN
+Diferencia: +0.65 PEN
+--------------------------------------------------------------------------------
+
+Venta #1272 [DESCUENTOS]
+Vendedor: josuex_16
+Producto: Panel iOS - Mensual
+Descuento: 32.27 PEN
+Comisión anterior: 19.77 PEN
+Comisión corregida: 19.96 PEN
+Diferencia: +0.19 PEN
+--------------------------------------------------------------------------------
+
+Venta #1276 [DESCUENTOS]
+Vendedor: fvbriix
+Producto: Panel iOS + Gbox - Mensual + Por Temporada
+Descuento: 37.11 PEN
+Comisión anterior: 19.66 PEN
+Comisión corregida: 19.85 PEN
+Diferencia: +0.19 PEN
+--------------------------------------------------------------------------------
+
+Venta #1281 [PROPINAS]
+Vendedor: tanatoboss
+Producto: Panel Full - Anual
+Propina: 6.21 PEN
+Comisión anterior: 46.21 PEN
+Comisión corregida: 48.2 PEN
+Diferencia: +1.99 PEN
+--------------------------------------------------------------------------------
+
+Venta #1286 [DESCUENTOS]
+Vendedor: fvbriix
+Producto: Aimlock - Anual
+Descuento: 36.18 PEN
+Comisión anterior: 19.78 PEN
+Comisión corregida: 19.98 PEN
+Diferencia: +0.2 PEN
+--------------------------------------------------------------------------------
+
+Venta #1287 [OTROS]
+Vendedor: josuex_16
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 18.29 PEN
+Diferencia: +18.29 PEN
+--------------------------------------------------------------------------------
+
+Venta #1288 [DESCUENTOS]
+Vendedor: 4kiiiro
+Producto: Panel Android - Semanal
+Descuento: 1.10 PEN
+Comisión anterior: 9.37 PEN
+Comisión corregida: 9.69 PEN
+Diferencia: +0.32 PEN
+--------------------------------------------------------------------------------
+

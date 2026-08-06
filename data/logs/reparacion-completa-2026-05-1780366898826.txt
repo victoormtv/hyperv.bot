@@ -1,0 +1,94 @@
+REPARACIÓN COMPLETA DE VENTAS - 2026-05
+Fecha: 1/6/2026, 9:21:38 p. m.
+Ejecutado por: strixboss
+Modo: Aplicado
+Total reparaciones: 10
+
+CATEGORÍAS:
+- Propinas mal calculadas: 0
+- Descuentos mal aplicados: 0
+- Comisiones fijas incorrectas: 0
+- Descuento Ads incorrecto: 0
+- Otros errores: 10
+================================================================================
+
+Venta #1032 [OTROS]
+Vendedor: mattizynn.
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 30.87 PEN
+Diferencia: +30.87 PEN
+--------------------------------------------------------------------------------
+
+Venta #1041 [OTROS]
+Vendedor: josuex_16
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 16.84 PEN
+Diferencia: +16.84 PEN
+--------------------------------------------------------------------------------
+
+Venta #1045 [OTROS]
+Vendedor: josuex_16
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 18.12 PEN
+Diferencia: +18.12 PEN
+--------------------------------------------------------------------------------
+
+Venta #1090 [OTROS]
+Vendedor: fvbriix
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 18.12 PEN
+Diferencia: +18.12 PEN
+--------------------------------------------------------------------------------
+
+Venta #1093 [OTROS]
+Vendedor: josuex_16
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 14.93 PEN
+Diferencia: +14.93 PEN
+--------------------------------------------------------------------------------
+
+Venta #1109 [OTROS]
+Vendedor: josuex_16
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 33.71 PEN
+Diferencia: +33.71 PEN
+--------------------------------------------------------------------------------
+
+Venta #1131 [OTROS]
+Vendedor: josuex_16
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 8.55 PEN
+Diferencia: +8.55 PEN
+--------------------------------------------------------------------------------
+
+Venta #1155 [OTROS]
+Vendedor: josuex_16
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 14.93 PEN
+Diferencia: +14.93 PEN
+--------------------------------------------------------------------------------
+
+Venta #1156 [OTROS]
+Vendedor: fvbriix
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 11.74 PEN
+Diferencia: +11.74 PEN
+--------------------------------------------------------------------------------
+
+Venta #1174 [OTROS]
+Vendedor: josuex_16
+Producto: Propina - N/A
+Comisión anterior: 0 PEN
+Comisión corregida: 14.93 PEN
+Diferencia: +14.93 PEN
+--------------------------------------------------------------------------------
+
