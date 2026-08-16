@@ -4,27 +4,7 @@ const { ChartJSNodeCanvas } = require('chartjs-node-canvas');
 async function generateSalesExcel(ventas, mes = null, año = new Date().getFullYear(), quincena = null, diaInicio = null, diaFin = null) {
     const workbook = new ExcelJS.Workbook();
 
-    let ventasFiltradas = ventas.filter(v => {
-        const fecha = new Date(v.fecha);
-        const añoVenta = fecha.getFullYear();
-
-        if (mes && quincena) {
-            const OFFSET_HOURS = 5;
-            const fechaInicio = new Date(Date.UTC(año, mes - 1, diaInicio, OFFSET_HOURS, 0, 0, 0));
-            const fechaFin = new Date(Date.UTC(año, mes - 1, diaFin + 1, OFFSET_HOURS, 0, 0, 0) - 1);
-            return fecha >= fechaInicio && fecha <= fechaFin;
-        } else if (mes) {
-            const OFFSET_HOURS = 5;
-            const fechaInicio = new Date(Date.UTC(año, mes - 1, 1, OFFSET_HOURS, 0, 0, 0));
-            const fechaFin = new Date(Date.UTC(año, mes - 1, diaFin + 1, OFFSET_HOURS, 0, 0, 0) - 1);
-            return fecha >= fechaInicio && fecha <= fechaFin;
-        }
-
-        const OFFSET_HOURS = 5;
-        const fechaInicio = new Date(Date.UTC(año, 0, 1, OFFSET_HOURS, 0, 0, 0));
-        const fechaFin = new Date(Date.UTC(año + 1, 0, 1, OFFSET_HOURS - 1, 59, 59, 999));
-        return fecha >= fechaInicio && fecha <= fechaFin;
-    });
+    let ventasFiltradas = ventas;
 
     if (!ventasFiltradas.length) {
         throw new Error('No hay ventas para el periodo seleccionado');
