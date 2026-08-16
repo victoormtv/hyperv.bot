@@ -1055,8 +1055,7 @@ module.exports = [
         "**Remitly** <:1039637352546578432:1117992079289749566>\n**Indicar que se recibe en dólares**\n- **Banco:** INTERBANK\n- **Cuenta:** Ahorros dólares\n- **Número de cuenta:** 8983306148967\n- **Número de identificación:** 76850426\n- **Nombre completo:** Carlos Mario Farid\n- **Apellido:** Bonifacio\n- **Segundo apellido:** Guerra\n- **Teléfono:** 960 546 093\n- **País:** Perú\n- **Ciudad:** Pisco\n- **Región:** Ica\n\n" +
         "**Paypal** <:paypal:1117992083765080144>\n- **Correo:** diegohyperv011@gmail.com\n- **Mensaje obligatorio al pagar:**\nDeclaro que este dinero enviado desde (AQUI COLOCA TU NOMBRE) hacia DIEGO HUACA PEZET es totalmente legal, y declaro que el pago no es reembolsable bajo ninguna circunstancia. Soy el titular responsable de este envío de USD.\n- **Link de Donación:** https://www.paypal.com/donate/?hosted_button_id=V374LDC8RMTKC\n\n" +
         "**Binance** <:5393binancecoin:1117992082699718726>\n- **ID:** 488458041\n\n" +
-        "**Zelle:**\n- **Nombre:** JEFERSON RAMIREZ\n- **Numero**: +1 (720) 756-8895\n\n" +
-        "**Cash App EEUU** <a:eeuu:1117992163658170448>\n- https://cash.app/$Jrz1lk\n\n" +
+        "~~**Cash App EEUU** <a:eeuu:1117992163658170448>\n- https://cash.app/$Jrz1lk\n\n~~" +
         "**Nequi Colombia** <:flagcolombia:1232045292887605290>\n- **Cuenta:** 3013969801\n- **Datos:** Jonatan Perez\n- **Tipo de cambio:** 5,000 pesos colombianos = 1 Dólar\n\n" +
         "**Banco Estado Chile:**\n- **Datos:** Martín Alonso Marín Contreras\n- **RUT:** 22777794-k\n- **Correo:** mkeria004@gmail.com\n- **Mercado Pago**\n- **Cuenta Vista**\n- **Número de cuenta: 1056187914\n\n" +
         "**MÉTODOS DE MÉXICO** <:flagmexico_1f1f21f1fd:1244856813053284437>\n\n" +
