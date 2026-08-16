@@ -10,10 +10,7 @@ module.exports = {
     let ActivityIndex = 0;
     const activities = [
       { name: "+6000 clientes activos", type: ActivityType.Watching },
-      {
-        name: "Consulta sobre nuestros productos",
-        type: ActivityType.Listening,
-      },
+      { name: "Consulta sobre nuestros productos", type: ActivityType.Listening },
       { name: "HyperV - El mejor panel", type: ActivityType.Playing },
     ];
 
@@ -30,27 +27,26 @@ module.exports = {
     for (const channel of channelData) {
       try {
         const targetChannel = await client.channels.fetch(channel.id);
-        if (!targetChannel.isTextBased()) {
-          console.error(
-            `El canal ${channel.id} no es válido para mensajes de texto.`,
-          );
-          continue;
-        }
+        if (!targetChannel.isTextBased()) continue;
 
         const embeds = [channel.embed, ...(channel.extraEmbeds || [])];
+        const components = channel.components?.length ? channel.components : channel.menu ? [channel.menu] : [];
 
-        const messageOptions = { embeds };
-
-        if (channel.menu) {
-          messageOptions.components = [channel.menu];
-        } else if (channel.components && channel.components.length > 0) {
-          messageOptions.components = channel.components;
+        if (channel.messageId) {
+          try {
+            const message = await targetChannel.messages.fetch(channel.messageId);
+            await message.edit({ embeds, components });
+            console.log(`Embed editado en canal ${channel.id}`);
+            continue;
+          } catch {
+            console.warn(`No se pudo editar mensaje ${channel.messageId}, enviando nuevo...`);
+          }
         }
 
-        await targetChannel.send(messageOptions);
-        console.log(`Mensaje de embed enviado en canal ${channel.id}`);
+        const sent = await targetChannel.send({ embeds, components });
+        console.log(`Embed enviado en canal ${channel.id} — messageId: ${sent.id}`);
       } catch (error) {
-        console.error(`Error enviando mensaje en canal ${channel.id}:`, error);
+        console.error(`Error en canal ${channel.id}:`, error);
       }
     }
   },
