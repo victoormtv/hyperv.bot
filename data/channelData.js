@@ -38,7 +38,7 @@ function createTicketAndStoreRow(ticketId, storeUrl) {
 module.exports = [
   {
     id: ids.embeds.WEBSITE,
-    messageId: "1466257657550737591",
+    messageId: "1538692438204481547",
     embed: new EmbedBuilder()
       .setTitle("> Website")
       .setDescription(
@@ -68,7 +68,7 @@ module.exports = [
 
   {
     id: ids.embeds.PAYMENT,
-    messageId: "1466621230101561600",
+    messageId: "1538692440444371065",
     embed: new EmbedBuilder()
       .setTitle("> Métodos de Pago")
       .setDescription(
@@ -110,7 +110,7 @@ module.exports = [
 
   {
     id: ids.embeds.SOCIAL_NETWORKS,
-    messageId: "1466621231108325548",
+    messageId: "1538692441845014599",
     embed: new EmbedBuilder()
       .setTitle("> Redes Sociales")
       .setDescription(
@@ -148,7 +148,7 @@ module.exports = [
 
   {
     id: ids.embeds.TICKET_GENERAL,
-    messageId: "1466621231540342948",
+    messageId: "1538692443216679075",
     embed: new EmbedBuilder()
       .setTitle("> Ticket")
       .setDescription(
@@ -172,7 +172,7 @@ module.exports = [
 
   {
     id: ids.embeds.PANEL_PC_GRATIS,
-    messageId: "1509800525334319215",
+    messageId: "1538692444302999572",
     embed: new EmbedBuilder()
       .setTitle("> Panel Gratis")
       .setDescription(
@@ -210,7 +210,7 @@ module.exports = [
 
   {
     id: ids.embeds.BYPASS_GRATIS,
-    messageId: "1439158817488109709",
+    messageId: "1538631071825002637",
     embed: new EmbedBuilder()
       .setTitle("> Bypass UID Gratis")
       .setDescription(
@@ -250,7 +250,7 @@ module.exports = [
   // ========================================
   {
     id: ids.embeds.PANEL_FULL,
-    messageId: "1466840122648559773",
+    messageId: "1538692446282584096",
     embed: new EmbedBuilder()
       .setTitle("> Panel Full")
       .setDescription(
@@ -290,7 +290,7 @@ module.exports = [
   // ========================================
   {
     id: ids.embeds.PANEL_BASIC,
-    messageId: "1466862391395483700",
+    messageId: "1538692447469703180",
     embed: new EmbedBuilder()
       .setTitle("Panel Secure")
       .setDescription(
@@ -323,7 +323,7 @@ module.exports = [
   // ========================================
   {
     id: ids.embeds.PANEL_ONLY_AIMBOT,
-    messageId: "1466862392259514442",
+    messageId: "1538692448576872473",
     embed: new EmbedBuilder()
       .setTitle("> Panel Only Aimbot")
       .setDescription(
@@ -355,7 +355,7 @@ module.exports = [
   // ========================================
   {
     id: ids.embeds.CHAMS_PC,
-    messageId: "1466862392922083368",
+    messageId: "1538692450439270422",
     embed: new EmbedBuilder()
       .setTitle("> Menu Chams")
       .setDescription(
@@ -387,7 +387,7 @@ module.exports = [
   // ========================================
   {
     id: ids.embeds.BYPASS_ID,
-    messageId: "1530103411578765375",
+    messageId: "1538692452054212662",
     embed: new EmbedBuilder()
       .setTitle("> Bypass UID")
       .setDescription(
@@ -420,7 +420,7 @@ module.exports = [
   // ========================================
   {
     id: ids.embeds.BYPASS_GLOBAL,
-    messageId: "1458125700199350354",
+    messageId: "1538625794262442047",
     embed: new EmbedBuilder()
       .setTitle("> Bypass Global")
       .setDescription(
@@ -452,7 +452,7 @@ module.exports = [
   // ========================================
   {
     id: ids.embeds.BYPASS_APK,
-    messageId: "1458125701185015830",
+    messageId: "1538692454566338625",
     embed: new EmbedBuilder()
       .setTitle("> Bypass APK")
       .setDescription(
@@ -481,7 +481,7 @@ module.exports = [
   // ========================================
   {
     id: ids.embeds.PANEL_IOS,
-    messageId: "1483312515629973565",
+    messageId: "1538692456223080600",
     embed: new EmbedBuilder()
       .setTitle("> Panel iOS")
       .setDescription(
@@ -513,7 +513,7 @@ module.exports = [
   // ========================================
   {
     id: ids.embeds.AIMBOT_BODY_IOS,
-    messageId: "1436783769813123165",
+    messageId: "1538692457842216962",
     embed: new EmbedBuilder()
       .setTitle("> Aimbot Body")
       .setDescription(
@@ -541,7 +541,7 @@ module.exports = [
   // ========================================
   {
     id: ids.embeds.PANEL_ANDROID,
-    messageId: "1454537233662087323",
+    messageId: "1538692459217944698",
     embed: new EmbedBuilder()
       .setTitle("> Panel Android")
       .setDescription(
@@ -576,7 +576,7 @@ module.exports = [
   // ========================================
   {
     id: ids.embeds.AIMBOT_BODY_ANDROID,
-    messageId: "1454537233662087323",
+    messageId: "1538692460677562430",
     embed: new EmbedBuilder()
       .setTitle("> Aimbot Body Android")
       .setDescription(
@@ -602,7 +602,7 @@ module.exports = [
   // ========================================
   {
     id: ids.embeds.AIMBOT_PROXY,
-    messageId: "1486896241546629251",
+    messageId: "1538692462636310680",
     embed: new EmbedBuilder()
       .setTitle("> Aimbot Proxy")
       .setDescription(
@@ -629,7 +629,7 @@ module.exports = [
   // ========================================
   {
     id: ids.embeds.AIMLOCK,
-    messageId: "1275684915320590336",
+    messageId: "1538692465161408554",
     embed: new EmbedBuilder()
       .setTitle("> Aimlock")
       .setDescription(
@@ -656,7 +656,7 @@ module.exports = [
   // ========================================
   {
     id: ids.embeds.REGEDIT,
-    messageId: "1117935996449857647",
+    messageId: "1538692467560284274",
     embed: new EmbedBuilder()
       .setTitle("> Regedit")
       .setDescription(
@@ -683,8 +683,8 @@ module.exports = [
   // AIMBOT COLOR - VALORANT
   // ========================================
   {
-    id: "1399913608283951325",
-    messageId: "1430729753526272114",
+    id: ids.embeds.AIMBOT_COLOR,
+    messageId: "1538692468625776772",
     embed: new EmbedBuilder()
       .setTitle("> Aimbot Color")
       .setDescription(
@@ -712,7 +712,7 @@ module.exports = [
   // ========================================
   {
     id: ids.embeds.SPOOFER,
-    messageId: "1306875141015212093",
+    messageId: "1538692469804245064",
     embed: new EmbedBuilder()
       .setTitle("> Spoofer")
       .setDescription(
@@ -739,7 +739,7 @@ module.exports = [
   // ========================================
   {
     id: ids.embeds.BOOST_RANK,
-    messageId: "1360496293621006336",
+    messageId: "1538692471591014534",
     embed: new EmbedBuilder()
       .setTitle("> Boost Rank")
       .setDescription(
@@ -767,7 +767,7 @@ module.exports = [
   // ========================================
   {
     id: ids.embeds.PANEL_CSGO,
-    messageId: "1454143472738238545",
+    messageId: "1538692473243705346",
     embed: new EmbedBuilder()
       .setTitle("> Panel CSGO")
       .setDescription(
@@ -797,7 +797,7 @@ module.exports = [
   // ========================================
   {
     id: ids.embeds.PANEL_COD_IOS,
-    messageId: "1454149809329012947",
+    messageId: "1538692474824818751",
     embed: new EmbedBuilder()
       .setTitle("> Panel COD iOS")
       .setDescription(
@@ -825,7 +825,7 @@ module.exports = [
   // ========================================
   {
     id: ids.embeds.PANEL_WARZONE,
-    messageId: "1402843190184382515",
+    messageId: "1538692476347351112",
     embed: new EmbedBuilder()
       .setTitle("> Panel Warzone")
       .setDescription(
@@ -853,7 +853,7 @@ module.exports = [
   // ========================================
   {
     id: ids.embeds.CHAMS_BLOODSTRIKE,
-    messageId: "1476269296752660571",
+    messageId: "1538692478075670560",
     embed: new EmbedBuilder()
       .setTitle("> Menu Chams Bloodstrike")
       .setDescription(
@@ -881,7 +881,7 @@ module.exports = [
   // ========================================
   {
     id: ids.embeds.NITRO,
-    messageId: "1316566411036065792",
+    messageId: "1538692478960406602",
     embed: new EmbedBuilder()
       .setTitle("> Discord Nitro & Booster")
       .setDescription(
@@ -914,7 +914,7 @@ module.exports = [
   // ========================================
   {
     id: ids.embeds.INFO_COMANDOS,
-    messageId: "1455736867944402984",
+    messageId: "1538692480357105677",
     embed: new EmbedBuilder()
       .setTitle("> Comandos")
       .setDescription(
@@ -934,7 +934,7 @@ module.exports = [
   // ========================================
   {
     id: ids.embeds.BOT,
-    messageId: "1455736868577226863",
+    messageId: "1538692481699414137",
     embed: new EmbedBuilder()
       .setTitle("> Sistema de Comisiones")
       .setDescription(
@@ -953,7 +953,7 @@ module.exports = [
   // ========================================
   {
     id: ids.embeds.PC_PROGRAMAS,
-    messageId: "1452814722239037572",
+    messageId: "1538692482802655235",
     embed: new EmbedBuilder()
       .setTitle("> Setup Informacion")
       .setDescription(
@@ -987,7 +987,7 @@ module.exports = [
   // ========================================
   {
     id: ids.embeds.MOVIL_PROGRAMAS,
-    messageId: "1435441785697730694",
+    messageId: "1538692484446552186",
     embed: new EmbedBuilder()
       .setTitle("> Setup Informacion")
       .setDescription(
@@ -1020,7 +1020,7 @@ module.exports = [
   // ========================================
   {
     id: ids.embeds.BOOST,
-    messageId: "1118018791041937578",
+    messageId: "1538692485700911125",
     embed: new EmbedBuilder()
       .setTitle("> Boost Reward")
       .setDescription(
@@ -1035,7 +1035,7 @@ module.exports = [
 
   {
     id: ids.embeds.PAGOS_PERU, // metodos de pago de peru
-    messageId: "1486894923176480981",
+    messageId: "1538692486665478287",
     embed: new EmbedBuilder()
       .setTitle("> Métodos de Pago Nacionales")
       .setDescription(
@@ -1047,7 +1047,7 @@ module.exports = [
 
   {
     id: ids.embeds.PAGOS_INTERNACIONALES,
-    messageId: "1487854730905391186",
+    messageId: "1538692487944732765",
     embed: new EmbedBuilder()
       .setTitle("> Métodos de Pago Internacionales")
       .setDescription(
@@ -1078,7 +1078,7 @@ module.exports = [
   // ========================================
   {
     id: ids.embeds.BANCO_BOLIVIA,
-    messageId: "1464694776493244436",
+    messageId: "1538692489010221097",
     embed: new EmbedBuilder()
       .setTitle("> QR Bolivia")
       .setDescription(
@@ -1093,7 +1093,7 @@ module.exports = [
 
   {
     id: ids.embeds.ZELLE,
-    messageId: "1505640090737836055",
+    messageId: "1538692490654253118",
     embed: new EmbedBuilder()
       .setTitle("> Zelle")
       .setDescription(
@@ -1105,7 +1105,7 @@ module.exports = [
 
   {
     id: ids.embeds.COMISIONES_INFO,
-    messageId: "1486896266112667699",
+    messageId: "1538692492059484181",
     embed: new EmbedBuilder()
       .setTitle("> HyperV | Comisiones")
       .setDescription(
