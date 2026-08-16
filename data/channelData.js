@@ -1058,7 +1058,7 @@ module.exports = [
         "**Zelle:**\n- **Nombre:** JEFERSON RAMIREZ\n- **Numero**: +1 (720) 756-8895\n\n" +
         "**Cash App EEUU** <a:eeuu:1117992163658170448>\n- https://cash.app/$Jrz1lk\n\n" +
         "**Nequi Colombia** <:flagcolombia:1232045292887605290>\n- **Cuenta:** 3013969801\n- **Datos:** Jonatan Perez\n- **Tipo de cambio:** 5,000 pesos colombianos = 1 Dólar\n\n" +
-        "**Banco Estado Chile:**\n- **Datos:** Martín Alonso Marín Contreras\n- **RUT:** 22777794-k\n\n" +
+        "**Banco Estado Chile:**\n- **Datos:** Martín Alonso Marín Contreras\n- **RUT:** 22777794-k\n- **Correo:** mkeria004@gmail.com\n- **Mercado Pago**\n- **Cuenta Vista**\n- **Número de cuenta: 1056187914\n\n" +
         "**MÉTODOS DE MÉXICO** <:flagmexico_1f1f21f1fd:1244856813053284437>\n\n" +
         "**Para transferencias:**\n- **Clabe NU (NUBANK): **638180010145897670\n- **Datos:** Karelys Ferrer\n- **Nota:** Si no encuentran Nu en el sistema, puedes decir que se deposita con PESPay.\n\n" +
         "**Para depositos:**\n- **Spin Oxxo: **5101 2505 6374 3542 \n- **Datos:** Karelys Ferrer\n- **Tipo de cambio (México): **1 Sol = 6,20 MXN\n\n" +
