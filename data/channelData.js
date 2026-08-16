@@ -223,10 +223,10 @@ module.exports = [
     components: [
       new ActionRowBuilder().addComponents(
         new ButtonBuilder()
+          .setCustomId("ticket_bypass_free")
           .setLabel("Reclamar Key")
-          .setStyle(ButtonStyle.Link)
-          .setEmoji({ name: 'soporte', id: '1316466482653171763' })
-          .setURL("https://discord.com/channels/1117932314102595716/1523413055885676654"),
+          .setStyle(ButtonStyle.Secondary)
+          .setEmoji({ name: 'soporte', id: '1316466482653171763' }),
         new ButtonBuilder()
           .setLabel("Guia de Instalacion")
           .setStyle(ButtonStyle.Link)
@@ -245,7 +245,6 @@ module.exports = [
       ),
     ],
   },
-
   // ========================================
   // PANEL FULL
   // ========================================
