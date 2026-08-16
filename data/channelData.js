@@ -1097,7 +1097,7 @@ module.exports = [
     embed: new EmbedBuilder()
       .setTitle("> Zelle")
       .setDescription(
-        "**Transferencia Zelle**\n- **Titular**: JEFERSON RAMIREZ\n- **Numero**: +1 (720) 756-8895",
+        "**Transferencia Zelle**\n- **Titular**: Angel Salas\n- **Numero**: +1 (908) 477-3454",
       )
       .setColor(config.embedColor)
       .setFooter(config.embedFooter)
