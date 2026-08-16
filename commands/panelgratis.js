@@ -55,10 +55,9 @@ module.exports = {
             .setDescription(
                 "**Tu key ha sido generada exitosamente.**\n\n" +
                 "**Instrucciones:**\n" +
-                "`1.` Descarga el Panel desde el botón de abajo\n" +
-                "`2.` Ejecuta el loader como **Administrador**\n" +
-                "`3.` Ingresa tu key cuando se te solicite\n" +
-                "`4.` ¡Disfruta!\n\n" +
+                "`1.` Ejecuta el loader como **Administrador**\n" +
+                "`2.` Ingresa tu key cuando se te solicite\n" +
+                "`3.` ¡Disfruta!\n\n" +
                 "**Importante:**\n" +
                 "- La key es de **uso personal**, no la compartas\n" +
                 "- Si tienes problemas, abre un ticket de soporte\n\n" +
@@ -66,7 +65,7 @@ module.exports = {
             )
             .setColor(config.embedColor)
             .setFooter(config.embedFooter)
-            .setImage("https://i.ibb.co/TB9Z7y5X/panel-free.png")
+            .setImage("https://i.ibb.co/R4j2zZnn/WALLPAPER-HYPERV-2.gif")
             .setTimestamp();
 
         await interaction.editReply({
