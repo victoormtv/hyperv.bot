@@ -51,21 +51,17 @@ module.exports = {
         }
 
         const embed = new EmbedBuilder()
-            .setTitle("> HyperV - Panel Gratis")
+            .setTitle("> Tu Panel FREE fue APROBADO")
             .setDescription(
-                "**Tu key ha sido generada exitosamente.**\n\n" +
-                "**Instrucciones:**\n" +
-                "`1.` Ejecuta el loader como **Administrador**\n" +
-                "`2.` Ingresa tu key cuando se te solicite\n" +
-                "`3.` ¡Disfruta!\n\n" +
-                "**Importante:**\n" +
-                "- La key es de **uso personal**, no la compartas\n" +
-                "- Si tienes problemas, abre un ticket de soporte\n\n" +
-                `**Tu Key (${diasOpcion}):**\n\`\`\`${key}\`\`\``,
+                "- **Producto:** Panel Gratis\n" +
+                `- **Duración:** ${diasOpcion}\n\n` +
+                "- **Tu licencia:**\n" +
+                `\`\`\`${key}\`\`\`\n\n` +
+                "Ingresa aquí y sigue los pasos:\nhttps://hyperv.online/free/panel-free/\n\n" +
+                "¿Te gustó? Contacta con nuestro equipo para adquirir algunos de nuestros planes.",
             )
             .setColor(config.embedColor)
             .setFooter(config.embedFooter)
-            .setImage("https://i.ibb.co/R4j2zZnn/WALLPAPER-HYPERV-2.gif")
             .setTimestamp();
 
         await interaction.editReply({
