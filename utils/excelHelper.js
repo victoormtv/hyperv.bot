@@ -11,12 +11,12 @@ async function generateSalesExcel(ventas, mes = null, año = new Date().getFullY
         if (mes && quincena) {
             const OFFSET_HOURS = 5;
             const fechaInicio = new Date(Date.UTC(año, mes - 1, diaInicio, OFFSET_HOURS, 0, 0, 0));
-            const fechaFin = new Date(Date.UTC(año, mes - 1, diaFin + 1, OFFSET_HOURS - 1, 59, 59, 999));
+            const fechaFin = new Date(Date.UTC(año, mes - 1, diaFin + 1, OFFSET_HOURS, 0, 0, 0) - 1);
             return fecha >= fechaInicio && fecha <= fechaFin;
         } else if (mes) {
             const OFFSET_HOURS = 5;
             const fechaInicio = new Date(Date.UTC(año, mes - 1, 1, OFFSET_HOURS, 0, 0, 0));
-            const fechaFin = new Date(Date.UTC(año, mes, 1, OFFSET_HOURS - 1, 59, 59, 999));
+            const fechaFin = new Date(Date.UTC(año, mes - 1, diaFin + 1, OFFSET_HOURS, 0, 0, 0) - 1);
             return fecha >= fechaInicio && fecha <= fechaFin;
         }
 
@@ -40,8 +40,8 @@ async function generateSalesExcel(ventas, mes = null, año = new Date().getFullY
     const colorAds = 'FFFF6B6B';
     const colorDiscord = 'FF5865F2';
 
-    const ventasNormales = ventasFiltradas.filter(v => 
-        v.tipoVenta !== 'upgrade' && 
+    const ventasNormales = ventasFiltradas.filter(v =>
+        v.tipoVenta !== 'upgrade' &&
         v.tipoVenta !== 'propina'
     );
     const ventasUpgrade = ventasFiltradas.filter(v => v.tipoVenta === 'upgrade');
@@ -141,9 +141,9 @@ async function generateSalesExcel(ventas, mes = null, año = new Date().getFullY
         { metrica: 'RESUMEN GENERAL', valor: '' },
         { metrica: '═══════════════════════════════════════', valor: '══════════════════════' },
         { metrica: 'REGISTROS TOTALES', valor: totalVentas },
-        { metrica: '  ├─ Ventas Normales', valor: `${totalVentasNormales} (${((totalVentasNormales/totalVentas)*100).toFixed(1)}%)` },
-        { metrica: '  ├─ Upgrades', valor: `${totalUpgrades} (${((totalUpgrades/totalVentas)*100).toFixed(1)}%)` },
-        { metrica: '  └─ Propinas', valor: `${totalPropinas} (${((totalPropinas/totalVentas)*100).toFixed(1)}%)` },
+        { metrica: '  ├─ Ventas Normales', valor: `${totalVentasNormales} (${((totalVentasNormales / totalVentas) * 100).toFixed(1)}%)` },
+        { metrica: '  ├─ Upgrades', valor: `${totalUpgrades} (${((totalUpgrades / totalVentas) * 100).toFixed(1)}%)` },
+        { metrica: '  └─ Propinas', valor: `${totalPropinas} (${((totalPropinas / totalVentas) * 100).toFixed(1)}%)` },
         { metrica: '', valor: '' },
         { metrica: 'INGRESOS TOTALES', valor: `S/ ${ingresosTotales.toFixed(2)}` },
         { metrica: '  ├─ Ventas Normales', valor: `S/ ${ingresosNormales.toFixed(2)}` },
@@ -159,18 +159,18 @@ async function generateSalesExcel(ventas, mes = null, año = new Date().getFullY
         { metrica: '═══════════════════════════════════════', valor: '══════════════════════' },
         { metrica: 'VENTAS POR TIPO', valor: '' },
         { metrica: '═══════════════════════════════════════', valor: '══════════════════════' },
-        { metrica: 'VENTAS DE ADS', valor: `${totalVentasAds} (${totalVentas > 0 ? ((totalVentasAds/totalVentas)*100).toFixed(1) : '0.0'}%)` },
+        { metrica: 'VENTAS DE ADS', valor: `${totalVentasAds} (${totalVentas > 0 ? ((totalVentasAds / totalVentas) * 100).toFixed(1) : '0.0'}%)` },
         { metrica: 'Ingresos Ads', valor: `S/ ${ingresosAds.toFixed(2)}` },
         { metrica: '', valor: '' },
-        { metrica: 'VENTAS DE DISCORD', valor: `${totalVentasDiscord} (${totalVentas > 0 ? ((totalVentasDiscord/totalVentas)*100).toFixed(1) : '0.0'}%)` },
+        { metrica: 'VENTAS DE DISCORD', valor: `${totalVentasDiscord} (${totalVentas > 0 ? ((totalVentasDiscord / totalVentas) * 100).toFixed(1) : '0.0'}%)` },
         { metrica: 'Ingresos Discord', valor: `S/ ${ingresosDiscord.toFixed(2)}` },
         { metrica: '', valor: '' },
         { metrica: '═══════════════════════════════════════', valor: '══════════════════════' },
         { metrica: 'VENTAS NORMALES', valor: '' },
         { metrica: '═══════════════════════════════════════', valor: '══════════════════════' },
-        { metrica: 'Ventas Sin Ajuste', valor: `${ventasNormalesSinAjuste} (${totalVentasNormales > 0 ? ((ventasNormalesSinAjuste/totalVentasNormales)*100).toFixed(1) : '0.0'}%)` },
-        { metrica: 'Ventas con Descuento', valor: `${ventasConDescuento} (${totalVentasNormales > 0 ? ((ventasConDescuento/totalVentasNormales)*100).toFixed(1) : '0.0'}%)` },
-        { metrica: 'Ventas con Propina Extra', valor: `${ventasConPropina} (${totalVentasNormales > 0 ? ((ventasConPropina/totalVentasNormales)*100).toFixed(1) : '0.0'}%)` },
+        { metrica: 'Ventas Sin Ajuste', valor: `${ventasNormalesSinAjuste} (${totalVentasNormales > 0 ? ((ventasNormalesSinAjuste / totalVentasNormales) * 100).toFixed(1) : '0.0'}%)` },
+        { metrica: 'Ventas con Descuento', valor: `${ventasConDescuento} (${totalVentasNormales > 0 ? ((ventasConDescuento / totalVentasNormales) * 100).toFixed(1) : '0.0'}%)` },
+        { metrica: 'Ventas con Propina Extra', valor: `${ventasConPropina} (${totalVentasNormales > 0 ? ((ventasConPropina / totalVentasNormales) * 100).toFixed(1) : '0.0'}%)` },
         { metrica: 'Total Descuentos Otorgados', valor: `S/ ${totalDescuentos.toFixed(2)}` },
         { metrica: 'Total Propinas Extra', valor: `S/ ${totalPropinasAjuste.toFixed(2)}` },
         { metrica: '', valor: '' },
@@ -180,7 +180,7 @@ async function generateSalesExcel(ventas, mes = null, año = new Date().getFullY
         { metrica: 'Total Propinas Directas', valor: totalPropinas },
         { metrica: 'Ingresos por Propinas', valor: `S/ ${ingresosPropinas.toFixed(2)}` },
         { metrica: 'Descuentos Metodos de Pago', valor: `S/ ${descuentosMetodoPagoPropinas.toFixed(2)}` },
-        { metrica: 'Promedio por Propina', valor: totalPropinas > 0 ? `S/ ${(ingresosPropinas/totalPropinas).toFixed(2)}` : 'N/A' },
+        { metrica: 'Promedio por Propina', valor: totalPropinas > 0 ? `S/ ${(ingresosPropinas / totalPropinas).toFixed(2)}` : 'N/A' },
         { metrica: 'Vendedor Top Propinas', valor: vendedorTopPropinas && vendedorTopPropinas[1].propinas > 0 ? `${vendedorTopPropinas[0]} (${vendedorTopPropinas[1].propinas} propinas)` : 'N/A' },
         { metrica: '', valor: '' },
         { metrica: '═══════════════════════════════════════', valor: '══════════════════════' },
@@ -189,7 +189,7 @@ async function generateSalesExcel(ventas, mes = null, año = new Date().getFullY
         { metrica: 'Total Upgrades Realizados', valor: totalUpgrades },
         { metrica: 'Ingresos por Upgrades', valor: `S/ ${ingresosUpgrades.toFixed(2)}` },
         { metrica: 'Comisiones Upgrades (30%)', valor: `S/ ${comisionVentaUpgrade.toFixed(2)}` },
-        { metrica: 'Promedio por Upgrade', valor: totalUpgrades > 0 ? `S/ ${(ingresosUpgrades/totalUpgrades).toFixed(2)}` : 'N/A' },
+        { metrica: 'Promedio por Upgrade', valor: totalUpgrades > 0 ? `S/ ${(ingresosUpgrades / totalUpgrades).toFixed(2)}` : 'N/A' },
         { metrica: 'Vendedor Top Upgrades', valor: vendedorTopUpgrades ? `${vendedorTopUpgrades[0]} (${vendedorTopUpgrades[1].upgrades} upgrades)` : 'N/A' },
         { metrica: '', valor: '' },
         { metrica: '═══════════════════════════════════════', valor: '══════════════════════' },

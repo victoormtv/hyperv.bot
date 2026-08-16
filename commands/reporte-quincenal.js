@@ -92,7 +92,7 @@ module.exports = {
       Date.UTC(año, mes - 1, diaInicio, OFFSET_HOURS, 0, 0, 0),
     );
     const fechaFin = new Date(
-      Date.UTC(año, mes - 1, diaFin + 1, OFFSET_HOURS - 1, 59, 59, 999),
+      Date.UTC(año, mes - 1, diaFin + 1, OFFSET_HOURS, 0, 0, 0) - 1,
     );
 
     let ventasFiltradas = ventas.filter((venta) => {
@@ -213,8 +213,8 @@ module.exports = {
         .setTitle("> HyperV - Reporte Quincenal de Ventas y Propinas")
         .setDescription(
           `**Periodo:** Quincena ${quincena} (${diaInicio}-${diaFin}) - ${mes}/${año}\n` +
-            `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n` +
-            `**Resumen General**`,
+          `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n` +
+          `**Resumen General**`,
         )
         .addFields(
           // Bloque 1 — Totales (3 fields)

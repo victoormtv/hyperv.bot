@@ -73,7 +73,7 @@ module.exports = {
       Date.UTC(año, mes - 1, 1, OFFSET_HOURS, 0, 0, 0),
     );
     const fechaFin = new Date(
-      Date.UTC(año, mes, 1, OFFSET_HOURS - 1, 59, 59, 999),
+      Date.UTC(año, mes, 1, OFFSET_HOURS, 0, 0, 0) - 1,
     );
 
     let ventasFiltradas = ventas.filter((venta) => {
@@ -218,130 +218,47 @@ module.exports = {
       const embed = new EmbedBuilder()
         .setTitle("> HyperV - Reporte Mensual de Ventas y Propinas")
         .setDescription(
-          `**Periodo:** ${nombresMeses[mes - 1]} ${año} - Mes Completo\n\nResumen General`,
+          `**Periodo:** ${nombresMeses[mes - 1]} ${año} - Mes Completo\n` +
+          `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n` +
+          `**Resumen General**`
         )
         .addFields(
-          {
-            name: "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-            value: "\u200b",
-            inline: false,
-          },
-          {
-            name: "Total Registros",
-            value: `**${totalVentas}**`,
-            inline: true,
-          },
-          {
-            name: "Ingresos Totales",
-            value: `**S/ ${totalIngresos.toFixed(2)}**`,
-            inline: true,
-          },
-          {
-            name: "Comisiones Staff",
-            value: `**S/ ${totalComisiones.toFixed(2)}**`,
-            inline: true,
-          },
-          {
-            name: "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-            value: "\u200b",
-            inline: false,
-          },
-          {
-            name: "Ventas Normales",
-            value: `${totalVentasNormales}`,
-            inline: true,
-          },
+          // Bloque 1 (3)
+          { name: "Total Registros", value: `**${totalVentas}**`, inline: true },
+          { name: "Ingresos Totales", value: `**S/ ${totalIngresos.toFixed(2)}**`, inline: true },
+          { name: "Comisiones Staff", value: `**S/ ${totalComisiones.toFixed(2)}**`, inline: true },
+          // sep (1)
+          { name: "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", value: "\u200b", inline: false },
+          // Bloque 2 (3)
+          { name: "Ventas Normales", value: `${totalVentasNormales}`, inline: true },
           { name: "Upgrades", value: `${totalUpgrades}`, inline: true },
           { name: "Propinas", value: `${totalPropinas}`, inline: true },
-          {
-            name: "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-            value: "\u200b",
-            inline: false,
-          },
+          // sep (1)
+          { name: "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", value: "\u200b", inline: false },
+          // Bloque 3 — Ads/Discord en 3 campos (sin blank fillers) (3)
           { name: "Ventas Ads", value: `${ventasAds.length}`, inline: true },
-          {
-            name: "Ingresos Ads",
-            value: `S/ ${ingresosAds.toFixed(2)}`,
-            inline: true,
-          },
-          { name: "\u200b", value: "\u200b", inline: true },
-          {
-            name: "Ventas Discord",
-            value: `${ventasDiscord.length}`,
-            inline: true,
-          },
-          {
-            name: "Ingresos Discord",
-            value: `S/ ${ingresosDiscord.toFixed(2)}`,
-            inline: true,
-          },
-          { name: "\u200b", value: "\u200b", inline: true },
-          {
-            name: "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-            value: "\u200b",
-            inline: false,
-          },
-          {
-            name: "Ingresos Normales",
-            value: `S/ ${ingresosNormales.toFixed(2)}`,
-            inline: true,
-          },
-          {
-            name: "Ingresos Upgrades",
-            value: `S/ ${ingresosUpgrades.toFixed(2)}`,
-            inline: true,
-          },
-          {
-            name: "Ingresos Propinas",
-            value: `S/ ${ingresosPropinas.toFixed(2)}`,
-            inline: true,
-          },
-          {
-            name: "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-            value: "\u200b",
-            inline: false,
-          },
-          {
-            name: "Com. Ventas",
-            value: `S/ ${comisionVentaNormal.toFixed(2)}`,
-            inline: true,
-          },
-          {
-            name: "Com. Upgrades",
-            value: `S/ ${comisionVentaUpgrade.toFixed(2)}`,
-            inline: true,
-          },
-          {
-            name: "Com. Soporte",
-            value: `S/ ${totalComisionesSoporte.toFixed(2)}`,
-            inline: true,
-          },
-          {
-            name: "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-            value: "\u200b",
-            inline: false,
-          },
-          {
-            name: "Descuentos Propinas",
-            value: `S/ ${descuentosMetodoPagoPropinas.toFixed(2)}`,
-            inline: true,
-          },
+          { name: "Ingresos Ads", value: `S/ ${ingresosAds.toFixed(2)}`, inline: true },
+          { name: "Ventas Discord", value: `${ventasDiscord.length}`, inline: true },
+          // sep (1)
+          { name: "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", value: "\u200b", inline: false },
+          // Bloque 4 (3)
+          { name: "Ingresos Normales", value: `S/ ${ingresosNormales.toFixed(2)}`, inline: true },
+          { name: "Ingresos Upgrades", value: `S/ ${ingresosUpgrades.toFixed(2)}`, inline: true },
+          { name: "Ingresos Propinas", value: `S/ ${ingresosPropinas.toFixed(2)}`, inline: true },
+          // sep (1)
+          { name: "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", value: "\u200b", inline: false },
+          // Bloque 5 (3)
+          { name: "Com. Ventas", value: `S/ ${comisionVentaNormal.toFixed(2)}`, inline: true },
+          { name: "Com. Upgrades", value: `S/ ${comisionVentaUpgrade.toFixed(2)}`, inline: true },
+          { name: "Com. Soporte", value: `S/ ${totalComisionesSoporte.toFixed(2)}`, inline: true },
+          // sep (1)
+          { name: "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", value: "\u200b", inline: false },
+          // Bloque 6 (3)
+          { name: "Desc. Propinas", value: `S/ ${descuentosMetodoPagoPropinas.toFixed(2)}`, inline: true },
           { name: "Sin Ajuste", value: `${ventasSinAjuste}`, inline: true },
-          {
-            name: "Con Descuento",
-            value: `${ventasConDescuento}`,
-            inline: true,
-          },
-          {
-            name: "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
-            value: "\u200b",
-            inline: false,
-          },
-          {
-            name: "Archivo Generado",
-            value: `\`${attachment.name}\``,
-            inline: false,
-          },
+          { name: "Con Descuento", value: `${ventasConDescuento}`, inline: true },
+          // Archivo (1)
+          { name: "Archivo Generado", value: `\`${attachment.name}\``, inline: false },
         )
         .setColor(config.embedColor)
         .setFooter({ text: `Generado por ${interaction.user.username}` })
