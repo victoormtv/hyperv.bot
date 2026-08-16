@@ -34,6 +34,8 @@ const ticketTypeMapping = {
     // General
     'ticket_general_es': 'soporte-es',
     'ticket_general_en': 'support-en',
+
+    'ticket_panel_gratis': 'panel-gratis',
 };
 
 module.exports = { ticketTypeMapping };

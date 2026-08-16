@@ -185,10 +185,10 @@ module.exports = [
     components: [
       new ActionRowBuilder().addComponents(
         new ButtonBuilder()
-          .setLabel("Reclamar Key")
-          .setStyle(ButtonStyle.Link)
-          .setEmoji({ name: 'soporte', id: '1316466482653171763' })
-          .setURL("https://discord.com/channels/1117932314102595716/1471692818077712444"),
+          .setCustomId("ticket_panel_gratis")  // <-- botón de ticket
+          .setLabel("Abrir Ticket / Open Ticket")
+          .setStyle(ButtonStyle.Secondary)
+          .setEmoji({ name: 'soporte', id: '1232042953908949034' }),
         new ButtonBuilder()
           .setLabel("Guia de Instalacion")
           .setStyle(ButtonStyle.Link)
@@ -208,7 +208,7 @@ module.exports = [
     ],
   },
 
-{
+  {
     id: ids.embeds.BYPASS_GRATIS,
     messageId: "1439158817488109709",
     embed: new EmbedBuilder()
@@ -1104,7 +1104,7 @@ module.exports = [
       .setColor(config.embedColor)
       .setFooter(config.embedFooter)
   },
-  
+
   {
     id: ids.embeds.COMISIONES_INFO,
     messageId: "1486896266112667699",
