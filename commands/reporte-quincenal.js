@@ -99,6 +99,10 @@ module.exports = {
       const fechaVenta = new Date(venta.fecha);
       return fechaVenta >= fechaInicio && fechaVenta <= fechaFin;
     });
+    console.log('fechaInicio:', fechaInicio.toISOString());
+    console.log('fechaFin:', fechaFin.toISOString());
+    console.log('Total ventas cargadas:', ventas.length);
+    console.log('Total ventas filtradas:', ventasFiltradas.length);
 
     ventas.slice(-10).forEach((v) => {
       const fv = new Date(v.fecha);
