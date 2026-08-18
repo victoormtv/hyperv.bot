@@ -43,7 +43,7 @@ module.exports = {
 
         if (!esAdmin) {
             return await interaction.reply({
-                content: "❌ Solo los **Admins** y **Vendors** pueden usar este comando.",
+                content: "❌ Solo los **Admins** y **Sellers** pueden usar este comando.",
                 ephemeral: true,
             });
         }
