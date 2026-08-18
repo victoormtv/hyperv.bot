@@ -65,7 +65,7 @@ module.exports = {
             .setTimestamp();
 
         await interaction.editReply({
-            content: `<@${interaction.user.id}> aquí está tu key de Panel Secure:`,
+            content: `<@${interaction.user.id}> aquí está tu key de Panel Gratis:`,
             embeds: [embed],
         });
     },
