@@ -6,6 +6,8 @@ async function generateSalesExcel(ventas, mes = null, año = new Date().getFullY
 
     let ventasFiltradas = ventas;
 
+    ventasFiltradas = ventasFiltradas.sort((a, b) => a.numeroVenta - b.numeroVenta);
+
     if (!ventasFiltradas.length) {
         throw new Error('No hay ventas para el periodo seleccionado');
     }
@@ -454,7 +456,7 @@ async function generateSalesExcel(ventas, mes = null, año = new Date().getFullY
             tipoVentaTexto = venta.tipoVenta === 'ads' ? '📢 Ads' : venta.tipoVenta === 'discord' ? '💬 Discord' : 'No especificado';
         }
         ventasTotalesSheet.addRow({
-            numero: index + 1,
+            numero: venta.numeroVenta,
             fecha: new Date(venta.fecha).toLocaleString('es-PE', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', timeZone: 'America/Lima' }),
             vendedor: venta.vendedor, usuario: venta.usuario || '-', whatsapp: venta.whatsapp || 'No proporcionado',
             metodoPago: venta.metodoPago,
