@@ -1,6 +1,7 @@
 const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 const axios = require("axios");
 const config = require("../data/config");
+const { roles } = require("../data/ids");
 
 const expiryMap = {
     "1 dia": 1,
@@ -36,6 +37,17 @@ module.exports = {
         ),
 
     async execute(interaction) {
+        const member = interaction.member;
+        const adminRoles = [roles.ADMIN, roles.VENDOR].flat().filter(Boolean);
+        const esAdmin = adminRoles.some((roleId) => member.roles.cache.has(roleId));
+
+        if (!esAdmin) {
+            return await interaction.reply({
+                content: "❌ Solo los **Admins** y **Vendors** pueden usar este comando.",
+                ephemeral: true,
+            });
+        }
+
         await interaction.deferReply({ ephemeral: false });
 
         const diasOpcion = interaction.options.getString("dias");
