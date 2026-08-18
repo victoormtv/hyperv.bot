@@ -504,7 +504,7 @@ async function generateSalesExcel(ventas, mes = null, año = new Date().getFullY
     ];
     ventasDiscord.forEach((venta, index) => {
         ventasDiscordSheet.addRow({
-            numero: index + 1, fecha: new Date(venta.fecha).toLocaleString('es-PE', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', timeZone: 'America/Lima' }),
+            numero: venta.numeroVenta, fecha: new Date(venta.fecha).toLocaleString('es-PE', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', timeZone: 'America/Lima' }),
             vendedor: venta.vendedor, whatsapp: venta.whatsapp || 'No proporcionado', metodoPago: venta.metodoPago,
             producto: venta.producto, periodo: venta.periodo,
             clienteEnvio: venta.montoBrutoCliente ? parseFloat(venta.montoBrutoCliente) : null,
@@ -540,7 +540,7 @@ async function generateSalesExcel(ventas, mes = null, año = new Date().getFullY
     ];
     ventasAds.forEach((venta, index) => {
         ventasAdsSheet.addRow({
-            numero: index + 1, fecha: new Date(venta.fecha).toLocaleString('es-PE', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', timeZone: 'America/Lima' }),
+            numero: venta.numeroVenta, fecha: new Date(venta.fecha).toLocaleString('es-PE', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', timeZone: 'America/Lima' }),
             vendedor: venta.vendedor, whatsapp: venta.whatsapp || 'No proporcionado', metodoPago: venta.metodoPago,
             producto: venta.producto, periodo: venta.periodo,
             clienteEnvio: venta.montoBrutoCliente ? parseFloat(venta.montoBrutoCliente) : null,
@@ -579,7 +579,7 @@ async function generateSalesExcel(ventas, mes = null, año = new Date().getFullY
     ventasUpgrade.forEach((upgrade, index) => {
         const tipoVentaTexto = upgrade.tipoVenta === 'ads' ? 'Ads' : upgrade.tipoVenta === 'discord' ? 'Discord' : 'No especificado';
         upgradesSheet.addRow({
-            numero: index + 1,
+            numero: venta.numeroVenta,
             fecha: new Date(upgrade.fecha).toLocaleString('es-PE', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', timeZone: 'America/Lima' }),
             vendedor: upgrade.vendedor, usuario: upgrade.usuario,
             ventaOriginal: `#${upgrade.ventaOriginalId}`,
@@ -622,7 +622,7 @@ async function generateSalesExcel(ventas, mes = null, año = new Date().getFullY
     propinas.forEach((propina, index) => {
         const tipoVentaTexto = propina.tipoVenta === 'ads' ? 'Ads' : propina.tipoVenta === 'discord' ? 'Discord' : 'No especificado';
         propinasSheet.addRow({
-            numero: index + 1,
+            numero: venta.numeroVenta,
             fecha: new Date(propina.fecha).toLocaleString('es-PE', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', timeZone: 'America/Lima' }),
             vendedor: propina.vendedor, montoBruto: parseFloat(propina.montoBrutoCliente || 0),
             moneda: propina.monedaOriginal || 'PEN', metodoPago: propina.metodoPago,
