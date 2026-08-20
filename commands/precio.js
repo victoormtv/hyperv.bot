@@ -183,10 +183,9 @@ module.exports = {
         descripcion: "Bypass global vinculado a tu cuenta de Free Fire",
         planes: [
           { duracion: "- 1 dia", precio: "$3.00 | S./ 10.00" },
-          { duracion: "- 14 dias", precio: "$9.00 | S./ 30.00" },
-          { duracion: "- Mensual", precio: "$30.00 | S./ 90.00" },
-          { duracion: "- Trimestral", precio: "$40.00 | S./ 140.00" },
-          { duracion: "- Anual", precio: "$60.00 | S./ 190.00" },
+          { duracion: "- Semanal", precio: "$9.00 | S./ 30.00" },
+          { duracion: "- 14 dias", precio: "$14.00 | S./ 50.00" },
+          { duracion: "- Mensual", precio: "$40.00 | S./ 100.00" },
         ],
         features: [
           "- Indetectable",
@@ -194,7 +193,7 @@ module.exports = {
           "- Sin riesgo de black/ban",
           "- Actualizaciones y soporte incluido",
         ],
-        imagen: "https://i.ibb.co/kgbggbdd/BYPASS-UID-PORTADA-HYPER-V.png",
+        imagen: "https://i.ibb.co/q3LTLgf5/bypass-global.jpg",
         link: "https://hyperv.online/products/bypass-global",
         color: config.embedColor,
       },
