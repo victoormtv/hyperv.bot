@@ -15,7 +15,6 @@ module.exports = {
 
     const channelsToClean = [
       config.embeds.TICKET_GENERAL,
-      config.embeds.verifyUserPanel.verify,
       config.channels.VERIFY_USER,
       config.embeds.PANEL_PC_GRATIS,
       config.embeds.PANEL_BASIC,
