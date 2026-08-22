@@ -21,7 +21,7 @@ const DIAS_POR_PERIODO = {
 };
 
 function calcularFechaVencimiento(fechaVenta, periodo) {
-    // Si es combo (ej: "Mensual + Semanal"), toma el primero
+    if (!periodo) return null;
     const periodoBase = periodo.split("+")[0].trim();
     const dias = DIAS_POR_PERIODO[periodoBase];
     if (!dias) return null;
