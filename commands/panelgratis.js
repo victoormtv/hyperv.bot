@@ -43,7 +43,11 @@ module.exports = {
 
         if (!esAdmin) {
             return await interaction.reply({
-                content: "❌ Solo los **Admins** y **Sellers** pueden usar este comando.",
+                embeds: [
+                    new EmbedBuilder()
+                        .setDescription("❌ Solo los **Admins** y **Vendors** pueden usar este comando.")
+                        .setColor("#ff0000"),
+                ],
                 ephemeral: true,
             });
         }
@@ -58,13 +62,18 @@ module.exports = {
             key = await generateKeyAuthLicense(dias);
         } catch (error) {
             return await interaction.editReply({
-                content: `❌ Error al generar la licencia: ${error.message}`,
+                embeds: [
+                    new EmbedBuilder()
+                        .setDescription(`❌ Error al generar la licencia: ${error.message}`)
+                        .setColor("#ff0000"),
+                ],
             });
         }
 
         const embed = new EmbedBuilder()
             .setTitle("> Tu Panel FREE fue APROBADO")
             .setDescription(
+                `<@${interaction.user.id}>\n\n` +
                 "- **Producto:** Panel Gratis\n" +
                 `- **Duración:** ${diasOpcion}\n\n` +
                 "- **Tu licencia:**\n" +
@@ -77,7 +86,7 @@ module.exports = {
             .setTimestamp();
 
         await interaction.editReply({
-            content: `<@${interaction.user.id}> aquí está tu key de Panel Gratis:`,
+            content: "",
             embeds: [embed],
         });
     },

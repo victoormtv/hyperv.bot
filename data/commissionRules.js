@@ -4,8 +4,7 @@ const commissionRules = {
   "Panel Full": {
     Semanal: { venta: 10, soporte: 10, moneda: "Soles", precioEstandar: 60 },
     Mensual: { venta: 20, soporte: 10, moneda: "Soles", precioEstandar: 110 },
-    Trimestral: { venta: 30, soporte: 10, moneda: "Soles", precioEstandar: 150,
-    },
+    Trimestral: { venta: 30, soporte: 10, moneda: "Soles", precioEstandar: 150 },
     Anual: { venta: 40, soporte: 10, moneda: "Soles", precioEstandar: 200 },
   },
   "Panel Secure": {
@@ -20,19 +19,25 @@ const commissionRules = {
     Trimestral: { venta: 15, soporte: 5, moneda: "Soles", precioEstandar: 90 },
     Anual: { venta: 25, soporte: 5, moneda: "Soles", precioEstandar: 130 },
   },
+  "Menu Basic": {
+    Semanal: { venta: 9, soporte: 10, moneda: "Soles", precioEstandar: 50 },
+    Mensual: { venta: 18, soporte: 10, moneda: "Soles", precioEstandar: 100 },
+    Trimestral: { venta: 25, soporte: 10, moneda: "Soles", precioEstandar: 130 },
+    Anual: { venta: 35, soporte: 10, moneda: "Soles", precioEstandar: 170 },
+  },
   "Bypass APK": {
     Semanal: { venta: 10, soporte: 5, moneda: "Soles", precioEstandar: 60 },
     Mensual: { venta: 15, soporte: 5, moneda: "Soles", precioEstandar: 130 },
   },
   "Bypass ID": {
-    "1 dia" : { venta: 3, soporte: 5, moneda: "Soles", precioEstandar: 10 },
+    "1 dia": { venta: 3, soporte: 5, moneda: "Soles", precioEstandar: 10 },
     Semanal: { venta: 10, soporte: 5, moneda: "Soles", precioEstandar: 30 },
     Mensual: { venta: 20, soporte: 5, moneda: "Soles", precioEstandar: 90 },
     Trimestral: { venta: 25, soporte: 5, moneda: "Soles", precioEstandar: 140 },
     Anual: { venta: 30, soporte: 5, moneda: "Soles", precioEstandar: 190 },
   },
   "Bypass Global": {
-    "1 dia" : { venta: 3, soporte: 5, moneda: "Soles", precioEstandar: 10 },
+    "1 dia": { venta: 3, soporte: 5, moneda: "Soles", precioEstandar: 10 },
     Semanal: { venta: 10, soporte: 5, moneda: "Soles", precioEstandar: 30 },
     "14 dias": { venta: 15, soporte: 5, moneda: "Soles", precioEstandar: 50 },
     Mensual: { venta: 20, soporte: 5, moneda: "Soles", precioEstandar: 100 },
@@ -48,15 +53,15 @@ const commissionRules = {
     Semanal: { venta: 10, soporte: 10, moneda: "Soles", precioEstandar: 85 },
     Mensual: { venta: 25, soporte: 10, moneda: "Soles", precioEstandar: 160 },
   },
-  "Gbox": {
+  Gbox: {
     "Por Temporada": { venta: 0, soporte: 0, moneda: "Soles", precioEstandar: 20 },
   },
-  "Regedit": {
+  Regedit: {
     Mensual: { venta: 15, soporte: 15, moneda: "Soles", precioEstandar: 80 },
     Anual: { venta: 30, soporte: 15, moneda: "Soles", precioEstandar: 130 },
   },
   "Aimbot Body iOS": {
-    "Por Temporada": { venta: 20, soporte: 15, moneda: "Soles", precioEstandar: 200},
+    "Por Temporada": { venta: 20, soporte: 15, moneda: "Soles", precioEstandar: 200 },
   },
   "Panel Android": {
     Semanal: { venta: 10, soporte: 10, moneda: "Soles", precioEstandar: 35 },
@@ -77,7 +82,7 @@ const commissionRules = {
     Semanal: { venta: 15, soporte: 10, moneda: "Soles", precioEstandar: 100 },
     Mensual: { venta: 25, soporte: 10, moneda: "Soles", precioEstandar: 170 },
   },
-  "Aimlock": {
+  Aimlock: {
     Anual: { venta: 25, soporte: 15, moneda: "Soles", precioEstandar: 180 },
   },
   "Aimbot Color": {
@@ -101,11 +106,12 @@ const exchangeRatesFijas = {
   CLP: 1 / 270,
   COP: 1 / 5000,
   BOB: 1 / 3.6,
+  // ARS eliminado — es siempre dinámica
 };
 
 let exchangeRatesDinamicas = {
   USD: 3.37,
-  ARS: 1 / 600, // valor fallback, se actualiza dinámicamente
+  ARS: 1 / 1200, // fallback actualizado
   DOP: 0.056,
   UYU: 0.082,
   GTQ: 0.43,
@@ -114,76 +120,28 @@ let exchangeRatesDinamicas = {
 };
 
 const comisionesMetodoPago = {
-  PayPal: {
-    porcentaje: 5.4,
-    fijo: 0.3,
-    moneda: "USD",
-  },
-  Binance: {
-    porcentaje: 0.5,
-    fijo: 0,
-    moneda: "USD",
-  },
-  "Western Union": {
-    porcentaje: 3.0,
-    fijo: 2.0,
-    moneda: "USD",
-  },
-  Remitly: {
-    porcentaje: 2.5,
-    fijo: 0,
-    moneda: "USD",
-  },
-  CashApp: {
-    porcentaje: 5.4,
-    fijo: 0.3,
-    moneda: "USD",
-  },
-  "CashApp Business": {
-    porcentaje: 2.75,
-    fijo: 0,
-    moneda: "USD",
-  },
-  "Prex Uruguay": {
-    porcentaje: 0,
-    fijo: 0,
-    moneda: "UYU",
-  },
-  "Banrural Guatemala": {
-    porcentaje: 0,
-    fijo: 0,
-    moneda: "GTQ",
-  },
-  "Banco Pichincha": {
-    porcentaje: 0,
-    fijo: 0,
-    moneda: "USD",
-  },
-  "Bizum España": {
-    porcentaje: 0,
-    fijo: 0,
-    moneda: "EUR",
-  },
-  "Yape/Plin": {
-    porcentaje: 0,
-    fijo: 0,
-    moneda: "PEN",
-  },
+  PayPal: { porcentaje: 5.4, fijo: 0.3, moneda: "USD" },
+  Binance: { porcentaje: 0.5, fijo: 0, moneda: "USD" },
+  "Western Union": { porcentaje: 3.0, fijo: 2.0, moneda: "USD" },
+  Remitly: { porcentaje: 2.5, fijo: 0, moneda: "USD" },
+  CashApp: { porcentaje: 5.4, fijo: 0.3, moneda: "USD" },
+  "CashApp Business": { porcentaje: 2.75, fijo: 0, moneda: "USD" },
+  "Prex Uruguay": { porcentaje: 0, fijo: 0, moneda: "UYU" },
+  "Banrural Guatemala": { porcentaje: 0, fijo: 0, moneda: "GTQ" },
+  "Banco Pichincha": { porcentaje: 0, fijo: 0, moneda: "USD" },
+  "Bizum España": { porcentaje: 0, fijo: 0, moneda: "EUR" },
+  "Yape/Plin": { porcentaje: 0, fijo: 0, moneda: "PEN" },
   "BCP Soles": { porcentaje: 0, fijo: 0, moneda: "PEN" },
   "Interbank Soles": { porcentaje: 0, fijo: 0, moneda: "PEN" },
   "Interbank Dolares": { porcentaje: 0, fijo: 0, moneda: "USD" },
   "Scotiabank Soles": { porcentaje: 0, fijo: 0, moneda: "PEN" },
   "BBVA Soles": { porcentaje: 0, fijo: 0, moneda: "PEN" },
-  Zelle: {
-    porcentaje: 5.4,
-    fijo: 0.3,
-    moneda: "USD",
-  },
+  Zelle: { porcentaje: 5.4, fijo: 0.3, moneda: "USD" },
   Nequi: { porcentaje: 0, fijo: 0, moneda: "COP" },
   "BCP Bolivia": { porcentaje: 0, fijo: 0, moneda: "BOB" },
   "Spin Oxxo": { porcentaje: 0, fijo: 0, moneda: "MXN" },
   "Clabe Nubank": { porcentaje: 0, fijo: 0, moneda: "MXN" },
-  "CBU Mercado Pago": { porcentaje: 0, fijo: 0, moneda: "ARS" },
+  "CBU Mercado Pago Argentina": { porcentaje: 0, fijo: 0, moneda: "ARS" }, // renombrado
   "Banco Guayaquil": { porcentaje: 0, fijo: 0, moneda: "USD" },
   "Banco Estado": { porcentaje: 0, fijo: 0, moneda: "CLP" },
   BanReserva: { porcentaje: 0, fijo: 0, moneda: "DOP" },
@@ -192,10 +150,9 @@ const comisionesMetodoPago = {
 
 async function actualizarTasasDeCambio() {
   try {
-    const API_KEY =
-      process.env.EXCHANGE_RATE_API_KEY || "f4ab0c0ecc7a54a52cced91e";
+    const API_KEY = process.env.EXCHANGE_RATE_API_KEY || "f4ab0c0ecc7a54a52cced91e";
     const response = await axios.get(
-      `https://v6.exchangerate-api.com/v6/${API_KEY}/latest/PEN`,
+      `https://v6.exchangerate-api.com/v6/${API_KEY}/latest/PEN`
     );
 
     if (response.data && response.data.result === "success") {
@@ -208,17 +165,12 @@ async function actualizarTasasDeCambio() {
       exchangeRatesDinamicas["BRL"] = 1 / rates.BRL;
       exchangeRatesDinamicas["EUR"] = 1 / rates.EUR;
 
-      console.log(
-        "✅ Tasas de cambio actualizadas:",
-        new Date().toLocaleString(),
-      );
+      console.log("✅ Tasas de cambio actualizadas:", new Date().toLocaleString());
       console.log("💵 USD a PEN:", exchangeRatesDinamicas["USD"].toFixed(4));
       console.log("💵 ARS a PEN:", exchangeRatesDinamicas["ARS"].toFixed(6));
       return true;
     } else {
-      console.warn(
-        "⚠️ No se pudieron actualizar tasas de cambio, usando fallback",
-      );
+      console.warn("⚠️ No se pudieron actualizar tasas de cambio, usando fallback");
       return false;
     }
   } catch (error) {
@@ -230,24 +182,21 @@ async function actualizarTasasDeCambio() {
 
 function convertToSoles(cantidad, moneda) {
   if (moneda === "ARS") {
-    const comisionFija = 2000;
-    const cantidadNeta = cantidad - comisionFija;
-    const tasaDinamica = exchangeRatesDinamicas["ARS"];
-    return cantidadNeta * tasaDinamica;
+    if (cantidad <= 2000) {
+      console.warn(`⚠️ Pago en ARS (${cantidad}) no cubre la comisión fija de 2000 pesos.`);
+      return 0;
+    }
+    const cantidadNeta = cantidad - 2000;
+    return cantidadNeta * exchangeRatesDinamicas["ARS"];
   }
 
-  if (
-    exchangeRatesFijas[moneda] !== undefined &&
-    exchangeRatesFijas[moneda] !== null
-  ) {
+  if (exchangeRatesFijas[moneda] !== undefined && exchangeRatesFijas[moneda] !== null) {
     const tasaFija = exchangeRatesFijas[moneda];
-
     if (moneda === "COP") {
       const cantidadUSD = cantidad * tasaFija;
       const usdToPen = exchangeRatesDinamicas["USD"] || 3.37;
       return cantidadUSD * usdToPen;
     }
-
     return cantidad * tasaFija;
   }
 
@@ -255,9 +204,6 @@ function convertToSoles(cantidad, moneda) {
   return cantidad * tasa;
 }
 
-// Reemplaza al antiguo objeto fijo `comisionesFijasPorMoneda`.
-// Calcula la comisión fija (en soles) en el momento de la venta,
-// usando siempre la tasa de cambio dinámica más reciente.
 function obtenerComisionFijaPorMoneda(moneda) {
   if (moneda === "ARS") {
     return 2000 * exchangeRatesDinamicas["ARS"];
@@ -276,17 +222,24 @@ function calcularMontoNeto(montoBruto, metodoPago, monedaPago) {
   const montoNeto = montoBruto - comisionTotal;
 
   return {
-    montoBruto: montoBruto,
-    comisionPorcentaje: comisionPorcentaje,
+    montoBruto,
+    comisionPorcentaje,
     comisionFija: comision.fijo,
-    comisionTotal: comisionTotal,
-    montoNeto: montoNeto,
+    comisionTotal,
+    montoNeto,
     monedaComision: comision.moneda,
   };
 }
 
-function calcularAjusteAutomatico(montoNetoSoles, precioEstandar) {
-  const diferencia = montoNetoSoles - precioEstandar;
+function calcularAjusteAutomatico(montoNetoSoles, precioEstandar, moneda = null) {
+  let montoNetoAjustado = montoNetoSoles;
+
+  if (moneda === "ARS") {
+    const comisionFijaSoles = obtenerComisionFijaPorMoneda("ARS");
+    montoNetoAjustado = montoNetoSoles - comisionFijaSoles;
+  }
+
+  const diferencia = montoNetoAjustado - precioEstandar;
   const diferenciaPorcentaje = ((diferencia / precioEstandar) * 100).toFixed(2);
 
   if (Math.abs(diferencia) <= precioEstandar * 0.02) {
@@ -329,31 +282,13 @@ function getCommission(producto, periodo) {
 }
 
 function obtenerTasaCambio(moneda) {
-  if (
-    exchangeRatesFijas[moneda] !== undefined &&
-    exchangeRatesFijas[moneda] !== null
-  ) {
-    return {
-      valor: exchangeRatesFijas[moneda],
-      tipo: "fija",
-      moneda: moneda,
-    };
+  if (exchangeRatesFijas[moneda] !== undefined && exchangeRatesFijas[moneda] !== null) {
+    return { valor: exchangeRatesFijas[moneda], tipo: "fija", moneda };
   }
-
-  return {
-    valor: exchangeRatesDinamicas[moneda] || 1,
-    tipo: "dinámica",
-    moneda: moneda,
-  };
+  return { valor: exchangeRatesDinamicas[moneda] || 1, tipo: "dinámica", moneda };
 }
 
-function calcularUpgrade(
-  precioOriginal,
-  precioNuevo,
-  montoCobrado,
-  moneda,
-  metodoPago,
-) {
+function calcularUpgrade(precioOriginal, precioNuevo, montoCobrado, moneda, metodoPago) {
   if (precioNuevo <= precioOriginal) {
     return {
       esValido: false,
@@ -364,10 +299,8 @@ function calcularUpgrade(
   const diferenciaEsperada = precioNuevo - precioOriginal;
   const detallesPago = calcularMontoNeto(montoCobrado, metodoPago, moneda);
   const montoNetoSoles = convertToSoles(detallesPago.montoNeto, moneda);
-  const comisionMetodoPagoSoles = convertToSoles(
-    detallesPago.comisionTotal,
-    moneda,
-  );
+  const comisionFijaSoles = obtenerComisionFijaPorMoneda(moneda);
+  const comisionMetodoPagoSoles = convertToSoles(detallesPago.comisionTotal, moneda) + comisionFijaSoles;
   const tolerancia = 0.1;
 
   if (montoNetoSoles < diferenciaEsperada * (1 - tolerancia)) {
@@ -381,13 +314,13 @@ function calcularUpgrade(
 
   return {
     esValido: true,
-    diferenciaEsperada: diferenciaEsperada,
+    diferenciaEsperada,
     montoBruto: montoCobrado,
     montoNeto: detallesPago.montoNeto,
-    montoNetoSoles: montoNetoSoles,
+    montoNetoSoles,
     comisionMetodoPago: detallesPago.comisionTotal,
-    comisionMetodoPagoSoles: comisionMetodoPagoSoles,
-    comisionVendedor: comisionVendedor,
+    comisionMetodoPagoSoles,
+    comisionVendedor,
     comisionSoporte: 0,
     porcentajeComision: 30,
   };

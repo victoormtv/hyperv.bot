@@ -351,6 +351,39 @@ module.exports = [
   },
 
   // ========================================
+  // MENU BASIC
+  // ========================================
+  {
+    id: ids.embeds.MENU_BASIC,
+    messageId: "1538692448576872473",
+    embed: new EmbedBuilder()
+      .setTitle("> Menu Basic")
+      .setDescription(
+        "**FUNCIONES:**\n" +
+        "- **Aimbot Memory**\n> Neck/Legit\n" +
+        "- **Visuals - Chams**\n> 3D/Glow/Solido/RGB\n" +
+        "- **Fake Lag**\n> Flush/Ghost/Freeze/FreezeTimer/Lines\n" +
+        "- **Stream Spoof**\n- **All mices compatible**\n- **Windows 8/10/11**\n- **HVCI ON & OFF**\n\n" +
+        "**PRECIOS:**\n" +
+        "<:garantia:1321973733971333150> Semanal: $ 15.00 | S/. 50.00\n" +
+        "<:garantia:1321973733971333150> Mensual: $ 30.00 | S/. 100.00\n" +
+        "<:garantia:1321973733971333150> Trimestral: $ 40.00 | S/. 130.00\n" +
+        "<:garantia:1321973733971333150> Anual: $ 50.00 | S/. 170.00\n\n" +
+        liston,
+      )
+      .setColor(config.embedColor)
+      .setFooter(config.embedFooter)
+      .setImage("https://i.ibb.co/HDGrcZvR/Gemini-Generated-Image-mso2tnmso2tnmso2-jpg.jpg"),
+    extraEmbeds: [purchaseEmbed],
+    components: [
+      createTicketAndStoreRow(
+        "ticket_menu_basic",
+        "https://hyperv.online/products/menu-basic",
+      ),
+    ],
+  },
+
+  // ========================================
   // CHAMS PC
   // ========================================
   {
@@ -1061,7 +1094,7 @@ module.exports = [
         "**MÉTODOS DE MÉXICO** <:flagmexico_1f1f21f1fd:1244856813053284437>\n\n" +
         "**Para transferencias:**\n- **Clabe NU (NUBANK): **638180010145897670\n- **Datos:** Karelys Ferrer\n- **Nota:** Si no encuentran Nu en el sistema, puedes decir que se deposita con PESPay.\n\n" +
         "**Para depositos:**\n- **Spin Oxxo: **5101 2505 6374 3542 \n- **Datos:** Karelys Ferrer\n- **Tipo de cambio (México): **1 Sol = 6,20 MXN\n\n" +
-        "**CBU Argentina** <:flagargentina:1232045285241262251>\n- **Cuenta:** 0000177500090968404000\n- **Alias:** 47800448.ASTROPAY\n- **Nombre:** Diego Sirpa\n- **Tipo de cambio:** Google + 2000 Pesos Argentinos de comision\n\n" +
+        "**CBU Argentina** <:flagargentina:1232045285241262251>\n- **Cuenta:** 0000177500090968404000\n- **Alias:** diegozn47\n- **Nombre:** Diego Sirpa\n- **Tipo de cambio:** Google + 2000 Pesos Argentinos de comision\n\n" +
         "**Banrural monetaria - Guatemala <a:guatemala:1449442439277580369>**\n- **Cuenta:**3139173628\n- **Datos:** Kimberly Garcia\n\n" +
         "**Banco Pichincha** <:ecuador:1232045296998023260>\n- **Cuenta de ahorro transaccional:** 2214588834\n- **Datos:** Jostin Stiven Martinez Parrales\n" +
         "**Cuenta República Dominicana** <a:rddd:1449442346939973783>\n- **Nombre:**Jenny Joselin Rodríguez Castillo\n- **Numero de Cuenta:** 9607499842\n- **Cédula:** 0540131783-8\n\n" +
@@ -1112,6 +1145,7 @@ module.exports = [
         "<:zeusaa:1433927475976474624> **Panel Full**\nSoporte: S/10\nComisiones por ventas:\n- Semanal: S/10 | 2.65$\n- Mensual: S/20 | 5.30$\n- Trimestral: S/30 | 8$\n- Anual: S/40 | 10.50$\n\n" +
         "<:zeusaa:1433927475976474624> **Panel Basic**\nSoporte: S/5\nComisiones por ventas:\n- Semanal: S/8 | 2.10$\n- Mensual: S/15 | 4$\n- Trimestral: S/20 | 5.30$\n- Anual: S/30 | 8$\n\n" +
         "<:zeusaa:1433927475976474624> **Panel Only Aimbot**\nSoporte: S/5\nComisiones por ventas:\n- Semanal: S/5 | 2.10$\n- Mensual: S/10 | 4$\n- Trimestral: S/15 | 5.30$\n- Anual: S/25 | 8$\n\n" +
+        "<:zeusaa:1433927475976474624> **Menu Basic**\nSoporte: S/10\nComisiones por ventas:\n- Semanal: S/9 | 2.60$\n- Mensual: S/18 | 5.40$\n- Trimestral: S/25 | 7.40$\n- Anual: S/35 | 10$\n\n" +
         "<:zeusaa:1433927475976474624> **Bypass APK**\nSoporte: S/5\nComisiones por ventas:\n- Semanal: S/10 | 3$\n- Mensual: S/20 | 5.9$\n\n" +
         "<:zeusaa:1433927475976474624> **Bypass UID**\nSoporte: S/5\nComisiones por ventas:\n- Semanal: S/10 | 3$\n- 14 días: S/15 | 4.5$\n- Mensual: S/20 | 5.9$\n- Trimestral: S/30 | 8.9$\n- Anual: S/40 | 11.8$\n\n" +
         "<:zeusaa:1433927475976474624> **Menu Chams ESP**\nSoporte: S/5\nComisiones por ventas:\n- Semanal: S/5 | 1.5$\n- Mensual: S/15 | 4.5$\n- Trimestral: S/20 | 5.9$\n- Anual: S/30 | 8.9$\n\n" +
