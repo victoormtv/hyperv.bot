@@ -91,6 +91,12 @@ module.exports = {
     methods: [{ name: "- Prex", available: true }],
   },
 
+  espana: {
+    title: "> Métodos de Pago - España <a:spain:1117992165470122064>",
+    description: "Contamos con los siguientes métodos de pago disponibles en España:",
+    methods: [{ name: "- Bizum", available: true }],
+  },
+
   private: {
     yape: {
       title: "Datos de Yape",
@@ -291,6 +297,14 @@ module.exports = {
       thumbnail:
         "https://i.ibb.co/XZ6Q4Pm4/380ee9d1-9cc1-418d-a00c-043194471eed.webp",
       instructions: "Envía el comprobante después del depósito",
+    },
+
+    bizum: {
+      title: "Datos Bizum España",
+      phone: "611557148",
+      holder: "Jeuri Hernández",
+      thumbnail: "https://i.ibb.co/XZ6Q4Pm4/380ee9d1-9cc1-418d-a00c-043194471eed.webp",
+      instructions: "Envía el comprobante después de realizar el pago",
     },
   },
 };
