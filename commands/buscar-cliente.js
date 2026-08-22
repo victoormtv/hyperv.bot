@@ -63,7 +63,7 @@ module.exports = {
             });
         }
 
-        await interaction.deferReply({ ephemeral: true });
+        await interaction.deferReply({ ephemeral: false });
 
         const busqueda = interaction.options.getString("busqueda").trim();
         const sales = loadSales();
