@@ -10,11 +10,10 @@ const {
   obtenerComisionFijaPorMoneda,
   calcularMontoNeto,
   calcularAjusteAutomatico,
+  commissionRules,
 } = require("../data/commissionRules");
 
-
 const salesFilePath = path.join(__dirname, "../data/sales.json");
-
 
 const metodosPagoConMonedaFija = {
   "Yape/Plin": "PEN",
@@ -38,167 +37,73 @@ const metodosPagoConMonedaFija = {
   BanReserva: "DOP",
 };
 
+// Productos y períodos sacados dinámicamente de commissionRules
+const TODOS_LOS_PRODUCTOS = Object.keys(commissionRules);
+const TODOS_LOS_PERIODOS = [
+  "1 dia", "Semanal", "14 dias", "15 dias", "Mensual",
+  "60 dias", "Trimestral", "Anual", "Por Temporada", "Permanente",
+];
 
 function loadSales() {
   if (!fs.existsSync(salesFilePath)) {
     fs.writeFileSync(salesFilePath, JSON.stringify([], null, 2));
     return [];
   }
-  const data = fs.readFileSync(salesFilePath, "utf-8");
-  return JSON.parse(data);
+  return JSON.parse(fs.readFileSync(salesFilePath, "utf-8"));
 }
-
 
 async function generateKeyAuthLicense(producto, periodo) {
   try {
-    const productosConKeyAuth = [
-      "Panel Full",
-      "Panel Secure",
-      "Panel Only Aimbot",
-      "Menu Chams",
-    ];
+    const productosConKeyAuth = ["Panel Full", "Panel Secure", "Panel Only Aimbot", "Menu Chams"];
     if (!productosConKeyAuth.includes(producto)) {
-      return {
-        success: true,
-        key: null,
-        message: "Producto sin sistema de licencias",
-      };
+      return { success: true, key: null, message: "Producto sin sistema de licencias" };
     }
-
 
     const sellerKey = process.env.KEYAUTH_SELLER_KEY;
-    if (!sellerKey) {
-      return {
-        success: false,
-        error: "No se encontró KEYAUTH_SELLER_KEY en .env",
-      };
-    }
-
+    if (!sellerKey) return { success: false, error: "No se encontró KEYAUTH_SELLER_KEY en .env" };
 
     const expiryMap = {
-      "1 dia": 1,
-      Semanal: 7,
-      "14 dias": 14,
-      "15 dias": 15,
-      Mensual: 30,
-      "60 dias": 60,
-      Trimestral: 90,
-      Anual: 365,
-      "Por Temporada": 90,
-      Permanente: 3650,
+      "1 dia": 1, Semanal: 7, "14 dias": 14, "15 dias": 15,
+      Mensual: 30, "60 dias": 60, Trimestral: 90, Anual: 365,
+      "Por Temporada": 90, Permanente: 3650,
     };
     const expiry = expiryMap[periodo] || 30;
 
-
     const levelMap = {
-      "Panel Full": 4,
-      "Panel Secure": 1,
-      "Panel Only Aimbot": 3,
-      "Menu Chams": 2,
-      "Bypass": 5
+      "Panel Full": 4, "Panel Secure": 1, "Panel Only Aimbot": 3, "Menu Chams": 2, Bypass: 5,
     };
     const level = levelMap[producto] || 1;
-
 
     const url = `https://teamfirmeza.com/api/seller.php?sellerkey=${sellerKey}&type=add&expiry=${expiry}&mask=XXXXXX-XXXXXX-XXXXXX-XXXXXX-XXXXXX-XXXXXX&level=${level}&amount=1&owner=&character=2&note=${encodeURIComponent(producto + " - " + periodo)}&format=json`;
     const response = await axios.get(url);
 
-
-    if (response.data.success) {
-      return {
-        success: true,
-        key: response.data.key,
-        message: response.data.message,
-      };
-    } else {
-      return {
-        success: false,
-        error: response.data.message || "Error desconocido al generar licencia",
-      };
-    }
+    if (response.data.success) return { success: true, key: response.data.key };
+    return { success: false, error: response.data.message || "Error desconocido al generar licencia" };
   } catch (error) {
     console.error("Error generando licencia KeyAuth:", error);
-    return {
-      success: false,
-      error: error.message,
-    };
+    return { success: false, error: error.message };
   }
 }
-
 
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("venta")
     .setDescription("Registrar una venta")
     .addStringOption((option) =>
-      option
-        .setName("tipo")
-        .setDescription("Origen de la venta")
-        .setRequired(true)
-        .addChoices(
-          { name: "Discord", value: "discord" },
-          { name: "Ads", value: "ads" },
-        ),
+      option.setName("tipo").setDescription("Origen de la venta").setRequired(true)
+        .addChoices({ name: "Discord", value: "discord" }, { name: "Ads", value: "ads" }),
     )
     .addStringOption((option) =>
-      option
-        .setName("producto")
-        .setDescription("Producto vendido")
-        .setRequired(true)
-        .addChoices(
-          { name: "Panel Full", value: "Panel Full" },
-          { name: "Panel Secure", value: "Panel Secure" },
-          { name: "Panel Only Aimbot", value: "Panel Only Aimbot" },
-          { name: "Bypass APK", value: "Bypass APK" },
-          { name: "Bypass ID", value: "Bypass ID" },
-          { name: "Bypass Global", value: "Bypass Global" },
-          { name: "Menu Chams", value: "Menu Chams" },
-          { name: "Panel iOS", value: "Panel iOS" },
-          { name: "Gbox", value: "Gbox" },
-          { name: "Aimbot Body iOS", value: "Aimbot Body iOS" },
-          { name: "Panel Android", value: "Panel Android" },
-          { name: "Panel CSGO", value: "Panel CSGO" },
-          { name: "Panel COD iOS", value: "Panel COD iOS" },
-          { name: "Regedit", value: "Regedit" },
-          { name: "Aimlock", value: "Aimlock" },
-          { name: "Aimbot Color", value: "Aimbot Color" },
-          { name: "Spoofer", value: "Spoofer" },
-          { name: "Panel Warzone", value: "Panel Warzone" },
-          { name: "Discord Tools", value: "Discord Tools" },
-          { name: "Menu Chams BloodStrike", value: "Menu Chams BloodStrike" },
-          { name: "Aimbot Body Android", value: "Aimbot Body Android" },
-          { name: "Aimbot Proxy", value: "Aimbot Proxy" },
-        ),
+      option.setName("producto").setDescription("Producto vendido").setRequired(true).setAutocomplete(true),
     )
     .addStringOption((option) =>
-      option
-        .setName("periodo")
-        .setDescription("Duración del producto")
-        .setRequired(true)
-        .addChoices(
-          { name: "1 dia", value: "1 dia" },
-          { name: "Semanal", value: "Semanal" },
-          { name: "14 dias", value: "14 dias" },
-          { name: "15 dias", value: "15 dias" },
-          { name: "Mensual", value: "Mensual" },
-          { name: "60 dias", value: "60 dias" },
-          { name: "Trimestral", value: "Trimestral" },
-          { name: "Anual", value: "Anual" },
-          { name: "Por Temporada", value: "Por Temporada" },
-          { name: "Permanente", value: "Permanente" },
-        ),
+      option.setName("periodo").setDescription("Duración del producto").setRequired(true).setAutocomplete(true),
     )
     .addBooleanOption((option) =>
-      option
-        .setName("requiere_soporte")
-        .setDescription("¿Esta venta requiere soporte? (Default: Sí)")
-        .setRequired(true),
+      option.setName("requiere_soporte").setDescription("¿Esta venta requiere soporte? (Default: Sí)").setRequired(true),
     )
     .addStringOption((option) =>
-      option
-        .setName("metodopago")
-        .setDescription("Método de pago utilizado")
-        .setRequired(true)
+      option.setName("metodopago").setDescription("Método de pago utilizado").setRequired(true)
         .addChoices(
           { name: "Yape/Plin (PEN)", value: "Yape/Plin" },
           { name: "BCP Soles (PEN)", value: "BCP Soles" },
@@ -227,57 +132,19 @@ module.exports = {
         ),
     )
     .addNumberOption((option) =>
-      option
-        .setName("precio_cobrado")
-        .setDescription("Precio cobrado al cliente")
-        .setRequired(true)
-        .setMinValue(0),
+      option.setName("precio_cobrado").setDescription("Precio cobrado al cliente").setRequired(true).setMinValue(0),
     )
     .addStringOption((option) =>
-      option
-        .setName("whatsapp")
-        .setDescription("Número de WhatsApp del cliente")
-        .setRequired(true),
+      option.setName("whatsapp").setDescription("Número de WhatsApp del cliente").setRequired(true),
     )
     .addAttachmentOption((option) =>
-      option
-        .setName("comprobante")
-        .setDescription("Imagen del comprobante de pago")
-        .setRequired(true),
+      option.setName("comprobante").setDescription("Imagen del comprobante de pago").setRequired(true),
     )
     .addStringOption((option) =>
-      option
-        .setName("producto_adicional")
-        .setDescription("Producto adicional en combo (opcional)")
-        .setRequired(false)
-        .addChoices(
-          { name: "Panel Full", value: "Panel Full" },
-          { name: "Panel Secure", value: "Panel Secure" },
-          { name: "Panel Only Aimbot", value: "Panel Only Aimbot" },
-          { name: "Bypass APK", value: "Bypass APK" },
-          { name: "Bypass ID", value: "Bypass ID" },
-          { name: "Bypass Global", value: "Bypass Global" },
-          { name: "Menu Chams", value: "Menu Chams" },
-          { name: "Panel iOS", value: "Panel iOS" },
-          { name: "Gbox", value: "Gbox" },
-          { name: "Aimbot Body iOS", value: "Aimbot Body iOS" },
-          { name: "Panel Android", value: "Panel Android" },
-          { name: "Regedit", value: "Regedit" },
-          { name: "Aimlock", value: "Aimlock" },
-          { name: "Aimbot Color", value: "Aimbot Color" },
-          { name: "Spoofer", value: "Spoofer" },
-          { name: "Panel Warzone", value: "Panel Warzone" },
-          { name: "Discord Tools", value: "Discord Tools" },
-          { name: "Menu Chams BloodStrike", value: "Menu Chams BloodStrike" },
-          { name: "Aimbot Body Android", value: "Aimbot Body Android" },
-          { name: "Aimbot Proxy", value: "Aimbot Proxy" },
-        ),
+      option.setName("producto_adicional").setDescription("Producto adicional en combo (opcional)").setRequired(false).setAutocomplete(true),
     )
     .addStringOption((option) =>
-      option
-        .setName("moneda")
-        .setDescription("Moneda del pago (solo para métodos multimoneda)")
-        .setRequired(false)
+      option.setName("moneda").setDescription("Moneda del pago (solo para métodos multimoneda)").setRequired(false)
         .addChoices(
           { name: "Soles (PEN)", value: "PEN" },
           { name: "Dólares (USD)", value: "USD" },
@@ -293,29 +160,41 @@ module.exports = {
         ),
     )
     .addStringOption((option) =>
-      option
-        .setName("periodo_adicional")
-        .setDescription("Período del producto adicional (opcional)")
-        .setRequired(false)
-        .addChoices(
-          { name: "1 dia", value: "1 dia" },
-          { name: "Semanal", value: "Semanal" },
-          { name: "14 dias", value: "14 dias" },
-          { name: "15 dias", value: "15 dias" },
-          { name: "Mensual", value: "Mensual" },
-          { name: "60 dias", value: "60 dias" },
-          { name: "Trimestral", value: "Trimestral" },
-          { name: "Anual", value: "Anual" },
-          { name: "Por Temporada", value: "Por Temporada" },
-        ),
+      option.setName("periodo_adicional").setDescription("Período del producto adicional (opcional)").setRequired(false).setAutocomplete(true),
     )
     .addStringOption((option) =>
-      option
-        .setName("nota")
-        .setDescription("Nota adicional (opcional)")
-        .setRequired(false),
+      option.setName("nota").setDescription("Nota adicional (opcional)").setRequired(false),
     ),
 
+  async autocomplete(interaction) {
+    const focused = interaction.options.getFocused(true);
+    const value = focused.value.toLowerCase();
+
+    if (focused.name === "producto" || focused.name === "producto_adicional") {
+      const filtrados = TODOS_LOS_PRODUCTOS
+        .filter((p) => p.toLowerCase().includes(value))
+        .slice(0, 25);
+      return await interaction.respond(filtrados.map((p) => ({ name: p, value: p })));
+    }
+
+    if (focused.name === "periodo" || focused.name === "periodo_adicional") {
+      // Si ya eligió producto, mostrar solo períodos válidos para ese producto
+      const productoField = focused.name === "periodo" ? "producto" : "producto_adicional";
+      const productoElegido = interaction.options.getString(productoField);
+
+      let periodosDisponibles;
+      if (productoElegido && commissionRules[productoElegido]) {
+        periodosDisponibles = Object.keys(commissionRules[productoElegido]);
+      } else {
+        periodosDisponibles = TODOS_LOS_PERIODOS;
+      }
+
+      const filtrados = periodosDisponibles
+        .filter((p) => p.toLowerCase().includes(value))
+        .slice(0, 25);
+      return await interaction.respond(filtrados.map((p) => ({ name: p, value: p })));
+    }
+  },
 
   async execute(interaction) {
     const validChannels = [channels.LOGIN_VENTAS];
@@ -327,10 +206,8 @@ module.exports = {
     }
     await interaction.deferReply();
 
-
     const metodoPago = interaction.options.getString("metodopago");
     let monedaPago = interaction.options.getString("moneda");
-
 
     if (metodosPagoConMonedaFija[metodoPago]) {
       monedaPago = metodosPagoConMonedaFija[metodoPago];
@@ -343,39 +220,28 @@ module.exports = {
       }
     }
 
-
     const producto = interaction.options.getString("producto");
     const periodo = interaction.options.getString("periodo");
-    const productoAdicional =
-      interaction.options.getString("producto_adicional");
+    const productoAdicional = interaction.options.getString("producto_adicional");
     const periodoAdicional = interaction.options.getString("periodo_adicional");
     const imagen = interaction.options.getAttachment("comprobante");
-    const whatsapp =
-      interaction.options.getString("whatsapp") || "No proporcionado";
+    const whatsapp = interaction.options.getString("whatsapp") || "No proporcionado";
     const precioCobrado = interaction.options.getNumber("precio_cobrado");
     const nota = interaction.options.getString("nota") || "";
-    const requiereSoporte =
-      interaction.options.getBoolean("requiere_soporte") ?? true;
+    const requiereSoporte = interaction.options.getBoolean("requiere_soporte") ?? true;
     const tipoVenta = interaction.options.getString("tipo");
 
-
-    if (
-      (productoAdicional && !periodoAdicional) ||
-      (!productoAdicional && periodoAdicional)
-    ) {
+    if ((productoAdicional && !periodoAdicional) || (!productoAdicional && periodoAdicional)) {
       return await interaction.editReply({
-        content:
-          "Si agregas un producto adicional, debes especificar también su período.",
+        content: "Si agregas un producto adicional, debes especificar también su período.",
         ephemeral: true,
       });
     }
-
 
     const comisiones = getCommission(producto, periodo);
     let precioEstandarTotal = comisiones.precioEstandar;
     let comisionVentaBase = comisiones.venta;
     let comisionSoporteBase = comisiones.soporte;
-
 
     if (precioEstandarTotal === 0) {
       return await interaction.editReply({
@@ -384,13 +250,9 @@ module.exports = {
       });
     }
 
-
     let comisionesAdicionales = null;
     if (productoAdicional && periodoAdicional) {
-      comisionesAdicionales = getCommission(
-        productoAdicional,
-        periodoAdicional,
-      );
+      comisionesAdicionales = getCommission(productoAdicional, periodoAdicional);
       if (comisionesAdicionales.precioEstandar === 0) {
         return await interaction.editReply({
           content: `No existe precio estándar para ${productoAdicional} - ${periodoAdicional}. Verifica la configuración.`,
@@ -402,33 +264,18 @@ module.exports = {
       comisionSoporteBase += comisionesAdicionales.soporte;
     }
 
-
-    if (!requiereSoporte) {
-      comisionSoporteBase = 0;
-    }
+    if (!requiereSoporte) comisionSoporteBase = 0;
 
     const montoBrutoCliente = precioCobrado;
-    const detallesPago = calcularMontoNeto(
-      montoBrutoCliente,
-      metodoPago,
-      monedaPago,
-    );
+    const detallesPago = calcularMontoNeto(montoBrutoCliente, metodoPago, monedaPago);
     const montoNetoSoles = convertToSoles(detallesPago.montoNeto, monedaPago);
-    const comisionMetodoPagoSoles = convertToSoles(
-      detallesPago.comisionTotal,
-      monedaPago,
-    );
-    const ajuste = calcularAjusteAutomatico(
-      montoNetoSoles,
-      precioEstandarTotal,
-    );
+    const comisionMetodoPagoSoles = convertToSoles(detallesPago.comisionTotal, monedaPago);
+    const ajuste = calcularAjusteAutomatico(montoNetoSoles, precioEstandarTotal);
 
     let comisionVentaFinal = comisionVentaBase;
     let comisionSoporteFinal = comisionSoporteBase;
 
-    if (tipoVenta === "ads") {
-      comisionVentaFinal = comisionVentaFinal * 0.85;
-    }
+    if (tipoVenta === "ads") comisionVentaFinal = comisionVentaFinal * 0.85;
 
     if (ajuste.tipo === "descuento") {
       const factorDescuento = montoNetoSoles / precioEstandarTotal;
@@ -438,9 +285,7 @@ module.exports = {
     }
 
     let comisionFijaAplicada = obtenerComisionFijaPorMoneda(monedaPago);
-    if (comisionFijaAplicada > 0) {
-      comisionVentaFinal += comisionFijaAplicada;
-    }
+    if (comisionFijaAplicada > 0) comisionVentaFinal += comisionFijaAplicada;
 
     const licencias = [];
     const licenseResult1 = await generateKeyAuthLicense(producto, periodo);
@@ -454,16 +299,9 @@ module.exports = {
     }
 
     if (productoAdicional && periodoAdicional) {
-      const licenseResult2 = await generateKeyAuthLicense(
-        productoAdicional,
-        periodoAdicional,
-      );
+      const licenseResult2 = await generateKeyAuthLicense(productoAdicional, periodoAdicional);
       if (licenseResult2.key) {
-        licencias.push({
-          producto: productoAdicional,
-          periodo: periodoAdicional,
-          key: licenseResult2.key,
-        });
+        licencias.push({ producto: productoAdicional, periodo: periodoAdicional, key: licenseResult2.key });
       } else if (licenseResult2.error) {
         return await interaction.editReply({
           content: `Error al generar licencia de ${productoAdicional}: ${licenseResult2.error}`,
@@ -474,16 +312,12 @@ module.exports = {
 
     const sales = loadSales();
     const numeroVenta = sales.length + 1;
-    const productosTexto = productoAdicional
-      ? `${producto} + ${productoAdicional}`
-      : producto;
-    const periodosTexto = periodoAdicional
-      ? `${periodo} + ${periodoAdicional}`
-      : periodo;
+    const productosTexto = productoAdicional ? `${producto} + ${productoAdicional}` : producto;
+    const periodosTexto = periodoAdicional ? `${periodo} + ${periodoAdicional}` : periodo;
 
     const ventaData = {
-      numeroVenta: numeroVenta,
-      tipoVenta: tipoVenta,
+      numeroVenta,
+      tipoVenta,
       descuentoAds: tipoVenta === "ads" ? 15 : 0,
       vendedor: interaction.user.tag,
       vendedorId: interaction.user.id,
@@ -505,13 +339,13 @@ module.exports = {
       tipoAjuste: ajuste.tipo,
       diferenciaPorcentaje: ajuste.diferenciaPorcentaje,
       comisionFija: comisionFijaAplicada,
-      nota: nota,
-      comisionVentaBase: comisionVentaBase,
-      comisionSoporteBase: comisionSoporteBase,
+      nota,
+      comisionVentaBase,
+      comisionSoporteBase,
       comisionVenta: parseFloat(comisionVentaFinal.toFixed(2)),
       comisionSoporte: parseFloat(comisionSoporteFinal.toFixed(2)),
       monedaComision: "Soles",
-      requiereSoporte: requiereSoporte,
+      requiereSoporte,
       vendedorSoporte: requiereSoporte ? "Pendiente" : "No requerido",
       vendedorSoporteId: null,
       imagen: imagen ? imagen.url : null,
@@ -524,38 +358,18 @@ module.exports = {
       .setDescription(`**Vendedor:** <@${interaction.user.id}>`)
       .addFields(
         { name: "WhatsApp", value: whatsapp, inline: true },
-        {
-          name: "Soporte",
-          value: requiereSoporte ? "Reacciona con ✅" : "No requerido",
-          inline: true,
-        },
-        {
-          name: "Tipo",
-          value: tipoVenta === "ads" ? "📢 Ads" : "💬 Discord",
-          inline: true,
-        },
+        { name: "Soporte", value: requiereSoporte ? "Reacciona con ✅" : "No requerido", inline: true },
+        { name: "Tipo", value: tipoVenta === "ads" ? "📢 Ads" : "💬 Discord", inline: true },
         { name: "Método de Pago", value: metodoPago, inline: true },
         { name: "Producto", value: productosTexto, inline: true },
         { name: "Período", value: periodosTexto, inline: true },
-        {
-          name: "Monto",
-          value: `${precioCobrado} ${monedaPago}`,
-          inline: true,
-        },
+        { name: "Monto", value: `${precioCobrado} ${monedaPago}`, inline: true },
       );
 
-    if (nota) {
-      embed.addFields({ name: "Nota", value: nota, inline: false });
-    }
+    if (nota) embed.addFields({ name: "Nota", value: nota, inline: false });
 
-    embed
-      .setColor(config.embedColor)
-      .setFooter(config.embedFooter)
-      .setTimestamp();
-
-    if (imagen) {
-      embed.setImage(imagen.url);
-    }
+    embed.setColor(config.embedColor).setFooter(config.embedFooter).setTimestamp();
+    if (imagen) embed.setImage(imagen.url);
 
     const adminMentions = `<@&${roles.ADMIN[0]}>`;
     const mencionSoporte = requiereSoporte ? `<@&${roles.SUPPORT}>` : "";
@@ -573,14 +387,8 @@ module.exports = {
     if (requiereSoporte) {
       await reply.react("✅");
 
-      const filter = (reaction, user) => {
-        return reaction.emoji.name === "✅" && !user.bot;
-      };
-
-      const collector = reply.createReactionCollector({
-        filter,
-        dispose: true,
-      });
+      const filter = (reaction, user) => reaction.emoji.name === "✅" && !user.bot;
+      const collector = reply.createReactionCollector({ filter, dispose: true });
 
       let soporteAsignado = false;
       let collectorActivo = true;
@@ -591,7 +399,7 @@ module.exports = {
         try {
           await interaction.channel.messages.fetch(reply.id);
           return true;
-        } catch (error) {
+        } catch {
           mensajeEliminado = true;
           limpiarTodosLosTimers();
           collector.stop("message_deleted");
@@ -603,47 +411,37 @@ module.exports = {
       const mensajesRecordatorio = [];
 
       const limpiarTodosLosTimers = () => {
-        todosLosTimers.forEach((timer) => clearTimeout(timer));
+        todosLosTimers.forEach((t) => clearTimeout(t));
         todosLosTimers.length = 0;
       };
 
       const eliminarMensajesRecordatorio = () => {
         setTimeout(() => {
-          mensajesRecordatorio.forEach((msg) => {
-            msg
-              .delete()
-              .catch((err) =>
-                console.log("No se pudo eliminar el mensaje:", err),
-              );
-          });
+          mensajesRecordatorio.forEach((msg) => msg.delete().catch(() => { }));
           mensajesRecordatorio.length = 0;
         }, 10000);
       };
 
-      const recordatorio10min = setTimeout(
-        async () => {
-          if (soporteAsignado || mensajeEliminado || !collectorActivo) return;
-          if (await mensajeExiste()) {
-            const reminderEmbed = new EmbedBuilder()
-              .setDescription(
-                `⏰ **RECORDATORIO:** VENTA #${numeroVenta.toString().padStart(3, "0")} sin asignar\n\n` +
+      const recordatorio10min = setTimeout(async () => {
+        if (soporteAsignado || mensajeEliminado || !collectorActivo) return;
+        if (await mensajeExiste()) {
+          const reminderMsg = await interaction.channel.send({
+            content: `<@&${roles.SUPPORT}>`,
+            embeds: [
+              new EmbedBuilder()
+                .setDescription(
+                  `⏰ **RECORDATORIO:** VENTA #${numeroVenta.toString().padStart(3, "0")} sin asignar\n\n` +
                   `Han pasado 10 minutos y esta venta aún no tiene soporte asignado.\n` +
                   `Por favor, reacciona con ✅ para asignarte.`,
-              )
-              .setColor(config.embedColor)
-              .setTimestamp();
-
-
-            const reminderMsg = await interaction.channel.send({
-              content: `<@&${roles.SUPPORT}>`,
-              embeds: [reminderEmbed],
-              reply: { messageReference: reply.id },
-            });
-            mensajesRecordatorio.push(reminderMsg);
-          }
-        },
-        10 * 60 * 1000,
-      );
+                )
+                .setColor(config.embedColor)
+                .setTimestamp(),
+            ],
+            reply: { messageReference: reply.id },
+          });
+          mensajesRecordatorio.push(reminderMsg);
+        }
+      }, 10 * 60 * 1000);
       todosLosTimers.push(recordatorio10min);
 
       for (let i = 1; i <= 11; i++) {
@@ -652,31 +450,26 @@ module.exports = {
           if (soporteAsignado || mensajeEliminado || !collectorActivo) return;
           if (await mensajeExiste()) {
             const horasTranscurridas = Math.floor((10 + i * 60) / 60);
-            const reminderEmbed = new EmbedBuilder()
-              .setDescription(
-                `⏰ **RECORDATORIO:** VENTA #${numeroVenta.toString().padStart(3, "0")} sin asignar\n\n` +
-                  `Han pasado ${horasTranscurridas} hora(s) y esta venta aún no tiene soporte asignado.\n` +
-                  `Por favor, reacciona con ✅ para asignarte.`,
-              )
-              .setColor(config.embedColor)
-              .setTimestamp();
-
-
             const reminderMsg = await interaction.channel.send({
               content: `<@&${roles.SUPPORT}>`,
-              embeds: [reminderEmbed],
+              embeds: [
+                new EmbedBuilder()
+                  .setDescription(
+                    `⏰ **RECORDATORIO:** VENTA #${numeroVenta.toString().padStart(3, "0")} sin asignar\n\n` +
+                    `Han pasado ${horasTranscurridas} hora(s) y esta venta aún no tiene soporte asignado.\n` +
+                    `Por favor, reacciona con ✅ para asignarte.`,
+                  )
+                  .setColor(config.embedColor)
+                  .setTimestamp(),
+              ],
               reply: { messageReference: reply.id },
             });
             mensajesRecordatorio.push(reminderMsg);
-            console.log(
-              `⏰ Recordatorio de ${horasTranscurridas}h enviado para venta #${numeroVenta}`,
-            );
           }
         }, tiempoEspera);
         todosLosTimers.push(recordatorio);
       }
 
-      const timeoutDuration = 12 * 60 * 60 * 1000;
       const timeoutTimer = setTimeout(async () => {
         if (soporteAsignado || mensajeEliminado) return;
         if (await mensajeExiste()) {
@@ -685,95 +478,67 @@ module.exports = {
           limpiarTodosLosTimers();
 
           const salesUpdated = loadSales();
-          const ventaIndex = salesUpdated.findIndex(
-            (v) => v.numeroVenta === numeroVenta,
-          );
+          const ventaIndex = salesUpdated.findIndex((v) => v.numeroVenta === numeroVenta);
           if (ventaIndex !== -1) {
             salesUpdated[ventaIndex].vendedorSoporte = "Expirado (12h)";
             salesUpdated[ventaIndex].soporteBloqueado = true;
             salesUpdated[ventaIndex].fechaExpiracion = new Date().toISOString();
-            fs.writeFileSync(
-              salesFilePath,
-              JSON.stringify(salesUpdated, null, 2),
-            );
+            fs.writeFileSync(salesFilePath, JSON.stringify(salesUpdated, null, 2));
           }
 
           try {
             const updatedEmbed = EmbedBuilder.from(embed).spliceFields(1, 1, {
-              name: "Soporte",
-              value: "⏱️ Expirado (12h sin asignar)",
-              inline: true,
+              name: "Soporte", value: "⏱️ Expirado (12h sin asignar)", inline: true,
             });
             await reply.edit({ embeds: [updatedEmbed] });
-          } catch (error) {
-            console.log(
-              `❌ No se pudo editar mensaje de venta #${numeroVenta} (ya fue eliminado)`,
-            );
+          } catch {
+            console.log(`❌ No se pudo editar mensaje de venta #${numeroVenta}`);
           }
-
-          const timeoutEmbed = new EmbedBuilder()
-            .setDescription(
-              `⏱️ **Venta #${numeroVenta.toString().padStart(3, "0")} expirada**\n\n` +
-                `Han pasado 12 horas sin que un soporte marque esta venta.\n` +
-                `La venta ha sido bloqueada y ya no se puede asignar soporte.`,
-            )
-            .setColor("#FF0000")
-            .setTimestamp();
 
           await interaction.channel.send({
             content: `<@${interaction.user.id}> <@&${roles.ADMIN[0]}>`,
-            embeds: [timeoutEmbed],
+            embeds: [
+              new EmbedBuilder()
+                .setDescription(
+                  `⏱️ **Venta #${numeroVenta.toString().padStart(3, "0")} expirada**\n\n` +
+                  `Han pasado 12 horas sin que un soporte marque esta venta.\n` +
+                  `La venta ha sido bloqueada y ya no se puede asignar soporte.`,
+                )
+                .setColor("#FF0000")
+                .setTimestamp(),
+            ],
             reply: { messageReference: reply.id },
           });
-          console.log(
-            `⏱️ Venta #${numeroVenta} expiró después de 12 horas sin soporte asignado`,
-          );
         }
-      }, timeoutDuration);
+      }, 12 * 60 * 60 * 1000);
       todosLosTimers.push(timeoutTimer);
 
       collector.on("collect", async (reaction, user) => {
         if (!collectorActivo) {
           await reaction.users.remove(user.id);
-          const expiredEmbed = new EmbedBuilder()
-            .setDescription(
-              `⏱️ <@${user.id}>, esta venta expiró hace más de 12 horas y ya no se puede asignar soporte.`,
-            )
-            .setColor("#FF0000");
-
           const expiredMsg = await interaction.channel.send({
             content: `<@${user.id}>`,
-            embeds: [expiredEmbed],
+            embeds: [
+              new EmbedBuilder()
+                .setDescription(`⏱️ <@${user.id}>, esta venta expiró hace más de 12 horas y ya no se puede asignar soporte.`)
+                .setColor("#FF0000"),
+            ],
           });
-          setTimeout(() => {
-            expiredMsg
-              .delete()
-              .catch((err) =>
-                console.log("No se pudo eliminar el mensaje:", err),
-              );
-          }, 10000);
+          setTimeout(() => expiredMsg.delete().catch(() => { }), 10000);
           return;
         }
 
         if (soporteAsignado && ventaData.vendedorSoporteId !== user.id) {
           await reaction.users.remove(user.id);
-          const warningEmbed = new EmbedBuilder()
-            .setDescription(
-              `⚠️ <@${user.id}>, esta venta ya tiene un soporte asignado (<@${ventaData.vendedorSoporteId}>). Si deseas asignarte, el soporte actual debe quitar su reacción primero.`,
-            )
-            .setColor(config.embedColor);
-
           const warningMsg = await interaction.channel.send({
             content: `<@${user.id}>`,
-            embeds: [warningEmbed],
+            embeds: [
+              new EmbedBuilder()
+                .setDescription(`⚠️ <@${user.id}>, esta venta ya tiene un soporte asignado (<@${ventaData.vendedorSoporteId}>). Si deseas asignarte, el soporte actual debe quitar su reacción primero.`)
+                .setColor(config.embedColor),
+            ],
           });
-          setTimeout(() => {
-            warningMsg
-              .delete()
-              .catch((err) =>
-                console.log("No se pudo eliminar el mensaje:", err),
-              );
-          }, 10000);
+          setTimeout(() => warningMsg.delete().catch(() => { }), 10000);
           return;
         }
 
@@ -786,45 +551,31 @@ module.exports = {
         ventaData.vendedorSoporteId = user.id;
 
         const salesUpdated = loadSales();
-        const ventaIndex = salesUpdated.findIndex(
-          (v) => v.numeroVenta === numeroVenta,
-        );
+        const ventaIndex = salesUpdated.findIndex((v) => v.numeroVenta === numeroVenta);
         if (ventaIndex !== -1) {
           salesUpdated[ventaIndex].vendedorSoporte = user.tag;
           salesUpdated[ventaIndex].vendedorSoporteId = user.id;
-          salesUpdated[ventaIndex].fechaAsignacionSoporte =
-            new Date().toISOString();
-          fs.writeFileSync(
-            salesFilePath,
-            JSON.stringify(salesUpdated, null, 2),
-          );
+          salesUpdated[ventaIndex].fechaAsignacionSoporte = new Date().toISOString();
+          fs.writeFileSync(salesFilePath, JSON.stringify(salesUpdated, null, 2));
         }
 
         const updatedEmbed = EmbedBuilder.from(embed).spliceFields(1, 1, {
-          name: "Soporte",
-          value: `<@${user.id}>`,
-          inline: true,
+          name: "Soporte", value: `<@${user.id}>`, inline: true,
         });
         await reply.edit({ embeds: [updatedEmbed] });
 
-        const notificationEmbed = new EmbedBuilder()
-          .setDescription(
-            esNuevaAsignacion
-              ? `<@${user.id}> ha sido asignado como soporte de la venta #${numeroVenta.toString().padStart(3, "0")}.`
-              : `El soporte ha sido reasignado a <@${user.id}> para la venta #${numeroVenta.toString().padStart(3, "0")}.`,
-          )
-          .setColor(config.embedColor);
-
         const notificationMsg = await interaction.channel.send({
-          embeds: [notificationEmbed],
+          embeds: [
+            new EmbedBuilder()
+              .setDescription(
+                esNuevaAsignacion
+                  ? `<@${user.id}> ha sido asignado como soporte de la venta #${numeroVenta.toString().padStart(3, "0")}.`
+                  : `El soporte ha sido reasignado a <@${user.id}> para la venta #${numeroVenta.toString().padStart(3, "0")}.`,
+              )
+              .setColor(config.embedColor),
+          ],
         });
-        setTimeout(() => {
-          notificationMsg
-            .delete()
-            .catch((err) =>
-              console.log("No se pudo eliminar el mensaje:", err),
-            );
-        }, 60000);
+        setTimeout(() => notificationMsg.delete().catch(() => { }), 60000);
       });
 
       collector.on("remove", async (reaction, user) => {
@@ -835,40 +586,25 @@ module.exports = {
           venta.vendedorSoporte = "Pendiente";
           venta.vendedorSoporteId = null;
 
-          const ventaIndex = salesUpdated.findIndex(
-            (v) => v.numeroVenta === numeroVenta,
-          );
+          const ventaIndex = salesUpdated.findIndex((v) => v.numeroVenta === numeroVenta);
           if (ventaIndex !== -1) {
             salesUpdated[ventaIndex] = venta;
-            fs.writeFileSync(
-              salesFilePath,
-              JSON.stringify(salesUpdated, null, 2),
-            );
+            fs.writeFileSync(salesFilePath, JSON.stringify(salesUpdated, null, 2));
           }
 
           const updatedEmbed = EmbedBuilder.from(embed).spliceFields(1, 1, {
-            name: "Soporte",
-            value: "Reacciona con ✅",
-            inline: true,
+            name: "Soporte", value: "Reacciona con ✅", inline: true,
           });
           await reply.edit({ embeds: [updatedEmbed] });
 
-          const liberationEmbed = new EmbedBuilder()
-            .setDescription(
-              `⚠️ <@${user.id}> ha liberado el soporte de la venta #${numeroVenta.toString().padStart(3, "0")}. Disponible para otro soporte.`,
-            )
-            .setColor(config.embedColor);
-
           const liberationMsg = await interaction.channel.send({
-            embeds: [liberationEmbed],
+            embeds: [
+              new EmbedBuilder()
+                .setDescription(`⚠️ <@${user.id}> ha liberado el soporte de la venta #${numeroVenta.toString().padStart(3, "0")}. Disponible para otro soporte.`)
+                .setColor(config.embedColor),
+            ],
           });
-          setTimeout(() => {
-            liberationMsg
-              .delete()
-              .catch((err) =>
-                console.log("No se pudo eliminar el mensaje:", err),
-              );
-          }, 60000);
+          setTimeout(() => liberationMsg.delete().catch(() => { }), 60000);
 
           soporteAsignado = false;
           ventaData.vendedorSoporte = "Pendiente";
@@ -876,9 +612,7 @@ module.exports = {
         }
       });
 
-      collector.on("end", (collected, reason) => {
-        limpiarTodosLosTimers();
-      });
+      collector.on("end", () => limpiarTodosLosTimers());
     } else {
       const reactionCollector = reply.createReactionCollector({
         filter: (reaction, user) => !user.bot,
@@ -887,24 +621,41 @@ module.exports = {
 
       reactionCollector.on("collect", async (reaction, user) => {
         await reaction.users.remove(user.id);
-        const noSupportEmbed = new EmbedBuilder()
-          .setDescription(
-            `<@${user.id}>, esta venta no requiere soporte. No puedes reaccionar.`,
-          )
-          .setColor(config.embedColor);
-
         const noSupportMsg = await interaction.channel.send({
           content: `<@${user.id}>`,
-          embeds: [noSupportEmbed],
+          embeds: [
+            new EmbedBuilder()
+              .setDescription(`<@${user.id}>, esta venta no requiere soporte. No puedes reaccionar.`)
+              .setColor(config.embedColor),
+          ],
         });
-        setTimeout(() => {
-          noSupportMsg
-            .delete()
-            .catch((err) =>
-              console.log("No se pudo eliminar el mensaje:", err),
-            );
-        }, 5000);
+        setTimeout(() => noSupportMsg.delete().catch(() => { }), 5000);
       });
+    }
+
+    if (ajuste.tipo === "descuento" && Math.abs(ajuste.diferenciaPorcentaje) >= 10) {
+      try {
+        const alertaCanal = await interaction.client.channels.fetch(channels.LOGIN_VENTAS);
+        await alertaCanal.send({
+          content: `<@&${roles.ADMIN[0]}>`,
+          embeds: [
+            new EmbedBuilder()
+              .setTitle("⚠️ ALERTA DE DESCUENTO ALTO")
+              .setDescription(
+                `La venta **#${numeroVenta.toString().padStart(3, "0")}** registra un descuento de **${Math.abs(ajuste.diferenciaPorcentaje)}%**.\n\n` +
+                `**Vendedor:** <@${interaction.user.id}>\n` +
+                `**Producto:** ${productosTexto} (${periodosTexto})\n` +
+                `**Precio estándar:** S/ ${precioEstandarTotal}\n` +
+                `**Precio real:** S/ ${montoNetoSoles.toFixed(2)}\n\n` +
+                `Verifica si el precio cobrado es correcto.`,
+              )
+              .setColor("#ff0000")
+              .setTimestamp(),
+          ],
+        });
+      } catch (err) {
+        console.error("❌ Error enviando alerta de descuento:", err);
+      }
     }
 
     if (licencias.length > 0) {
@@ -913,20 +664,20 @@ module.exports = {
         licenciasTexto += `\n**${lic.producto} - ${lic.periodo}:**\n\`\`\`${lic.key}\`\`\``;
       });
 
-      const licenseEmbed = new EmbedBuilder()
-        .setTitle("> HyperV - Licencias Generadas")
-        .setDescription(
-          `🔑 ${licencias.length > 1 ? "Licencias generadas" : "Licencia generada"} automáticamente por KeyAuth\n\n` +
-            "**IMPORTANTE:**\nCopia estas licencias y entrégalas al cliente **SOLO DESPUÉS** de que <@1117934669002965014> haya confirmado el pago.\n" +
-            licenciasTexto,
-        )
-        .setColor(config.embedColor)
-        .setFooter(config.embedFooter)
-        .setTimestamp();
-
       await interaction.followUp({
         content: `<@${interaction.user.id}> ${licencias.length > 1 ? "Tus licencias han sido generadas:" : "Tu licencia ha sido generada:"}`,
-        embeds: [licenseEmbed],
+        embeds: [
+          new EmbedBuilder()
+            .setTitle("> HyperV - Licencias Generadas")
+            .setDescription(
+              `🔑 ${licencias.length > 1 ? "Licencias generadas" : "Licencia generada"} automáticamente por KeyAuth\n\n` +
+              "**IMPORTANTE:**\nCopia estas licencias y entrégalas al cliente **SOLO DESPUÉS** de que <@1117934669002965014> haya confirmado el pago.\n" +
+              licenciasTexto,
+            )
+            .setColor(config.embedColor)
+            .setFooter(config.embedFooter)
+            .setTimestamp(),
+        ],
         ephemeral: false,
       });
     }

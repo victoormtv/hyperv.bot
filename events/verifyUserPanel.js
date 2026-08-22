@@ -11,6 +11,7 @@ module.exports = {
         console.log('🔐 Sistema de verifyUser activo.');
 
         const verifyChannelId = ids.channels.VERIFY_USER;
+        const verifiedRoleId = ids.roles.VERIFIED;
 
         if (!verifyChannelId) {
             console.error('❌ ids.channels.VERIFY_USER no está configurado en data/ids.js');
@@ -45,13 +46,58 @@ module.exports = {
                     .setTimestamp();
 
                 message = await channel.send({ embeds: [embed] });
-
                 console.log(`✅ Mensaje de verify creado: ${message.id}`);
                 console.log('👉 Copia este ID en VERIFY_MESSAGE_ID dentro de verifyUserPanel.js si quieres fijarlo.');
             }
 
             const hasCheck = message.reactions.cache.some(r => r.emoji.name === '✅');
             if (!hasCheck) await message.react('✅');
+
+            // Escuchar reacciones en este mensaje
+            const collector = message.createReactionCollector({
+                filter: () => true, // captura todo
+                dispose: true,      // también captura cuando se quita
+            });
+
+            collector.on('collect', async (reaction, user) => {
+                if (user.bot) return;
+
+                // Si la reacción no es ✅, eliminarla
+                if (reaction.emoji.name !== '✅') {
+                    await reaction.users.remove(user.id).catch(() => { });
+                    return;
+                }
+
+                // Asignar rol verificado
+                try {
+                    const guild = channel.guild;
+                    const member = await guild.members.fetch(user.id);
+                    if (!member.roles.cache.has(verifiedRoleId)) {
+                        await member.roles.add(verifiedRoleId);
+                        console.log(`✅ Rol asignado a ${user.tag}`);
+                    }
+                } catch (err) {
+                    console.error(`❌ Error asignando rol a ${user.tag}:`, err);
+                }
+            });
+
+            collector.on('remove', async (reaction, user) => {
+                if (user.bot) return;
+                if (reaction.emoji.name !== '✅') return;
+
+                // Quitar rol si se elimina la reacción
+                try {
+                    const guild = channel.guild;
+                    const member = await guild.members.fetch(user.id);
+                    if (member.roles.cache.has(verifiedRoleId)) {
+                        await member.roles.remove(verifiedRoleId);
+                        console.log(`❌ Rol removido de ${user.tag}`);
+                    }
+                } catch (err) {
+                    console.error(`❌ Error removiendo rol de ${user.tag}:`, err);
+                }
+            });
+
         } catch (err) {
             console.error('❌ Error preparando el mensaje de verify:', err);
         }

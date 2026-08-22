@@ -1,22 +1,19 @@
-const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder, PermissionFlagsBits } = require('discord.js');
 const fs = require('fs');
 const path = require('path');
 const { roles } = require('../data/ids');
+const config = require('../data/config');
 
 const salesFilePath = path.join(__dirname, '../data/sales.json');
 
 function loadSales() {
-    if (!fs.existsSync(salesFilePath)) {
-        return [];
-    }
-    const data = fs.readFileSync(salesFilePath, 'utf-8');
-    return JSON.parse(data);
+    if (!fs.existsSync(salesFilePath)) return [];
+    return JSON.parse(fs.readFileSync(salesFilePath, 'utf-8'));
 }
 
 function deleteSale(ventaNumero) {
     const sales = loadSales();
-    const index = sales.findIndex((v, i) => i + 1 === ventaNumero);
-    
+    const index = sales.findIndex((v) => v.numeroVenta === ventaNumero);
     if (index !== -1) {
         sales.splice(index, 1);
         fs.writeFileSync(salesFilePath, JSON.stringify(sales, null, 2));
@@ -30,36 +27,38 @@ module.exports = {
         .setName('eliminar-venta')
         .setDescription('Eliminar una venta del registro')
         .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
-        .addIntegerOption(option =>
-            option.setName('numero')
-                .setDescription('Numero de venta a eliminar')
-                .setRequired(true)),
+        .addIntegerOption((option) =>
+            option.setName('numero').setDescription('Numero de venta a eliminar').setRequired(true),
+        ),
 
     async execute(interaction) {
-        const userRoles = interaction.member.roles.cache;
-        const isAdmin = roles.ADMIN.some(adminId => userRoles.has(adminId));
+        const isAdmin = roles.ADMIN.some((adminId) => interaction.member.roles.cache.has(adminId));
 
         if (!isAdmin) {
             return await interaction.reply({
-                content: '❌ Solo los Admins pueden eliminar ventas.',
-                ephemeral: true
+                embeds: [
+                    new EmbedBuilder()
+                        .setDescription("❌ Solo los **Admins** pueden eliminar ventas.")
+                        .setColor("#ff0000"),
+                ],
+                ephemeral: true,
             });
         }
 
-        const ventaNumero = interaction.options.getInteger('numero');
-
+        const ventaNumero = interaction.options.getInteger("numero");
         const deleted = deleteSale(ventaNumero);
 
-        if (deleted) {
-            await interaction.reply({
-                content: `✅ Venta #${ventaNumero} eliminada correctamente del registro.`,
-                ephemeral: true
-            });
-        } else {
-            await interaction.reply({
-                content: `❌ No se encontró la venta #${ventaNumero}.`,
-                ephemeral: true
-            });
-        }
-    }
+        await interaction.reply({
+            embeds: [
+                new EmbedBuilder()
+                    .setDescription(
+                        deleted
+                            ? `✅ Venta **#${ventaNumero.toString().padStart(3, "0")}** eliminada correctamente.`
+                            : `❌ No se encontró la venta **#${ventaNumero}**.`,
+                    )
+                    .setColor(deleted ? config.embedColor : "#ff0000"),
+            ],
+            ephemeral: true,
+        });
+    },
 };

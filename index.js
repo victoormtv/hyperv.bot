@@ -13,6 +13,7 @@ const cron = require("node-cron");
 const { checkInactiveTickets } = require("./utils/inactivityChecker");
 const { actualizarTasasDeCambio } = require("./data/commissionRules");
 const { startFeedbackServer } = require("./utils/feedbackServer");
+const { checkLicenseReminders } = require("./utils/licenseReminder");
 
 const client = new Client({
   intents: [
@@ -151,6 +152,7 @@ client.once("ready", async () => {
 
   cron.schedule("0 * * * *", () => {
     checkInactiveTickets(client);
+    checkLicenseReminders(client);
   });
 
   console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
@@ -164,6 +166,7 @@ client.once("ready", async () => {
   console.log("   Reportes Mensuales Automáticos");
   console.log("   Sistema de Reacciones para Soporte");
   console.log("   Sistema de Recarga de Comandos/Eventos");
+  console.log("   Recordatorios de Licencias (cada hora)");
   console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
   startFeedbackServer(client);
 });

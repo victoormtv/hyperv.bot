@@ -952,19 +952,36 @@ module.exports = [
       .setTitle("> Comandos")
       .setDescription(
         "Lista completa de comandos disponibles para el equipo de ventas y soporte.\n\n" +
-        "**Gestión de ventas:**\n- `/venta` - Registrar ventas de cualquier producto.\n- `/upgrade` - Cambiar o mejorar productos pagando la diferencia.\n- `/gracias` - Informar al cliente que su compra fue efectiva.\n- `/pago` - Crea un link para realizar la compra mediante Mercado Pago.\n- `/propina` - Registrar propinas de cualquier metodo de pago.\n- `/eliminar-venta` Eliminar ventas mal ingresadas.\n\n" +
-        "**Información de productos:**\n- `/precio` - Listar precios y características de productos.\n- `/link` - Mostrar enlace directo de un producto de la tienda.\n- `/instalacion` - Pasos y requisitos para instalación de productos PC.\n\n" +
-        "**Carrito de compras:**\n- `/carrito` - Agregar productos al carrito web del cliente\n\n" +
-        "**Métodos de pago:**\n- `/metodos` - Listar métodos de pago por país\n- `/datos` - Mostrar datos de métodos de pago específicos\n" +
-        "**Administración:**\n- `/reporte-mensual` - Generar Excel de comisiones mensuales\n- `/embed` - Genera un embed facil y rapido.\n- `/info` - Muestra informacion del bot\n- `/limpiar` - Elimina todos los embeds de los canales.\n",
+        "**Gestión de ventas:**\n" +
+        "- `/venta` - Registrar ventas de cualquier producto.\n" +
+        "- `/upgrade` - Cambiar o mejorar productos pagando la diferencia.\n" +
+        "- `/gracias` - Informar al cliente que su compra fue efectiva.\n" +
+        "- `/pago` - Crea un link para realizar la compra mediante Mercado Pago.\n" +
+        "- `/propina` - Registrar propinas de cualquier metodo de pago.\n" +
+        "- `/eliminar-venta` - Eliminar ventas mal ingresadas.\n" +
+        "- `/resumen-vendedor` - Ver resumen de ventas de un vendedor en el período actual.\n\n" +
+        "**Clientes:**\n" +
+        "- `/buscar-cliente` - Ver historial de compras de un cliente por WhatsApp o Discord.\n\n" +
+        "**Información de productos:**\n" +
+        "- `/precio` - Listar precios y características de productos.\n" +
+        "- `/link` - Mostrar enlace directo de un producto de la tienda.\n" +
+        "- `/instalacion` - Pasos y requisitos para instalación de productos PC.\n\n" +
+        "**Carrito de compras:**\n" +
+        "- `/carrito` - Agregar productos al carrito web del cliente.\n\n" +
+        "**Métodos de pago:**\n" +
+        "- `/metodos` - Listar métodos de pago por país.\n" +
+        "- `/datos` - Mostrar datos de métodos de pago específicos.\n\n" +
+        "**Administración:**\n" +
+        "- `/reporte-mensual` - Generar Excel de comisiones mensuales.\n" +
+        "- `/embed` - Genera un embed fácil y rápido.\n" +
+        "- `/info` - Muestra información del bot.\n" +
+        "- `/limpiar` - Elimina todos los embeds de los canales.\n",
       )
       .setColor(config.embedColor)
       .setFooter(config.embedFooter),
   },
 
-  // ========================================
-  // COMISIONES INFO
-  // ========================================
+
   {
     id: ids.embeds.BOT,
     messageId: "1538692481699414137",
@@ -972,10 +989,47 @@ module.exports = [
       .setTitle("> Sistema de Comisiones")
       .setDescription(
         "**Sistema automatizado de gestión de ventas y comisiones**\n\n" +
-        "**Registro de ventas:**\n- Comando `/venta` con autocompletado de productos.\n- Registro automático en base de datos.\n- Asignación inmediata al vendedor.\n\n" +
-        "**Notificaciones automáticas:**\n- Recordatorios: 10 minutos inicial, luego cada hora.\n- Bloqueo automático tras 12 horas sin asignar.\n\n" +
-        "**Cálculo de comisiones:**\n- Conversión automática de monedas.\n- Detección de descuentos y propinas.\n- Tasas y comisiones según método de pago.\n\n" +
-        "**IMPORTANTE**:\n- Ingresar precios falsos será verificado por <@1117934669002965014> y resultará en descuento de la venta.\n",
+        "**Registro de ventas:**\n" +
+        "- Comando `/venta` con autocompletado de productos y períodos.\n" +
+        "- Registro automático en base de datos.\n" +
+        "- Asignación inmediata al vendedor.\n\n" +
+        "**Notificaciones automáticas:**\n" +
+        "- Recordatorios de soporte: 10 minutos inicial, luego cada hora.\n" +
+        "- Bloqueo automático tras 12 horas sin soporte asignado.\n" +
+        "- Recordatorio automático 3 días antes de que venza una licencia.\n\n" +
+        "**Cálculo de comisiones:**\n" +
+        "- Conversión automática de monedas.\n" +
+        "- Detección de descuentos y propinas.\n" +
+        "- Alerta automática si el descuento supera el 10%.\n" +
+        "- Tasas y comisiones según método de pago.\n\n" +
+        "**IMPORTANTE:**\n" +
+        "- Ingresar precios falsos será verificado por <@1117934669002965014> y resultará en descuento de la venta.\n",
+      )
+      .setColor(config.embedColor)
+      .setFooter(config.embedFooter),
+  },
+
+  // ========================================
+  // BUSCAR CLIENTE INFO
+  // ========================================
+  {
+    id: ids.embeds.BUSCAR_CLIENTE_INFO, // agregar este ID en ids.js
+    messageId: "TU_MESSAGE_ID_AQUI",
+    embed: new EmbedBuilder()
+      .setTitle("> Recuperación de Clientes")
+      .setDescription(
+        "**¿Para qué sirve `/buscar-cliente`?**\n\n" +
+        "Permite ver el historial completo de compras de un cliente: qué productos tiene, cuándo vencen y quién los atendió.\n\n" +
+        "Esto nos permite **contactar al cliente antes de que su licencia venza** y ofrecerle renovación, lo que aumenta las ventas recurrentes.\n\n" +
+        "**⚠️ Por esto es OBLIGATORIO registrar el número de WhatsApp al hacer una venta.**\n\n" +
+        "Sin el WhatsApp no podemos:\n" +
+        "- Buscar al cliente en el historial\n" +
+        "- Contactarlo para renovaciones\n" +
+        "- Recuperar ventas perdidas\n\n" +
+        "**Cómo usarlo:**\n" +
+        "- `/buscar-cliente 987654321` — buscar por número de WhatsApp\n" +
+        "- `/buscar-cliente @usuario` — buscar por usuario de Discord\n\n" +
+        "El sistema muestra las últimas 10 compras con fecha de vencimiento y estado actual.",
       )
       .setColor(config.embedColor)
       .setFooter(config.embedFooter),
