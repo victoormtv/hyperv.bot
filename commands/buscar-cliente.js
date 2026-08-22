@@ -52,6 +52,17 @@ module.exports = {
             });
         }
 
+        if (interaction.channelId !== "1540795132020920390") {
+            return await interaction.reply({
+                embeds: [
+                    new EmbedBuilder()
+                        .setDescription("❌ Este comando solo puede usarse en el canal de ventas.")
+                        .setColor("#ff0000"),
+                ],
+                ephemeral: true,
+            });
+        }
+
         await interaction.deferReply({ ephemeral: true });
 
         const busqueda = interaction.options.getString("busqueda").trim();
