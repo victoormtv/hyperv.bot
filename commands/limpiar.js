@@ -1,6 +1,7 @@
 // commands/limpiar.js
 const { SlashCommandBuilder, PermissionFlagsBits } = require("discord.js");
 const config = require("../data/ids.js");
+const verfiy = require("../events/verifyUserPanel.js");
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -15,8 +16,8 @@ module.exports = {
 
     const channelsToClean = [
       config.embeds.TICKET_GENERAL,
-      config.embeds.VERIFY_USER,
-      config.embeds.PANEL_FULL,
+      config.embeds.verifyUserPanel.verify,
+      config.channels.VERIFY_USER,
       config.embeds.PANEL_PC_GRATIS,
       config.embeds.PANEL_BASIC,
       config.embeds.PANEL_ONLY_AIMBOT,
@@ -49,6 +50,8 @@ module.exports = {
       config.embeds.CHAMS_BLOODSTRIKE,
       config.embeds.AIMBOT_BODY_ANDROID,
       config.embeds.AIMBOT_PROXY,
+      config.embeds.BUSCAR_CLIENTE_INFO,
+
     ];
 
     const uniqueChannels = [...new Set(channelsToClean)];
