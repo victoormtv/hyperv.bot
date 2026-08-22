@@ -1,7 +1,6 @@
 // commands/limpiar.js
 const { SlashCommandBuilder, PermissionFlagsBits } = require("discord.js");
 const config = require("../data/ids.js");
-const verfiy = require("../events/verifyUserPanel.js");
 
 module.exports = {
   data: new SlashCommandBuilder()
