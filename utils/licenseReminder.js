@@ -56,7 +56,7 @@ async function checkLicenseReminders(client) {
     if (ventasPorRecordar.length === 0) return;
 
     try {
-        const canal = await client.channels.fetch(channels.LOGIN_VENTAS);
+        const canal = await client.channels.fetch(channels.BUSCAR_CLIENTE_INFO);
 
         for (const venta of ventasPorRecordar) {
             const vencimiento = calcularFechaVencimiento(venta.fecha, venta.periodo);
