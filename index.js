@@ -150,10 +150,14 @@ client.once("ready", async () => {
     console.error("❌ Error registrando comandos:", error);
   }
 
-  cron.schedule("0 * * * *", () => {
-    checkInactiveTickets(client);
-    checkLicenseReminders(client);
-  });
+cron.schedule("0 * * * *", () => {
+  checkInactiveTickets(client);
+});
+
+cron.schedule("0 20 * * *", () => {
+  checkLicenseReminders(client);
+});
+
 
   console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
   console.log("TODOS LOS SISTEMAS INICIADOS");
