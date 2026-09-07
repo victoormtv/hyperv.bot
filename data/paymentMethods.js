@@ -35,7 +35,10 @@ module.exports = {
     title: "> Métodos de Pago - Chile <:flagchile:1232045290484404274>",
     description:
       "Contamos con los siguientes métodos de pago disponibles en Chile:",
-    methods: [{ name: "- Cuenta Tempo", available: true }],
+    methods: [
+      { name: "- Banco Estado (Cuenta RUT)", available: true },
+      { name: "- Cuenta Tempo", available: true },
+    ],
   },
 
   mexico: {
@@ -191,10 +194,21 @@ module.exports = {
 
     cashapp: {
       title: "Datos CashApp",
-      link: "https://cash.app/$Jrz1lk",
+      link: "https://cash.app/$angxeee1",
       thumbnail:
         "https://i.ibb.co/gMF9cCLy/Cash-App-Logo-wine-removebg-preview.png",
       instructions: "Envía el comprobante después del depósito",
+    },
+
+    bancoestado: {
+      title: "Datos Banco Estado Chile (Cuenta RUT)",
+      accountNumber: "212725927",
+      rut: "212725927",
+      holder: "Germán fuentes",
+      accountType: "Cuenta RUT",
+      thumbnail:
+        "https://i.ibb.co/qMDh7byv/bancoestado-social-preview-removebg-preview.png",
+      instructions: "Envía el comprobante después de realizar el pago",
     },
 
     zelle: {

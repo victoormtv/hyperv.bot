@@ -49,14 +49,14 @@ async function checkLicenseReminders(client) {
         const vencimiento = calcularFechaVencimiento(v.fecha, v.periodo);
         if (!vencimiento) return false;
 
-        // Vence en los próximos 3 días y aún no venció
         return vencimiento <= en3dias && vencimiento > ahora;
     });
 
     if (ventasPorRecordar.length === 0) return;
 
     try {
-        const canal = await client.channels.fetch(channels.LOGIN_VENTAS);
+        const canalId = channels.LICENSE_REMINDERS || "1472643257971245321";
+        const canal = await client.channels.fetch(canalId);
 
         for (const venta of ventasPorRecordar) {
             const vencimiento = calcularFechaVencimiento(venta.fecha, venta.periodo);
@@ -84,7 +84,6 @@ async function checkLicenseReminders(client) {
                 embeds: [embed],
             });
 
-            // Marcar como recordatorio enviado para no repetir
             const salesUpdated = loadSales();
             const idx = salesUpdated.findIndex((v) => v.numeroVenta === venta.numeroVenta);
             if (idx !== -1) {

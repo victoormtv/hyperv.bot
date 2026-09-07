@@ -105,17 +105,21 @@ module.exports = {
 
     async execute(interaction) {
         if (!isInTicket(interaction)) {
-            return await interaction.reply({
-                content: 'Este comando solo puede usarse dentro de un ticket.',
-                ephemeral: true
-            });
+            const embed = new EmbedBuilder()
+                .setTitle('> HyperV - Error')
+                .setDescription('Este comando solo puede usarse dentro de un ticket.')
+                .setColor(config.embedColor)
+                .setFooter(config.embedFooter);
+            return await interaction.reply({ embeds: [embed], ephemeral: true });
         }
 
         if (!isVendor(interaction)) {
-            return await interaction.reply({
-                content: 'Solo los vendedores pueden ejecutar este comando.',
-                ephemeral: true
-            });
+            const embed = new EmbedBuilder()
+                .setTitle('> HyperV - Acceso Denegado')
+                .setDescription('Solo los vendedores pueden ejecutar este comando.')
+                .setColor(config.embedColor)
+                .setFooter(config.embedFooter);
+            return await interaction.reply({ embeds: [embed], ephemeral: true });
         }
 
         const subcommand = interaction.options.getSubcommand();
@@ -141,7 +145,7 @@ module.exports = {
             'guatemala-banrural': 'banrural',
             'ecuador-pichincha': 'pichincha',
             'republicadominicana-banreserva': 'banreserva',
-            'bolivia-sol': 'bancosol',
+            'bolivia-bcp': 'bancounion',
             'uruguay-prex': 'prex'
         };
 
@@ -149,14 +153,19 @@ module.exports = {
         const methodData = paymentMethods.private[methodKey];
         
         if (!methodData) {
-            return await interaction.reply({
-                content: `Método de pago no encontrado: ${subcommand}`,
-                ephemeral: true
-            });
+            const embed = new EmbedBuilder()
+                .setTitle('> HyperV - Error')
+                .setDescription(`Método de pago no encontrado: ${subcommand}`)
+                .setColor(config.embedColor)
+                .setFooter(config.embedFooter);
+            return await interaction.reply({ embeds: [embed], ephemeral: true });
         }
 
+        const rawTitle = methodData.title.replace(/^>\s*/, '');
+        const embedTitle = rawTitle.startsWith('HyperV -') ? `> ${rawTitle}` : `> HyperV - ${rawTitle}`;
+
         const embed = new EmbedBuilder()
-            .setTitle(methodData.title)
+            .setTitle(embedTitle)
             .setColor(config.embedColor)
             .setFooter(config.embedFooter)
             .setTimestamp();
@@ -175,6 +184,10 @@ module.exports = {
         
         if (methodData.holder) {
             embed.addFields({ name: 'Titular', value: `\`${methodData.holder}\``, inline: true });
+        }
+
+        if (methodData.rut) {
+            embed.addFields({ name: 'RUT', value: `\`${methodData.rut}\``, inline: true });
         }
         
         if (methodData.accountNumber) {

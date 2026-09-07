@@ -152,8 +152,17 @@ client.once("ready", async () => {
 
   cron.schedule("0 * * * *", () => {
     checkInactiveTickets(client);
-    checkLicenseReminders(client);
   });
+
+  cron.schedule(
+    "0 12 * * *",
+    async () => {
+      await checkLicenseReminders(client);
+    },
+    {
+      timezone: "America/Lima",
+    },
+  );
 
   console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
   console.log("TODOS LOS SISTEMAS INICIADOS");
@@ -166,7 +175,7 @@ client.once("ready", async () => {
   console.log("   Reportes Mensuales Automáticos");
   console.log("   Sistema de Reacciones para Soporte");
   console.log("   Sistema de Recarga de Comandos/Eventos");
-  console.log("   Recordatorios de Licencias (cada hora)");
+  console.log("   Recordatorios de Licencias (Diario 12:00 PM Perú)");
   console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
   startFeedbackServer(client);
 });
