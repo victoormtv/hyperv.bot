@@ -9,9 +9,10 @@ module.exports = {
 
     let ActivityIndex = 0;
     const activities = [
-      { name: "+6000 clientes activos", type: ActivityType.Watching },
+      { name: "+8400 clientes activos", type: ActivityType.Watching },
       { name: "Consulta sobre nuestros productos", type: ActivityType.Listening },
-      { name: "HyperV - El mejor panel", type: ActivityType.Playing },
+      { name: "HyperV - Desarrolladora de Software", type: ActivityType.Playing },
+      { name: "Visita hyperv.online", type: ActivityType.Watching },
     ];
 
     if (client.user) {
