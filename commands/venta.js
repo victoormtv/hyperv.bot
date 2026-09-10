@@ -357,7 +357,6 @@ module.exports = {
       .setTitle(`> HyperV - VENTA #${numeroVenta.toString().padStart(3, "0")}`)
       .setDescription(`**Vendedor:** <@${interaction.user.id}>`)
       .addFields(
-        { name: "WhatsApp", value: whatsapp, inline: true },
         { name: "Soporte", value: requiereSoporte ? "Reacciona con ✅" : "No requerido", inline: true },
         { name: "Tipo", value: tipoVenta === "ads" ? "📢 Ads" : "💬 Discord", inline: true },
         { name: "Método de Pago", value: metodoPago, inline: true },
