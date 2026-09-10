@@ -2,7 +2,6 @@
 const fs = require("fs");
 const path = require("path");
 const { EmbedBuilder } = require("discord.js");
-const { channels, roles } = require("../data/ids");
 const config = require("../data/config");
 
 const salesFilePath = path.join(__dirname, "../data/sales.json");
@@ -54,20 +53,19 @@ async function checkLicenseReminders(client) {
 
     if (ventasPorRecordar.length === 0) return;
 
-    try {
-        const canalId = channels.LICENSE_REMINDERS || "1472643257971245321";
-        const canal = await client.channels.fetch(canalId);
-
-        for (const venta of ventasPorRecordar) {
+    for (const venta of ventasPorRecordar) {
+        try {
             const vencimiento = calcularFechaVencimiento(venta.fecha, venta.periodo);
             const diasRestantes = Math.ceil((vencimiento - ahora) / (1000 * 60 * 60 * 24));
+
+            const vendedor = await client.users.fetch(venta.vendedorId);
+            const dm = await vendedor.createDM();
 
             const embed = new EmbedBuilder()
                 .setTitle("> HyperV - Licencia por vencer")
                 .setDescription(
-                    `La licencia de un cliente está por vencer en **${diasRestantes} día(s)**.\n\n` +
+                    `Tu cliente tiene una licencia por vencer en **${diasRestantes} día(s)**.\n\n` +
                     `**Venta #:** ${venta.numeroVenta.toString().padStart(3, "0")}\n` +
-                    `**Vendedor:** <@${venta.vendedorId}>\n` +
                     `**Producto:** ${venta.producto}\n` +
                     `**Período:** ${venta.periodo}\n` +
                     `**WhatsApp:** ${venta.whatsapp}\n` +
@@ -79,10 +77,7 @@ async function checkLicenseReminders(client) {
                 .setFooter(config.embedFooter)
                 .setTimestamp();
 
-            await canal.send({
-                content: `<@${venta.vendedorId}>`,
-                embeds: [embed],
-            });
+            await dm.send({ embeds: [embed] });
 
             const salesUpdated = loadSales();
             const idx = salesUpdated.findIndex((v) => v.numeroVenta === venta.numeroVenta);
@@ -92,10 +87,10 @@ async function checkLicenseReminders(client) {
                 fs.writeFileSync(salesFilePath, JSON.stringify(salesUpdated, null, 2));
             }
 
-            console.log(`⏳ Recordatorio enviado para venta #${venta.numeroVenta}`);
+            console.log(`⏳ Recordatorio DM enviado para venta #${venta.numeroVenta} → ${vendedor.tag}`);
+        } catch (err) {
+            console.error(`❌ Error enviando DM para venta #${venta.numeroVenta}:`, err);
         }
-    } catch (err) {
-        console.error("❌ Error enviando recordatorios de licencia:", err);
     }
 }
 
