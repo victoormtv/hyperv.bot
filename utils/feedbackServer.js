@@ -71,7 +71,7 @@ function startFeedbackServer(client) {
 
       if (!secret || secret !== process.env.BOT_API_SECRET) {
         res.writeHead(401, { 'Content-Type': 'application/json' });
-        return res.end(JSON.stringify({ inVoice: false }));
+        return res.end(JSON.stringify({ inVoice: false, debug: "BOT_API_SECRET no coincide" }));
       }
 
       const GUILD_ID = process.env.GUILD_ID;
@@ -79,24 +79,37 @@ function startFeedbackServer(client) {
 
       if (!userId || !GUILD_ID) {
         res.writeHead(200, { 'Content-Type': 'application/json' });
-        return res.end(JSON.stringify({ inVoice: false }));
+        return res.end(JSON.stringify({ inVoice: false, debug: "Falta GUILD_ID en .env del bot" }));
       }
 
       try {
-        const guild = client.guilds.cache.get(GUILD_ID) || await client.guilds.fetch(GUILD_ID).catch(() => null);
+        const guild = client.guilds.cache.get(GUILD_ID);
         if (!guild) {
           res.writeHead(200, { 'Content-Type': 'application/json' });
-          return res.end(JSON.stringify({ inVoice: false }));
+          return res.end(JSON.stringify({
+            inVoice: false,
+            debug: `El bot no encuentra la Guild con ID: ${GUILD_ID}`
+          }));
         }
 
-        const voiceChannel = await guild.channels.fetch(VOICE_CHANNEL_ID, { force: true }).catch(() => null);
-        const inVoice = voiceChannel && voiceChannel.isVoiceBased() ? voiceChannel.members.has(userId) : false;
+        const voiceState = guild.voiceStates.cache.get(userId);
+        const currentChannelId = voiceState?.channelId || null;
+        const inVoice = currentChannelId === VOICE_CHANNEL_ID;
 
         res.writeHead(200, { 'Content-Type': 'application/json' });
-        return res.end(JSON.stringify({ inVoice }));
-      } catch {
+        return res.end(JSON.stringify({
+          inVoice,
+          debug: {
+            userIdBuscado: userId,
+            guildNombre: guild.name,
+            canalActualDelUsuario: currentChannelId,
+            canalEsperado: VOICE_CHANNEL_ID,
+            coincide: inVoice
+          }
+        }));
+      } catch (err) {
         res.writeHead(200, { 'Content-Type': 'application/json' });
-        return res.end(JSON.stringify({ inVoice: false }));
+        return res.end(JSON.stringify({ inVoice: false, debug: err.message }));
       }
     }
 
