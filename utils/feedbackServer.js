@@ -62,7 +62,46 @@ async function startTunnel(port) {
 
 function startFeedbackServer(client) {
   const server = http.createServer(async (req, res) => {
-    if (req.method === 'POST' && req.url === '/feedback') {
+    const reqUrl = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
+
+    // ========== RUTA GET: /voice-check/:userId ==========
+    if (req.method === 'GET' && reqUrl.pathname.startsWith('/voice-check/')) {
+      const userId = reqUrl.pathname.split('/')[2];
+      const secret = req.headers['x-bot-secret'];
+
+      if (!secret || secret !== process.env.BOT_API_SECRET) {
+        res.writeHead(401, { 'Content-Type': 'application/json' });
+        return res.end(JSON.stringify({ inVoice: false }));
+      }
+
+      const GUILD_ID = process.env.GUILD_ID;
+      const VOICE_CHANNEL_ID = process.env.VOICE_CHANNEL_ID || '1117970446978121769';
+
+      if (!userId || !GUILD_ID) {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        return res.end(JSON.stringify({ inVoice: false }));
+      }
+
+      try {
+        const guild = client.guilds.cache.get(GUILD_ID) || await client.guilds.fetch(GUILD_ID).catch(() => null);
+        if (!guild) {
+          res.writeHead(200, { 'Content-Type': 'application/json' });
+          return res.end(JSON.stringify({ inVoice: false }));
+        }
+
+        const voiceChannel = await guild.channels.fetch(VOICE_CHANNEL_ID, { force: true }).catch(() => null);
+        const inVoice = voiceChannel && voiceChannel.isVoiceBased() ? voiceChannel.members.has(userId) : false;
+
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        return res.end(JSON.stringify({ inVoice }));
+      } catch {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        return res.end(JSON.stringify({ inVoice: false }));
+      }
+    }
+
+    // ========== RUTA POST: /feedback ==========
+    if (req.method === 'POST' && reqUrl.pathname === '/feedback') {
       let body = '';
 
       req.on('data', chunk => { body += chunk.toString(); });
@@ -120,15 +159,15 @@ function startFeedbackServer(client) {
           console.error('❌ Error procesando feedback:', error);
         }
       });
-
-    } else {
-      res.writeHead(404);
-      res.end('Not found');
+      return;
     }
+
+    res.writeHead(404);
+    res.end('Not found');
   });
 
   server.listen(25786, '0.0.0.0', () => {
-    console.log(`✅ Feedback server corriendo en 0.0.0.0:25786`);
+    console.log(`✅ Server corriendo en 0.0.0.0:25786`);
     startTunnel(25786);
   });
 }
