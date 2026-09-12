@@ -75,7 +75,7 @@ function startFeedbackServer(client) {
       }
 
       const GUILD_ID = process.env.GUILD_ID;
-      const VOICE_CHANNEL_ID = process.env.VOICE_CHANNEL_ID || '1117970446978121769';
+      const VOICE_CHANNEL_ID = process.env.VOICE_CHANNEL_ID || '1548459490574082098';
 
       if (!userId || !GUILD_ID) {
         res.writeHead(200, { 'Content-Type': 'application/json' });
