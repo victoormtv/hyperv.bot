@@ -5,7 +5,7 @@ const { commissionRules } = require('../data/commissionRules');
 
 const CONFIGURACION = {
     canalId: channels.FAKE_VENTAS,
-    intervalos: [40, 189, 97, 240, 113, 189, 40, 97],
+    intervalos: [400, 1890, 970, 2400, 113, 180, 497],
     activarEnHorario: { inicio: 8, fin: 23 },
     usarUsuariosReales: true,
     guildId: '1117932314102595716'
