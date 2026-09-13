@@ -1,20 +1,38 @@
 const { EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js');
 const config = require('../data/config');
-const { channels } = require('../data/ids');
+const { channels, embeds } = require('../data/ids');
 const { commissionRules } = require('../data/commissionRules');
 
 const CONFIGURACION = {
     canalId: channels.FAKE_VENTAS,
-    urlComprar: 'https://hyperv.online/products',
-
-    intervalos: [19, 46, 97, 113],
-    
-    activarEnHorario: {
-        inicio: 8,
-        fin: 23
-    },
+    intervalos: [40, 189, 97, 240, 113, 189, 40, 97],
+    activarEnHorario: { inicio: 8, fin: 23 },
     usarUsuariosReales: true,
     guildId: '1117932314102595716'
+};
+
+const PRODUCTO_CANAL = {
+    'Panel Full': embeds.PANEL_FULL,
+    'Panel Secure': '1176254214851268718',
+    'Panel Only Aimbot': embeds.PANEL_ONLY_AIMBOT,
+    'Menu Basic': embeds.MENU_BASIC,
+    'Bypass APK': embeds.BYPASS_APK,
+    'Bypass ID': embeds.BYPASS_ID,
+    'Bypass Global': embeds.BYPASS_GLOBAL,
+    'Menu Chams': '1317281105228861471',
+    'Panel iOS': embeds.PANEL_IOS,
+    'Gbox': embeds.PANEL_IOS,
+    'Regedit': embeds.REGEDIT,
+    'Aimbot Body iOS': embeds.AIMBOT_BODY_IOS,
+    'Panel Android': embeds.PANEL_ANDROID,
+    'Aimbot Proxy': embeds.AIMBOT_PROXY,
+    'Panel COD iOS': embeds.PANEL_COD_IOS,
+    'Panel CSGO': embeds.PANEL_CSGO,
+    'Aimlock': embeds.AIMLOCK,
+    'Aimbot Color': embeds.AIMBOT_COLOR,
+    'Spoofer': embeds.SPOOFER,
+    'Panel Warzone': embeds.PANEL_WARZONE,
+    'Aimbot Body Android': '1476269244563067030',
 };
 
 const MONEDAS = {
@@ -39,47 +57,40 @@ const NOMBRES_RESPALDO = [
     'zFraz_zG', 'ZodiacEnd', 'ComboXrc', 'JuanGamer', 'ProPlayer'
 ];
 
+// Últimas ventas fake para que los feedbacks puedan linkearlas
+const ultimasVentas = [];
+const MAX_VENTAS_GUARDADAS = 20;
+
 let usuariosCache = [];
-let indiceIntervalos = 0; 
+let indiceIntervalos = 0;
 let timerActivo = null;
 
 async function obtenerUsuariosReales(client) {
     try {
         const guild = client.guilds.cache.get(CONFIGURACION.guildId);
-        if (!guild) {
-            return NOMBRES_RESPALDO.map(nombre => ({ 
-                username: nombre, 
-                avatarURL: config.embedThumbnail 
-            }));
-        }
+        if (!guild) return fallbackUsuarios();
 
         await guild.members.fetch();
-        
+
         const usuarios = guild.members.cache
             .filter(member => !member.user.bot)
             .map(member => {
-                const avatarURL = member.user.avatar 
+                const avatarURL = member.user.avatar
                     ? `https://cdn.discordapp.com/avatars/${member.user.id}/${member.user.avatar}.${member.user.avatar.startsWith('a_') ? 'gif' : 'png'}?size=256`
                     : member.user.defaultAvatarURL;
-                
-                return {
-                    username: member.user.username,
-                    avatarURL: avatarURL
-                };
+                return { username: member.user.username, avatarURL };
             });
 
         console.log(`✅ ${usuarios.length} usuarios reales cargados del servidor`);
-        return usuarios.length > 0 ? usuarios : NOMBRES_RESPALDO.map(nombre => ({ 
-            username: nombre, 
-            avatarURL: config.embedThumbnail 
-        }));
+        return usuarios.length > 0 ? usuarios : fallbackUsuarios();
     } catch (error) {
         console.error('❌ Error obteniendo usuarios:', error.message);
-        return NOMBRES_RESPALDO.map(nombre => ({ 
-            username: nombre, 
-            avatarURL: config.embedThumbnail 
-        }));
+        return fallbackUsuarios();
     }
+}
+
+function fallbackUsuarios() {
+    return NOMBRES_RESPALDO.map(nombre => ({ username: nombre, avatarURL: config.embedThumbnail }));
 }
 
 function generarVenta(clienteData) {
@@ -99,9 +110,7 @@ function generarVenta(clienteData) {
 
     if (['ARS', 'COP', 'CLP'].includes(monedaCodigo)) {
         precio = Math.round(precio / 100) * 100;
-    } else if (monedaCodigo === 'PEN') {
-        precio = Math.round(precio);
-    } else if (monedaCodigo === 'UYU' || monedaCodigo === 'DOP') {
+    } else if (['PEN', 'UYU', 'DOP'].includes(monedaCodigo)) {
         precio = Math.round(precio);
     } else {
         precio = parseFloat(precio.toFixed(2));
@@ -109,22 +118,38 @@ function generarVenta(clienteData) {
 
     const idVenta = '#' + Math.floor(Math.random() * 900 + 100) + 'K';
 
-    return { 
-        producto, 
-        periodo, 
-        monedaCodigo, 
-        moneda, 
-        precio, 
+    return {
+        producto,
+        periodo,
+        monedaCodigo,
+        moneda,
+        precio,
         cliente: clienteData.username,
         avatarURL: clienteData.avatarURL,
-        idVenta 
+        idVenta
     };
 }
 
 function estaEnHorario() {
     const hora = new Date().getHours();
-    return hora >= CONFIGURACION.activarEnHorario.inicio && 
-           hora < CONFIGURACION.activarEnHorario.fin;
+    return hora >= CONFIGURACION.activarEnHorario.inicio && hora < CONFIGURACION.activarEnHorario.fin;
+}
+
+function getCanalProducto(producto) {
+    const canalId = PRODUCTO_CANAL[producto];
+    if (!canalId) return null;
+    return `https://discord.com/channels/1117932314102595716/${canalId}`;
+}
+
+function guardarVenta(venta, messageURL) {
+    ultimasVentas.push({ ...venta, messageURL });
+    if (ultimasVentas.length > MAX_VENTAS_GUARDADAS) {
+        ultimasVentas.shift();
+    }
+}
+
+function getUltimasVentas() {
+    return ultimasVentas;
 }
 
 async function enviarVentaSimulada(client) {
@@ -143,11 +168,10 @@ async function enviarVentaSimulada(client) {
     const clienteData = usuariosCache[Math.floor(Math.random() * usuariosCache.length)];
     const venta = generarVenta(clienteData);
 
+    const urlCanal = getCanalProducto(venta.producto);
+
     const embed = new EmbedBuilder()
-        .setAuthor({ 
-            name: venta.cliente,
-            iconURL: venta.avatarURL
-        })
+        .setAuthor({ name: venta.cliente, iconURL: venta.avatarURL })
         .setTitle('> <:shoppp:1472642011197735107> Compra Realizada!')
         .setDescription(
             `**Carrito**\n` +
@@ -158,17 +182,27 @@ async function enviarVentaSimulada(client) {
         .setColor(config.embedColor)
         .setFooter(config.embedFooter);
 
-    const boton = new ButtonBuilder()
-        .setLabel('Comprar')
-        .setStyle(ButtonStyle.Link)
-        .setURL(CONFIGURACION.urlComprar)
-        .setEmoji('🛒');
+    const botonesComponentes = [];
 
-    const row = new ActionRowBuilder().addComponents(boton);
+    if (urlCanal) {
+        botonesComponentes.push(
+            new ButtonBuilder()
+                .setLabel('Ver Producto')
+                .setStyle(ButtonStyle.Link)
+                .setURL(urlCanal)
+                .setEmoji('🛒')
+        );
+    }
+
+    const row = new ActionRowBuilder().addComponents(...botonesComponentes);
 
     try {
-        await canal.send({ embeds: [embed], components: [row] });
-        const intervaloActual = CONFIGURACION.intervalos[indiceIntervalos];
+        const msg = await canal.send({
+            embeds: [embed],
+            components: botonesComponentes.length > 0 ? [row] : []
+        });
+
+        guardarVenta(venta, msg.url);
     } catch (error) {
         console.error('❌ Error enviando venta simulada:', error.message);
     }
@@ -177,38 +211,32 @@ async function enviarVentaSimulada(client) {
 }
 
 function programarSiguienteVenta(client) {
-    if (timerActivo) {
-        clearTimeout(timerActivo);
-    }
+    if (timerActivo) clearTimeout(timerActivo);
 
     const intervaloMinutos = CONFIGURACION.intervalos[indiceIntervalos];
     const milisegundos = intervaloMinutos * 60 * 1000;
-
     indiceIntervalos = (indiceIntervalos + 1) % CONFIGURACION.intervalos.length;
 
     timerActivo = setTimeout(() => {
         enviarVentaSimulada(client);
     }, milisegundos);
-
 }
 
 module.exports = {
     name: 'ready',
     once: false,
-    
+
     async execute(client) {
-        // Cargar usuarios
         if (CONFIGURACION.usarUsuariosReales) {
             usuariosCache = await obtenerUsuariosReales(client);
         } else {
-            usuariosCache = NOMBRES_RESPALDO.map(nombre => ({ 
-                username: nombre, 
-                avatarURL: config.embedThumbnail 
-            }));
+            usuariosCache = fallbackUsuarios();
         }
 
         setTimeout(() => {
             enviarVentaSimulada(client);
         }, 120000);
-    }
+    },
+
+    getUltimasVentas
 };

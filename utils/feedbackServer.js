@@ -1,10 +1,175 @@
 const http = require('http');
 const ngrok = require('@ngrok/ngrok');
-const { EmbedBuilder } = require('discord.js');
+const { EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js');
 const { embedColor, embedFooter, embedThumbnail } = require('../data/config');
 
 const FEEDBACK_CHANNEL_ID = process.env.FEEDBACK_CHANNEL_ID;
 
+// ─── Importar ventas fake para linkearlas ───────────────────────────────────
+const fakeVentasEvent = require('../events/fakeVentas');
+
+// ─── Intervalos feedback fake (minutos) ────────────────────────────────────
+const INTERVALOS_FEEDBACK = [60, 150, 95, 210, 130, 75, 180, 240];
+let indiceFeedback = 0;
+let timerFeedback = null;
+
+const COMENTARIOS_POSITIVOS = [
+  'Muy buen servicio, todo llegó rápido y sin problemas 🔥',
+  'Excelente atención, el producto funciona perfecto',
+  'Todo llegó al toque, recomendado 100%',
+  'Primera vez que compro y quedé sorprendido, vuelvo a comprar',
+  'El soporte me ayudó al instante, increíble',
+  'Funciona de maravilla, muy contento con la compra',
+  'Rápido y confiable, nada que decir en contra',
+  'Producto tal cual se describe, sin fallas',
+  'Llevo meses comprando acá y nunca falla',
+  'El mejor servicio que he encontrado, sin duda',
+  'Me sorprendió la rapidez de la entrega',
+  'Todo perfecto, el panel funciona sin lag',
+  'Buenísimo, ya le recomendé a mis amigos',
+  'Compra sin miedo, es de fiar',
+  'La atención al cliente es rapida, resolvieron mi duda en segundos',
+  // nuevos
+  'el panel full es una locura todo en uno vale cada sol',
+  'llevo semanas con el bypass id y ni un ban imaginate',
+  'el panel android va suave ni un lag ni un crash',
+  'el aimbot body ios es demasiado preciso no se nota nada',
+  'bypass apk funciona en cualquier version del juego literalmente',
+  'el panel ios es de otro nivel con lo barato que sale',
+  'menu basic pero no tiene nada de basico jaja cumple re bien',
+  'el regedit hizo maravillas en mi pc todo mas fluido',
+  'spoofer activo y a jugar sin dramas funciona perfecto',
+  'panel csgo sin vac sin nada limpio total',
+  'aimbot color demasiado smooth nadie se da cuenta',
+  'bypass global en todos mis devices sin problema',
+  'panel warzone activo en minutos el soporte es rapido',
+  'menu chams increible ves todo sin que se note raro',
+  'aimlock preciso y suave no parece hack para nada',
+  'panel only aimbot ideal para los que no quieren tanto riesgo',
+  'bypass id renovado cada mes y jamas tuve problema',
+  'panel full trimestral salio baratisimo comparado a otras tiendas',
+  'aimbot proxy sin lag sin delay va como seda',
+  'panel cod ios funciona perfecto en mi iphone sin jailbreak',
+  'gbox de lujo para la temporada lo uso cada dia',
+  'menu basic semanal perfecto para probar antes de comprar mensual',
+  'el soporte explica todo paso a paso no te dejan solo',
+  'active el bypass global y en 5 minutos ya estaba jugando',
+  'panel android mensual relacion calidad precio imbatible',
+  'aimbot body ios por temporada y ni un reporte increible',
+];
+
+const USUARIOS_FEEDBACK_FAKE = [
+  'xX_darkside_Xx', 'juancho.ff', 'elcrack2009', 'pipe_rdz', 'nachito_gamer',
+  'soyjoseML', 'alexis.pvp', 'el_zurdo07', 'brandon_gg', 'miguel.exe',
+  'elias_fr', 'rodrigo2k24', 'fer_nochill', 'danii.co', 'cristhian_ff',
+  'nico_slayer', 'mateo.rdx', 'jota_pe', 'luisito_crack', 'el_pato99',
+  'yael.mx', 'sebas_123', 'camilo.gg', 'andres.pvp', 'eduin_ff',
+  'franco.exe', 'josecito_co', 'emilio_rdz', 'dylan.2k', 'alexito_pe',
+  'thiago_ff', 'kevin.sniper', 'el_mono88', 'brayan_col', 'pablito.gg',
+  'gael_mx', 'santi.pvp', 'renzo_pe', 'fabian.exe', 'tomas_rdx',
+];
+
+const VENDEDORES_FAKE = [
+  'fvbrix', 'strixboss', 'HyperV',
+  'Matty', 'Em4', 'Josuex'
+];
+
+const DESCUBRIMIENTO_FAKE = [
+  'Discord', 'TikTok', 'Instagram', 'Un amigo me recomendó',
+  'YouTube', 'Otra red', 'Google',
+];
+
+const RATING_FAKE = ['⭐⭐⭐⭐⭐ (5/5)', '⭐⭐⭐⭐⭐ (5/5)', '⭐⭐⭐⭐⭐ (5/5)', '⭐⭐⭐⭐ (4/5)'];
+
+const ENCONTRO_FAKE = ['Sí, encontré todo lo que buscaba', 'Sí, y más de lo esperado', 'Sí, sin problemas'];
+
+function pick(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function estaEnHorario() {
+  const hora = new Date().getHours();
+  return hora >= 8 && hora < 23;
+}
+
+async function enviarFeedbackFake(client) {
+  if (!estaEnHorario()) {
+    programarSiguienteFeedback(client);
+    return;
+  }
+
+  try {
+    const ventas = fakeVentasEvent.getUltimasVentas();
+    if (ventas.length === 0) {
+      programarSiguienteFeedback(client);
+      return;
+    }
+
+    const ventaRef = pick(ventas);
+
+    const usuario = pick(USUARIOS_FEEDBACK_FAKE);
+    const vendedor = pick(VENDEDORES_FAKE);
+    const comentario = pick(COMENTARIOS_POSITIVOS);
+    const rating = pick(RATING_FAKE);
+    const descubrimiento = pick(DESCUBRIMIENTO_FAKE);
+    const encontro = pick(ENCONTRO_FAKE);
+
+    const embed = new EmbedBuilder()
+      .setTitle('> HyperV - Feedback')
+      .setColor(embedColor)
+      .setThumbnail(embedThumbnail)
+      .addFields(
+        { name: '<:zeusaa:1433927475976474624> Usuario', value: usuario, inline: true },
+        { name: '<:compra:1316466484133757021> Producto', value: `${ventaRef.producto} ${ventaRef.periodo}`, inline: true },
+        { name: '<:support1:1321973732193075362> Vendedor y Soporte', value: vendedor, inline: true },
+        { name: '<:website:1459019351410872362> ¿Cómo nos descubriste?', value: descubrimiento, inline: true },
+        { name: '<:estrellaa:1317937061965074524> Experiencia general', value: rating, inline: true },
+        { name: '<:soporte:1316466482653171763> ¿Encontró lo que buscaba?', value: encontro, inline: true },
+        { name: '<:garantia:1321973733971333150> Lo que más le gustó', value: comentario, inline: false },
+        { name: '💬 Comentarios', value: comentario, inline: false },
+      )
+      .setFooter(embedFooter)
+      .setTimestamp();
+
+    const botones = [];
+
+    if (ventaRef.messageURL) {
+      botones.push(
+        new ButtonBuilder()
+          .setLabel('Ver Compra')
+          .setStyle(ButtonStyle.Link)
+          .setURL(ventaRef.messageURL)
+          .setEmoji('🧾')
+      );
+    }
+
+    const channel = await client.channels.fetch(FEEDBACK_CHANNEL_ID);
+    await channel.send({
+      embeds: [embed],
+      components: botones.length > 0 ? [new ActionRowBuilder().addComponents(...botones)] : []
+    });
+
+    console.log(`✅ Feedback fake enviado — referenciando: ${ventaRef.producto} ${ventaRef.periodo}`);
+  } catch (error) {
+    console.error('❌ Error enviando feedback fake:', error.message);
+  }
+
+  programarSiguienteFeedback(client);
+}
+
+function programarSiguienteFeedback(client) {
+  if (timerFeedback) clearTimeout(timerFeedback);
+
+  const minutos = INTERVALOS_FEEDBACK[indiceFeedback];
+  const ms = minutos * 60 * 1000;
+  indiceFeedback = (indiceFeedback + 1) % INTERVALOS_FEEDBACK.length;
+
+  timerFeedback = setTimeout(() => {
+    enviarFeedbackFake(client);
+  }, ms);
+}
+
+// ─── Labels reales del formulario ──────────────────────────────────────────
 const fieldLabels = {
   question_zK8R4g: '<:zeusaa:1433927475976474624> Usuario',
   question_5dagoQ: '<:compra:1316466484133757021> Producto',
@@ -61,6 +226,11 @@ async function startTunnel(port) {
 }
 
 function startFeedbackServer(client) {
+  // Arrancar feedbacks fake con delay inicial de 3 minutos
+  setTimeout(() => {
+    programarSiguienteFeedback(client);
+  }, 3 * 60 * 1000);
+
   const server = http.createServer(async (req, res) => {
     const reqUrl = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
 
@@ -113,7 +283,7 @@ function startFeedbackServer(client) {
       }
     }
 
-    // ========== RUTA POST: /feedback ==========
+    // ========== RUTA POST: /feedback (REAL) ==========
     if (req.method === 'POST' && reqUrl.pathname === '/feedback') {
       let body = '';
 
@@ -155,7 +325,7 @@ function startFeedbackServer(client) {
           const imageUrl = fileField?.value?.[0]?.url || null;
 
           const embed = new EmbedBuilder()
-            .setTitle(`> HyperV - Feedback`)
+            .setTitle('> HyperV - Feedback')
             .setColor(embedColor)
             .setThumbnail(embedThumbnail)
             .addFields(embedFields)
