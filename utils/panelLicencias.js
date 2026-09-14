@@ -1,33 +1,79 @@
-const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js");
+const {
+    ContainerBuilder,
+    SectionBuilder,
+    TextDisplayBuilder,
+    SeparatorBuilder,
+    ButtonBuilder,
+    ButtonStyle,
+    MessageFlags,
+} = require("discord.js");
 const config = require("../data/config.js");
 
 async function enviarPanelLicenciasWindows(channel) {
-    const embed = new EmbedBuilder()
-        .setTitle("HyperV | Licencias Windows")
-        .setDescription("**Recursos Oficiales**\n\u200b")
-        .addFields(
-            { name: "🪟 Windows 10 Pro - Licencia Digital", value: "\u200b", inline: true },
-            { name: "\u200b", value: "\u200b", inline: true },
-            { name: "🪟 Windows 11 Pro - Licencia Digital", value: "\u200b", inline: true },
-            { name: "\u200b", value: "\u200b", inline: true },
-            { name: "📄 Guía de Activación Paso a Paso", value: "\u200b", inline: true },
-            { name: "\u200b", value: "\u200b", inline: true },
+    const container = new ContainerBuilder()
+        .setAccentColor(config.embedColor)
+        .addTextDisplayComponents(
+            new TextDisplayBuilder().setContent("## HyperV | Licencias Windows"),
         )
-        .setColor("#2b2d31")
-        .setImage(config.defaultImage);
+        .addSeparatorComponents(new SeparatorBuilder())
+        .addTextDisplayComponents(
+            new TextDisplayBuilder().setContent("__Recursos Oficiales__"),
+        )
+        .addSectionComponents(
+            new SectionBuilder()
+                .addTextDisplayComponents(
+                    new TextDisplayBuilder().setContent("🪟 **Windows 10 Pro - Licencia Digital**"),
+                )
+                .setButtonAccessory(
+                    new ButtonBuilder()
+                        .setLabel("Comprar")
+                        .setStyle(ButtonStyle.Link)
+                        .setURL("https://hyperv.online/licencias/win10pro"),
+                ),
+        )
+        .addSeparatorComponents(new SeparatorBuilder())
+        .addSectionComponents(
+            new SectionBuilder()
+                .addTextDisplayComponents(
+                    new TextDisplayBuilder().setContent("🪟 **Windows 11 Pro - Licencia Digital**"),
+                )
+                .setButtonAccessory(
+                    new ButtonBuilder()
+                        .setLabel("Comprar")
+                        .setStyle(ButtonStyle.Link)
+                        .setURL("https://hyperv.online/licencias/win11pro"),
+                ),
+        )
+        .addSeparatorComponents(new SeparatorBuilder())
+        .addSectionComponents(
+            new SectionBuilder()
+                .addTextDisplayComponents(
+                    new TextDisplayBuilder().setContent("📄 **Guía de Activación**"),
+                )
+                .setButtonAccessory(
+                    new ButtonBuilder()
+                        .setLabel("Ver Guía")
+                        .setStyle(ButtonStyle.Link)
+                        .setURL("https://hyperv.online/docs/activacion-windows"),
+                ),
+        )
+        .addSeparatorComponents(new SeparatorBuilder())
+        .addSectionComponents(
+            new SectionBuilder()
+                .addTextDisplayComponents(
+                    new TextDisplayBuilder().setContent("🛠️ **Soporte de Activación**"),
+                )
+                .setButtonAccessory(
+                    new ButtonBuilder()
+                        .setLabel("Abrir Ticket")
+                        .setStyle(ButtonStyle.Link)
+                        .setURL("https://hyperv.online/support"),
+                ),
+        );
 
     await channel.send({
-        embeds: [embed],
-        components: [
-            new ActionRowBuilder().addComponents(
-                new ButtonBuilder().setLabel("Comprar Win10").setStyle(ButtonStyle.Link).setURL("https://hyperv.online/licencias/win10pro"),
-                new ButtonBuilder().setLabel("Comprar Win11").setStyle(ButtonStyle.Link).setURL("https://hyperv.online/licencias/win11pro"),
-            ),
-            new ActionRowBuilder().addComponents(
-                new ButtonBuilder().setLabel("Ver Guía").setStyle(ButtonStyle.Link).setURL("https://hyperv.online/docs/activacion-windows"),
-                new ButtonBuilder().setLabel("Soporte").setStyle(ButtonStyle.Link).setURL("https://hyperv.online/support"),
-            ),
-        ],
+        components: [container],
+        flags: MessageFlags.IsComponentsV2,
     });
 }
 
