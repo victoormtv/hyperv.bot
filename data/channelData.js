@@ -174,11 +174,16 @@ module.exports = [
     id: ids.embeds.PANEL_PC_GRATIS,
     messageId: "1538692444302999572",
     embed: new EmbedBuilder()
-      .setTitle("> HyperV - Panel Gratis")
-      .setDescription("Obten acceso directo a tu panel gratis, y usalo en nuestro canal de voz en tiempo real")
+      .setTitle("Panel Aimbot + FPS Booster | Download Links")
+      .setDescription("**Recursos Recomendados**\n\u200b")
       .addFields(
-        { name: "Panel Gratis para PC", value: "[` HyperV <:external_link_white:1548864165358211133> `](https://hyperv.online/gratis)", inline: true },
-        { name: "\u200b", value: "\u200b", inline: true },
+        { name: "**BLUESTACKS 5.22.100.1024**", value: "[Descargar <:external_link_white:1548864165358211133>](https://tulink.com/bluestacks)", inline: true },
+        { name: "**MSI_P64 5.22.75**", value: "[Descargar <:external_link_white:1548864165358211133>](https://tulink.com/msi)", inline: true },
+        { name: "**FF NORMAL 0B54**", value: "[Descargar <:external_link_white:1548864165358211133>](https://tulink.com/ff)", inline: true },
+        { name: "**Free Executables**", value: "\u200b", inline: false },
+        { name: "**PANEL BASICO**", value: "[Descargar <:external_link_white:1548864165358211133>](https://tulink.com/panel)", inline: true },
+        { name: "**FPS BOOSTER**", value: "[Descargar <:external_link_white:1548864165358211133>](https://tulink.com/booster)", inline: true },
+        { name: "**System Requirements**", value: "📁 DirectX/C++  |  📁 Dll's (obligatorio)", inline: false },
       )
       .setColor(config.embedColor)
       .setFooter(config.embedFooter)
