@@ -176,7 +176,7 @@ module.exports = [
     embed: new EmbedBuilder()
       .setTitle("Panel Aimbot + FPS Booster | Download Links")
       .setDescription("**Recursos Recomendados**")
-      .setColor(config.embedColor)
+      .setColor("#2b2d31")
       .setFooter(config.embedFooter)
       .setImage(config.defaultImage),
 
