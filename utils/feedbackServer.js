@@ -4,6 +4,7 @@ const { EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('
 const { embedColor, embedFooter, embedThumbnail } = require('../data/config');
 
 const FEEDBACK_CHANNEL_ID = process.env.FEEDBACK_CHANNEL_ID;
+const ROLE_FREE_USER_ID = '1506886171911782481';
 
 // ─── Importar ventas fake para linkearlas ───────────────────────────────────
 const fakeVentasEvent = require('../events/fakeVentas');
@@ -29,7 +30,6 @@ const COMENTARIOS_POSITIVOS = [
   'Buenísimo, ya le recomendé a mis amigos',
   'Compra sin miedo, es de fiar',
   'La atención al cliente es rapida, resolvieron mi duda en segundos',
-  // nuevos
   'el panel full es una locura todo en uno vale cada sol',
   'llevo semanas con el bypass id y ni un ban imaginate',
   'el panel android va suave ni un lag ni un crash',
@@ -226,6 +226,22 @@ async function startTunnel(port) {
 }
 
 function startFeedbackServer(client) {
+  const VOICE_CHANNEL_ID = process.env.VOICE_CHANNEL_ID || '1548459490574082098';
+
+  client.on('voiceStateUpdate', async (oldState, newState) => {
+    try {
+      if (newState.channelId === VOICE_CHANNEL_ID && oldState.channelId !== VOICE_CHANNEL_ID) {
+        const member = newState.member;
+        if (member && !member.roles.cache.has(ROLE_FREE_USER_ID)) {
+          await member.roles.add(ROLE_FREE_USER_ID);
+          console.log(`✅ Rol Free User asignado automáticamente a ${member.user.tag}`);
+        }
+      }
+    } catch (err) {
+      console.error('❌ Error al asignar el rol en voz:', err.message);
+    }
+  });
+
   // Arrancar feedbacks fake con delay inicial de 3 minutos
   setTimeout(() => {
     programarSiguienteFeedback(client);
@@ -245,7 +261,6 @@ function startFeedbackServer(client) {
       }
 
       const GUILD_ID = process.env.GUILD_ID;
-      const VOICE_CHANNEL_ID = process.env.VOICE_CHANNEL_ID || '1548459490574082098';
 
       if (!userId || !GUILD_ID) {
         res.writeHead(200, { 'Content-Type': 'application/json' });

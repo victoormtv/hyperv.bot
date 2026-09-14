@@ -174,38 +174,15 @@ module.exports = [
     id: ids.embeds.PANEL_PC_GRATIS,
     messageId: "1538692444302999572",
     embed: new EmbedBuilder()
-      .setTitle("> Panel Gratis")
+      .setTitle("> HyperV - Panel Secure Gratis")
       .setDescription(
-        "**<:compra:1316171968717918379> Si deseas adquirir algún plan de paga o recurrir algun soporte gratuito, abre un ticket.**",
+        "DESACTIVATA TU ANTIVIRUS ANTES DE DESCARGAR LOS ARCHIVOS ⚠️\n\n" +
+        "**Página:**\n\n" +
+        "- Ingresa a nuestra pagina y sigue los pasos — [📥 HyperV](https://hyperv.online)"
       )
       .setColor(config.embedColor)
-      .setTimestamp()
       .setFooter(config.embedFooter)
-      .setImage("https://i.ibb.co/TB9Z7y5X/panel-free.png"),
-    components: [
-      new ActionRowBuilder().addComponents(
-        new ButtonBuilder()
-          .setCustomId("ticket_panel_gratis")  // <-- botón de ticket
-          .setLabel("Abrir Ticket / Open Ticket")
-          .setStyle(ButtonStyle.Secondary)
-          .setEmoji({ name: 'soporte', id: '1232042953908949034' }),
-        new ButtonBuilder()
-          .setLabel("Guia de Instalacion")
-          .setStyle(ButtonStyle.Link)
-          .setEmoji({ name: 'download', id: '1505630527535972402' })
-          .setURL("https://hyperv.online/free/panel-free"),
-        new ButtonBuilder()
-          .setLabel("Instagram (Seguirnos obligatoriamente)")
-          .setStyle(ButtonStyle.Link)
-          .setEmoji({ name: 'instagram36', id: '1317355853182926939' })
-          .setURL("https://www.instagram.com/hypervgg.pe/"),
-        new ButtonBuilder()
-          .setLabel("Grupo de Ventas")
-          .setStyle(ButtonStyle.Link)
-          .setEmoji({ name: 'wsp', id: '1459018687817322618' })
-          .setURL("https://chat.whatsapp.com/DSjbG1vp4hnA6EaLRpeCQj"),
-      ),
-    ],
+      .setImage(config.defaultImage),
   },
 
   {
