@@ -170,50 +170,70 @@ module.exports = [
     components: [createLanguageTicketButtons()],
   },
 
-
   {
     id: ids.embeds.PANEL_PC_GRATIS,
-    messageId: "TU_MESSAGE_ID",
+    messageId: "1538692444302999572",
     embed: new EmbedBuilder()
-      .setTitle("HyperV | Kit de Instalación")
-      .setDescription("Descarga los recursos oficiales para configurar tu cuenta")
+      .setTitle("Download Links")
+      .setDescription("**Recursos Recomendados**")
       .setColor("#2b2d31")
-      .setFooter(config.embedFooter)
       .setImage(config.defaultImage),
 
     components: [
       new ActionRowBuilder().addComponents(
         new ButtonBuilder()
-          .setCustomId("label_manual")
-          .setLabel("Manual de Instalación (PDF)")
+          .setCustomId("label_bluestacks")
+          .setLabel("BLUESTACKS 5.22.100.1024")
           .setStyle(ButtonStyle.Secondary)
           .setDisabled(true),
         new ButtonBuilder()
           .setLabel("Descargar")
           .setStyle(ButtonStyle.Link)
-          .setURL("https://hyperv.online/docs/manual.pdf"),
+          .setURL("https://tulink.com/bluestacks"),
       ),
       new ActionRowBuilder().addComponents(
         new ButtonBuilder()
-          .setCustomId("label_licencia")
-          .setLabel("Guía de Activación de Licencia")
+          .setCustomId("label_msi")
+          .setLabel("MSI_P64 5.22.75")
           .setStyle(ButtonStyle.Secondary)
           .setDisabled(true),
         new ButtonBuilder()
-          .setLabel("Ver Guía")
+          .setLabel("Descargar")
           .setStyle(ButtonStyle.Link)
-          .setURL("https://hyperv.online/docs/licencia"),
+          .setURL("https://tulink.com/msi"),
       ),
       new ActionRowBuilder().addComponents(
         new ButtonBuilder()
-          .setCustomId("label_soporte")
-          .setLabel("Soporte Técnico")
+          .setCustomId("label_ff")
+          .setLabel("FF NORMAL 0B54")
           .setStyle(ButtonStyle.Secondary)
           .setDisabled(true),
         new ButtonBuilder()
-          .setLabel("Abrir Ticket")
+          .setLabel("Descargar")
           .setStyle(ButtonStyle.Link)
-          .setURL("https://hyperv.online/support"),
+          .setURL("https://tulink.com/ff"),
+      ),
+      new ActionRowBuilder().addComponents(
+        new ButtonBuilder()
+          .setCustomId("label_panel")
+          .setLabel("PANEL BASICO")
+          .setStyle(ButtonStyle.Secondary)
+          .setDisabled(true),
+        new ButtonBuilder()
+          .setLabel("Descargar")
+          .setStyle(ButtonStyle.Link)
+          .setURL("https://tulink.com/panel"),
+      ),
+      new ActionRowBuilder().addComponents(
+        new ButtonBuilder()
+          .setCustomId("label_booster")
+          .setLabel("FPS BOOSTER")
+          .setStyle(ButtonStyle.Secondary)
+          .setDisabled(true),
+        new ButtonBuilder()
+          .setLabel("Descargar")
+          .setStyle(ButtonStyle.Link)
+          .setURL("https://tulink.com/booster"),
       ),
     ],
   },
