@@ -175,19 +175,68 @@ module.exports = [
     messageId: "1538692444302999572",
     embed: new EmbedBuilder()
       .setTitle("Panel Aimbot + FPS Booster | Download Links")
-      .setDescription("**Recursos Recomendados**\n\u200b")
-      .addFields(
-        { name: "**BLUESTACKS 5.22.100.1024**", value: "[Descargar <:external_link_white:1548864165358211133>](https://tulink.com/bluestacks)", inline: true },
-        { name: "**MSI_P64 5.22.75**", value: "[Descargar <:external_link_white:1548864165358211133>](https://tulink.com/msi)", inline: true },
-        { name: "**FF NORMAL 0B54**", value: "[Descargar <:external_link_white:1548864165358211133>](https://tulink.com/ff)", inline: true },
-        { name: "**Free Executables**", value: "\u200b", inline: false },
-        { name: "**PANEL BASICO**", value: "[Descargar <:external_link_white:1548864165358211133>](https://tulink.com/panel)", inline: true },
-        { name: "**FPS BOOSTER**", value: "[Descargar <:external_link_white:1548864165358211133>](https://tulink.com/booster)", inline: true },
-        { name: "**System Requirements**", value: "📁 DirectX/C++  |  📁 Dll's (obligatorio)", inline: false },
-      )
+      .setDescription("**Recursos Recomendados**")
       .setColor(config.embedColor)
       .setFooter(config.embedFooter)
       .setImage(config.defaultImage),
+
+    components: [
+      new ActionRowBuilder().addComponents(
+        new ButtonBuilder()
+          .setCustomId("label_bluestacks")
+          .setLabel("BLUESTACKS 5.22.100.1024")
+          .setStyle(ButtonStyle.Secondary)
+          .setDisabled(true),
+        new ButtonBuilder()
+          .setLabel("Descargar")
+          .setStyle(ButtonStyle.Link)
+          .setURL("https://tulink.com/bluestacks"),
+      ),
+      new ActionRowBuilder().addComponents(
+        new ButtonBuilder()
+          .setCustomId("label_msi")
+          .setLabel("MSI_P64 5.22.75")
+          .setStyle(ButtonStyle.Secondary)
+          .setDisabled(true),
+        new ButtonBuilder()
+          .setLabel("Descargar")
+          .setStyle(ButtonStyle.Link)
+          .setURL("https://tulink.com/msi"),
+      ),
+      new ActionRowBuilder().addComponents(
+        new ButtonBuilder()
+          .setCustomId("label_ff")
+          .setLabel("FF NORMAL 0B54")
+          .setStyle(ButtonStyle.Secondary)
+          .setDisabled(true),
+        new ButtonBuilder()
+          .setLabel("Descargar")
+          .setStyle(ButtonStyle.Link)
+          .setURL("https://tulink.com/ff"),
+      ),
+      new ActionRowBuilder().addComponents(
+        new ButtonBuilder()
+          .setCustomId("label_panel")
+          .setLabel("PANEL BASICO")
+          .setStyle(ButtonStyle.Secondary)
+          .setDisabled(true),
+        new ButtonBuilder()
+          .setLabel("Descargar")
+          .setStyle(ButtonStyle.Link)
+          .setURL("https://tulink.com/panel"),
+      ),
+      new ActionRowBuilder().addComponents(
+        new ButtonBuilder()
+          .setCustomId("label_booster")
+          .setLabel("FPS BOOSTER")
+          .setStyle(ButtonStyle.Secondary)
+          .setDisabled(true),
+        new ButtonBuilder()
+          .setLabel("Descargar")
+          .setStyle(ButtonStyle.Link)
+          .setURL("https://tulink.com/booster"),
+      ),
+    ],
   },
 
   {
