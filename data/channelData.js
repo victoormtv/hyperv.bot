@@ -175,38 +175,32 @@ module.exports = [
     messageId: "1538692444302999572",
     embed: new EmbedBuilder()
       .setTitle("> Panel Aimbot + FPS Booster | Download Links")
-      .setDescription(
-        "DESACTIVATA TU ANTIVIRUS ANTES DE DESCARGAR LOS ARCHIVOS\n\n" +
-        "**Recommended Resources**\n\n" +
-        "BLUESTACKS \n" +
-        "MSI_P64\n" +
-        "FF\n\n" +
-        "**Free Executables:**\n\n" +
-        "PANEL BASICO\n\n" +
-        "**System Requirements:**\n" +
-        "DirectX/C++ Dll's (obligatorio)"
+      .setDescription("DESACTIVATA TU ANTIVIRUS ANTES DE DESCARGAR LOS ARCHIVOS ⚠️")
+      .addFields(
+        // Fila 1: BlueStacks
+        { name: "🟢 BLUESTACKS 5.22.100.1024", value: "[📥 Descargar](https://tu-link.com/bluestacks)", inline: true },
+        { name: "\u200b", value: "\u200b", inline: true }, // Espacio para separar columnas si es necesario
+
+        // Fila 2: MSI
+        { name: "💻 MSI_P64 5.22.75", value: "[📥 Descargar](https://tu-link.com/msi)", inline: true },
+        { name: "\u200b", value: "\u200b", inline: true },
+
+        // Fila 3: FF Normal
+        { name: "📱 FF NORMAL OB54", value: "[📥 Descargar](https://tu-link.com/ff)", inline: true },
+        { name: "\u200b", value: "\u200b", inline: true },
+
+        // Sección Free Executables
+        { name: "⚙️ PANEL BASICO", value: "[📥 Descargar](https://tu-link.com/basico)", inline: true },
+        { name: "\u200b", value: "\u200b", inline: true },
+
+        { name: "🚀 FPS BOOSTER", value: "[📥 Descargar](https://tu-link.com/fps)", inline: true },
+        { name: "\u200b", value: "\u200b", inline: true }
       )
       .setColor(config.embedColor)
       .setFooter(config.embedFooter)
       .setImage(config.defaultImage),
     components: [
-      // Fila 1: Botón para BlueStacks
-      new ActionRowBuilder().addComponents(
-        new ButtonBuilder()
-          .setLabel("Descargar BlueStacks")
-          .setStyle(ButtonStyle.Link)
-          .setEmoji({ name: 'download', id: '1505630527535972402' })
-          .setURL("https://hyperv.online")
-      ),
-      // Fila 2: Botón para MSI
-      new ActionRowBuilder().addComponents(
-        new ButtonBuilder()
-          .setLabel("Descargar MSI")
-          .setStyle(ButtonStyle.Link)
-          .setEmoji({ name: 'download', id: '1505630527535972402' })
-          .setURL("https://hyperv.online")
-      ),
-      // Fila 3: Botones de Prueba Gratis (pueden ir juntos en una fila si caben)
+      // Abajo de todo puedes dejar solo los botones generales (como Reclamar Prueba o Support)
       new ActionRowBuilder().addComponents(
         new ButtonBuilder()
           .setLabel("Reclamar Prueba Gratis")
