@@ -177,21 +177,12 @@ module.exports = [
       .setTitle("> HyperV - Panel Gratis")
       .setDescription("Obten acceso directo a tu panel gratis, y usalo en nuestro canal de voz en tiempo real")
       .addFields(
-        { name: "Panel Gratis para PC", value: "[`HyperV <:external_link_white:1548864165358211133>`](https://hyperv.online/gratis)", inline: true },
+        { name: "Panel Gratis para PC", value: "[` HyperV `](https://hyperv.online/gratis) <:external_link_white:1548864165358211133>", inline: true },
         { name: "\u200b", value: "\u200b", inline: true },
       )
       .setColor(config.embedColor)
       .setFooter(config.embedFooter)
       .setImage(config.defaultImage),
-    components: [
-      new ActionRowBuilder().addComponents(
-        new ButtonBuilder()
-          .setLabel("Help Support")
-          .setStyle(ButtonStyle.Link)
-          .setEmoji("🛠️")
-          .setURL("https://hyperv.online")
-      )
-    ],
   },
 
   {
