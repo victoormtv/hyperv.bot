@@ -87,9 +87,12 @@ function estaEnHorario() {
 function buildFeedbackContainer({ usuario, producto, vendedor, descubrimiento, rating, encontro, comentario, imageUrl }) {
   const container = new ContainerBuilder().setAccentColor(embedColor);
 
-  if (imageUrl || embedThumbnail) {
+  // Si no llega imagen explícita, usa por defecto el embedThumbnail de config
+  const finalImage = imageUrl || embedThumbnail;
+
+  if (finalImage) {
     container.addMediaGalleryComponents(
-      new MediaGalleryBuilder().addItems(new MediaGalleryItemBuilder().setURL(imageUrl || embedThumbnail))
+      new MediaGalleryBuilder().addItems(new MediaGalleryItemBuilder().setURL(finalImage))
     );
   }
 
@@ -131,7 +134,6 @@ async function enviarFeedbackFake(client) {
     const descubrimiento = pick(DESCUBRIMIENTO_FAKE);
     const encontro = pick(ENCONTRO_FAKE);
 
-    // Seleccionar comentario coherente según el producto
     const categoriaProducto = Object.keys(COMENTARIOS_POR_PRODUCTO).find(key =>
       ventaRef.producto.toLowerCase().includes(key.toLowerCase())
     );
@@ -146,7 +148,7 @@ async function enviarFeedbackFake(client) {
       rating,
       encontro,
       comentario,
-      imageUrl: embedThumbnail
+      imageUrl: embedThumbnail // Usa el valor por defecto de config
     });
 
     const botones = [];
@@ -220,7 +222,7 @@ function resolveFieldValue(field) {
       }).join('\n') || 'Sin respuesta';
     }
     case 'FILE_UPLOAD': {
-      if (!field.value || field.value.length === 0) return 'Sin archivo';
+      if (!field.value || field.value.length === 0) return null;
       return field.value.map(f => `[📎 ${f.name}](${f.url})`).join('\n');
     }
     default:
@@ -259,7 +261,6 @@ function startFeedbackServer(client) {
     }
   });
 
-  // Arrancar feedbacks fake con delay inicial de 3 minutos
   setTimeout(() => {
     programarSiguienteFeedback(client);
   }, 3 * 60 * 1000);
@@ -267,7 +268,6 @@ function startFeedbackServer(client) {
   const server = http.createServer(async (req, res) => {
     const reqUrl = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
 
-    // ========== RUTA GET: /voice-check/:userId ==========
     if (req.method === 'GET' && reqUrl.pathname.startsWith('/voice-check/')) {
       const userId = reqUrl.pathname.split('/')[2];
       const secret = req.headers['x-bot-secret'];
@@ -315,7 +315,6 @@ function startFeedbackServer(client) {
       }
     }
 
-    // ========== RUTA POST: /feedback (REAL) ==========
     if (req.method === 'POST' && reqUrl.pathname === '/feedback') {
       let body = '';
 
@@ -346,7 +345,8 @@ function startFeedbackServer(client) {
           const comentario = dataMap['<:garantia:1321973733971333150> Comentarios'] || dataMap['Lo que más le gustó'] || 'Sin comentarios';
 
           const fileField = fields.find(f => f.type === 'FILE_UPLOAD');
-          const imageUrl = fileField?.value?.[0]?.url || embedThumbnail;
+          // Si el usuario adjuntó archivo/imagen se usa, si no, se pasa null para que coja el embedThumbnail por defecto
+          const imageUrl = fileField?.value?.[0]?.url || null;
 
           const container = buildFeedbackContainer({
             usuario,
@@ -365,7 +365,7 @@ function startFeedbackServer(client) {
             flags: MessageFlags.IsComponentsV2
           });
 
-          console.log('✅ Feedback real enviado (V2) sin duplicados');
+          console.log('✅ Feedback real enviado (V2 con imagen por defecto si falta)');
         } catch (error) {
           console.error('❌ Error procesando feedback real:', error);
         }
