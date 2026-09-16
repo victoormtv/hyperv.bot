@@ -10,11 +10,7 @@ const {
 } = require("discord.js");
 const config = require("../data/config");
 
-function pinify(text) {
-    return text.replace(/^- /gm, "📌 ").replace(/\n- /g, "\n📌 ");
-}
-
-function buildProductContainer({ title, description, image, color, buttons = [] }) {
+function buildProductContainer({ title, functions, prices, image, color, buttons = [] }) {
     const container = new ContainerBuilder().setAccentColor(color || config.embedColor);
 
     if (image) {
@@ -23,13 +19,25 @@ function buildProductContainer({ title, description, image, color, buttons = [] 
         );
     }
 
-    container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`### ${title}`));
+    // Título
+    container.addTextDisplayComponents(new TextDisplayBuilder().setContent(title));
 
-    if (description) {
+    // Funciones
+    if (functions) {
         container.addSeparatorComponents(new SeparatorBuilder());
-        container.addTextDisplayComponents(new TextDisplayBuilder().setContent(pinify(description)));
+        container.addTextDisplayComponents(new TextDisplayBuilder().setContent(functions));
     }
 
+    // Precios
+    if (prices) {
+        container.addSeparatorComponents(new SeparatorBuilder());
+        const priceText = Array.isArray(prices)
+            ? prices.map((p) => `<:garantia:1321973733971333150> ${p}`).join("\n")
+            : prices;
+        container.addTextDisplayComponents(new TextDisplayBuilder().setContent(priceText));
+    }
+
+    // Botones
     if (buttons.length) {
         container.addSeparatorComponents(new SeparatorBuilder());
         const row = new ActionRowBuilder().addComponents(
@@ -47,4 +55,4 @@ function buildProductContainer({ title, description, image, color, buttons = [] 
     return container;
 }
 
-module.exports = { buildProductContainer, pinify };
+module.exports = { buildProductContainer };

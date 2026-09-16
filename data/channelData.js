@@ -178,9 +178,8 @@ module.exports = [
     id: ids.embeds.PANEL_FULL,
     messageId: "1538692446282584096",
     container: buildProductContainer({
-      title: "Panel Full",
-      description:
-        "**FUNCIONES:**\n" +
+      title: "## Panel Full",
+      functions:
         "- **Aimbot Memory**\n> Neck/Legit/Pecho\n" +
         "- **Aimbot Offsets**\n> Rage/Helper/Lock/Silent\n" +
         "- **Misc**\n> NoRecoil/FastReload/FakeDamage/MedikitFast\n" +
@@ -191,20 +190,20 @@ module.exports = [
         "- **Functions Offsets**\n> MagnetEnemy/UnderShot/ClimbStructure/SpectateEnemy/UpPlayer/Teleport\n" +
         "- **WallH4ck Explo1ts**\n" +
         "- **Extra Functions**\n> FastFire/Levitate/Speed/360\n" +
-        "- **Stream Spoof**\n- **All mices compatible**\n- **Windows 8/10/11**\n- **HVCI ON & OFF**\n\n" +
-        "**PRECIOS:**\n" +
-        "📌 Semanal: $ 25.00 | S/. 60.00\n" +
-        "📌 Mensual: $ 40.00 | S/. 110.00\n" +
-        "📌 Trimestral: $ 50.00 | S/. 150.00\n" +
-        "📌 Anual: $ 65.00 | S/. 200.00",
-      image: "https://i.ibb.co/kVvRZ8J4/PANEL-FULL-PORTADA-HYPER-V.png",
+        "- **Stream Spoof**\n- **All mices compatible**\n- **Windows 8/10/11**\n- **HVCI ON & OFF**",
+      prices: [
+        "Semanal: $ 25.00 | S/. 60.00",
+        "Mensual: $ 40.00 | S/. 110.00",
+        "Trimestral: $ 50.00 | S/. 150.00",
+        "Anual: $ 65.00 | S/. 200.00",
+      ],
+      image: "https://www.realcloudx.com/Cloud/tanatozn/panel-full.png",
       buttons: [
         { label: "Comprar en Ticket / Buy on Ticket", style: ButtonStyle.Secondary, customId: "ticket_panel_full", emoji: { name: "soporte", id: "1232042953908949034" } },
         { label: "Comprar en Web / Buy on Web", style: ButtonStyle.Link, url: "https://hyperv.online/products/panel-full", emoji: { name: "compra", id: "1316171968717918379" } },
       ],
     }),
   },
-
   // ========================================
   // PANEL SECURE
   // ========================================
