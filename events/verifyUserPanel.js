@@ -36,8 +36,7 @@ module.exports = {
                         'Reacciona con ✅ a este mensaje para obtener acceso a nuestros **Productos Gratis**.\n\n' +
                         '- Al reaccionar, se te asignará el rol correspondiente.\n' +
                         '- Luego verás la categoría con los productos gratuitos.\n\n' +
-                        '- <#1170995306721194044> — Panel Free\n' +
-                        '- <#1513956489935720499> — Bypass UID\n'
+                        '- <#1170995306721194044> — Panel Free\n'
                     )
                     .setColor(config.embedColor)
                     .setThumbnail(config.embedThumbnail)

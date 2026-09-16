@@ -26,7 +26,6 @@ module.exports = {
       config.embeds.MENU_BASIC,
       config.embeds.PANEL_IOS,
       config.embeds.AIMBOT_BODY_IOS,
-      config.embeds.BYPASS_GRATIS,
       config.embeds.AIMLOCK,
       config.embeds.REGEDIT,
       config.embeds.AIMBOT_COLOR,

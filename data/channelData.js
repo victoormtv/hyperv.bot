@@ -170,43 +170,6 @@ module.exports = [
     components: [createLanguageTicketButtons()],
   },
 
-  {
-    id: ids.embeds.BYPASS_GRATIS,
-    messageId: "1538631071825002637",
-    embed: new EmbedBuilder()
-      .setTitle("> Bypass UID Gratis")
-      .setDescription(
-        "**<:compra:1316171968717918379> Si deseas reclamar tu key, usa uno de los botones de abajo.**",
-      )
-      .setColor(config.embedColor)
-      .setFooter(config.embedFooter)
-      .setTimestamp()
-      .setImage("https://i.ibb.co/fYR0QN6P/bypass-free.png"),
-    components: [
-      new ActionRowBuilder().addComponents(
-        new ButtonBuilder()
-          .setCustomId("ticket_bypass_free")
-          .setLabel("Reclamar Key")
-          .setStyle(ButtonStyle.Secondary)
-          .setEmoji({ name: 'soporte', id: '1316466482653171763' }),
-        new ButtonBuilder()
-          .setLabel("Guia de Instalacion")
-          .setStyle(ButtonStyle.Link)
-          .setEmoji({ name: 'download', id: '1505630527535972402' })
-          .setURL("https://hyperv.online/free/bypass-free"),
-        new ButtonBuilder()
-          .setLabel("Instagram (Seguirnos obligatoriamente)")
-          .setStyle(ButtonStyle.Link)
-          .setEmoji({ name: 'instagram36', id: '1317355853182926939' })
-          .setURL("https://www.instagram.com/hypervgg.pe/"),
-        new ButtonBuilder()
-          .setLabel("Grupo de Ventas")
-          .setStyle(ButtonStyle.Link)
-          .setEmoji({ name: 'wsp', id: '1459018687817322618' })
-          .setURL("https://chat.whatsapp.com/DSjbG1vp4hnA6EaLRpeCQj"),
-      ),
-    ],
-  },
   // ========================================
   // PANEL FULL
   // ========================================
@@ -237,7 +200,7 @@ module.exports = [
       )
       .setColor(config.embedColor)
       .setFooter(config.embedFooter)
-      .setImage("https://i.ibb.co/kVvRZ8J4/PANEL-FULL-PORTADA-HYPER-V.png"),
+      .setImage("https://www.realcloudx.com/Cloud/tanatozn/panel-full.png"),
     extraEmbeds: [purchaseEmbed],
     components: [
       createTicketAndStoreRow(
@@ -251,7 +214,7 @@ module.exports = [
   // PANEL SECURE
   // ========================================
   {
-    id: ids.embeds.PANEL_BASIC,
+    id: ids.embeds.PANEL_SECURE,
     messageId: "1538692447469703180",
     embed: new EmbedBuilder()
       .setTitle("Panel Secure")
@@ -270,7 +233,7 @@ module.exports = [
       )
       .setColor(config.embedColor)
       .setFooter(config.embedFooter)
-      .setImage("https://i.ibb.co/wF7k65bP/PANEL-SECURE-PORTADA-HYPER-V.png"),
+      .setImage("https://www.realcloudx.com/Cloud/tanatozn/panel-secure.png"),
     extraEmbeds: [purchaseEmbed],
     components: [
       createTicketAndStoreRow(
@@ -302,7 +265,7 @@ module.exports = [
       )
       .setColor(config.embedColor)
       .setFooter(config.embedFooter)
-      .setImage("https://i.ibb.co/6ctT7jFp/ONLY-AIMBOT-PORTADA-HYPER-V.png"),
+      .setImage("https://www.realcloudx.com/Cloud/tanatozn/panel-only-aimbot.png"),
     extraEmbeds: [purchaseEmbed],
     components: [
       createTicketAndStoreRow(
@@ -335,7 +298,7 @@ module.exports = [
       )
       .setColor(config.embedColor)
       .setFooter(config.embedFooter)
-      .setImage("https://i.ibb.co/HDGrcZvR/Gemini-Generated-Image-mso2tnmso2tnmso2-jpg.jpg"),
+      .setImage("https://www.realcloudx.com/Cloud/tanatozn/menu-basic.jpeg"),
     extraEmbeds: [purchaseEmbed],
     components: [
       createTicketAndStoreRow(
@@ -349,7 +312,7 @@ module.exports = [
   // CHAMS PC
   // ========================================
   {
-    id: ids.embeds.CHAMS_PC,
+    id: ids.embeds.MENU_CHAMS,
     messageId: "1538692450439270422",
     embed: new EmbedBuilder()
       .setTitle("> Menu Chams")
@@ -367,7 +330,7 @@ module.exports = [
       )
       .setColor(config.embedColor)
       .setFooter(config.embedFooter)
-      .setImage("https://i.ibb.co/TBzmmY39/MENU-CHAMS-PORTADA-HYPER-V.png"),
+      .setImage("https://www.realcloudx.com/Cloud/tanatozn/menu-chams.png"),
     extraEmbeds: [purchaseEmbed],
     components: [
       createTicketAndStoreRow(
@@ -400,7 +363,7 @@ module.exports = [
       )
       .setColor(config.embedColor)
       .setFooter(config.embedFooter)
-      .setImage("https://i.ibb.co/kgbggbdd/BYPASS-UID-PORTADA-HYPER-V.png"),
+      .setImage("https://www.realcloudx.com/Cloud/tanatozn/bypass-uid.png"),
     extraEmbeds: [purchaseEmbed],
     components: [
       createTicketAndStoreRow(
@@ -432,7 +395,7 @@ module.exports = [
       )
       .setColor(config.embedColor)
       .setFooter(config.embedFooter)
-      .setImage("https://i.ibb.co/q3LTLgf5/bypass-global.jpg"),
+      .setImage("https://www.realcloudx.com/Cloud/tanatozn/bypass-global.png"),
     extraEmbeds: [purchaseEmbed],
     components: [
       createTicketAndStoreRow(
@@ -461,7 +424,7 @@ module.exports = [
       )
       .setColor(config.embedColor)
       .setFooter(config.embedFooter)
-      .setImage("https://i.ibb.co/5gjrJZ7Y/BYPASS-APK-PORTADA-HYPER-V.png"),
+      .setImage("https://www.realcloudx.com/Cloud/tanatozn/bypass-apk.png"),
     extraEmbeds: [purchaseEmbed],
     components: [
       createTicketAndStoreRow(
@@ -493,7 +456,7 @@ module.exports = [
       )
       .setColor(config.embedColor)
       .setFooter(config.embedFooter)
-      .setImage("https://i.ibb.co/Xr6yMDrF/PANEL-IOS-PORTADA-HYPER-V.png"),
+      .setImage("https://www.realcloudx.com/Cloud/tanatozn/panel-ios.png"),
     extraEmbeds: [purchaseEmbed],
     components: [
       createTicketAndStoreRow(
@@ -556,7 +519,7 @@ module.exports = [
       )
       .setColor(config.embedColor)
       .setFooter(config.embedFooter)
-      .setImage("https://i.ibb.co/tpb4HbrK/PANEL-ANDROID-PORTADA-HYPER-V.png"),
+      .setImage("https://www.realcloudx.com/Cloud/tanatozn/panel-android.png"),
     extraEmbeds: [purchaseEmbed],
     components: [
       createTicketAndStoreRow(
@@ -582,7 +545,7 @@ module.exports = [
       )
       .setColor(config.embedColor)
       .setFooter(config.embedFooter)
-      .setImage("https://i.ibb.co/Zkh6PB2/AIMBOT-PECHO-1.png"),
+      .setImage("https://www.realcloudx.com/Cloud/tanatozn/aimbot-body-android.png"),
     extraEmbeds: [purchaseEmbed],
     components: [
       createTicketAndStoreRow(
@@ -609,7 +572,7 @@ module.exports = [
       )
       .setColor(config.embedColor)
       .setFooter(config.embedFooter)
-      .setImage("https://i.ibb.co/mrMTB6GD/AIMBOT-PROXY-1.png"),
+      .setImage("https://www.realcloudx.com/Cloud/tanatozn/aimbot-proxy.png"),
     extraEmbeds: [purchaseEmbed],
     components: [
       createTicketAndStoreRow(
@@ -636,7 +599,7 @@ module.exports = [
       )
       .setColor(config.embedColor)
       .setFooter(config.embedFooter)
-      .setImage("https://i.ibb.co/TDw0gPbw/AIMLOCK-IOS-HYPER-V.png"),
+      .setImage("https://www.realcloudx.com/Cloud/tanatozn/aimlock.png"),
     extraEmbeds: [purchaseEmbed],
     components: [
       createTicketAndStoreRow(
@@ -664,7 +627,7 @@ module.exports = [
       )
       .setColor(config.embedColor)
       .setFooter(config.embedFooter)
-      .setImage("https://i.ibb.co/k2ZvPzxF/REGEDIT-PORTADA-HYPER-V.png"),
+      .setImage("https://www.realcloudx.com/Cloud/tanatozn/regedit.png"),
     extraEmbeds: [purchaseEmbed],
     components: [
       createTicketAndStoreRow(
@@ -692,7 +655,7 @@ module.exports = [
       )
       .setColor(config.embedColor)
       .setFooter(config.embedFooter)
-      .setImage("https://i.ibb.co/G4y2b2N0/AIMBOT-COLOR-VALORANT-1.png"),
+      .setImage("https://www.realcloudx.com/Cloud/tanatozn/aimbot-color.png"),
     extraEmbeds: [purchaseEmbed],
     components: [
       createTicketAndStoreRow(
@@ -719,7 +682,7 @@ module.exports = [
       )
       .setColor(config.embedColor)
       .setFooter(config.embedFooter)
-      .setImage("https://i.ibb.co/JW2MWvtB/SPOOFER-VALORANT-HYPER-V-1.png"),
+      .setImage("https://www.realcloudx.com/Cloud/tanatozn/spoofer.png"),
     extraEmbeds: [purchaseEmbed],
     components: [
       createTicketAndStoreRow(
@@ -747,7 +710,7 @@ module.exports = [
       )
       .setColor(config.embedColor)
       .setFooter(config.embedFooter)
-      .setImage("https://i.ibb.co/F4HdZyW5/BOOST-RANK-VALORANT-HYP.png"),
+      .setImage("https://www.realcloudx.com/Cloud/tanatozn/boost-rank.png"),
     extraEmbeds: [purchaseEmbed],
     components: [
       createTicketAndStoreRow(
@@ -776,7 +739,7 @@ module.exports = [
       .setColor(config.embedColor)
       .setFooter(config.embedFooter)
       .setImage(
-        "https://media.discordapp.net/attachments/1231110235171586138/1464694955078586520/cs2_hyper_v_1.png?ex=697666fa&is=6975157a&hm=c361074bddb145f5468cb13a51bf3301205e045cb5244abc05c1475e4035900d&=&format=webp&quality=lossless&width=1521&height=856",
+        "https://www.realcloudx.com/Cloud/tanatozn/panel-csgo.png",
       ),
     extraEmbeds: [purchaseEmbed],
     components: [
@@ -805,7 +768,7 @@ module.exports = [
       )
       .setColor(config.embedColor)
       .setFooter(config.embedFooter)
-      .setImage("https://i.ibb.co/67hyVH0M/COD-HYPER-V-1.png"),
+      .setImage("https://www.realcloudx.com/Cloud/tanatozn/panel-cod-ios.png"),
     extraEmbeds: [purchaseEmbed],
     components: [
       createTicketAndStoreRow(
@@ -833,12 +796,12 @@ module.exports = [
       )
       .setColor(config.embedColor)
       .setFooter(config.embedFooter)
-      .setImage("https://i.ibb.co/DDxCgMp4/WARZONE-HYPER-V-1.png"),
+      .setImage("https://www.realcloudx.com/Cloud/tanatozn/panel-warzone.png"),
     extraEmbeds: [purchaseEmbed],
     components: [
       createTicketAndStoreRow(
         "ticket_panel_warzone",
-        "https://hyperv.online/products/panbel-warzone",
+        "https://hyperv.online/products/panel-warzone",
       ),
     ],
   },
@@ -861,7 +824,7 @@ module.exports = [
       )
       .setColor(config.embedColor)
       .setFooter(config.embedFooter)
-      .setImage("https://i.ibb.co/PvzmVcGx/CHAMS-BLOOD.png"),
+      .setImage("https://www.realcloudx.com/Cloud/tanatozn/chams-blood.png"),
     extraEmbeds: [purchaseEmbed],
     components: [
       createTicketAndStoreRow(
@@ -894,7 +857,7 @@ module.exports = [
       )
       .setColor(config.embedColor)
       .setFooter(config.embedFooter)
-      .setImage("https://i.ibb.co/XZn91S4y/DISCORD-TOOLS-HYPER-V.png"),
+      .setImage("https://www.realcloudx.com/Cloud/tanatozn/discord-tools.png"),
     extraEmbeds: [purchaseEmbed],
     components: [
       createTicketAndStoreRow(
