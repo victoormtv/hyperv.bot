@@ -1,47 +1,36 @@
-const { 
-    EmbedBuilder, 
-    ActionRowBuilder, 
-    ButtonBuilder, 
-    ButtonStyle, 
-    PermissionFlagsBits, 
-    ChannelType, 
-    MessageFlags 
+const {
+    EmbedBuilder,
+    ActionRowBuilder,
+    ButtonBuilder,
+    ButtonStyle,
+    PermissionFlagsBits,
+    ChannelType,
+    MessageFlags
 } = require('discord.js');
 const config = require('../data/config');
 const { ticketTypeMapping } = require('../data/ticketTypes');
 const { ticketClaimButton, ticketCloseButton } = require('../utils/ticketButtons');
 const { registerNewTicket } = require('../utils/inactivityChecker');
 
-
-const guildTicketCategoryId = '1118077173295763526';
-const adminRoleIds = ['1117933070335623280', '1189251231714115715'];
-const vendorRoleId = '1117939958653649027';
-
+function sanitize(username) {
+    return username.toLowerCase().replace(/[^a-z0-9-_]/g, '-').replace(/-+/g, '-').slice(0, 20);
+}
 
 module.exports = async (interaction) => {
     if (!interaction.isStringSelectMenu() && !interaction.isButton()) {
-        console.log('❌ No es un StringSelectMenu ni Button');
         return;
     }
-
-    console.log(`✅ Procesando interacción de: ${interaction.user.tag}`);
 
     let ticketType;
 
     if (interaction.isButton()) {
-        const customId = interaction.customId;
-        console.log(`🎯 Botón presionado: ${customId}`);
-
-        ticketType = ticketTypeMapping[customId];
-
+        ticketType = ticketTypeMapping[interaction.customId];
         if (!ticketType) {
-            console.log('❌ CustomId no encontrado en ticketTypeMapping:', customId);
+            console.log('❌ CustomId no encontrado en ticketTypeMapping:', interaction.customId);
             return;
         }
-    } 
-    else if (interaction.isStringSelectMenu()) {
+    } else if (interaction.isStringSelectMenu()) {
         ticketType = interaction.values[0];
-        console.log(`🎯 Valor seleccionado del menú: ${ticketType}`);
     }
 
     const embed = new EmbedBuilder()
@@ -54,39 +43,31 @@ module.exports = async (interaction) => {
     try {
         await interaction.deferReply({ flags: MessageFlags.Ephemeral });
 
-        const { guild, user } = interaction;
-        const botMember = guild.members.me;
+        const { channel: parentChannel, guild, user } = interaction;
 
-        if (!botMember.permissions.has([
-            PermissionFlagsBits.ManageChannels, 
+        const botMember = guild.members.me;
+        if (!botMember.permissionsIn(parentChannel).has([
+            PermissionFlagsBits.CreatePrivateThreads,
+            PermissionFlagsBits.ManageThreads,
             PermissionFlagsBits.ViewChannel
         ])) {
-            embed.setDescription('⚠️ No tengo permisos suficientes para crear tickets.');
+            embed.setDescription('⚠️ No tengo permisos suficientes en este canal para crear el ticket.');
             return await interaction.editReply({ embeds: [embed] });
         }
 
         // ========================================
-        // ✅ VERIFICAR SI EL USUARIO YA TIENE UN TICKET ABIERTO
+        // ✅ VERIFICAR SI EL USUARIO YA TIENE UN TICKET ABIERTO EN ESTE CANAL
         // ========================================
-        const category = guild.channels.cache.get(guildTicketCategoryId);
-        if (!category) {
-            console.log('❌ Categoría no encontrada:', guildTicketCategoryId);
-            embed.setDescription('⚠️ La categoría de tickets no está configurada correctamente.');
-            return await interaction.editReply({ embeds: [embed] });
-        }
-
-        const ticketExistente = guild.channels.cache.find(ch =>
-            ch.parentId === guildTicketCategoryId &&
-            ch.topic?.includes(user.id)
+        const activeThreads = await parentChannel.threads.fetchActive();
+        const ticketExistente = activeThreads.threads.find(th =>
+            th.name.endsWith(`-${sanitize(user.username)}`)
         );
 
         if (ticketExistente) {
-            console.log(`⚠️ ${user.tag} ya tiene un ticket abierto: ${ticketExistente.name}`);
-
             const yaExisteEmbed = new EmbedBuilder()
                 .setTitle('> HyperV - Ticket')
                 .setDescription(
-                    `❌ Ya tienes un ticket abierto.\n\n` +
+                    `❌ Ya tienes un ticket abierto en este canal.\n\n` +
                     `Debes cerrarlo antes de abrir uno nuevo.\n\n` +
                     `*Haz clic en el botón para ir a tu ticket activo.*`
                 )
@@ -108,52 +89,14 @@ module.exports = async (interaction) => {
             });
         }
 
-        // ========================================
-        // ✅ CREACIÓN DE CANAL DE TICKET
-        // ========================================
-        console.log('🎫 Iniciando creación de canal de ticket...');
-        console.log('✅ Categoría encontrada:', category.name);
-
-        const adminPermissions = adminRoleIds.map((id) => ({
-            id,
-            allow: [
-                PermissionFlagsBits.ViewChannel,
-                PermissionFlagsBits.SendMessages,
-                PermissionFlagsBits.ManageMessages,
-                PermissionFlagsBits.ReadMessageHistory,
-            ],
-        }));
-
-        console.log('🔨 Creando canal con nombre:', `🛒-${ticketType}`);
-
-        const channel = await guild.channels.create({
-            name: `🛒-${ticketType}`,
-            type: ChannelType.GuildText,
-            parent: guildTicketCategoryId,
-            topic: `Ticket creado por ${user.id} | Tipo: ${ticketType}`,
-            permissionOverwrites: [
-                { id: guild.id, deny: [PermissionFlagsBits.ViewChannel] },
-                {
-                    id: user.id,
-                    allow: [
-                        PermissionFlagsBits.ViewChannel,
-                        PermissionFlagsBits.SendMessages,
-                        PermissionFlagsBits.ReadMessageHistory,
-                    ],
-                },
-                ...adminPermissions,
-                {
-                    id: vendorRoleId,
-                    allow: [
-                        PermissionFlagsBits.ViewChannel,
-                        PermissionFlagsBits.SendMessages,
-                        PermissionFlagsBits.ReadMessageHistory,
-                    ],
-                },
-            ],
+        const thread = await parentChannel.threads.create({
+            name: `📌-${ticketType}-${sanitize(user.username)}`,
+            type: ChannelType.PrivateThread,
+            invitable: false,
+            reason: `Ticket creado por ${user.tag} (${user.id})`,
         });
 
-        console.log('✅ Canal creado exitosamente:', channel.name, channel.id);
+        await thread.members.add(user.id);
 
         const welcomeEmbed = new EmbedBuilder()
             .setTitle('> HyperV - Ticket')
@@ -163,28 +106,17 @@ module.exports = async (interaction) => {
             .setColor(config.embedColor)
             .setThumbnail('https://cdn.discordapp.com/attachments/1231110235171586138/1457816465393848544/ZEUS_AZUL_Y_AMR.png')
             .addFields(
-                {
-                    name: '<:reloj:1465456666152665209> Tiempo de Respuesta',
-                    value: 'Normalmente respondemos en pocos minutos',
-                    inline: false
-                },
-                {
-                    name: '<:soporte:1316466482653171763> ID del Ticket',
-                    value: `\`${channel.id}\``,
-                    inline: false
-                }
+                { name: '<:reloj:1465456666152665209> Tiempo de Respuesta', value: 'Normalmente respondemos en pocos minutos', inline: false },
+                { name: '<:soporte:1316466482653171763> ID del Ticket', value: `\`${thread.id}\``, inline: false }
             )
-            .setFooter(config.embedFooter)
+            .setFooter(config.embedFooter);
 
-        await channel.send({
+        await thread.send({
             embeds: [welcomeEmbed],
             components: [ticketClaimButton, ticketCloseButton],
         });
 
-        console.log('✅ Mensaje de bienvenida enviado');
-
-        await registerNewTicket(channel.id);
-        console.log(`🎫 Ticket ${channel.id} registrado en sistema de inactividad`);
+        await registerNewTicket(thread.id);
 
         const successEmbed = new EmbedBuilder()
             .setTitle('Ticket Creado Exitosamente')
@@ -196,24 +128,19 @@ module.exports = async (interaction) => {
         const goToTicketButton = new ActionRowBuilder().addComponents(
             new ButtonBuilder()
                 .setLabel('Ir al Ticket')
-                .setURL(channel.url)
+                .setURL(thread.url)
                 .setStyle(ButtonStyle.Link)
                 .setEmoji('<:soporte:1232042953908949034>')
         );
 
-        await interaction.editReply({ 
-            embeds: [successEmbed], 
+        await interaction.editReply({
+            embeds: [successEmbed],
             components: [goToTicketButton]
         });
 
-        console.log('✅ Proceso completado exitosamente');
-
     } catch (error) {
         console.error('❌ Error al crear el ticket:', error);
-        console.error('❌ Stack completo:', error.stack);
-
         embed.setDescription('⚠️ Ocurrió un error al intentar crear tu ticket.');
-
         try {
             await interaction.editReply({ embeds: [embed] });
         } catch (err2) {

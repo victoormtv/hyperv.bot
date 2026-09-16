@@ -1,7 +1,8 @@
-const { EmbedBuilder, PermissionsBitField, PermissionFlagsBits } = require('discord.js');
-const { categories, roles } = require('../data/ids');
+const { EmbedBuilder, PermissionFlagsBits } = require('discord.js');
+const { roles } = require('../data/ids');
 const config = require('../data/config');
 const { unregisterTicket } = require('../utils/inactivityChecker');
+const { getClaim, removeClaim } = require('../utils/ticketClaims');
 
 async function main(interaction) {
     const embed = new EmbedBuilder()
@@ -13,34 +14,21 @@ async function main(interaction) {
     const { channel, guild, member, user } = interaction;
 
     try {
-        if (channel.parentId !== categories.TICKETS) {
+        if (!channel.isThread()) {
             embed.setDescription('⚠️ Este canal no es un ticket.');
             return await interaction.reply({ embeds: [embed], ephemeral: true });
         }
 
         const botMember = guild.members.me;
-        if (!botMember.permissions.has(PermissionFlagsBits.ManageChannels)) {
-            console.error('El bot no tiene permisos para gestionar canales.');
-            embed.setDescription('⚠️ No tengo permisos para borrar este canal.');
+        if (!botMember.permissionsIn(channel).has(PermissionFlagsBits.ManageThreads)) {
+            console.error('El bot no tiene permisos para gestionar hilos.');
+            embed.setDescription('⚠️ No tengo permisos para borrar este ticket.');
             return await interaction.reply({ embeds: [embed], ephemeral: true });
         }
-
-        const ticketCreatorId = channel.topic?.match(/\d{17,19}/)?.[0];
-        
-        if (!ticketCreatorId) {
-            embed.setDescription('⚠️ No se pudo identificar al creador del ticket.');
-            return await interaction.reply({ embeds: [embed], ephemeral: true });
-        }
-
-        const permissions = channel.permissionOverwrites.cache;
-        const claimedBy = permissions.find(p =>
-            p.type === 1 &&
-            p.id !== ticketCreatorId &&
-            p.allow.has(PermissionsBitField.Flags.SendMessages)
-        )?.id;
 
         const isAdmin = roles.ADMIN.some(roleId => member.roles.cache.has(roleId));
-        const isClaimer = user.id === claimedBy;
+        const claimedBy = getClaim(channel.id);
+        const isClaimer = claimedBy === user.id;
 
         if (!isAdmin && !isClaimer) {
             embed.setDescription('❌ Solo el vendedor que reclamó el ticket o un administrador pueden cerrarlo.');
@@ -59,9 +47,10 @@ async function main(interaction) {
 
         await channel.send({ embeds: [closeEmbed] });
         await unregisterTicket(channel.id);
+        removeClaim(channel.id);
 
         setTimeout(() => {
-            channel.delete().catch(err => console.error('Error al eliminar el canal:', err));
+            channel.delete().catch(err => console.error('Error al eliminar el hilo:', err));
         }, 4000);
 
     } catch (error) {
