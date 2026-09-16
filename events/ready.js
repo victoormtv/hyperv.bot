@@ -1,4 +1,4 @@
-const { ActivityType } = require("discord.js");
+const { ActivityType, MessageFlags } = require("discord.js");
 const channelData = require("../data/channelData");
 
 module.exports = {
@@ -30,13 +30,25 @@ module.exports = {
         const targetChannel = await client.channels.fetch(channel.id);
         if (!targetChannel.isTextBased()) continue;
 
-        const embeds = [channel.embed, ...(channel.extraEmbeds || [])];
-        const components = channel.components?.length ? channel.components : channel.menu ? [channel.menu] : [];
+        let payload;
+
+        if (channel.container) {
+          // ✅ Formato nuevo: Components V2
+          payload = {
+            embeds: [],
+            components: [channel.container],
+            flags: MessageFlags.IsComponentsV2,
+          };
+        } else {
+          const embeds = [channel.embed, ...(channel.extraEmbeds || [])];
+          const components = channel.components?.length ? channel.components : channel.menu ? [channel.menu] : [];
+          payload = { embeds, components };
+        }
 
         if (channel.messageId) {
           try {
             const message = await targetChannel.messages.fetch(channel.messageId);
-            await message.edit({ embeds, components });
+            await message.edit(payload);
             console.log(`Embed editado en canal ${channel.id}`);
             continue;
           } catch {
@@ -44,7 +56,7 @@ module.exports = {
           }
         }
 
-        const sent = await targetChannel.send({ embeds, components });
+        const sent = await targetChannel.send(payload);
         console.log(`Embed enviado en canal ${channel.id} — messageId: ${sent.id}`);
       } catch (error) {
         console.error(`Error en canal ${channel.id}:`, error);
