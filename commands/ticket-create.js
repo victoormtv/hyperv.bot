@@ -8,7 +8,7 @@ const {
     MessageFlags
 } = require('discord.js');
 const config = require('../data/config');
-const { roles } = require('../data/ids'); // 👈 Asegúrate de importar los roles
+const { roles } = require('../data/ids');
 const { ticketTypeMapping } = require('../data/ticketTypes');
 const { ticketClaimButton, ticketCloseButton } = require('../utils/ticketButtons');
 const { registerNewTicket } = require('../utils/inactivityChecker');
@@ -56,9 +56,6 @@ module.exports = async (interaction) => {
             return await interaction.editReply({ embeds: [embed] });
         }
 
-        // ========================================
-        // ✅ VERIFICAR SI EL USUARIO YA TIENE UN TICKET ABIERTO EN ESTE CANAL
-        // ========================================
         const activeThreads = await parentChannel.threads.fetchActive();
         const ticketExistente = activeThreads.threads.find(th =>
             th.name.endsWith(`-${sanitize(user.username)}`)
@@ -97,7 +94,8 @@ module.exports = async (interaction) => {
             reason: `Ticket creado por ${user.tag} (${user.id})`,
         });
 
-        await thread.members.add(user.id);
+        // Asegurar membresía explícita del usuario en el hilo privado
+        await thread.members.add(user.id).catch(() => { });
 
         const welcomeEmbed = new EmbedBuilder()
             .setTitle('> HyperV - Ticket')
@@ -117,9 +115,6 @@ module.exports = async (interaction) => {
             components: [ticketClaimButton, ticketCloseButton],
         });
 
-        // =========================================================================
-        // ✅ MENSAJE TEMPORAL AL CREAR: Etiqueta al usuario y al rol de seller, se borra en 5s
-        // =========================================================================
         const pingMessage = await thread.send({
             content: `🔔 ¡Hola <@${user.id}>! Se ha creado tu ticket. Un <@&${roles.VENDOR}> te atenderá en breve.`
         });
@@ -127,9 +122,7 @@ module.exports = async (interaction) => {
         setTimeout(async () => {
             try {
                 await pingMessage.delete();
-            } catch (err) {
-                // Ignorar si ya fue borrado
-            }
+            } catch (err) { }
         }, 5000);
 
         await registerNewTicket(thread.id);
@@ -159,8 +152,6 @@ module.exports = async (interaction) => {
         embed.setDescription('⚠️ Ocurrió un error al intentar crear tu ticket.');
         try {
             await interaction.editReply({ embeds: [embed] });
-        } catch (err2) {
-            console.error('❌ No se pudo responder, interacción expirada:', err2.message);
-        }
+        } catch (err2) { }
     }
 };

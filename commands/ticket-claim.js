@@ -58,6 +58,11 @@ async function handleInteraction(interaction) {
             setClaim(channel.id, member.id);
             await channel.members.add(member.id);
 
+            // ✅ Asegurar que el dueño original del hilo mantenga acceso completo al hilo privado tras el reclamo
+            if (channel.ownerId) {
+                await channel.members.add(channel.ownerId).catch(() => { });
+            }
+
             const currentName = channel.name;
             const staffName = member.user.username.toLowerCase().replace(/[^a-z0-9]/g, '');
             const newName = `${staffName}-${currentName}`.slice(0, 100);
