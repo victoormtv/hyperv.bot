@@ -1,6 +1,7 @@
 const http = require('http');
 const ngrok = require('@ngrok/ngrok');
-const { EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js');
+const { ActionRowBuilder, ButtonBuilder, ButtonStyle, MessageFlags } = require('discord.js');
+const { ContainerBuilder, TextDisplayBuilder, SeparatorBuilder, MediaGalleryBuilder, MediaGalleryItemBuilder } = require('discord.js');
 const { embedColor, embedFooter, embedThumbnail } = require('../data/config');
 
 const FEEDBACK_CHANNEL_ID = process.env.FEEDBACK_CHANNEL_ID;
@@ -14,48 +15,38 @@ const INTERVALOS_FEEDBACK = [60, 150, 95, 210, 130, 75, 180, 240];
 let indiceFeedback = 0;
 let timerFeedback = null;
 
-const COMENTARIOS_POSITIVOS = [
+// ─── Comentarios específicos y coherentes por producto ─────────────────────
+const COMENTARIOS_POR_PRODUCTO = {
+  'Panel Full': [
+    'el panel full es una locura todo en uno vale cada sol',
+    'panel full trimestral salio baratisimo comparado a otras tiendas',
+    'Muy buen servicio, el panel full va increíble sin lag 🔥',
+    'Excelente atención, el panel full tiene de todo'
+  ],
+  'Bypass ID': [
+    'llevo semanas con el bypass id y ni un ban imaginate',
+    'bypass id renovado cada mes y jamas tuve problema',
+    'Todo al toque, el bypass id funciona de maravilla'
+  ],
+  'Panel Android': [
+    'el panel android va suave ni un lag ni un crash',
+    'panel android mensual relacion calidad precio imbatible',
+    'Increíble lo fluido que va el panel en mi celu'
+  ],
+  'Panel iOS': [
+    'el aimbot body ios es demasiado preciso no se nota nada',
+    'el panel ios es de otro nivel con lo barato que sale',
+    'gbox de lujo para la temporada lo uso cada dia'
+  ]
+};
+
+const COMENTARIOS_GENERALES = [
   'Muy buen servicio, todo llegó rápido y sin problemas 🔥',
   'Excelente atención, el producto funciona perfecto',
   'Todo llegó al toque, recomendado 100%',
   'Primera vez que compro y quedé sorprendido, vuelvo a comprar',
   'El soporte me ayudó al instante, increíble',
-  'Funciona de maravilla, muy contento con la compra',
-  'Rápido y confiable, nada que decir en contra',
-  'Producto tal cual se describe, sin fallas',
-  'Llevo meses comprando acá y nunca falla',
-  'El mejor servicio que he encontrado, sin duda',
-  'Me sorprendió la rapidez de la entrega',
-  'Todo perfecto, el panel funciona sin lag',
-  'Buenísimo, ya le recomendé a mis amigos',
-  'Compra sin miedo, es de fiar',
-  'La atención al cliente es rapida, resolvieron mi duda en segundos',
-  'el panel full es una locura todo en uno vale cada sol',
-  'llevo semanas con el bypass id y ni un ban imaginate',
-  'el panel android va suave ni un lag ni un crash',
-  'el aimbot body ios es demasiado preciso no se nota nada',
-  'bypass apk funciona en cualquier version del juego literalmente',
-  'el panel ios es de otro nivel con lo barato que sale',
-  'menu basic pero no tiene nada de basico jaja cumple re bien',
-  'el regedit hizo maravillas en mi pc todo mas fluido',
-  'spoofer activo y a jugar sin dramas funciona perfecto',
-  'panel csgo sin vac sin nada limpio total',
-  'aimbot color demasiado smooth nadie se da cuenta',
-  'bypass global en todos mis devices sin problema',
-  'panel warzone activo en minutos el soporte es rapido',
-  'menu chams increible ves todo sin que se note raro',
-  'aimlock preciso y suave no parece hack para nada',
-  'panel only aimbot ideal para los que no quieren tanto riesgo',
-  'bypass id renovado cada mes y jamas tuve problema',
-  'panel full trimestral salio baratisimo comparado a otras tiendas',
-  'aimbot proxy sin lag sin delay va como seda',
-  'panel cod ios funciona perfecto en mi iphone sin jailbreak',
-  'gbox de lujo para la temporada lo uso cada dia',
-  'menu basic semanal perfecto para probar antes de comprar mensual',
-  'el soporte explica todo paso a paso no te dejan solo',
-  'active el bypass global y en 5 minutos ya estaba jugando',
-  'panel android mensual relacion calidad precio imbatible',
-  'aimbot body ios por temporada y ni un reporte increible',
+  'Funciona de maravilla, muy contento con la compra'
 ];
 
 const USUARIOS_FEEDBACK_FAKE = [
@@ -92,6 +83,34 @@ function estaEnHorario() {
   return hora >= 8 && hora < 23;
 }
 
+// ─── Función para construir contenedor V2 de Feedback ──────────────────────
+function buildFeedbackContainer({ usuario, producto, vendedor, descubrimiento, rating, encontro, comentario, imageUrl }) {
+  const container = new ContainerBuilder().setAccentColor(embedColor);
+
+  if (imageUrl || embedThumbnail) {
+    container.addMediaGalleryComponents(
+      new MediaGalleryBuilder().addItems(new MediaGalleryItemBuilder().setURL(imageUrl || embedThumbnail))
+    );
+  }
+
+  container.addTextDisplayComponents(new TextDisplayBuilder().setContent("## HyperV - Feedback"));
+
+  const contentText = [
+    `<:zeusaa:1433927475976474624> **Usuario:** ${usuario}`,
+    `<:compra:1316466484133757021> **Producto:** ${producto}`,
+    `<:support1:1321973732193075362> **Vendedor y Soporte:** ${vendedor}`,
+    `<:website:1459019351410872362> **¿Cómo nos descubriste?:** ${descubrimiento}`,
+    `<:estrellaa:1317937061965074524> **Experiencia general:** ${rating}`,
+    `<:soporte:1316466482653171763> **¿Encontró lo que buscaba?:** ${encontro}`,
+    `<:garantia:1321973733971333150> **Comentarios:** ${comentario}`
+  ].join('\n');
+
+  container.addSeparatorComponents(new SeparatorBuilder());
+  container.addTextDisplayComponents(new TextDisplayBuilder().setContent(contentText));
+
+  return container;
+}
+
 async function enviarFeedbackFake(client) {
   if (!estaEnHorario()) {
     programarSiguienteFeedback(client);
@@ -106,33 +125,31 @@ async function enviarFeedbackFake(client) {
     }
 
     const ventaRef = pick(ventas);
-
     const usuario = pick(USUARIOS_FEEDBACK_FAKE);
     const vendedor = pick(VENDEDORES_FAKE);
-    const comentario = pick(COMENTARIOS_POSITIVOS);
     const rating = pick(RATING_FAKE);
     const descubrimiento = pick(DESCUBRIMIENTO_FAKE);
     const encontro = pick(ENCONTRO_FAKE);
 
-    const embed = new EmbedBuilder()
-      .setTitle('> HyperV - Feedback')
-      .setColor(embedColor)
-      .setThumbnail(embedThumbnail)
-      .addFields(
-        { name: '<:zeusaa:1433927475976474624> Usuario', value: usuario, inline: true },
-        { name: '<:compra:1316466484133757021> Producto', value: `${ventaRef.producto} ${ventaRef.periodo}`, inline: true },
-        { name: '<:support1:1321973732193075362> Vendedor y Soporte', value: vendedor, inline: true },
-        { name: '<:website:1459019351410872362> ¿Cómo nos descubriste?', value: descubrimiento, inline: true },
-        { name: '<:estrellaa:1317937061965074524> Experiencia general', value: rating, inline: true },
-        { name: '<:soporte:1316466482653171763> ¿Encontró lo que buscaba?', value: encontro, inline: true },
-        { name: '<:garantia:1321973733971333150> Lo que más le gustó', value: comentario, inline: false },
-        { name: '💬 Comentarios', value: comentario, inline: false },
-      )
-      .setFooter(embedFooter)
-      .setTimestamp();
+    // Seleccionar comentario coherente según el producto
+    const categoriaProducto = Object.keys(COMENTARIOS_POR_PRODUCTO).find(key =>
+      ventaRef.producto.toLowerCase().includes(key.toLowerCase())
+    );
+    const listaComentarios = categoriaProducto ? COMENTARIOS_POR_PRODUCTO[categoriaProducto] : COMENTARIOS_GENERALES;
+    const comentario = pick(listaComentarios);
+
+    const container = buildFeedbackContainer({
+      usuario,
+      producto: `${ventaRef.producto} ${ventaRef.periodo}`,
+      vendedor,
+      descubrimiento,
+      rating,
+      encontro,
+      comentario,
+      imageUrl: embedThumbnail
+    });
 
     const botones = [];
-
     if (ventaRef.messageURL) {
       botones.push(
         new ButtonBuilder()
@@ -145,11 +162,11 @@ async function enviarFeedbackFake(client) {
 
     const channel = await client.channels.fetch(FEEDBACK_CHANNEL_ID);
     await channel.send({
-      embeds: [embed],
-      components: botones.length > 0 ? [new ActionRowBuilder().addComponents(...botones)] : []
+      components: [container, ...(botones.length > 0 ? [new ActionRowBuilder().addComponents(...botones)] : [])],
+      flags: MessageFlags.IsComponentsV2
     });
 
-    console.log(`✅ Feedback fake enviado — referenciando: ${ventaRef.producto} ${ventaRef.periodo}`);
+    console.log(`✅ Feedback fake enviado (V2 coherente) — Producto: ${ventaRef.producto}`);
   } catch (error) {
     console.error('❌ Error enviando feedback fake:', error.message);
   }
@@ -177,7 +194,7 @@ const fieldLabels = {
   question_pLY1WV: '<:website:1459019351410872362> ¿Cómo nos descubriste?',
   question_dYJ4XV: '<:estrellaa:1317937061965074524> Experiencia general',
   question_YZ7KXv: '<:soporte:1316466482653171763> ¿Encontró lo que buscaba?',
-  question_MAjqYY: '<:garantia:1321973733971333150> Lo que más le gustó',
+  question_MAjqYY: '<:garantia:1321973733971333150> Comentarios',
 };
 
 function resolveFieldValue(field) {
@@ -310,51 +327,47 @@ function startFeedbackServer(client) {
 
         try {
           const payload = JSON.parse(body);
-          const { fields, formName, createdAt } = payload.data;
+          const { fields } = payload.data;
 
-          const matrixField = fields.find(f => f.type === 'MATRIX');
-          const calificaciones = matrixField ? resolveFieldValue(matrixField) : 'Sin calificación';
-
-          const embedFields = [];
-
+          const dataMap = {};
           for (const f of fields) {
             if (f.type === 'MATRIX' || f.type === 'FILE_UPLOAD') continue;
-
-            const value = resolveFieldValue(f);
-            if (value === null) continue;
-
-            embedFields.push({
-              name: fieldLabels[f.key] || f.label,
-              value,
-              inline: true
-            });
+            const labelKey = fieldLabels[f.key] || f.label;
+            const val = resolveFieldValue(f);
+            if (val !== null) dataMap[labelKey] = val;
           }
 
-          embedFields.push({
-            name: '⭐ Calificaciones',
-            value: calificaciones,
-            inline: false
-          });
+          const usuario = dataMap['<:zeusaa:1433927475976474624> Usuario'] || 'Anónimo';
+          const producto = dataMap['<:compra:1316466484133757021> Producto'] || 'General';
+          const vendedor = dataMap['<:support1:1321973732193075362> Vendedor y Soporte'] || 'N/A';
+          const descubrimiento = dataMap['<:website:1459019351410872362> ¿Cómo nos descubriste?'] || 'N/A';
+          const rating = dataMap['<:estrellaa:1317937061965074524> Experiencia general'] || '⭐⭐⭐⭐⭐ (5/5)';
+          const encontro = dataMap['<:soporte:1316466482653171763> ¿Encontró lo que buscaba?'] || 'Sí';
+          const comentario = dataMap['<:garantia:1321973733971333150> Comentarios'] || dataMap['Lo que más le gustó'] || 'Sin comentarios';
 
           const fileField = fields.find(f => f.type === 'FILE_UPLOAD');
-          const imageUrl = fileField?.value?.[0]?.url || null;
+          const imageUrl = fileField?.value?.[0]?.url || embedThumbnail;
 
-          const embed = new EmbedBuilder()
-            .setTitle('> HyperV - Feedback')
-            .setColor(embedColor)
-            .setThumbnail(embedThumbnail)
-            .addFields(embedFields)
-            .setFooter(embedFooter)
-            .setTimestamp(new Date(createdAt));
-
-          if (imageUrl) embed.setImage(imageUrl);
+          const container = buildFeedbackContainer({
+            usuario,
+            producto,
+            vendedor,
+            descubrimiento,
+            rating,
+            encontro,
+            comentario,
+            imageUrl
+          });
 
           const channel = await client.channels.fetch(FEEDBACK_CHANNEL_ID);
-          await channel.send({ embeds: [embed] });
+          await channel.send({
+            components: [container],
+            flags: MessageFlags.IsComponentsV2
+          });
 
-          console.log('✅ Embed enviado al canal de Discord');
+          console.log('✅ Feedback real enviado (V2) sin duplicados');
         } catch (error) {
-          console.error('❌ Error procesando feedback:', error);
+          console.error('❌ Error procesando feedback real:', error);
         }
       });
       return;
