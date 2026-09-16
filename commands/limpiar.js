@@ -14,12 +14,11 @@ module.exports = {
 
     const channelsToClean = [
       config.embeds.TICKET_GENERAL,
-      config.channels.VERIFY_USER,
       config.embeds.PANEL_PC_GRATIS,
       config.embeds.PANEL_FULL,
-      config.embeds.PANEL_BASIC,
+      config.embeds.PANEL_SECURE,
       config.embeds.PANEL_ONLY_AIMBOT,
-      config.embeds.CHAMS_PC,
+      config.embeds.MENU_CHAMS,
       config.embeds.BYPASS_ID,
       config.embeds.BYPASS_APK,
       config.embeds.BYPASS_GLOBAL,
