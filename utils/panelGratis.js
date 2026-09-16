@@ -22,7 +22,7 @@ async function enviarPanelGratis(channel) {
             ),
         )
         .addTextDisplayComponents(
-            new TextDisplayBuilder().setContent("### HyperV - Panel Gratis"),
+            new TextDisplayBuilder().setContent("## HyperV - Panel Gratis"),
         )
         .addTextDisplayComponents(
             new TextDisplayBuilder().setContent(
