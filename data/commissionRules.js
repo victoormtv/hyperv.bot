@@ -79,8 +79,8 @@ const commissionRules = {
     Mensual: { venta: 10, soporte: 10, moneda: "Soles", precioEstandar: 180 },
   },
   "Panel CSGO": {
-    Semanal: { venta: 15, soporte: 10, moneda: "Soles", precioEstandar: 70 },
-    Mensual: { venta: 25, soporte: 10, moneda: "Soles", precioEstandar: 160 },
+    Semanal: { venta: 10, soporte: 5, moneda: "Soles", precioEstandar: 70 },
+    Mensual: { venta: 20, soporte: 5, moneda: "Soles", precioEstandar: 160 },
   },
   Aimlock: {
     Anual: { venta: 25, soporte: 15, moneda: "Soles", precioEstandar: 180 },
