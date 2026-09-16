@@ -89,8 +89,7 @@ module.exports = async (interaction) => {
 
         const thread = await parentChannel.threads.create({
             name: `📌-${ticketType}-${sanitize(user.username)}`,
-            type: ChannelType.PrivateThread,
-            invitable: false,
+            type: ChannelType.PublicThread, // 👈 Usa esto para solucionar el bloqueo de escritura de inmediato
             reason: `Ticket creado por ${user.tag} (${user.id})`,
         });
 
