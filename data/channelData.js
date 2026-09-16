@@ -203,7 +203,10 @@ module.exports = [
         { label: "Comprar en Web / Buy on Web", style: ButtonStyle.Link, url: "https://hyperv.online/products/panel-full", emoji: { name: "compra", id: "1316171968717918379" } },
       ],
     }),
+    extraEmbeds: [purchaseEmbed],
+    extraMessageId: null, // 👉 poné el ID real acá después del primer envío
   },
+
   // ========================================
   // PANEL SECURE
   // ========================================
@@ -1040,7 +1043,7 @@ module.exports = [
   },
 
   {
-    id: ids.embeds.PAGOS_PERU, // metodos de pago de peru
+    id: ids.embeds.PAGOS_PERU,
     messageId: "1538692486665478287",
     embed: new EmbedBuilder()
       .setTitle("> Métodos de Pago Nacionales")

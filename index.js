@@ -92,20 +92,28 @@ async function updateEmbeds() {
       let editOptions;
 
       if (item.container) {
-        // ✅ Formato nuevo: Components V2
         editOptions = {
           components: [item.container],
           flags: MessageFlags.IsComponentsV2,
           embeds: [],
         };
       } else {
-        // ✅ Formato viejo: Embed clásico
         editOptions = { embeds: [item.embed], components: [] };
         if (item.components) editOptions.components = item.components;
         if (item.menu) editOptions.components = [item.menu];
       }
 
       await message.edit(editOptions);
+
+      // ✅ Mensaje extra separado
+      if (item.container && item.extraEmbeds?.length && item.extraMessageId) {
+        try {
+          const extraMsg = await channel.messages.fetch(item.extraMessageId);
+          await extraMsg.edit({ embeds: item.extraEmbeds, components: [] });
+        } catch (err) {
+          console.warn(`⚠️ No se pudo editar embed extra en canal ${item.id}: ${err.message}`);
+        }
+      }
     } catch (err) {
       console.warn(
         `⚠️ No se pudo editar embed en canal ${item.id}: ${err.message}`,

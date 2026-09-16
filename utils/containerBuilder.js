@@ -10,6 +10,12 @@ const {
 } = require("discord.js");
 const config = require("../data/config");
 
+function pinifyFunctions(text) {
+    return text
+        .replace(/^- /gm, "📦 ")
+        .replace(/^> /gm, "<:pinios:1549640853059014717> ");
+}
+
 function buildProductContainer({ title, functions, prices, image, color, buttons = [] }) {
     const container = new ContainerBuilder().setAccentColor(color || config.embedColor);
 
@@ -19,16 +25,13 @@ function buildProductContainer({ title, functions, prices, image, color, buttons
         );
     }
 
-    // Título
     container.addTextDisplayComponents(new TextDisplayBuilder().setContent(title));
 
-    // Funciones
     if (functions) {
         container.addSeparatorComponents(new SeparatorBuilder());
-        container.addTextDisplayComponents(new TextDisplayBuilder().setContent(functions));
+        container.addTextDisplayComponents(new TextDisplayBuilder().setContent(pinifyFunctions(functions)));
     }
 
-    // Precios
     if (prices) {
         container.addSeparatorComponents(new SeparatorBuilder());
         const priceText = Array.isArray(prices)
@@ -37,7 +40,6 @@ function buildProductContainer({ title, functions, prices, image, color, buttons
         container.addTextDisplayComponents(new TextDisplayBuilder().setContent(priceText));
     }
 
-    // Botones
     if (buttons.length) {
         container.addSeparatorComponents(new SeparatorBuilder());
         const row = new ActionRowBuilder().addComponents(

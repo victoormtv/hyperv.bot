@@ -33,7 +33,6 @@ module.exports = {
         let payload;
 
         if (channel.container) {
-          // ✅ Formato nuevo: Components V2
           payload = {
             embeds: [],
             components: [channel.container],
@@ -50,14 +49,34 @@ module.exports = {
             const message = await targetChannel.messages.fetch(channel.messageId);
             await message.edit(payload);
             console.log(`Embed editado en canal ${channel.id}`);
-            continue;
           } catch {
             console.warn(`No se pudo editar mensaje ${channel.messageId}, enviando nuevo...`);
+            const sent = await targetChannel.send(payload);
+            console.log(`Embed enviado en canal ${channel.id} — messageId: ${sent.id}`);
           }
+        } else {
+          const sent = await targetChannel.send(payload);
+          console.log(`Embed enviado en canal ${channel.id} — messageId: ${sent.id}`);
         }
 
-        const sent = await targetChannel.send(payload);
-        console.log(`Embed enviado en canal ${channel.id} — messageId: ${sent.id}`);
+        // ✅ Mensaje extra separado (solo para entradas con container + extraEmbeds)
+        if (channel.container && channel.extraEmbeds?.length) {
+          const extraPayload = { embeds: channel.extraEmbeds, components: [] };
+
+          if (channel.extraMessageId) {
+            try {
+              const extraMsg = await targetChannel.messages.fetch(channel.extraMessageId);
+              await extraMsg.edit(extraPayload);
+              console.log(`Embed extra editado en canal ${channel.id}`);
+              continue;
+            } catch {
+              console.warn(`No se pudo editar mensaje extra ${channel.extraMessageId}, enviando nuevo...`);
+            }
+          }
+
+          const sentExtra = await targetChannel.send(extraPayload);
+          console.log(`Embed extra enviado en canal ${channel.id} — extraMessageId: ${sentExtra.id}`);
+        }
       } catch (error) {
         console.error(`Error en canal ${channel.id}:`, error);
       }
