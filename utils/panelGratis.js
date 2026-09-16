@@ -38,13 +38,10 @@ async function enviarPanelGratis(channel) {
             ),
         )
         .addSeparatorComponents(new SeparatorBuilder())
-        .addTextDisplayComponents(
-            new TextDisplayBuilder().setContent("__Página Web:__"),
-        )
         .addSectionComponents(
             new SectionBuilder()
                 .addTextDisplayComponents(
-                    new TextDisplayBuilder().setContent("Ingresa aqui"),
+                    new TextDisplayBuilder().setContent("### Página Web"),
                 )
                 .setButtonAccessory(
                     new ButtonBuilder()
