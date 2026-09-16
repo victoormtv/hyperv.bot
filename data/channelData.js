@@ -198,31 +198,23 @@ module.exports = [
   {
     id: ids.embeds.PANEL_SECURE,
     messageId: "1538692447469703180",
-    embed: new EmbedBuilder()
-      .setTitle("Panel Secure")
-      .setDescription(
-        "**FUNCIONES:**\n" +
+    container: buildProductContainer({
+      title: "## Panel Secure",
+      functions:
         "- **Aimbot Memory**\n> Neck/Legit\n" +
         "- **Visuals - Chams**\n> 3D/Glow/Solido/Wireframe/Oreon/Wukong-Naruto/RGB\n" +
         "- **Fake Lag**\n> Flush/Ghost/Freeze/FreezeTimer\n" +
-        "- **Stream Spoof**\n- **All mices compatible**\n- **Windows 8/10/11**\n- **HVCI ON & OFF**\n\n" +
-        "**PRECIOS:**\n" +
-        "<:garantia:1321973733971333150> Semanal: $ 11.00 | S/. 40.00\n" +
-        "<:garantia:1321973733971333150> Mensual: $ 22.00 | S/. 80.00\n" +
-        "<:garantia:1321973733971333150> Trimestral: $ 32.00 | S/. 120.00\n" +
-        "<:garantia:1321973733971333150> Anual: $ 40.00 | S/. 150.00\n\n" +
-        liston,
-      )
-      .setColor(config.embedColor)
-      .setFooter(config.embedFooter)
-      .setImage("https://www.realcloudx.com/Cloud/tanatozn/panel-secure.png"),
-    extraEmbeds: [purchaseEmbed],
-    components: [
-      createTicketAndStoreRow(
-        "ticket_panel_secure",
-        "https://hyperv.online/products/panel-secure",
-      ),
-    ],
+        "- **Stream Spoof**\n- **All mices compatible**\n- **Windows 8/10/11**\n- **HVCI ON & OFF**",
+      prices: [
+        "Semanal: $ 11.00 | S/. 40.00",
+        "Mensual: $ 22.00 | S/. 80.00",
+        "Trimestral: $ 32.00 | S/. 120.00",
+        "Anual: $ 40.00 | S/. 150.00",
+      ],
+      image: "https://www.realcloudx.com/Cloud/tanatozn/panel-secure.png",
+    }),
+    extraContainer: createPurchaseContainer("ticket_panel_secure", "https://hyperv.online/products/panel-secure"),
+    extraMessageId: null,
   },
 
   // ========================================
@@ -231,30 +223,22 @@ module.exports = [
   {
     id: ids.embeds.PANEL_ONLY_AIMBOT,
     messageId: "1538692448576872473",
-    embed: new EmbedBuilder()
-      .setTitle("> Panel Only Aimbot")
-      .setDescription(
-        "**FUNCIONES:**\n" +
+    container: buildProductContainer({
+      title: "## Panel Only Aimbot",
+      functions:
         "- **Aimbot Memory**\n> Neck/Legit\n" +
         "- **Fake Lag**\n> Flush/Ghost/Freeze/FreezeTimer\n" +
-        "- **Stream Spoof**\n- **All mices compatible**\n- **Windows 8/10/11**\n- **HVCI ON & OFF**\n\n" +
-        "**PRECIOS:**\n" +
-        "<:garantia:1321973733971333150> Semanal: $ 6.00 | S/. 20.00\n" +
-        "<:garantia:1321973733971333150> Mensual: $ 15.00 | S/. 55.00\n" +
-        "<:garantia:1321973733971333150> Trimestral: $ 25.00 | S/. 90.00\n" +
-        "<:garantia:1321973733971333150> Anual: $ 30.00 | S/. 130.00\n\n" +
-        liston,
-      )
-      .setColor(config.embedColor)
-      .setFooter(config.embedFooter)
-      .setImage("https://www.realcloudx.com/Cloud/tanatozn/panel-only-aimbot.png"),
-    extraEmbeds: [purchaseEmbed],
-    components: [
-      createTicketAndStoreRow(
-        "ticket_panel_only_aimbot",
-        "https://hyperv.online/products/panel-only-aimbot",
-      ),
-    ],
+        "- **Stream Spoof**\n- **All mices compatible**\n- **Windows 8/10/11**\n- **HVCI ON & OFF**",
+      prices: [
+        "Semanal: $ 6.00 | S/. 20.00",
+        "Mensual: $ 15.00 | S/. 55.00",
+        "Trimestral: $ 25.00 | S/. 90.00",
+        "Anual: $ 30.00 | S/. 130.00",
+      ],
+      image: "https://www.realcloudx.com/Cloud/tanatozn/panel-only-aimbot.png",
+    }),
+    extraContainer: createPurchaseContainer("ticket_panel_only_aimbot", "https://hyperv.online/products/panel-only-aimbot"),
+    extraMessageId: null,
   },
 
   // ========================================
@@ -263,31 +247,23 @@ module.exports = [
   {
     id: ids.embeds.MENU_BASIC,
     messageId: "1538692448576872473",
-    embed: new EmbedBuilder()
-      .setTitle("> Menu Basic")
-      .setDescription(
-        "**FUNCIONES:**\n" +
+    container: buildProductContainer({
+      title: "## Menu Basic",
+      functions:
         "- **Aimbot Memory**\n> Neck/Legit\n" +
         "- **Visuals - Chams**\n> 3D/Glow/Solido/RGB\n" +
         "- **Fake Lag**\n> Flush/Ghost/Freeze/FreezeTimer/Lines\n" +
-        "- **Stream Spoof**\n- **All mices compatible**\n- **Windows 8/10/11**\n- **HVCI ON & OFF**\n\n" +
-        "**PRECIOS:**\n" +
-        "<:garantia:1321973733971333150> Semanal: $ 15.00 | S/. 50.00\n" +
-        "<:garantia:1321973733971333150> Mensual: $ 30.00 | S/. 100.00\n" +
-        "<:garantia:1321973733971333150> Trimestral: $ 40.00 | S/. 130.00\n" +
-        "<:garantia:1321973733971333150> Anual: $ 50.00 | S/. 170.00\n\n" +
-        liston,
-      )
-      .setColor(config.embedColor)
-      .setFooter(config.embedFooter)
-      .setImage("https://www.realcloudx.com/Cloud/tanatozn/menu-basic.jpeg"),
-    extraEmbeds: [purchaseEmbed],
-    components: [
-      createTicketAndStoreRow(
-        "ticket_menu_basic",
-        "https://hyperv.online/products/menu-basic",
-      ),
-    ],
+        "- **Stream Spoof**\n- **All mices compatible**\n- **Windows 8/10/11**\n- **HVCI ON & OFF**",
+      prices: [
+        "Semanal: $ 15.00 | S/. 50.00",
+        "Mensual: $ 30.00 | S/. 100.00",
+        "Trimestral: $ 40.00 | S/. 130.00",
+        "Anual: $ 50.00 | S/. 170.00",
+      ],
+      image: "https://www.realcloudx.com/Cloud/tanatozn/menu-basic.jpeg",
+    }),
+    extraContainer: createPurchaseContainer("ticket_menu_basic", "https://hyperv.online/products/menu-basic"),
+    extraMessageId: null,
   },
 
   // ========================================
@@ -296,30 +272,22 @@ module.exports = [
   {
     id: ids.embeds.MENU_CHAMS,
     messageId: "1538692450439270422",
-    embed: new EmbedBuilder()
-      .setTitle("> Menu Chams")
-      .setDescription(
-        "**FUNCIONES:**\n" +
+    container: buildProductContainer({
+      title: "## Menu Chams",
+      functions:
         "- **Visuals - Chams**\n> 3D/Glow/Solido/Wireframe/Oreon/Wukong-Wukong Naruto/RGB\n" +
         "- **ESP**\n> Line/Box/Name/RangoBR/Skeleton/Health/WeaponIcon/WeaponText\n" +
-        "- **Stream Spoof**\n- **All mices compatible**\n- **Windows 8/10/11**\n- **HVCI ON & OFF**\n\n" +
-        "**PRECIOS:**\n" +
-        "<:garantia:1321973733971333150> Semanal: $ 5.00 | S/. 25.00\n" +
-        "<:garantia:1321973733971333150> Mensual: $ 15.00 | S/. 50.00\n" +
-        "<:garantia:1321973733971333150> Trimestral: $ 20.00 | S/. 70.00\n" +
-        "<:garantia:1321973733971333150> Anual: $ 25.00 | S/. 90.00\n\n" +
-        liston,
-      )
-      .setColor(config.embedColor)
-      .setFooter(config.embedFooter)
-      .setImage("https://www.realcloudx.com/Cloud/tanatozn/menu-chams.png"),
-    extraEmbeds: [purchaseEmbed],
-    components: [
-      createTicketAndStoreRow(
-        "ticket_chams",
-        "https://hyperv.online/products/menu-chams",
-      ),
-    ],
+        "- **Stream Spoof**\n- **All mices compatible**\n- **Windows 8/10/11**\n- **HVCI ON & OFF**",
+      prices: [
+        "Semanal: $ 5.00 | S/. 25.00",
+        "Mensual: $ 15.00 | S/. 50.00",
+        "Trimestral: $ 20.00 | S/. 70.00",
+        "Anual: $ 25.00 | S/. 90.00",
+      ],
+      image: "https://www.realcloudx.com/Cloud/tanatozn/menu-chams.png",
+    }),
+    extraContainer: createPurchaseContainer("ticket_chams", "https://hyperv.online/products/menu-chams"),
+    extraMessageId: null,
   },
 
   // ========================================
@@ -328,31 +296,22 @@ module.exports = [
   {
     id: ids.embeds.BYPASS_ID,
     messageId: "1538692452054212662",
-    embed: new EmbedBuilder()
-      .setTitle("> Bypass UID")
-      .setDescription(
-        "**FUNCIONES:**\n" +
-        "- **Bypass Emulador**\n" +
-        "> 64 Bits\n" +
-        "- **Bluestacks and MSI compatibility**\n- **Good FPS**\n- **Proxy and ID Injection**\n- **Stream Spoof**\n- **All mices compatible**\n- **Windows 8/10/11**\n- **HVCI ON & OFF**\n\n" +
-        "**PRECIOS:**\n" +
-        "<:garantia:1321973733971333150> 1 dia: $ 3.00 | S/. 10.00\n" +
-        "<:garantia:1321973733971333150> Semanal: $ 9.00 | S/. 30.00\n" +
-        "<:garantia:1321973733971333150> Mensual: $ 30.00 | S/. 90.00\n" +
-        "<:garantia:1321973733971333150> Trimestral: $ 40.00 | S/. 140.00\n" +
-        "<:garantia:1321973733971333150> Anual: $ 60.00 | S/. 190.00\n\n" +
-        liston,
-      )
-      .setColor(config.embedColor)
-      .setFooter(config.embedFooter)
-      .setImage("https://www.realcloudx.com/Cloud/tanatozn/bypass-uid.png"),
-    extraEmbeds: [purchaseEmbed],
-    components: [
-      createTicketAndStoreRow(
-        "ticket_bypass_id",
-        "https://hyperv.online/products/bypass-uid",
-      ),
-    ],
+    container: buildProductContainer({
+      title: "## Bypass UID",
+      functions:
+        "- **Bypass Emulador**\n> 64 Bits\n" +
+        "- **Bluestacks and MSI compatibility**\n- **Good FPS**\n- **Proxy and ID Injection**\n- **Stream Spoof**\n- **All mices compatible**\n- **Windows 8/10/11**\n- **HVCI ON & OFF**",
+      prices: [
+        "1 dia: $ 3.00 | S/. 10.00",
+        "Semanal: $ 9.00 | S/. 30.00",
+        "Mensual: $ 30.00 | S/. 90.00",
+        "Trimestral: $ 40.00 | S/. 140.00",
+        "Anual: $ 60.00 | S/. 190.00",
+      ],
+      image: "https://www.realcloudx.com/Cloud/tanatozn/bypass-uid.png",
+    }),
+    extraContainer: createPurchaseContainer("ticket_bypass_id", "https://hyperv.online/products/bypass-uid"),
+    extraMessageId: null,
   },
 
   // ========================================
@@ -361,30 +320,21 @@ module.exports = [
   {
     id: ids.embeds.BYPASS_GLOBAL,
     messageId: "1538625794262442047",
-    embed: new EmbedBuilder()
-      .setTitle("> Bypass Global")
-      .setDescription(
-        "**FUNCIONES:**\n" +
-        "- **Bypass Emulador**\n" +
-        "> 64 Bits\n" +
-        "- **Bluestacks and MSI compatibility**\n- **Good FPS**\n- **Proxy and ID Injection**\n- **Stream Spoof**\n- **All mices compatible**\n- **Windows 8/10/11**\n- **HVCI ON & OFF**\n\n" +
-        "**PRECIOS:**\n" +
-        "<:garantia:1321973733971333150> 1 Dia: $ 3.00 | S/. 10.00\n" +
-        "<:garantia:1321973733971333150> Semanal: $ 9.00 | S/. 30.00\n" +
-        "<:garantia:1321973733971333150> 14 Dias:  $ 14.00 | S/. 50.00\n" +
-        "<:garantia:1321973733971333150> Mensual: $ 40.00 | S/. 100.00\n\n" +
-        liston,
-      )
-      .setColor(config.embedColor)
-      .setFooter(config.embedFooter)
-      .setImage("https://www.realcloudx.com/Cloud/tanatozn/bypass-global.png"),
-    extraEmbeds: [purchaseEmbed],
-    components: [
-      createTicketAndStoreRow(
-        "ticket_bypass_global",
-        "https://hyperv.online/products/bypass-global",
-      ),
-    ],
+    container: buildProductContainer({
+      title: "## Bypass Global",
+      functions:
+        "- **Bypass Emulador**\n> 64 Bits\n" +
+        "- **Bluestacks and MSI compatibility**\n- **Good FPS**\n- **Proxy and ID Injection**\n- **Stream Spoof**\n- **All mices compatible**\n- **Windows 8/10/11**\n- **HVCI ON & OFF**",
+      prices: [
+        "1 Dia: $ 3.00 | S/. 10.00",
+        "Semanal: $ 9.00 | S/. 30.00",
+        "14 Dias: $ 14.00 | S/. 50.00",
+        "Mensual: $ 40.00 | S/. 100.00",
+      ],
+      image: "https://www.realcloudx.com/Cloud/tanatozn/bypass-global.png",
+    }),
+    extraContainer: createPurchaseContainer("ticket_bypass_global", "https://hyperv.online/products/bypass-global"),
+    extraMessageId: null,
   },
 
   // ========================================
@@ -393,27 +343,19 @@ module.exports = [
   {
     id: ids.embeds.BYPASS_APK,
     messageId: "1538692454566338625",
-    embed: new EmbedBuilder()
-      .setTitle("> Bypass APK")
-      .setDescription(
-        "**FUNCIONES:**\n" +
+    container: buildProductContainer({
+      title: "## Bypass APK",
+      functions:
         "- **Bypass Emulador**\n> 64Bits\n" +
-        "- **Bluestacks and MSI compatibility**\n- **Good FPS**\n- **APK Injection**\n- **Stream Spoof**\n- **All mices compatible**\n- **Windows 8/10/11**\n- **HVCI ON & OFF**\n\n" +
-        "**PRECIOS:**\n" +
-        "<:garantia:1321973733971333150> Semanal: $ 15.00 | S/. 60.00\n" +
-        "<:garantia:1321973733971333150> Mensual: $ 35.00 | S/. 130.00\n\n" +
-        liston,
-      )
-      .setColor(config.embedColor)
-      .setFooter(config.embedFooter)
-      .setImage("https://www.realcloudx.com/Cloud/tanatozn/bypass-apk.png"),
-    extraEmbeds: [purchaseEmbed],
-    components: [
-      createTicketAndStoreRow(
-        "ticket_bypass_apk",
-        "https://hyperv.online/products/bypass-apk",
-      ),
-    ],
+        "- **Bluestacks and MSI compatibility**\n- **Good FPS**\n- **APK Injection**\n- **Stream Spoof**\n- **All mices compatible**\n- **Windows 8/10/11**\n- **HVCI ON & OFF**",
+      prices: [
+        "Semanal: $ 15.00 | S/. 60.00",
+        "Mensual: $ 35.00 | S/. 130.00",
+      ],
+      image: "https://www.realcloudx.com/Cloud/tanatozn/bypass-apk.png",
+    }),
+    extraContainer: createPurchaseContainer("ticket_bypass_apk", "https://hyperv.online/products/bypass-apk"),
+    extraMessageId: null,
   },
 
   // ========================================
@@ -422,30 +364,22 @@ module.exports = [
   {
     id: ids.embeds.PANEL_IOS,
     messageId: "1538692456223080600",
-    embed: new EmbedBuilder()
-      .setTitle("> Panel iOS")
-      .setDescription(
-        "**FUNCIONES:**\n" +
+    container: buildProductContainer({
+      title: "## Panel iOS",
+      functions:
         "- **Aimbot**\n> Head/Neck/Assist/Cycle/Silent/AimKill\n" +
         "- **ESP**\n> Line/Box/Name/RangoBR/Skeleton/Health/WeaponIcon/WeaponText\n" +
         "- **Misc**\n> NoRecoil/BackJump/InvertedWall/\n" +
-        "- **Stream Mode**\n- **No need JailBreak**\n- **No need computer to install**\n- **Includes Gbox certificate**\n- **Compatible with all iOS Versions**\n\n" +
-        "**PRECIOS:**\n" +
-        "<:garantia:1321973733971333150> 1 dia: $ 10.00 | S/. 35.00\n" +
-        "<:garantia:1321973733971333150> Semanal: $ 25.00 | S/. 85.00\n" +
-        "<:garantia:1321973733971333150> Mensual: $ 45.00 | S/. 160.00\n\n" +
-        liston,
-      )
-      .setColor(config.embedColor)
-      .setFooter(config.embedFooter)
-      .setImage("https://www.realcloudx.com/Cloud/tanatozn/panel-ios.png"),
-    extraEmbeds: [purchaseEmbed],
-    components: [
-      createTicketAndStoreRow(
-        "ticket_panel_ios",
-        "https://hyperv.online/products/panel-ios",
-      ),
-    ],
+        "- **Stream Mode**\n- **No need JailBreak**\n- **No need computer to install**\n- **Includes Gbox certificate**\n- **Compatible with all iOS Versions**",
+      prices: [
+        "1 dia: $ 10.00 | S/. 35.00",
+        "Semanal: $ 25.00 | S/. 85.00",
+        "Mensual: $ 45.00 | S/. 160.00",
+      ],
+      image: "https://www.realcloudx.com/Cloud/tanatozn/panel-ios.png",
+    }),
+    extraContainer: createPurchaseContainer("ticket_panel_ios", "https://hyperv.online/products/panel-ios"),
+    extraMessageId: null,
   },
 
   // ========================================
@@ -454,26 +388,16 @@ module.exports = [
   {
     id: ids.embeds.AIMBOT_BODY_IOS,
     messageId: "1538692457842216962",
-    embed: new EmbedBuilder()
-      .setTitle("> Aimbot Body")
-      .setDescription(
+    container: buildProductContainer({
+      title: "## Aimbot Body",
+      functions:
         "Presentamos nuestro nuevo Aimbot Body mediante Jailbreak, obtendrás una victoria asegurada sin bug de daño en tu dispositivo iOS.\n\n" +
-        "**FUNCIONES**\n" +
-        "`-` Soporte Sistema: iOS\n`-` Soporte Versión del sistema: Todas\n`-` Soporte Idiomas: Inglés/Español/Portugués\n\n" +
-        "**PRICES**\n" +
-        "<:garantia:1321973733971333150> Por Temporada: $ 50.00 | S/. 180.00\n" +
-        liston,
-      )
-      .setColor(config.embedColor)
-      .setFooter(config.embedFooter)
-      .setImage("https://i.ibb.co/fY5MmBNq/AIMBOT-IOS-BODY-1.png"),
-    extraEmbeds: [purchaseEmbed],
-    components: [
-      createTicketAndStoreRow(
-        "ticket_aimbot_body_ios",
-        "https://hyperv.online/products/aimbot-body-ios",
-      ),
-    ],
+        "- Soporte Sistema: iOS\n- Soporte Versión del sistema: Todas\n- Soporte Idiomas: Inglés/Español/Portugués",
+      prices: ["Por Temporada: $ 50.00 | S/. 180.00"],
+      image: "https://i.ibb.co/fY5MmBNq/AIMBOT-IOS-BODY-1.png",
+    }),
+    extraContainer: createPurchaseContainer("ticket_aimbot_body_ios", "https://hyperv.online/products/aimbot-body-ios"),
+    extraMessageId: null,
   },
 
   // ========================================
@@ -482,33 +406,25 @@ module.exports = [
   {
     id: ids.embeds.PANEL_ANDROID,
     messageId: "1538692459217944698",
-    embed: new EmbedBuilder()
-      .setTitle("> Panel Android")
-      .setDescription(
-        "**FUNCIONES:**\n" +
+    container: buildProductContainer({
+      title: "## Panel Android",
+      functions:
         "- **Trick**\n> Aimtrick/AimLegit/ShowFov/TypeOfRegedit\n" +
         "- **Helper**\n> CalibrateSensitivity/HeadTrick/Aimlock/Holograma\n" +
         "- **Misc**\n> Background/Liners/TextViews/Linear/ImageView/Button\n" +
         "- **Settings**\n> SaveConfig/ResetConfig/HideIcon/ShowIcon/DeleteCheats/Bypass\n" +
         "- **Optim**\n> DisableGApps/DisableAll/DisableOther/FixInputLag\n" +
-        "- **Compatible with all Android Versions**\n\n" +
-        "**PRECIOS:**\n" +
-        "<:garantia:1321973733971333150> Semanal: $ 10.00 | S/. 35.00\n" +
-        "<:garantia:1321973733971333150> 14 dias: $ 17.00 | S/. 60.00\n" +
-        "<:garantia:1321973733971333150> Mensual: $ 30.00 | S/. 100.00\n" +
-        "<:garantia:1321973733971333150> 60 dias: $ 45.00 | S/. 150.00\n\n" +
-        liston,
-      )
-      .setColor(config.embedColor)
-      .setFooter(config.embedFooter)
-      .setImage("https://www.realcloudx.com/Cloud/tanatozn/panel-android.png"),
-    extraEmbeds: [purchaseEmbed],
-    components: [
-      createTicketAndStoreRow(
-        "ticket_panel_android",
-        "https://hyperv.online/products/panel-android",
-      ),
-    ],
+        "- **Compatible with all Android Versions**",
+      prices: [
+        "Semanal: $ 10.00 | S/. 35.00",
+        "14 dias: $ 17.00 | S/. 60.00",
+        "Mensual: $ 30.00 | S/. 100.00",
+        "60 dias: $ 45.00 | S/. 150.00",
+      ],
+      image: "https://www.realcloudx.com/Cloud/tanatozn/panel-android.png",
+    }),
+    extraContainer: createPurchaseContainer("ticket_panel_android", "https://hyperv.online/products/panel-android"),
+    extraMessageId: null,
   },
 
   // ========================================
@@ -517,24 +433,14 @@ module.exports = [
   {
     id: ids.embeds.AIMBOT_BODY_ANDROID,
     messageId: "1538692460677562430",
-    embed: new EmbedBuilder()
-      .setTitle("> Aimbot Body Android")
-      .setDescription(
-        "**FUNCIONES:**\n- **Aimbot**\n> Body\n\n**Compatible con dispositivos Xiaomi**\n\n" +
-        "**PRECIOS:**\n" +
-        "<:garantia:1321973733971333150> Por Temporada: $ 40.00 | S/. 140.00\n\n" +
-        liston,
-      )
-      .setColor(config.embedColor)
-      .setFooter(config.embedFooter)
-      .setImage("https://www.realcloudx.com/Cloud/tanatozn/aimbot-body-android.png"),
-    extraEmbeds: [purchaseEmbed],
-    components: [
-      createTicketAndStoreRow(
-        "ticket_aimbot_body_android",
-        "https://hyperv.online/products/aimbot-body-android",
-      ),
-    ],
+    container: buildProductContainer({
+      title: "## Aimbot Body Android",
+      functions: "- **Aimbot**\n> Body\n\n**Compatible con dispositivos Xiaomi**",
+      prices: ["Por Temporada: $ 40.00 | S/. 140.00"],
+      image: "https://www.realcloudx.com/Cloud/tanatozn/aimbot-body-android.png",
+    }),
+    extraContainer: createPurchaseContainer("ticket_aimbot_body_android", "https://hyperv.online/products/aimbot-body-android"),
+    extraMessageId: null,
   },
 
   // ========================================
@@ -543,25 +449,17 @@ module.exports = [
   {
     id: ids.embeds.AIMBOT_PROXY,
     messageId: "1538692462636310680",
-    embed: new EmbedBuilder()
-      .setTitle("> Aimbot Proxy")
-      .setDescription(
-        "**FUNCIONES**\n- **120 FPS**\n- **Bypass relogin**\n- **Aimdrag**\n- **Aimbot Pecho**\n- **Hologramas Avatar**\n- **Hologramas Armas**\n\n" +
-        "**PRECIOS:**\n" +
-        "<:garantia:1321973733971333150> Semanal: $ 25.00 | S/. 85.00\n" +
-        "<:garantia:1321973733971333150> Mensual: $ 55.00 | S/. 190.00\n\n" +
-        liston,
-      )
-      .setColor(config.embedColor)
-      .setFooter(config.embedFooter)
-      .setImage("https://www.realcloudx.com/Cloud/tanatozn/aimbot-proxy.png"),
-    extraEmbeds: [purchaseEmbed],
-    components: [
-      createTicketAndStoreRow(
-        "ticket_aimbot_proxy",
-        "https://hyperv.online/products/aimbot-proxy",
-      ),
-    ],
+    container: buildProductContainer({
+      title: "## Aimbot Proxy",
+      functions: "- **120 FPS**\n- **Bypass relogin**\n- **Aimdrag**\n- **Aimbot Pecho**\n- **Hologramas Avatar**\n- **Hologramas Armas**",
+      prices: [
+        "Semanal: $ 25.00 | S/. 85.00",
+        "Mensual: $ 55.00 | S/. 190.00",
+      ],
+      image: "https://www.realcloudx.com/Cloud/tanatozn/aimbot-proxy.png",
+    }),
+    extraContainer: createPurchaseContainer("ticket_aimbot_proxy", "https://hyperv.online/products/aimbot-proxy"),
+    extraMessageId: null,
   },
 
   // ========================================
@@ -570,25 +468,16 @@ module.exports = [
   {
     id: ids.embeds.AIMLOCK,
     messageId: "1538692465161408554",
-    embed: new EmbedBuilder()
-      .setTitle("> Aimlock")
-      .setDescription(
-        "**FUNCIONES**\n- **Assist**\n> Aimlock/AimTrick\n- **Misc**\n> NoFakeDamage\n" +
-        "- **No need JailBreak**\n- **No need Phone reset**\n- **No need computer to install**\n- **Compatible with all iOS Versions**\n\n" +
-        "**PRECIOS:**\n" +
-        "<:garantia:1321973733971333150> Anual: $ 50.00 | S/. 180.00\n\n" +
-        liston,
-      )
-      .setColor(config.embedColor)
-      .setFooter(config.embedFooter)
-      .setImage("https://www.realcloudx.com/Cloud/tanatozn/aimlock.png"),
-    extraEmbeds: [purchaseEmbed],
-    components: [
-      createTicketAndStoreRow(
-        "ticket_aimlock",
-        "https://hyperv.online/products/aimlock",
-      ),
-    ],
+    container: buildProductContainer({
+      title: "## Aimlock",
+      functions:
+        "- **Assist**\n> Aimlock/AimTrick\n- **Misc**\n> NoFakeDamage\n" +
+        "- **No need JailBreak**\n- **No need Phone reset**\n- **No need computer to install**\n- **Compatible with all iOS Versions**",
+      prices: ["Anual: $ 50.00 | S/. 180.00"],
+      image: "https://www.realcloudx.com/Cloud/tanatozn/aimlock.png",
+    }),
+    extraContainer: createPurchaseContainer("ticket_aimlock", "https://hyperv.online/products/aimlock"),
+    extraMessageId: null,
   },
 
   // ========================================
@@ -597,26 +486,19 @@ module.exports = [
   {
     id: ids.embeds.REGEDIT,
     messageId: "1538692467560284274",
-    embed: new EmbedBuilder()
-      .setTitle("> Regedit")
-      .setDescription(
+    container: buildProductContainer({
+      title: "## Regedit",
+      functions:
         "Nuestro regedit te ofrece corregir la mira perfectamente.\n\n" +
-        "**FUNCIONES**\n`-` Soporte Sistema: Android\n`-` Soporte Versión del sistema: Todas\n`-` Soporte Idiomas: Inglés/Español/Portugués\n\n" +
-        "**PRECIOS:**\n" +
-        "<:garantia:1321973733971333150> Mensual: $ 25.00 | S/. 80.00\n" +
-        "<:garantia:1321973733971333150> Anual: $ 35.00 | S/. 130.00\n\n" +
-        liston,
-      )
-      .setColor(config.embedColor)
-      .setFooter(config.embedFooter)
-      .setImage("https://www.realcloudx.com/Cloud/tanatozn/regedit.png"),
-    extraEmbeds: [purchaseEmbed],
-    components: [
-      createTicketAndStoreRow(
-        "ticket_regedit",
-        "https://hyperv.online/products/regedit",
-      ),
-    ],
+        "- Soporte Sistema: Android\n- Soporte Versión del sistema: Todas\n- Soporte Idiomas: Inglés/Español/Portugués",
+      prices: [
+        "Mensual: $ 25.00 | S/. 80.00",
+        "Anual: $ 35.00 | S/. 130.00",
+      ],
+      image: "https://www.realcloudx.com/Cloud/tanatozn/regedit.png",
+    }),
+    extraContainer: createPurchaseContainer("ticket_regedit", "https://hyperv.online/products/regedit"),
+    extraMessageId: null,
   },
 
   // ========================================
@@ -625,26 +507,19 @@ module.exports = [
   {
     id: ids.embeds.AIMBOT_COLOR,
     messageId: "1538692468625776772",
-    embed: new EmbedBuilder()
-      .setTitle("> Aimbot Color")
-      .setDescription(
-        "**FUNCIONES**\n- **Aimbot**\n> Hold/Toogle mode\n- **Trigger Bot**\n- **Recoil Control**\n- **Insta Locker**\n- **Match Info**\n> Reveal players name and rank\n- **Mobile Control**\n- **All mices compatible**\n- **Windows 10 & 11**\n- **HVCI ON & OFF**\n\n" +
-        "**PRECIOS:**\n" +
-        "<:garantia:1321973733971333150> Semanal: $ 15.00 | S/. 60.00\n" +
-        "<:garantia:1321973733971333150> Mensual: $ 35.00 | S/. 110.00\n" +
-        "<:garantia:1321973733971333150> Trimestral: $ 65.00 | S/. 220.00\n\n" +
-        liston,
-      )
-      .setColor(config.embedColor)
-      .setFooter(config.embedFooter)
-      .setImage("https://www.realcloudx.com/Cloud/tanatozn/aimbot-color.png"),
-    extraEmbeds: [purchaseEmbed],
-    components: [
-      createTicketAndStoreRow(
-        "ticket_aimbot_color",
-        "https://hyperv.online/products/aimbot-color",
-      ),
-    ],
+    container: buildProductContainer({
+      title: "## Aimbot Color",
+      functions:
+        "- **Aimbot**\n> Hold/Toogle mode\n- **Trigger Bot**\n- **Recoil Control**\n- **Insta Locker**\n- **Match Info**\n> Reveal players name and rank\n- **Mobile Control**\n- **All mices compatible**\n- **Windows 10 & 11**\n- **HVCI ON & OFF**",
+      prices: [
+        "Semanal: $ 15.00 | S/. 60.00",
+        "Mensual: $ 35.00 | S/. 110.00",
+        "Trimestral: $ 65.00 | S/. 220.00",
+      ],
+      image: "https://www.realcloudx.com/Cloud/tanatozn/aimbot-color.png",
+    }),
+    extraContainer: createPurchaseContainer("ticket_aimbot_color", "https://hyperv.online/products/aimbot-color"),
+    extraMessageId: null,
   },
 
   // ========================================
@@ -653,25 +528,16 @@ module.exports = [
   {
     id: ids.embeds.SPOOFER,
     messageId: "1538692469804245064",
-    embed: new EmbedBuilder()
-      .setTitle("> Spoofer")
-      .setDescription(
+    container: buildProductContainer({
+      title: "## Spoofer",
+      functions:
         "Nuestro Spoofer te ayudará a falsificar las características del HWID.\n\n" +
-        "__**SOPORTE:**__\n`-` Fortnite\n`-` Rust\n`-` Apex\n`-` Dayz\n`-` Valorant\n\n" +
-        "**PRECIO:**\n" +
-        "<:garantia:1321973733971333150> Permanente: $ 50.00 | S/. 180.00\n\n" +
-        liston,
-      )
-      .setColor(config.embedColor)
-      .setFooter(config.embedFooter)
-      .setImage("https://www.realcloudx.com/Cloud/tanatozn/spoofer.png"),
-    extraEmbeds: [purchaseEmbed],
-    components: [
-      createTicketAndStoreRow(
-        "ticket_spoofer",
-        "https://hyperv.online/products/spoofer",
-      ),
-    ],
+        "**SOPORTE:**\n- Fortnite\n- Rust\n- Apex\n- Dayz\n- Valorant",
+      prices: ["Permanente: $ 50.00 | S/. 180.00"],
+      image: "https://www.realcloudx.com/Cloud/tanatozn/spoofer.png",
+    }),
+    extraContainer: createPurchaseContainer("ticket_spoofer", "https://hyperv.online/products/spoofer"),
+    extraMessageId: null,
   },
 
   // ========================================
@@ -680,26 +546,19 @@ module.exports = [
   {
     id: ids.embeds.BOOST_RANK,
     messageId: "1538692471591014534",
-    embed: new EmbedBuilder()
-      .setTitle("> Boost Rank")
-      .setDescription(
+    container: buildProductContainer({
+      title: "## Boost Rank",
+      functions:
         "**¿Estás listo para dejar atrás tus límites actuales?**\n" +
         "Ofrecemos servicios de boosteo personalizados en Valorant.\n\n" +
         "**¿Qué Ofrecemos?**\n" +
         "**Boosteo Personalizado:** Escoge el rango al que deseas llegar.\n" +
-        "**Total Seguridad:** Tu cuenta estará protegida.\n\n" +
-        liston,
-      )
-      .setColor(config.embedColor)
-      .setFooter(config.embedFooter)
-      .setImage("https://www.realcloudx.com/Cloud/tanatozn/boost-rank.png"),
-    extraEmbeds: [purchaseEmbed],
-    components: [
-      createTicketAndStoreRow(
-        "ticket_boost_rank",
-        "https://hyperv.online/products/boost-rank",
-      ),
-    ],
+        "**Total Seguridad:** Tu cuenta estará protegida.",
+      prices: null,
+      image: "https://www.realcloudx.com/Cloud/tanatozn/boost-rank.png",
+    }),
+    extraContainer: createPurchaseContainer("ticket_boost_rank", "https://hyperv.online/products/boost-rank"),
+    extraMessageId: null,
   },
 
   // ========================================
@@ -708,28 +567,19 @@ module.exports = [
   {
     id: ids.embeds.PANEL_CSGO,
     messageId: "1538692473243705346",
-    embed: new EmbedBuilder()
-      .setTitle("> Panel CSGO")
-      .setDescription(
+    container: buildProductContainer({
+      title: "## Panel CSGO",
+      functions:
         "**Descubre nuestro nuevo panel de CSGO2**.\n\n" +
-        "**FUNCIONES**\n`-` Soporte Windows: 8/10/11\n`-` Soporte CPU: Intel/AMD/Xeon\n`-` Soporte Idiomas: Inglés/Español/Portugués\n" +
-        "**PRECIOS**\n" +
-        "<:garantia:1321973733971333150> Semanal: $ 20.00 | S/. 70.00\n" +
-        "<:garantia:1321973733971333150> Mensual: $ 45.00 | S/. 160.00\n" +
-        liston,
-      )
-      .setColor(config.embedColor)
-      .setFooter(config.embedFooter)
-      .setImage(
-        "https://www.realcloudx.com/Cloud/tanatozn/panel-csgo.png",
-      ),
-    extraEmbeds: [purchaseEmbed],
-    components: [
-      createTicketAndStoreRow(
-        "ticket_panel_csgo",
-        "https://hyperv.online/products/panel-csgo",
-      ),
-    ],
+        "- Soporte Windows: 8/10/11\n- Soporte CPU: Intel/AMD/Xeon\n- Soporte Idiomas: Inglés/Español/Portugués",
+      prices: [
+        "Semanal: $ 20.00 | S/. 70.00",
+        "Mensual: $ 45.00 | S/. 160.00",
+      ],
+      image: "https://www.realcloudx.com/Cloud/tanatozn/panel-csgo.png",
+    }),
+    extraContainer: createPurchaseContainer("ticket_panel_csgo", "https://hyperv.online/products/panel-csgo"),
+    extraMessageId: null,
   },
 
   // ========================================
@@ -738,26 +588,21 @@ module.exports = [
   {
     id: ids.embeds.PANEL_COD_IOS,
     messageId: "1538692474824818751",
-    embed: new EmbedBuilder()
-      .setTitle("> Panel COD iOS")
-      .setDescription(
-        "**FUNCIONES**\n- **Aimbot**\n> Head/Neck/Assist/Cycle/Silent/AimKill\n**ESP**\n> Line/Box/Name/RangoBR/Skeleton/Health/WeaponIcon/WeaponText\n**Misc**\n> NoRecoil/BackJump/InvertedWall/\n\n" +
-        "**PRECIOS**\n" +
-        "<:garantia:1321973733971333150> x1 dia: $ 15.00 | S/. 50.00\n" +
-        "<:garantia:1321973733971333150> Semanal: $ 30.00 | S/. 100.00\n" +
-        "<:garantia:1321973733971333150> Mensual: $ 50.00 | S/. 170.00\n\n" +
-        liston,
-      )
-      .setColor(config.embedColor)
-      .setFooter(config.embedFooter)
-      .setImage("https://www.realcloudx.com/Cloud/tanatozn/panel-cod-ios.png"),
-    extraEmbeds: [purchaseEmbed],
-    components: [
-      createTicketAndStoreRow(
-        "ticket_panel_cod_ios",
-        "https://hyperv.online/products/panel-cod-ios",
-      ),
-    ],
+    container: buildProductContainer({
+      title: "## Panel COD iOS",
+      functions:
+        "- **Aimbot**\n> Head/Neck/Assist/Cycle/Silent/AimKill\n" +
+        "- **ESP**\n> Line/Box/Name/RangoBR/Skeleton/Health/WeaponIcon/WeaponText\n" +
+        "- **Misc**\n> NoRecoil/BackJump/InvertedWall/",
+      prices: [
+        "x1 dia: $ 15.00 | S/. 50.00",
+        "Semanal: $ 30.00 | S/. 100.00",
+        "Mensual: $ 50.00 | S/. 170.00",
+      ],
+      image: "https://www.realcloudx.com/Cloud/tanatozn/panel-cod-ios.png",
+    }),
+    extraContainer: createPurchaseContainer("ticket_panel_cod_ios", "https://hyperv.online/products/panel-cod-ios"),
+    extraMessageId: null,
   },
 
   // ========================================
@@ -766,26 +611,19 @@ module.exports = [
   {
     id: ids.embeds.PANEL_WARZONE,
     messageId: "1538692476347351112",
-    embed: new EmbedBuilder()
-      .setTitle("> Panel Warzone")
-      .setDescription(
+    container: buildProductContainer({
+      title: "## Panel Warzone",
+      functions:
         "Panel Warzone — compatible con Xbox, Steam y BattleNet.\n\n" +
-        "**FUNCIONES**\n`-` Compatibilidad: Xbox, Steam, BattleNet\n`-` Soporte Windows: 8/10/11\n`-` Soporte CPU: Intel/AMD/Xeon\n`-` Soporte Idiomas: Inglés/Español/Portugués\n" +
-        "**PRECIOS**\n" +
-        "<:garantia:1321973733971333150> 15 dias: $ 30.00 | S/. 110.00\n" +
-        "<:garantia:1321973733971333150> Mensual: $ 65.00 | S/. 200.00\n\n" +
-        liston,
-      )
-      .setColor(config.embedColor)
-      .setFooter(config.embedFooter)
-      .setImage("https://www.realcloudx.com/Cloud/tanatozn/panel-warzone.png"),
-    extraEmbeds: [purchaseEmbed],
-    components: [
-      createTicketAndStoreRow(
-        "ticket_panel_warzone",
-        "https://hyperv.online/products/panel-warzone",
-      ),
-    ],
+        "- Compatibilidad: Xbox, Steam, BattleNet\n- Soporte Windows: 8/10/11\n- Soporte CPU: Intel/AMD/Xeon\n- Soporte Idiomas: Inglés/Español/Portugués",
+      prices: [
+        "15 dias: $ 30.00 | S/. 110.00",
+        "Mensual: $ 65.00 | S/. 200.00",
+      ],
+      image: "https://www.realcloudx.com/Cloud/tanatozn/panel-warzone.png",
+    }),
+    extraContainer: createPurchaseContainer("ticket_panel_warzone", "https://hyperv.online/products/panel-warzone"),
+    extraMessageId: null,
   },
 
   // ========================================
@@ -794,26 +632,21 @@ module.exports = [
   {
     id: ids.embeds.CHAMS_BLOODSTRIKE,
     messageId: "1538692478075670560",
-    embed: new EmbedBuilder()
-      .setTitle("> Menu Chams Bloodstrike")
-      .setDescription(
-        "**FUNCIONES:**\n- **Visuals - Chams**\n> 3D/Glow/Solido/Wireframe/Oreon/Wukong Naruto/RGB\n- **ESP**\n> Line/Box/Name/RangoBR/Skeleton/Health/WeaponIcon/WeaponText\n- **Stream Spoof**\n- **All mices compatible**\n- **Windows 8/10/11**\n- **HVCI ON & OFF**\n\n" +
-        "**PRECIOS:**\n" +
-        "<:garantia:1321973733971333150> Semanal: $ 12.00 | S/. 40.00\n" +
-        "<:garantia:1321973733971333150> Mensual: $ 30.00 | S/. 100.00\n" +
-        "<:garantia:1321973733971333150> Trimestral: $ 40.00 | S/. 140.00\n" +
-        liston,
-      )
-      .setColor(config.embedColor)
-      .setFooter(config.embedFooter)
-      .setImage("https://www.realcloudx.com/Cloud/tanatozn/chams-blood.png"),
-    extraEmbeds: [purchaseEmbed],
-    components: [
-      createTicketAndStoreRow(
-        "ticket_chams_bloodstrike",
-        "https://hyperv.online/products/menu-chams-bloodstrike",
-      ),
-    ],
+    container: buildProductContainer({
+      title: "## Menu Chams Bloodstrike",
+      functions:
+        "- **Visuals - Chams**\n> 3D/Glow/Solido/Wireframe/Oreon/Wukong Naruto/RGB\n" +
+        "- **ESP**\n> Line/Box/Name/RangoBR/Skeleton/Health/WeaponIcon/WeaponText\n" +
+        "- **Stream Spoof**\n- **All mices compatible**\n- **Windows 8/10/11**\n- **HVCI ON & OFF**",
+      prices: [
+        "Semanal: $ 12.00 | S/. 40.00",
+        "Mensual: $ 30.00 | S/. 100.00",
+        "Trimestral: $ 40.00 | S/. 140.00",
+      ],
+      image: "https://www.realcloudx.com/Cloud/tanatozn/chams-blood.png",
+    }),
+    extraContainer: createPurchaseContainer("ticket_chams_bloodstrike", "https://hyperv.online/products/menu-chams-bloodstrike"),
+    extraMessageId: null,
   },
 
   // ========================================
@@ -822,31 +655,23 @@ module.exports = [
   {
     id: ids.embeds.NITRO,
     messageId: "1538692478960406602",
-    embed: new EmbedBuilder()
-      .setTitle("> Discord Nitro & Booster")
-      .setDescription(
-        "¿Quieres disfrutar de Discord Nitro o mejorar tu servidor con boosts?\n\n" +
-        "**PRECIOS**\n" +
-        "<:garantia:1321973733971333150> 6 boosts x1 mes: $ 7.00 | S/. 25.00\n" +
-        "<:garantia:1321973733971333150> 6 boosts x3 meses: $ 12.00 | S/. 45.00\n" +
-        "<:garantia:1321973733971333150> 14 boosts x1 mes: $ 12.00 | S/. 45.00\n" +
-        "<:garantia:1321973733971333150> 14 boosts x3 meses: $ 20.00 | S/. 70.00\n" +
-        "<:garantia:1321973733971333150> 30 boosts x1 meses: $ 20.00 | S/. 75.00\n" +
-        "<:garantia:1321973733971333150> 30 boosts x3 mes: $ 40.00 | S/. 140.00\n" +
-        "<:garantia:1321973733971333150> 1000 users online: $ 12.00 | S/. 40.00\n" +
-        "<:garantia:1321973733971333150> 1000 users offline: $ 25.00 | S/. 80.00\n\n" +
-        liston,
-      )
-      .setColor(config.embedColor)
-      .setFooter(config.embedFooter)
-      .setImage("https://www.realcloudx.com/Cloud/tanatozn/discord-tools.png"),
-    extraEmbeds: [purchaseEmbed],
-    components: [
-      createTicketAndStoreRow(
-        "ticket_nitro_booster",
-        "https://hyperv.online/products/discord-tools",
-      ),
-    ],
+    container: buildProductContainer({
+      title: "## Discord Nitro & Booster",
+      functions: "¿Quieres disfrutar de Discord Nitro o mejorar tu servidor con boosts?",
+      prices: [
+        "6 boosts x1 mes: $ 7.00 | S/. 25.00",
+        "6 boosts x3 meses: $ 12.00 | S/. 45.00",
+        "14 boosts x1 mes: $ 12.00 | S/. 45.00",
+        "14 boosts x3 meses: $ 20.00 | S/. 70.00",
+        "30 boosts x1 meses: $ 20.00 | S/. 75.00",
+        "30 boosts x3 mes: $ 40.00 | S/. 140.00",
+        "1000 users online: $ 12.00 | S/. 40.00",
+        "1000 users offline: $ 25.00 | S/. 80.00",
+      ],
+      image: "https://www.realcloudx.com/Cloud/tanatozn/discord-tools.png",
+    }),
+    extraContainer: createPurchaseContainer("ticket_nitro_booster", "https://hyperv.online/products/discord-tools"),
+    extraMessageId: null,
   },
 
   // ========================================
