@@ -12,8 +12,6 @@ const { roles } = require("./ids");
 
 const liston = "<:linea:1432870878382653530>".repeat(22) + "\n\n";
 
-const { buildProductContainer, buildPurchaseContainer } = require("../utils/containerBuilder");
-
 function createPurchaseContainer(ticketId, storeUrl) {
   return buildPurchaseContainer({
     description:
