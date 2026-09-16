@@ -68,7 +68,7 @@ function buildPurchaseContainer({ description, buttons = [], color }) {
     return container;
 }
 
-function buildInfoContainer({ title, description, image, buttons = [], color }) {
+function buildInfoContainer({ title, description, image, buttons = [], actionRows = [], color }) {
     const container = new ContainerBuilder().setAccentColor(color || config.embedColor);
 
     if (image) {
@@ -100,7 +100,16 @@ function buildInfoContainer({ title, description, image, buttons = [], color }) 
         container.addActionRowComponents(row);
     }
 
+    if (actionRows.length) {
+        container.addSeparatorComponents(new SeparatorBuilder());
+        actionRows.forEach((row) => container.addActionRowComponents(row));
+    }
+
     return container;
 }
 
-module.exports = { buildProductContainer, buildPurchaseContainer, buildInfoContainer };
+module.exports = {
+    buildProductContainer,
+    buildPurchaseContainer,
+    buildInfoContainer,
+};

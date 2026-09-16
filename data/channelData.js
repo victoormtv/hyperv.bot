@@ -34,10 +34,10 @@ module.exports = [
       description:
         "Explora nuestra tienda oficial y descubre todos nuestros productos disponibles.\n\n" +
         "**Juegos destacados**\n\n" +
-        "`<:ff:1433261279979769856>` Free Fire\n" +
-        "`<:valoo:1466276625480941774>` Valorant\n" +
-        "`<:csgoo:1466276596787708016>` CSGO\n" +
-        "`<:warzone:1466276557348929566>` Call of Duty\n\n" +
+        "<:ff:1433261279979769856> Free Fire\n" +
+        "<:valoo:1466276625480941774> Valorant\n" +
+        "<:csgoo:1466276596787708016> CSGO\n" +
+        "<:warzone:1466276557348929566> Call of Duty\n\n" +
         "<:garantia:1321973733971333150> Disfruta de una entrega inmediata y un Soporte 24/7 para asistirte en todo momento.\n" +
         "<:garantia:1321973733971333150> Contamos con Métodos de pago internacionales y nacionales para que puedas adquirir tus che4ts favoritos sin problemas.",
       image: config.defaultImage,
@@ -54,23 +54,23 @@ module.exports = [
       title: "## Métodos de Pago",
       description:
         "**Métodos Internacionales**\n\n" +
-        "`<:binance:1466284857742201104>` Binance\n" +
-        "`<:paypal:1117992083765080144>` PayPal\n" +
-        "`<:card:1466284819880083493>` Credit Card\n" +
-        "`<:wester:1117992080912945222>` Wester Union\n" +
-        "`<:remitly:1466284840000426099>` Remitly\n\n" +
+        "<:binance:1466284857742201104> Binance\n" +
+        "<:paypal:1117992083765080144> PayPal\n" +
+        "<:card:1466284819880083493> Credit Card\n" +
+        "<:wester:1117992080912945222> Wester Union\n" +
+        "<:remitly:1466284840000426099> Remitly\n\n" +
         "**Métodos Nacionales**\n\n" +
-        "`<:flagperu:1232045301813088277>` BCP/Interbank/Yape/Plin\n" +
-        "`<:flagmexico:1244856813053284437>` Spin (Depósitos)/Nubank (Transferencias)\n" +
-        "`<:flagcolombia:1232045292887605290>` Nequi\n" +
-        "`<:flagchile:1232045290484404274>` Banco Estado\n" +
-        "`<:flagargentina:1232045285241262251>` Mercado Pago\n" +
-        "`<:flagbolivia:1232045288118550648>` QR para depósitos y transferencias\n" +
-        "`<:ecuador:1232045296998023260>` Pichincha\n" +
-        "`<:guatemala:1466596711701938196>` BanRural\n" +
-        "`<:urugay:1466593083725582561>` Prex\n" +
-        "`<:spain:1466586341134434441>` Bizum\n" +
-        "`<:flagunitedstates:1232045303574827080>` Zelle/CashApp",
+        "<:flagperu:1232045301813088277> BCP/Interbank/Yape/Plin\n" +
+        "<:flagmexico:1244856813053284437> Spin (Depósitos)/Nubank (Transferencias)\n" +
+        "<:flagcolombia:1232045292887605290> Nequi\n" +
+        "<:flagchile:1232045290484404274> Banco Estado\n" +
+        "<:flagargentina:1232045285241262251> Mercado Pago\n" +
+        "<:flagbolivia:1232045288118550648> QR para depósitos y transferencias\n" +
+        "<:ecuador:1232045296998023260> Pichincha\n" +
+        "<:guatemala:1466596711701938196> BanRural\n" +
+        "<:urugay:1466593083725582561> Prex\n" +
+        "<:spain:1466586341134434441> Bizum\n" +
+        "<:flagunitedstates:1232045303574827080> Zelle/CashApp",
       image: config.defaultImage,
       buttons: [
         { label: "Check our products", style: ButtonStyle.Link, url: "https://discord.com/channels/1117932314102595716/1117935960852803696", emoji: { name: "compra", id: "1316466484133757021" } }
@@ -97,9 +97,9 @@ module.exports = [
   {
     id: ids.embeds.TICKET_GENERAL,
     messageId: "1538692443216679075",
-    embed: new EmbedBuilder()
-      .setTitle("> Ticket")
-      .setDescription(
+    container: buildInfoContainer({
+      title: "## Ticket",
+      description:
         "**Welcome to our support system!**\n" +
         "¡Bienvenido a nuestro sistema de soporte!\n\n" +
         "**Need help?** Open a ticket and our team will assist you.\n" +
@@ -110,12 +110,9 @@ module.exports = [
         "`-` General questions / Preguntas generales\n" +
         "`-` Technical issues / Problemas técnicos\n\n" +
         "*Select your language below / Selecciona tu idioma abajo*",
-      )
-      .setColor(config.embedColor)
-      .setThumbnail(config.embedThumbnail)
-      .setFooter(config.embedFooter)
-      .setImage(config.defaultImage),
-    components: [createLanguageTicketButtons()],
+      image: config.defaultImage,
+      actionRows: [createLanguageTicketButtons()],
+    }),
   },
 
   // ========================================
