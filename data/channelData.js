@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js");
+const { buildProductContainer } = require("../utils/containerBuilder");
 const {
   createTicketButton,
   createLanguageTicketButtons,
