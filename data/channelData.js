@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js");
-const { buildProductContainer } = require("../utils/containerBuilder");
+const { buildProductContainer, buildPurchaseContainer } = require("../utils/containerBuilder");
 const {
   createTicketButton,
   createLanguageTicketButtons,
@@ -12,28 +12,19 @@ const { roles } = require("./ids");
 
 const liston = "<:linea:1432870878382653530>".repeat(22) + "\n\n";
 
-const purchaseEmbed = new EmbedBuilder()
-  .setDescription(
-    "You can purchase directly on our website using Bitcoin, Paypal or Credit/Debit Card for **INSTANT DELIVERY**.\n" +
-    "Puedes comprar directamente en nuestra página web usando Bitcoin, PayPal o Tarjeta de Crédito/Débito para recibir tu **PEDIDO AL INSTANTE**.\n\n" +
-    "For other methods / Otros métodos: <#1466257895636209796>",
-  )
-  .setColor(0xffffff)
-  .setFooter(config.embedFooter);
+const { buildProductContainer, buildPurchaseContainer } = require("../utils/containerBuilder");
 
-function createTicketAndStoreRow(ticketId, storeUrl) {
-  return new ActionRowBuilder().addComponents(
-    new ButtonBuilder()
-      .setCustomId(ticketId)
-      .setLabel("Comprar en Ticket / Buy on Ticket")
-      .setStyle(ButtonStyle.Secondary)
-      .setEmoji({ name: 'soporte', id: '1232042953908949034' }),
-    new ButtonBuilder()
-      .setLabel("Comprar en Web / Buy on Web")
-      .setEmoji({ name: 'compra', id: '1316171968717918379' })
-      .setStyle(ButtonStyle.Link)
-      .setURL(storeUrl),
-  );
+function createPurchaseContainer(ticketId, storeUrl) {
+  return buildPurchaseContainer({
+    description:
+      "You can purchase directly on our website using Bitcoin, Paypal or Credit/Debit Card for **INSTANT DELIVERY**.\n" +
+      "Puedes comprar directamente en nuestra página web usando Bitcoin, PayPal o Tarjeta de Crédito/Débito para recibir tu **PEDIDO AL INSTANTE**.\n\n" +
+      "For other methods / Otros métodos: <#1466257895636209796>",
+    buttons: [
+      { label: "Comprar en Ticket / Buy on Ticket", style: ButtonStyle.Secondary, customId: ticketId, emoji: { name: "soporte", id: "1232042953908949034" } },
+      { label: "Comprar en Web / Buy on Web", style: ButtonStyle.Link, url: storeUrl, emoji: { name: "compra", id: "1316171968717918379" } },
+    ],
+  });
 }
 
 module.exports = [
@@ -198,13 +189,9 @@ module.exports = [
         "Anual: $ 65.00 | S/. 200.00",
       ],
       image: "https://www.realcloudx.com/Cloud/tanatozn/panel-full.png",
-      buttons: [
-        { label: "Comprar en Ticket / Buy on Ticket", style: ButtonStyle.Secondary, customId: "ticket_panel_full", emoji: { name: "soporte", id: "1232042953908949034" } },
-        { label: "Comprar en Web / Buy on Web", style: ButtonStyle.Link, url: "https://hyperv.online/products/panel-full", emoji: { name: "compra", id: "1316171968717918379" } },
-      ],
     }),
-    extraEmbeds: [purchaseEmbed],
-    extraMessageId: null, // 👉 poné el ID real acá después del primer envío
+    extraContainer: createPurchaseContainer("ticket_panel_full", "https://hyperv.online/products/panel-full"),
+    extraMessageId: null,
   },
 
   // ========================================

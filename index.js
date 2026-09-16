@@ -105,11 +105,13 @@ async function updateEmbeds() {
 
       await message.edit(editOptions);
 
-      // ✅ Mensaje extra separado
-      if (item.container && item.extraEmbeds?.length && item.extraMessageId) {
+      if (item.container && (item.extraContainer || item.extraEmbeds?.length) && item.extraMessageId) {
         try {
           const extraMsg = await channel.messages.fetch(item.extraMessageId);
-          await extraMsg.edit({ embeds: item.extraEmbeds, components: [] });
+          const extraPayload = item.extraContainer
+            ? { embeds: [], components: [item.extraContainer], flags: MessageFlags.IsComponentsV2 }
+            : { embeds: item.extraEmbeds, components: [] };
+          await extraMsg.edit(extraPayload);
         } catch (err) {
           console.warn(`⚠️ No se pudo editar embed extra en canal ${item.id}: ${err.message}`);
         }

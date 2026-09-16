@@ -12,8 +12,8 @@ const config = require("../data/config");
 
 function pinifyFunctions(text) {
     return text
-        .replace(/^- /gm, "📦 ")
-        .replace(/^> /gm, "<:pinios:1549640853059014717> ");
+        .replace(/^- /gm, "`📦` ")
+        .replace(/^> /gm, "`📌` ");
 }
 
 function buildProductContainer({ title, functions, prices, image, color, buttons = [] }) {
@@ -40,6 +40,14 @@ function buildProductContainer({ title, functions, prices, image, color, buttons
         container.addTextDisplayComponents(new TextDisplayBuilder().setContent(priceText));
     }
 
+    return container;
+}
+
+function buildPurchaseContainer({ description, buttons = [], color }) {
+    const container = new ContainerBuilder().setAccentColor(color || config.embedColor);
+
+    container.addTextDisplayComponents(new TextDisplayBuilder().setContent(description));
+
     if (buttons.length) {
         container.addSeparatorComponents(new SeparatorBuilder());
         const row = new ActionRowBuilder().addComponents(
@@ -57,4 +65,4 @@ function buildProductContainer({ title, functions, prices, image, color, buttons
     return container;
 }
 
-module.exports = { buildProductContainer };
+module.exports = { buildProductContainer, buildPurchaseContainer };
