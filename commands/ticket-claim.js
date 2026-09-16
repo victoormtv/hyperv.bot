@@ -58,7 +58,7 @@ async function handleInteraction(interaction) {
             setClaim(channel.id, member.id);
             await channel.members.add(member.id);
 
-            // ✅ Asegurar que el dueño original del hilo mantenga acceso completo al hilo privado tras el reclamo
+            // ✅ Forzar que el cliente/dueño original mantenga acceso y permisos de escritura al reclamar
             if (channel.ownerId) {
                 await channel.members.add(channel.ownerId).catch(() => { });
             }
@@ -70,6 +70,11 @@ async function handleInteraction(interaction) {
             await channel.setName(newName).catch(err =>
                 console.error('❌ Error al renombrar el hilo:', err)
             );
+
+            // ✅ Doble seguridad tras el cambio de nombre del hilo
+            if (channel.ownerId) {
+                await channel.members.add(channel.ownerId).catch(() => { });
+            }
 
             embed
                 .setTitle('> Ticket Reclamado')

@@ -94,8 +94,12 @@ module.exports = async (interaction) => {
             reason: `Ticket creado por ${user.tag} (${user.id})`,
         });
 
-        // Asegurar membresía explícita del usuario en el hilo privado
-        await thread.members.add(user.id).catch(() => { });
+        // ✅ Forzar la adición inmediata y sincronización del usuario en el hilo privado
+        try {
+            await thread.members.add(user.id);
+        } catch (err) {
+            console.error("❌ No se pudo añadir al usuario al hilo privado:", err);
+        }
 
         const welcomeEmbed = new EmbedBuilder()
             .setTitle('> HyperV - Ticket')
