@@ -1,4 +1,5 @@
 require("dotenv").config();
+const { MessageFlags } = require("discord.js");
 const {
   Client,
   GatewayIntentBits,
@@ -88,9 +89,20 @@ async function updateEmbeds() {
       const channel = await client.channels.fetch(item.id);
       const message = await channel.messages.fetch(item.messageId);
 
-      const editOptions = { embeds: [item.embed] };
-      if (item.menu) {
-        editOptions.components = [item.menu];
+      let editOptions;
+
+      if (item.container) {
+        // ✅ Formato nuevo: Components V2
+        editOptions = {
+          components: [item.container],
+          flags: MessageFlags.IsComponentsV2,
+          embeds: [],
+        };
+      } else {
+        // ✅ Formato viejo: Embed clásico
+        editOptions = { embeds: [item.embed], components: [] };
+        if (item.components) editOptions.components = item.components;
+        if (item.menu) editOptions.components = [item.menu];
       }
 
       await message.edit(editOptions);

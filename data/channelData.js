@@ -176,9 +176,9 @@ module.exports = [
   {
     id: ids.embeds.PANEL_FULL,
     messageId: "1538692446282584096",
-    embed: new EmbedBuilder()
-      .setTitle("> Panel Full")
-      .setDescription(
+    container: buildProductContainer({
+      title: "Panel Full",
+      description:
         "**FUNCIONES:**\n" +
         "- **Aimbot Memory**\n> Neck/Legit/Pecho\n" +
         "- **Aimbot Offsets**\n> Rage/Helper/Lock/Silent\n" +
@@ -192,22 +192,16 @@ module.exports = [
         "- **Extra Functions**\n> FastFire/Levitate/Speed/360\n" +
         "- **Stream Spoof**\n- **All mices compatible**\n- **Windows 8/10/11**\n- **HVCI ON & OFF**\n\n" +
         "**PRECIOS:**\n" +
-        "<:garantia:1321973733971333150> Semanal: $ 25.00 | S/. 60.00\n" +
-        "<:garantia:1321973733971333150> Mensual: $ 40.00 | S/. 110.00\n" +
-        "<:garantia:1321973733971333150> Trimestral: $ 50.00 | S/. 150.00\n" +
-        "<:garantia:1321973733971333150> Anual: $ 65.00 | S/. 200.00\n\n" +
-        liston,
-      )
-      .setColor(config.embedColor)
-      .setFooter(config.embedFooter)
-      .setImage("https://www.realcloudx.com/Cloud/tanatozn/panel-full.png"),
-    extraEmbeds: [purchaseEmbed],
-    components: [
-      createTicketAndStoreRow(
-        "ticket_panel_full",
-        "https://hyperv.online/products/panel-full",
-      ),
-    ],
+        "📌 Semanal: $ 25.00 | S/. 60.00\n" +
+        "📌 Mensual: $ 40.00 | S/. 110.00\n" +
+        "📌 Trimestral: $ 50.00 | S/. 150.00\n" +
+        "📌 Anual: $ 65.00 | S/. 200.00",
+      image: "https://i.ibb.co/kVvRZ8J4/PANEL-FULL-PORTADA-HYPER-V.png",
+      buttons: [
+        { label: "Comprar en Ticket / Buy on Ticket", style: ButtonStyle.Secondary, customId: "ticket_panel_full", emoji: { name: "soporte", id: "1232042953908949034" } },
+        { label: "Comprar en Web / Buy on Web", style: ButtonStyle.Link, url: "https://hyperv.online/products/panel-full", emoji: { name: "compra", id: "1316171968717918379" } },
+      ],
+    }),
   },
 
   // ========================================
