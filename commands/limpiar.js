@@ -1,4 +1,3 @@
-// commands/limpiar.js
 const { SlashCommandBuilder, PermissionFlagsBits } = require("discord.js");
 const config = require("../data/ids.js");
 
@@ -40,10 +39,8 @@ module.exports = {
       config.embeds.NITRO,
       config.embeds.WEBSITE,
       config.embeds.PAYMENT,
-      config.embeds.POLICIES,
       config.embeds.SOCIAL_NETWORKS,
       config.embeds.PAGOS_PERU,
-      config.embeds.WEBSITE_LOGIN,
       config.embeds.PC_PROGRAMAS,
       config.embeds.MOVIL_PROGRAMAS,
       config.embeds.INFO_COMANDOS,
@@ -53,7 +50,6 @@ module.exports = {
       config.embeds.AIMBOT_BODY_ANDROID,
       config.embeds.AIMBOT_PROXY,
       config.embeds.BUSCAR_CLIENTE_INFO,
-
     ];
 
     const uniqueChannels = [...new Set(channelsToClean)];
@@ -67,29 +63,64 @@ module.exports = {
       try {
         const channel = await interaction.client.channels.fetch(channelId);
 
-        if (channel && channel.isTextBased()) {
-          const messages = await channel.messages.fetch({ limit: 100 });
+        if (!channel || !channel.isTextBased()) continue;
+
+        let cleanedInChannel = 0;
+        let lastId;
+
+        while (true) {
+          const options = { limit: 100 };
+          if (lastId) options.before = lastId;
+
+          const messages = await channel.messages.fetch(options);
+          if (messages.size === 0) break;
+
+          lastId = messages.last().id;
+
           const botMessages = messages.filter(
             (m) => m.author.id === interaction.client.user.id,
           );
 
           if (botMessages.size > 0) {
-            try {
-              const deleted = await channel.bulkDelete(botMessages, true);
-              totalCleaned += deleted.size;
-              successCount++;
-            } catch (bulkError) {
-              for (const [, msg] of botMessages) {
-                try {
-                  await msg.delete();
-                  totalCleaned++;
-                  await new Promise((resolve) => setTimeout(resolve, 500));
-                } catch (delError) { }
+            const now = Date.now();
+            const fourteenDaysMs = 14 * 24 * 60 * 60 * 1000;
+
+            const recent = botMessages.filter(
+              (m) => now - m.createdTimestamp < fourteenDaysMs,
+            );
+            const old = botMessages.filter(
+              (m) => now - m.createdTimestamp >= fourteenDaysMs,
+            );
+
+            if (recent.size > 0) {
+              try {
+                const deleted = await channel.bulkDelete(recent, true);
+                cleanedInChannel += deleted.size;
+              } catch (bulkError) {
+                for (const [, msg] of recent) {
+                  try {
+                    await msg.delete();
+                    cleanedInChannel++;
+                    await new Promise((resolve) => setTimeout(resolve, 500));
+                  } catch (delError) { }
+                }
               }
-              successCount++;
+            }
+
+            for (const [, msg] of old) {
+              try {
+                await msg.delete();
+                cleanedInChannel++;
+                await new Promise((resolve) => setTimeout(resolve, 500));
+              } catch (delError) { }
             }
           }
+
+          if (messages.size < 100) break;
         }
+
+        totalCleaned += cleanedInChannel;
+        successCount++;
       } catch (error) {
         errorCount++;
       }
