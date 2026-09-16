@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js");
-const { buildProductContainer, buildPurchaseContainer } = require("../utils/containerBuilder");
+const { buildProductContainer, buildPurchaseContainer, buildInfoContainer } = require("../utils/containerBuilder");
 const {
   createTicketButton,
   createLanguageTicketButtons,
@@ -29,111 +29,69 @@ module.exports = [
   {
     id: ids.embeds.WEBSITE,
     messageId: "1538692438204481547",
-    embed: new EmbedBuilder()
-      .setTitle("> Website")
-      .setDescription(
+    container: buildInfoContainer({
+      title: "## Website",
+      description:
         "Explora nuestra tienda oficial y descubre todos nuestros productos disponibles.\n\n" +
         "**Juegos destacados**\n\n" +
-        "<:ff:1433261279979769856> Free Fire\n" +
-        "<:valoo:1466276625480941774> Valorant\n" +
-        "<:csgoo:1466276596787708016> CSGO\n" +
-        "<:warzone:1466276557348929566> Call of Duty\n\n" +
+        "`<:ff:1433261279979769856>` Free Fire\n" +
+        "`<:valoo:1466276625480941774>` Valorant\n" +
+        "`<:csgoo:1466276596787708016>` CSGO\n" +
+        "`<:warzone:1466276557348929566>` Call of Duty\n\n" +
         "<:garantia:1321973733971333150> Disfruta de una entrega inmediata y un Soporte 24/7 para asistirte en todo momento.\n" +
         "<:garantia:1321973733971333150> Contamos con Métodos de pago internacionales y nacionales para que puedas adquirir tus che4ts favoritos sin problemas.",
-      )
-      .setColor(config.embedColor)
-      .setThumbnail(config.embedThumbnail)
-      .setFooter(config.embedFooter)
-      .setImage(config.defaultImage),
-    components: [
-      new ActionRowBuilder().addComponents(
-        new ButtonBuilder()
-          .setLabel("Ir a la Tienda")
-          .setStyle(ButtonStyle.Link)
-          .setEmoji("<:website:1459019351410872362>")
-          .setURL("https://hyperv.online"),
-      ),
-    ],
+      image: config.defaultImage,
+      buttons: [
+        { label: "Ir a la Tienda", style: ButtonStyle.Link, url: "https://hyperv.online", emoji: { name: "website", id: "1459019351410872362" } }
+      ]
+    }),
   },
 
   {
     id: ids.embeds.PAYMENT,
     messageId: "1538692440444371065",
-    embed: new EmbedBuilder()
-      .setTitle("> Métodos de Pago")
-      .setDescription(
+    container: buildInfoContainer({
+      title: "## Métodos de Pago",
+      description:
         "**Métodos Internacionales**\n\n" +
-        "<:binance:1466284857742201104> Binance\n" +
-        "<:paypal:1117992083765080144> PayPal\n" +
-        "<:card:1466284819880083493> Credit Card\n" +
-        "<:wester:1117992080912945222> Wester Union\n" +
-        "<:remitly:1466284840000426099> Remitly\n\n" +
+        "`<:binance:1466284857742201104>` Binance\n" +
+        "`<:paypal:1117992083765080144>` PayPal\n" +
+        "`<:card:1466284819880083493>` Credit Card\n" +
+        "`<:wester:1117992080912945222>` Wester Union\n" +
+        "`<:remitly:1466284840000426099>` Remitly\n\n" +
         "**Métodos Nacionales**\n\n" +
-        "<:flagperu:1232045301813088277> BCP/Interbank/Yape/Plin\n" +
-        "<:flagmexico:1244856813053284437> Spin (Depósitos)/Nubank (Transferencias)\n" +
-        "<:flagcolombia:1232045292887605290> Nequi\n" +
-        "<:flagchile:1232045290484404274> Banco Estado\n" +
-        "<:flagargentina:1232045285241262251> Mercado Pago\n" +
-        "<:flagbolivia:1232045288118550648> QR para depósitos y transferencias\n" +
-        "<:ecuador:1232045296998023260> Pichincha\n" +
-        "<:guatemala:1466596711701938196> BanRural\n" +
-        "<:urugay:1466593083725582561> Prex\n" +
-        "<:spain:1466586341134434441> Bizum\n" +
-        "<:flagunitedstates:1232045303574827080> Zelle/CashApp\n",
-      )
-      .setColor(config.embedColor)
-      .setThumbnail(config.embedThumbnail)
-      .setFooter(config.embedFooter)
-      .setImage(config.defaultImage),
-    components: [
-      new ActionRowBuilder().addComponents(
-        new ButtonBuilder()
-          .setLabel("Check our products")
-          .setStyle(ButtonStyle.Link)
-          .setEmoji("<:compra:1316466484133757021>")
-          .setURL(
-            "https://discord.com/channels/1117932314102595716/1117935960852803696",
-          ),
-      ),
-    ],
+        "`<:flagperu:1232045301813088277>` BCP/Interbank/Yape/Plin\n" +
+        "`<:flagmexico:1244856813053284437>` Spin (Depósitos)/Nubank (Transferencias)\n" +
+        "`<:flagcolombia:1232045292887605290>` Nequi\n" +
+        "`<:flagchile:1232045290484404274>` Banco Estado\n" +
+        "`<:flagargentina:1232045285241262251>` Mercado Pago\n" +
+        "`<:flagbolivia:1232045288118550648>` QR para depósitos y transferencias\n" +
+        "`<:ecuador:1232045296998023260>` Pichincha\n" +
+        "`<:guatemala:1466596711701938196>` BanRural\n" +
+        "`<:urugay:1466593083725582561>` Prex\n" +
+        "`<:spain:1466586341134434441>` Bizum\n" +
+        "`<:flagunitedstates:1232045303574827080>` Zelle/CashApp",
+      image: config.defaultImage,
+      buttons: [
+        { label: "Check our products", style: ButtonStyle.Link, url: "https://discord.com/channels/1117932314102595716/1117935960852803696", emoji: { name: "compra", id: "1316466484133757021" } }
+      ]
+    }),
   },
 
   {
     id: ids.embeds.SOCIAL_NETWORKS,
     messageId: "1538692441845014599",
-    embed: new EmbedBuilder()
-      .setTitle("> Redes Sociales")
-      .setDescription(
-        "Síguenos en nuestras redes sociales, donde podrás estar al tanto de nuestras últimas novedades, promociones y contenido exclusivo.",
-      )
-      .setColor(config.embedColor)
-      .setThumbnail(config.embedThumbnail)
-      .setFooter(config.embedFooter)
-      .setImage(config.defaultImage),
-    components: [
-      new ActionRowBuilder().addComponents(
-        new ButtonBuilder()
-          .setLabel("Website")
-          .setStyle(ButtonStyle.Link)
-          .setEmoji("🌐")
-          .setURL("https://hyperv.online"),
-        new ButtonBuilder()
-          .setLabel("Instagram")
-          .setStyle(ButtonStyle.Link)
-          .setEmoji("<:instagram36:1317355853182926939>")
-          .setURL("https://www.instagram.com/hypervgg.pe/"),
-        new ButtonBuilder()
-          .setLabel("TikTok")
-          .setStyle(ButtonStyle.Link)
-          .setEmoji("<a:987340874914619432:1118071042510954548>")
-          .setURL("https://www.tiktok.com/@hypervgg"),
-        new ButtonBuilder()
-          .setLabel("YouTube")
-          .setStyle(ButtonStyle.Link)
-          .setEmoji("<:Youtube:1316608060675985468>")
-          .setURL("https://www.youtube.com/@hyperggg"),
-      ),
-    ],
+    container: buildInfoContainer({
+      title: "## Redes Sociales",
+      description: "Síguenos en nuestras redes sociales, donde podrás estar al tanto de nuestras últimas novedades, promociones y contenido exclusivo.",
+      image: config.defaultImage,
+      buttons: [
+        { label: "Website", style: ButtonStyle.Link, url: "https://hyperv.online", emoji: "🌐" },
+        { label: "Instagram", style: ButtonStyle.Link, url: "https://www.instagram.com/hypervgg.pe/", emoji: { name: "instagram36", id: "1317355853182926939" } },
+        { label: "TikTok", style: ButtonStyle.Link, url: "https://www.tiktok.com/@hypervgg", emoji: { name: "987340874914619432", id: "1118071042510954548", animated: true } },
+        { label: "YouTube", style: ButtonStyle.Link, url: "https://www.youtube.com/@hyperggg", emoji: { name: "Youtube", id: "1316608060675985468" } }
+      ]
+    }),
   },
 
   {

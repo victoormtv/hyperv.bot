@@ -32,6 +32,7 @@ module.exports = {
 
         let payload;
 
+        // 1. Procesar el mensaje principal (Embed o Container V2)
         if (channel.container) {
           payload = {
             embeds: [],
@@ -48,18 +49,45 @@ module.exports = {
           try {
             const message = await targetChannel.messages.fetch(channel.messageId);
             await message.edit(payload);
-            console.log(`Embed editado en canal ${channel.id}`);
+            console.log(`Embed principal editado en canal ${channel.id}`);
           } catch {
-            console.warn(`No se pudo editar mensaje ${channel.messageId}, enviando nuevo...`);
+            console.warn(`No se pudo editar mensaje principal ${channel.messageId}, enviando nuevo...`);
             const sent = await targetChannel.send(payload);
-            console.log(`Embed enviado en canal ${channel.id} — messageId: ${sent.id}`);
+            channel.messageId = sent.id;
+            console.log(`Embed principal enviado en canal ${channel.id} — messageId: ${sent.id}`);
           }
         } else {
           const sent = await targetChannel.send(payload);
-          console.log(`Embed enviado en canal ${channel.id} — messageId: ${sent.id}`);
+          channel.messageId = sent.id;
+          console.log(`Embed principal enviado en canal ${channel.id} — messageId: ${sent.id}`);
         }
 
-        // ✅ Mensaje extra separado (solo para entradas con container + extraEmbeds)
+        // 2. Procesar el segundo mensaje automático (extraContainer / botones de compra) de forma independiente
+        if (channel.container && channel.extraContainer) {
+          const extraPayload = {
+            embeds: [],
+            components: [channel.extraContainer],
+            flags: MessageFlags.IsComponentsV2,
+          };
+
+          if (channel.extraMessageId && channel.extraMessageId !== "TU_MESSAGE_ID_AQUI") {
+            try {
+              const extraMsg = await targetChannel.messages.fetch(channel.extraMessageId);
+              await extraMsg.edit(extraPayload);
+              console.log(`Embed extra (botones) editado en canal ${channel.id}`);
+            } catch {
+              console.warn(`No se pudo editar el mensaje extra guardado, enviando uno nuevo...`);
+              const sentExtra = await targetChannel.send(extraPayload);
+              channel.extraMessageId = sentExtra.id;
+              console.log(`Embed extra enviado — Nuevo ID: ${sentExtra.id}`);
+            }
+          } else {
+            const sentExtra = await targetChannel.send(extraPayload);
+            channel.extraMessageId = sentExtra.id;
+            console.log(`Embed extra enviado por primera vez — extraMessageId: ${sentExtra.id}`);
+          }
+        }
+
         if (channel.container && channel.extraEmbeds?.length) {
           const extraPayload = { embeds: channel.extraEmbeds, components: [] };
 
@@ -67,16 +95,18 @@ module.exports = {
             try {
               const extraMsg = await targetChannel.messages.fetch(channel.extraMessageId);
               await extraMsg.edit(extraPayload);
-              console.log(`Embed extra editado en canal ${channel.id}`);
+              console.log(`Embed extra clásico editado en canal ${channel.id}`);
               continue;
             } catch {
-              console.warn(`No se pudo editar mensaje extra ${channel.extraMessageId}, enviando nuevo...`);
+              console.warn(`No se pudo editar mensaje extra clásico, enviando nuevo...`);
             }
           }
 
           const sentExtra = await targetChannel.send(extraPayload);
-          console.log(`Embed extra enviado en canal ${channel.id} — extraMessageId: ${sentExtra.id}`);
+          channel.extraMessageId = sentExtra.id;
+          console.log(`Embed extra clásico enviado en canal ${channel.id} — extraMessageId: ${sentExtra.id}`);
         }
+
       } catch (error) {
         console.error(`Error en canal ${channel.id}:`, error);
       }
