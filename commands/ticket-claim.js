@@ -26,15 +26,17 @@ async function main(interaction) {
         const isVendor = vendorList.some(roleId => member.roles.cache.has(roleId));
 
         if (!isVendor && !isAdmin) {
-            embed.setDescription('⚠️ No tienes permisos para gestionar este ticket.');
+            embed.setDescription('❌ No tienes permisos para gestionar este ticket.');
             return await interaction.reply({ embeds: [embed], ephemeral: true });
         }
 
         await handleInteraction(interaction);
     } catch (error) {
         console.error('❌ Error al gestionar el ticket:', error);
-        embed.setDescription('⚠️ Ocurrió un error al gestionar este ticket. Contacta con un administrador.');
-        await interaction.reply({ embeds: [embed], ephemeral: true });
+        embed.setDescription('⚠️ Ocurrió un error al gestionar este ticket.');
+        if (!interaction.replied && !interaction.deferred) {
+            await interaction.reply({ embeds: [embed], ephemeral: true });
+        }
     }
 }
 
@@ -79,13 +81,14 @@ async function handleInteraction(interaction) {
 
             embed
                 .setTitle('> Ticket Reclamado')
-                .setDescription(`**${member.user.tag}** sera el staff a cargo de este ticket.`);
+                .setDescription(`**${member.user.tag}** será el staff a cargo de este ticket.`);
             await interaction.reply({ embeds: [embed], components: [ticketCloseButton] });
         }
     } catch (error) {
         console.error('❌ Error al manejar la interacción:', error);
-        embed.setDescription('⚠️ Ocurrió un error al manejar esta acción. Contacta con un administrador.');
-        await interaction.reply({ embeds: [embed], ephemeral: true });
+        if (!interaction.replied && !interaction.deferred) {
+            await interaction.reply({ embeds: [embed], ephemeral: true });
+        }
     }
 }
 

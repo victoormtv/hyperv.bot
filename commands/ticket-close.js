@@ -19,20 +19,13 @@ async function main(interaction) {
             return await interaction.reply({ embeds: [embed], ephemeral: true });
         }
 
-        const botMember = guild.members.me;
-        if (!botMember.permissionsIn(channel).has(PermissionFlagsBits.ManageThreads)) {
-            console.error('El bot no tiene permisos para gestionar hilos.');
-            embed.setDescription('⚠️ No tengo permisos para borrar este ticket.');
-            return await interaction.reply({ embeds: [embed], ephemeral: true });
-        }
-
-        // 🛡️ Normalizar y validar estrictamente permisos de administrador
         const adminList = Array.isArray(roles.ADMIN) ? roles.ADMIN : [roles.ADMIN];
         const isAdmin = adminList.some(roleId => member.roles.cache.has(roleId));
 
         const claimedBy = getClaim(channel.id);
         const isClaimer = claimedBy === user.id;
 
+        // ❌ SI NO ES ADMIN NI EL VENDEDOR QUE RECLAMÓ, BLOQUEAR
         if (!isAdmin && !isClaimer) {
             embed.setDescription('❌ Solo el vendedor que reclamó el ticket o un administrador pueden cerrarlo.');
             return await interaction.reply({ embeds: [embed], ephemeral: true });
