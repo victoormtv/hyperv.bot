@@ -19,8 +19,11 @@ async function main(interaction) {
             return await interaction.reply({ embeds: [embed], ephemeral: true });
         }
 
-        const isAdmin = roles.ADMIN.some(roleId => member.roles.cache.has(roleId));
-        const isVendor = member.roles.cache.has(roles.VENDOR);
+        const adminList = Array.isArray(roles.ADMIN) ? roles.ADMIN : [roles.ADMIN];
+        const vendorList = Array.isArray(roles.VENDOR) ? roles.VENDOR : [roles.VENDOR];
+
+        const isAdmin = adminList.some(roleId => member.roles.cache.has(roleId));
+        const isVendor = vendorList.some(roleId => member.roles.cache.has(roleId));
 
         if (!isVendor && !isAdmin) {
             embed.setDescription('⚠️ No tienes permisos para gestionar este ticket.');
@@ -58,7 +61,6 @@ async function handleInteraction(interaction) {
             setClaim(channel.id, member.id);
             await channel.members.add(member.id);
 
-            // ✅ Forzar que el cliente/dueño original mantenga acceso y permisos de escritura al reclamar
             if (channel.ownerId) {
                 await channel.members.add(channel.ownerId).catch(() => { });
             }
@@ -71,7 +73,6 @@ async function handleInteraction(interaction) {
                 console.error('❌ Error al renombrar el hilo:', err)
             );
 
-            // ✅ Doble seguridad tras el cambio de nombre del hilo
             if (channel.ownerId) {
                 await channel.members.add(channel.ownerId).catch(() => { });
             }

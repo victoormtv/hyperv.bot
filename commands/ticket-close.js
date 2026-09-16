@@ -26,7 +26,10 @@ async function main(interaction) {
             return await interaction.reply({ embeds: [embed], ephemeral: true });
         }
 
-        const isAdmin = roles.ADMIN.some(roleId => member.roles.cache.has(roleId));
+        // 🛡️ Normalizar y validar estrictamente permisos de administrador
+        const adminList = Array.isArray(roles.ADMIN) ? roles.ADMIN : [roles.ADMIN];
+        const isAdmin = adminList.some(roleId => member.roles.cache.has(roleId));
+
         const claimedBy = getClaim(channel.id);
         const isClaimer = claimedBy === user.id;
 
