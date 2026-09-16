@@ -126,7 +126,7 @@ module.exports = {
         } else if (interaction.customId === "promocion") {
           await ticketPromotion(interaction, client);
 
-        } else if (interaction.customId.startsWith("ticket_")) {
+        } else if (interaction.customId.startsWith("ticket_") && interaction.customId !== "ticket-close" && interaction.customId !== "ticket-claim") {
           await ticketCreate(interaction, client);
 
         } else if (
@@ -136,7 +136,6 @@ module.exports = {
           await verifyFreePanelGratis.execute(interaction);
 
         } else if (interaction.customId === "bypass_reclamar_key") {
-          // ✅ Manda la key directo por DM sin abrir ticket
           await interaction.deferReply({ ephemeral: true });
 
           const key = getKeyFromJson();
