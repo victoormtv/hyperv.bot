@@ -8,6 +8,7 @@ const {
     MessageFlags
 } = require('discord.js');
 const config = require('../data/config');
+const { roles } = require('../data/ids'); // 👈 Asegúrate de importar los roles
 const { ticketTypeMapping } = require('../data/ticketTypes');
 const { ticketClaimButton, ticketCloseButton } = require('../utils/ticketButtons');
 const { registerNewTicket } = require('../utils/inactivityChecker');
@@ -115,6 +116,21 @@ module.exports = async (interaction) => {
             embeds: [welcomeEmbed],
             components: [ticketClaimButton, ticketCloseButton],
         });
+
+        // =========================================================================
+        // ✅ MENSAJE TEMPORAL AL CREAR: Etiqueta al usuario y al rol de seller, se borra en 5s
+        // =========================================================================
+        const pingMessage = await thread.send({
+            content: `🔔 ¡Hola <@${user.id}>! Se ha creado tu ticket. Un <@&${roles.VENDOR}> te atenderá en breve.`
+        });
+
+        setTimeout(async () => {
+            try {
+                await pingMessage.delete();
+            } catch (err) {
+                // Ignorar si ya fue borrado
+            }
+        }, 5000);
 
         await registerNewTicket(thread.id);
 

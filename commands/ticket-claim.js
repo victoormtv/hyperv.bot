@@ -66,33 +66,15 @@ async function handleInteraction(interaction) {
                 console.error('❌ Error al renombrar el hilo:', err)
             );
 
-            const ownerId = channel.ownerId;
-
             embed
                 .setTitle('> Ticket Reclamado')
-                .setDescription(`**${member.user.tag}** será el staff a cargo de este ticket.`);
-
+                .setDescription(`**${member.user.tag}** sera el staff a cargo de este ticket.`);
             await interaction.reply({ embeds: [embed], components: [ticketCloseButton] });
-
-            if (ownerId) {
-                const pingMessage = await channel.send({
-                    content: `🔔 ¡Hola <@${ownerId}>! <@&${roles.VENDOR}> se ha hecho cargo de tu ticket.`
-                });
-
-                setTimeout(async () => {
-                    try {
-                        await pingMessage.delete();
-                    } catch (err) {
-                    }
-                }, 5000);
-            }
         }
     } catch (error) {
         console.error('❌ Error al manejar la interacción:', error);
-        if (!interaction.replied && !interaction.deferred) {
-            embed.setDescription('⚠️ Ocurrió un error al manejar esta acción. Contacta con un administrador.');
-            await interaction.reply({ embeds: [embed], ephemeral: true });
-        }
+        embed.setDescription('⚠️ Ocurrió un error al manejar esta acción. Contacta con un administrador.');
+        await interaction.reply({ embeds: [embed], ephemeral: true });
     }
 }
 
