@@ -13,8 +13,8 @@ const config = require("../data/config");
 function pinifyFunctions(text) {
     return text
         .trim()
-        .replace(/^- /gm, "`📦` ")
-        .replace(/^> /gm, "    `📌` ")
+        .replace(/^- /gm, "`📌` ")
+        .replace(/^> /gm, "    `⚙️` ")
         .split('\n')
         .join('\n');
 }
