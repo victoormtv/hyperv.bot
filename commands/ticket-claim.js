@@ -67,6 +67,33 @@ async function handleInteraction(interaction) {
                 await channel.members.add(channel.ownerId).catch(() => { });
             }
 
+            // 🔒 Restringir el hilo: solo el vendedor que reclamó (y admins) lo ven
+            const vendorList = Array.isArray(roles.VENDOR) ? roles.VENDOR : [roles.VENDOR];
+            const adminList = Array.isArray(roles.ADMIN) ? roles.ADMIN : [roles.ADMIN];
+
+            try {
+                for (const roleId of vendorList) {
+                    if (!roleId) continue;
+                    await channel.permissionOverwrites.edit(roleId, {
+                        ViewChannel: false,
+                    }).catch(() => { });
+                }
+
+                for (const roleId of adminList) {
+                    if (!roleId) continue;
+                    await channel.permissionOverwrites.edit(roleId, {
+                        ViewChannel: true,
+                    }).catch(() => { });
+                }
+
+                await channel.permissionOverwrites.edit(member.id, {
+                    ViewChannel: true,
+                    SendMessages: true,
+                }).catch(() => { });
+            } catch (err) {
+                console.error('❌ Error al restringir permisos del ticket:', err);
+            }
+
             const currentName = channel.name;
             const staffName = member.user.username.toLowerCase().replace(/[^a-z0-9]/g, '');
             const newName = `${staffName}-${currentName}`.slice(0, 100);

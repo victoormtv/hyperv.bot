@@ -94,11 +94,22 @@ module.exports = async (interaction) => {
             reason: `Ticket creado por ${user.tag} (${user.id})`,
         });
 
-        // ✅ Forzar la adición inmediata y sincronización del usuario en el hilo privado
         try {
             await thread.members.add(user.id);
         } catch (err) {
             console.error("❌ No se pudo añadir al usuario al hilo privado:", err);
+        }
+
+        try {
+            await thread.permissionOverwrites.edit(user.id, {
+                ViewChannel: true,
+                SendMessages: true,
+                AttachFiles: true,
+                EmbedLinks: true,
+                ReadMessageHistory: true,
+            });
+        } catch (err) {
+            console.error("❌ No se pudo asignar permisos de adjuntos en el hilo:", err);
         }
 
         const welcomeEmbed = new EmbedBuilder()

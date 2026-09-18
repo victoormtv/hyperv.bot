@@ -43,6 +43,20 @@ async function main(interaction) {
 
         await channel.send({ embeds: [closeEmbed] });
         await unregisterTicket(channel.id);
+
+        try {
+            const vendorList = Array.isArray(roles.VENDOR) ? roles.VENDOR : [roles.VENDOR];
+            for (const roleId of vendorList) {
+                if (!roleId) continue;
+                await channel.permissionOverwrites.delete(roleId).catch(() => { });
+            }
+            if (claimedBy) {
+                await channel.permissionOverwrites.delete(claimedBy).catch(() => { });
+            }
+        } catch (err) {
+            console.error('❌ Error al limpiar permisos del ticket:', err);
+        }
+
         removeClaim(channel.id);
 
         setTimeout(() => {
